@@ -1,26 +1,22 @@
-// Section 6.18, Checkpoint 3: Sum.java
-// Totaling command-line arguments.
-public class Sum {
+// PrintingNumbers.java
+public class PrintingNumbers {
    public static void main(String[] args) {
-      // check if any command-line arguments were provided
-      if (args.length == 0) {
-         System.out.println(
-            "Provide some integer command-line arguments.");
-         return;
+      int i = 1; 
+
+      while (i <= 10) {
+         System.out.print(i);
+
+         if (i % 5 == 0) {
+            System.out.println();
+         }
+         else {
+            System.out.print('\t');
+         }
+
+         ++i;
       }
-
-      int sum = 0;
-
-      // compute the sum of the command-line arguments
-      for (String arg : args) {
-         sum += Integer.parseInt(arg);
-      }
-
-      System.out.printf("Sum is: %d%n", sum); // display the sum
    }
-}
-
-
+} 
 
 
 /**************************************************************************

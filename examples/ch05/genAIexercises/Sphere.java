@@ -1,4 +1,4 @@
-// Section 5.2, Checkpoint 3: Sphere.java
+// Sphere.java
 // Calculate the volume of a sphere.
 import java.util.Scanner;
 
