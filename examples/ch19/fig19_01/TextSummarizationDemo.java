@@ -1,4 +1,4 @@
-// Fig. 19.1: TextSummarizationDemo.java
+// 图19.1: TextSummarizationDemo.java
 // Summarizing a transcript as an abstract paragraph and key points.
 import deitel.openai.OpenAIUtilities;
 import deitel.openai.OpenAIUtilities.Message;

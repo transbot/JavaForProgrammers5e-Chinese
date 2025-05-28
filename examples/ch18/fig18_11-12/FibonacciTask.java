@@ -1,4 +1,4 @@
-// Fig. 18.11: FibonacciTask.java
+// 图18.11: FibonacciTask.java
 // Task subclass for calculating Fibonacci numbers in the background
 import javafx.concurrent.Task;
 

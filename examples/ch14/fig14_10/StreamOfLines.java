@@ -1,4 +1,4 @@
-// Fig. 14.10: StreamOfLines.java
+// 图14.10: StreamOfLines.java
 // Counting word occurrences in a text file.
 import java.io.IOException;
 import java.nio.file.Files;

@@ -1,4 +1,4 @@
-// Fig. 10.4: UsingExceptions.java
+// 图10.4: UsingExceptions.java
 // Stack unwinding and obtaining data from an exception object.
 
 public class UsingExceptions {

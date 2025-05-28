@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Fig. 17.7: VideoPlayer.fxml -->
+<!-- 图17.7: VideoPlayer.fxml -->
 <!-- VideoPlayer GUI with a MediaView and a Button. -->
 
 <?import javafx.scene.control.Button?>

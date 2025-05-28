@@ -1,4 +1,4 @@
-// Fig. 19.6: NamedEntityRecognitionDemo.java
+// 图19.6: NamedEntityRecognitionDemo.java
 // Identifying named entities and obtaining them as structured outputs.
 import deitel.openai.OpenAIUtilities;
 import deitel.openai.OpenAIUtilities.Message;

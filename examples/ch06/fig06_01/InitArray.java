@@ -1,4 +1,4 @@
-// Fig. 6.1: InitArray.java
+// 图6.1: InitArray.java
 // Initializing the elements of an array to default values of zero.
 
 public class InitArray {

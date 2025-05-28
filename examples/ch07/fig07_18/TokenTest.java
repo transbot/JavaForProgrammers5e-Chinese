@@ -1,4 +1,4 @@
-// Fig. 7.18: TokenTest.java
+// 图7.18: TokenTest.java
 // Tokenizing with String method split
 import java.util.Scanner;
 

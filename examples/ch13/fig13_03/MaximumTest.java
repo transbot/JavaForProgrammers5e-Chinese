@@ -1,4 +1,4 @@
-// Fig. 13.3: MaximumTest.java
+// 图13.3: MaximumTest.java
 // Generic method maximum returns the largest of three objects.
 
 public class MaximumTest {

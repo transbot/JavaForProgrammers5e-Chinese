@@ -1,4 +1,4 @@
-// Fig. 8.21: Employee.java
+// 图8.21: Employee.java
 // static variable used to maintain a count of the number of 
 // Employee objects in memory.
 

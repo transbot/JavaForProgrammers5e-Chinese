@@ -1,4 +1,4 @@
-// Fig. 6.13: ArrayManipulations.java
+// 图6.13: ArrayManipulations.java
 // Arrays class methods and System.arraycopy.
 import java.util.Arrays;
 

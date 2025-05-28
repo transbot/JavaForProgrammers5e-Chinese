@@ -1,4 +1,4 @@
-// Fig. 21.13: AdditionProblemProvider.java
+// 图21.13: AdditionProblemProvider.java
 // AdditionProblemProvider implementation of interface  
 // ProblemProvider for the MathTutor app.
 package com.deitel.additionprovider;

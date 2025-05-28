@@ -1,4 +1,4 @@
-// Fig. 7.13: StringBuilderAppend.java
+// 图7.13: StringBuilderAppend.java
 // StringBuilder append methods.
 
 public class StringBuilderAppend {

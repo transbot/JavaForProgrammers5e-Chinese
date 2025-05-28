@@ -1,4 +1,4 @@
-// Fig. 7.4: StringStartEnd.java
+// 图7.4: StringStartEnd.java
 // String methods startsWith and endsWith.
 
 public class StringStartEnd {

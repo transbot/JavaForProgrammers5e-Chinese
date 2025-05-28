@@ -1,4 +1,4 @@
-// Fig. 9.15: Employee.java
+// 图9.15: Employee.java
 // An Employee "has a" CompensationModel.
 import java.math.BigDecimal;
 

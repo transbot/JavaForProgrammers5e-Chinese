@@ -1,4 +1,4 @@
-// Fig. 14.6: ArraysAndStreams.java
+// 图14.6: ArraysAndStreams.java
 // Demonstrating lambdas and streams with an array of Integers.
 import java.util.Arrays;
 import java.util.List;

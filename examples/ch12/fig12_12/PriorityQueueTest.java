@@ -1,4 +1,4 @@
-// Fig. 12.12: PriorityQueueTest.java
+// 图12.12: PriorityQueueTest.java
 // PriorityQueue test program.
 import java.util.PriorityQueue;
 

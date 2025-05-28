@@ -1,4 +1,4 @@
-// Fig. 4.1: WhileCounter.java
+// 图4.1: WhileCounter.java
 // Counter-controlled iteration with the while iteration statement.
 
 public class WhileCounter {

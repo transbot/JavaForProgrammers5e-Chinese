@@ -1,4 +1,4 @@
-// Fig. 22.4: TowersOfHanoi.java
+// 图22.4: TowersOfHanoi.java
 // Towers of Hanoi solution with a recursive method.
 public class TowersOfHanoi {
    // recursively move disks between towers                            

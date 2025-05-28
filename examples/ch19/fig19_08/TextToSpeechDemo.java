@@ -1,4 +1,4 @@
-// Fig. 19.8: TextToSpeechDemo.java
+// 图19.8: TextToSpeechDemo.java
 // Synthesizing speech from text.
 import deitel.openai.OpenAIUtilities;
 import java.nio.file.Path;

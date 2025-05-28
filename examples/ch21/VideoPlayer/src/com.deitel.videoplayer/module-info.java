@@ -1,4 +1,4 @@
-// Fig. 21.21: module-info.java
+// 图21.21: module-info.java
 // Module declaration for the com.deitel.videoplayer module
 module com.deitel.videoplayer {
    requires javafx.controls;

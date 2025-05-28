@@ -1,4 +1,4 @@
-// Fig. 9.2: SalariedEmployeeTest.java
+// 图9.2: SalariedEmployeeTest.java
 // SalariedEmployee class test program.
 import java.math.BigDecimal;
 import java.math.RoundingMode;

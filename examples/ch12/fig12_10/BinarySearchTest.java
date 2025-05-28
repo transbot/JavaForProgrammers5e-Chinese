@@ -1,4 +1,4 @@
-// Fig. 12.10: BinarySearchTest.java
+// 图12.10: BinarySearchTest.java
 // Collections method binarySearch.
 import java.util.List;
 import java.util.Arrays;

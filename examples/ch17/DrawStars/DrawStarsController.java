@@ -1,4 +1,4 @@
-// Fig. 17.6: DrawStarsController.java
+// 图17.6: DrawStarsController.java
 // Create a circle of stars using Polygons and Rotate transforms
 import java.util.random.RandomGenerator;
 import javafx.fxml.FXML;

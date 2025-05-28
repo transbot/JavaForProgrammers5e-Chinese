@@ -1,4 +1,4 @@
-// Fig. 10.1: DivideByZeroNoExceptionHandling.java
+// 图10.1: DivideByZeroNoExceptionHandling.java
 // Integer division without exception handling.
 import java.util.Scanner;
 

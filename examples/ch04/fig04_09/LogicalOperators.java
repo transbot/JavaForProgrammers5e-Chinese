@@ -1,4 +1,4 @@
-// Fig. 4.9: LogicalOperators.java
+// 图4.9: LogicalOperators.java
 // Logical operators.
 
 public class LogicalOperators {

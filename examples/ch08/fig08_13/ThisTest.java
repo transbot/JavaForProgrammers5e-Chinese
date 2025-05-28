@@ -1,4 +1,4 @@
-// Fig. 8.13: ThisTest.java
+// 图8.13: ThisTest.java
 // this used implicitly and explicitly to refer to members of an object.
 
 public class ThisTest {

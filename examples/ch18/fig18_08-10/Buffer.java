@@ -1,4 +1,4 @@
-// Fig. 18.8: Buffer.java
+// 图18.8: Buffer.java
 // Buffer interface specifies methods called by Producer and Consumer.
 public interface Buffer {
    // place int value into Buffer

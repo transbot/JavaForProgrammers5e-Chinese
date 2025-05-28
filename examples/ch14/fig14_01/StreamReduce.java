@@ -1,4 +1,4 @@
-// Fig. 14.1: StreamReduce.java
+// 图14.1: StreamReduce.java
 // Sum the integers from 1 through 10 with IntStream.
 import java.util.stream.IntStream;
 

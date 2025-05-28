@@ -1,4 +1,4 @@
-// Fig. 3.5: UsingBigInteger.java
+// 图3.5: UsingBigInteger.java
 // Creating and manipulating super-sized integers
 // with objects of the Java API's BigInteger class.
 import java.math.BigInteger;

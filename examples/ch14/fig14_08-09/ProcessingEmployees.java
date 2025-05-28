@@ -1,4 +1,4 @@
-// Fig. 14.9: ProcessingEmployees.java
+// 图14.9: ProcessingEmployees.java
 // Processing streams of Employee objects.
 import java.util.Comparator;
 import java.util.List;

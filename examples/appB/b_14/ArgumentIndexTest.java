@@ -1,4 +1,4 @@
-// Fig. B.14: ArgumentIndexTest.java
+// 图B.14: ArgumentIndexTest.java
 // Reordering output with argument indices.
 
 public class ArgumentIndexTest {

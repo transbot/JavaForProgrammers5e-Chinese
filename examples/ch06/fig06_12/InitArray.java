@@ -1,4 +1,4 @@
-// Fig. 6.12: InitArray.java
+// 图6.12: InitArray.java
 // Initializing an array using command-line arguments.
 
 public class InitArray {

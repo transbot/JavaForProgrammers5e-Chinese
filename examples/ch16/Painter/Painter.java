@@ -1,4 +1,4 @@
-// Fig. 16.1: Painter.java
+// 图16.1: Painter.java
 // Main application class that loads and displays the Painter's GUI.
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

@@ -1,4 +1,4 @@
-// Fig. B.2: FloatingNumberTest.java
+// 图B.2: FloatingNumberTest.java
 // Using floating-point conversion characters.
 
 public class FloatingNumberTest {

@@ -1,4 +1,4 @@
-// Fig. 17.8: VideoPlayerController.java
+// 图17.8: VideoPlayerController.java
 // Using Media, MediaPlayer and MediaView to play a video. 
 import java.net.URL;
 import javafx.beans.binding.Bindings;

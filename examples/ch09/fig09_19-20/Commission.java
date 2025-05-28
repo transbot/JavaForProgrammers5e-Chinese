@@ -1,4 +1,4 @@
-// Fig. 9.17: Commission.java
+// 图9.17: Commission.java
 // Commission implements the CompensationModel interface.
 import java.math.BigDecimal;
 

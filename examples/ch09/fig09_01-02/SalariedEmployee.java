@@ -1,4 +1,4 @@
-// Fig. 9.1: SalariedEmployee.java
+// 图9.1: SalariedEmployee.java
 // SalariedEmployee class represents an employee paid a fixed salary.
 import java.math.BigDecimal;
 

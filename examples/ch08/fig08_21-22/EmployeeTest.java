@@ -1,4 +1,4 @@
-// Fig. 8.22: EmployeeTest.java
+// 图8.22: EmployeeTest.java
 // static member demonstration.
 
 public class EmployeeTest {

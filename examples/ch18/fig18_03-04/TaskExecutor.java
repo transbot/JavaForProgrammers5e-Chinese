@@ -1,4 +1,4 @@
-// Fig. 18.4: TaskExecutor.java
+// 图18.4: TaskExecutor.java
 // Using an ExecutorService to execute Runnables.
 import java.util.concurrent.Executors;
 

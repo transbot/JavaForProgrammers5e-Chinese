@@ -1,4 +1,4 @@
-// Fig. 5.4: CrapsWithSwitchExpressions.java
+// 图5.4: CrapsWithSwitchExpressions.java
 // Craps class simulates the dice game craps.
 import java.util.random.RandomGenerator;
 

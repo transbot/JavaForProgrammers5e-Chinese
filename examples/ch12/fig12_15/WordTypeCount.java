@@ -1,4 +1,4 @@
-// Fig. 12.15: WordTypeCount.java
+// 图12.15: WordTypeCount.java
 // Program counts the number of occurrences of each word in a String.
 import java.util.Map;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-// Fig. 21.x: module-info.java
+// 图21.x: module-info.java
 // Module declaration for the com.deitel.timetest module
 module com.deitel.timetest {
    requires com.deitel.timelibrary;

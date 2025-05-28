@@ -1,4 +1,4 @@
-// Fig. 21.6: Welcome.java
+// 图21.6: Welcome.java
 // Welcome class that will be placed in a module
 package com.deitel.welcome; // all classes in modules must be packaged
 

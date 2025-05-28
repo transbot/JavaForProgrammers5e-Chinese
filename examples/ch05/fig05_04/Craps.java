@@ -1,4 +1,4 @@
-// Fig. 5.4: Craps.java
+// 图5.4: Craps.java
 // Craps class simulates the dice game craps.
 import java.util.random.RandomGenerator;
 

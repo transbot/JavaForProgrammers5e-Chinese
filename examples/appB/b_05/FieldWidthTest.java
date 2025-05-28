@@ -1,4 +1,4 @@
-// Fig. B.5: FieldWidthTest.java
+// 图B.5: FieldWidthTest.java
 // Right aligning integers in fields.
 
 public class FieldWidthTest {

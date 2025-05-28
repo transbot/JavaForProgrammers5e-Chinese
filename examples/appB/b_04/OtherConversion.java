@@ -1,4 +1,4 @@
-// Fig. B.4: OtherConversion.java
+// 图B.4: OtherConversion.java
 // Using the b, B, h, H, % and n conversion characters.
 
 public class OtherConversion {

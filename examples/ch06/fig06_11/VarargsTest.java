@@ -1,4 +1,4 @@
-// Fig. 6.11: VarargsTest.java
+// 图6.11: VarargsTest.java
 // Using variable-length argument lists.
 
 public class VarargsTest {

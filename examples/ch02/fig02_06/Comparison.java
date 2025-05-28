@@ -1,4 +1,4 @@
-// Fig. 2.6: Comparison.java
+// 图2.6: Comparison.java
 // Compare integers using if statements, relational operators 
 // and equality operators.
 import java.util.Scanner; // program uses class Scanner

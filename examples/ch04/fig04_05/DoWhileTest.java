@@ -1,4 +1,4 @@
-// Fig. 4.5: DoWhileTest.java
+// 图4.5: DoWhileTest.java
 // do...while iteration statement.
 
 public class DoWhileTest {

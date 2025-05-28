@@ -1,4 +1,4 @@
-// Fig. 9.6: Employee.java
+// 图9.6: Employee.java
 // Employee abstract superclass.
 import java.math.BigDecimal;
 

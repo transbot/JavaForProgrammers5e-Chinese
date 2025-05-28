@@ -1,4 +1,4 @@
-// Fig. 22.3: FactorialCalculator.java
+// 图22.3: FactorialCalculator.java
 // Iterative factorial method.
 import java.math.BigInteger;
 

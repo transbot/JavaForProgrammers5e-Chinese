@@ -1,4 +1,4 @@
-// Fig. 8.27: RecordPatternMatchingDemo2.java
+// 图8.27: RecordPatternMatchingDemo2.java
 // Using record patterns in a switch expression to assign
 // record members to variables for use in a given case.
 

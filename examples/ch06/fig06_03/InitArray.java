@@ -1,4 +1,4 @@
-// Fig. 6.3: InitArray.java
+// 图6.3: InitArray.java
 // Calculating the values to be placed into the elements of an array.
 
 public class InitArray {

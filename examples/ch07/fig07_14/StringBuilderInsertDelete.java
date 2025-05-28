@@ -1,4 +1,4 @@
-// Fig. 7.14: StringBuilderInsertDelete.java
+// 图7.14: StringBuilderInsertDelete.java
 // StringBuilder methods insert, delete and deleteCharAt.
 
 public class StringBuilderInsertDelete {

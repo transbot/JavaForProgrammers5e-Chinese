@@ -1,4 +1,4 @@
-// Fig. 19.10: SpeechToVTTDemo.java
+// 图19.10: SpeechToVTTDemo.java
 // Transcribing the audio track from a video and creating closed captions.
 import deitel.openai.OpenAIUtilities;
 

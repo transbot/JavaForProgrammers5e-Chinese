@@ -1,4 +1,4 @@
-// Fig. 17.13: BallAnimationTimerController.java
+// 图17.13: BallAnimationTimerController.java
 // Bounce a circle around a window using an AnimationTimer subclass. 
 import java.util.random.RandomGenerator;
 import javafx.animation.AnimationTimer;

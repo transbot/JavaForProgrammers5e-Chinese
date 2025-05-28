@@ -1,4 +1,4 @@
-// Fig. 19.3: DescribeImageDemo.java
+// 图19.3: DescribeImageDemo.java
 // Getting accessibility descriptions of images.
 import deitel.openai.OpenAIUtilities;
 import java.nio.file.Path;

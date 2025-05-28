@@ -1,4 +1,4 @@
-// Fig. 9.13: PayableInterfaceTest.java
+// 图9.13: PayableInterfaceTest.java
 // Payable interface test program processing Invoices and 
 // Employees polymorphically.
 import java.math.BigDecimal;

@@ -1,4 +1,4 @@
-// Fig. 21.11: MathTutor.java
+// 图21.11: MathTutor.java
 // Math tutoring app using ProblemProviders to display math problems.
 package com.deitel.mathtutor;
 

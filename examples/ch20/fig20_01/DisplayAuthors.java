@@ -1,4 +1,4 @@
-// Fig. 20.1: DisplayAuthors.java
+// 图20.1: DisplayAuthors.java
 // Displaying the contents of the authors table.
 import java.nio.file.Path;
 import java.sql.Connection;

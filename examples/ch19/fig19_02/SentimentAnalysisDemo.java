@@ -1,4 +1,4 @@
-// Fig. 19.2: SentimentAnalysisDemo.java
+// 图19.2: SentimentAnalysisDemo.java
 // Analyzing the sentiment of a transcript.
 import deitel.openai.OpenAIUtilities;
 import deitel.openai.OpenAIUtilities.Message;

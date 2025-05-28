@@ -1,4 +1,4 @@
-// Fig. 16.9: FileChooserTestController.java
+// 图16.9: FileChooserTestController.java
 // Displays information about a selected file or folder. 
 import java.io.File;
 import java.io.IOException;

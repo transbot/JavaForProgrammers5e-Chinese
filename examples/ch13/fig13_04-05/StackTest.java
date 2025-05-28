@@ -1,4 +1,4 @@
-// Fig. 13.5: StackTest.java
+// 图13.5: StackTest.java
 // Stack generic class test program.
 import java.util.NoSuchElementException;
 

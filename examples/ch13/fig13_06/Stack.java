@@ -1,4 +1,4 @@
-// Fig. 13.4: Stack.java
+// 图13.4: Stack.java
 // Stack generic class declaration.
 import java.util.ArrayList;
 import java.util.NoSuchElementException;

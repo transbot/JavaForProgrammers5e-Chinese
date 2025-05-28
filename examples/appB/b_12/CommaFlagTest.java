@@ -1,4 +1,4 @@
-// Fig. B.12: CommaFlagTest.java
+// 图B.12: CommaFlagTest.java
 // Using the comma (,) flag to display numbers with thousands separator.
 
 public class CommaFlagTest {

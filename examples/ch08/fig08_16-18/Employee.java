@@ -1,4 +1,4 @@
-// Fig. 8.17: Employee.java
+// 图8.17: Employee.java
 // Employee class with references to other objects.
 
 public class Employee {

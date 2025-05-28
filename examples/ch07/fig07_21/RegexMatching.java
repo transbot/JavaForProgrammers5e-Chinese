@@ -1,4 +1,4 @@
-// Fig. 7.22: RegexMatching.java
+// 图7.22: RegexMatching.java
 // Classes Pattern and Matcher.
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;

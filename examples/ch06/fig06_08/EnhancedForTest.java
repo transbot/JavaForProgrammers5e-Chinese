@@ -1,4 +1,4 @@
-// Fig. 6.8: EnhancedForTest.java
+// 图6.8: EnhancedForTest.java
 // Using the enhanced for statement to total integers in an array.
 
 public class EnhancedForTest {

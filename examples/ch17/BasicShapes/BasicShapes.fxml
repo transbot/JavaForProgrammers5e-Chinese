@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Fig. 17.3: BasicShapes.fxml -->
+<!-- 图17.3: BasicShapes.fxml -->
 <!-- Defining Shape objects and styling via CSS -->
 
 <?import javafx.scene.layout.Pane?>

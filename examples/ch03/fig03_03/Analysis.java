@@ -1,4 +1,4 @@
-// Fig. 3.3: Analysis.java
+// 图3.3: Analysis.java
 // Analysis of examination results using nested control statements.
 import java.util.Scanner; // class uses class Scanner
 

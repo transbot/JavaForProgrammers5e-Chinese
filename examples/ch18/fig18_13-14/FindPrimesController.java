@@ -1,4 +1,4 @@
-// Fig. 18.14: FindPrimesController.java
+// 图18.14: FindPrimesController.java
 // Displaying prime numbers as they're calculated; updating a ProgressBar
 import java.util.concurrent.Executors;
 

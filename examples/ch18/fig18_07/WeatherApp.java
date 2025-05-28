@@ -1,4 +1,4 @@
-// Fig. 18.7: WeatherApp.java
+// 图18.7: WeatherApp.java
 // Fetch a city's weather using OpenWeatherMap API with 
 // structured concurrency and scoped values.
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

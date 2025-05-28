@@ -1,4 +1,4 @@
-// Fig. 11.7: WeatherApp.java
+// 图11.7: WeatherApp.java
 // Use an OpenWeatherMap web service to get a city's current weather.
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;

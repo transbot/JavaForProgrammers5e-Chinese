@@ -1,4 +1,4 @@
-// Fig. B.3: CharStringConversion.java
+// 图B.3: CharStringConversion.java
 // Using character and string conversion characters.
 public class CharStringConversion {
    public static void main(String[] args) {

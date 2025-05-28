@@ -1,4 +1,4 @@
-// Fig. 6.14: ArrayListCollection.java
+// 图6.14: ArrayListCollection.java
 // Generic ArrayList<E> collection demonstration.
 import java.util.ArrayList;
 

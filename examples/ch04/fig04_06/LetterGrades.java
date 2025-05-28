@@ -1,4 +1,4 @@
-// Fig. 4.6: LetterGrades.java
+// 图4.6: LetterGrades.java
 // LetterGrades class uses the switch statement to count letter grades.
 import java.util.Scanner; 
 

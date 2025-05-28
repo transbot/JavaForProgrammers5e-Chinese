@@ -1,4 +1,4 @@
-// Fig. 8.10: Time1.java
+// 图8.10: Time1.java
 // Time1 class declaration maintains the time in 24-hour format.
 
 public class Time1 {

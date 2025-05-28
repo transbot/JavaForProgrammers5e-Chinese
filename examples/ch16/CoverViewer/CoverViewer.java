@@ -1,4 +1,4 @@
-// Fig. 16.5: CoverViewer.java
+// 图16.5: CoverViewer.java
 // Class that loads and displays the CoverViewer's GUI.
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

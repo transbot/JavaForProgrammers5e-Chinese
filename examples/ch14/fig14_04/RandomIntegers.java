@@ -1,4 +1,4 @@
-// Fig. 14.4: RandomIntegers.java
+// 图14.4: RandomIntegers.java
 // Shifted and scaled random integers.
 import java.util.random.RandomGenerator;
 import java.util.stream.Collectors;

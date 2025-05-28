@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Fig. 17.14: TransitionAnimations.fxml -->
+<!-- 图17.14: TransitionAnimations.fxml -->
 <!-- FXML for a Pane and a Rectangle-->
 
 <?import javafx.scene.layout.Pane?>

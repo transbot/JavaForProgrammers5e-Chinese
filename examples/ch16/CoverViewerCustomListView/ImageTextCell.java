@@ -1,4 +1,4 @@
-// Fig. 16.7: ImageTextCell.java
+// 图16.7: ImageTextCell.java
 // Custom ListView cell factory that displays an Image and text
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;

@@ -1,4 +1,4 @@
-// Fig. 14.2: StreamMapReduce.java
+// 图14.2: StreamMapReduce.java
 // Sum the even integers from 2 through 20 with IntStream.
 import java.util.stream.IntStream;
 

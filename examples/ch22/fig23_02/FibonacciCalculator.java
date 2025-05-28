@@ -1,4 +1,4 @@
-// Fig. 22.2: FibonacciCalculator.java
+// 图22.2: FibonacciCalculator.java
 // Recursive fibonacci method.
 import java.math.BigInteger;
 

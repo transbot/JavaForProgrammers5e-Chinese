@@ -1,4 +1,4 @@
-// Fig. 15.2: TipCalculatorController.java
+// 图15.2: TipCalculatorController.java
 // Controller that handles calculateButton and tipPercentageSlider events
 import java.math.BigDecimal;
 import java.math.RoundingMode;

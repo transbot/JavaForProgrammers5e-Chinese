@@ -1,4 +1,4 @@
-// Fig. 12.8: DeckOfCards.java
+// 图12.8: DeckOfCards.java
 // Card shuffling and dealing with Collections method shuffle.
 import java.util.ArrayList;
 import java.util.List;

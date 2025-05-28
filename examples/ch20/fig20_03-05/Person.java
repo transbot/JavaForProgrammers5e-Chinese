@@ -1,4 +1,4 @@
-// Fig. 20.3: Person.java
+// 图20.3: Person.java
 // Person record class that represents an entry in an address book.
 public record Person (
    int id, String first, String last, String email, String phone) {

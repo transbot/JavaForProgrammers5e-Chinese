@@ -1,4 +1,4 @@
-// Fig. 8.7: Card.java
+// 图8.7: Card.java
 // Card class represents a playing card.
 
 public class Card {

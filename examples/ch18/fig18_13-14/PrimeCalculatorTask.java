@@ -1,4 +1,4 @@
-// Fig. 18.13: PrimeCalculatorTask.java
+// 图18.13: PrimeCalculatorTask.java
 // Calculates the first n primes, publishing them as they are found.
 import java.util.Arrays;
 import javafx.concurrent.Task;

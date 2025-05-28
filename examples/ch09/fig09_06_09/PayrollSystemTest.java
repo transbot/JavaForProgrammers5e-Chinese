@@ -1,4 +1,4 @@
-// Fig. 9.9: PayrollSystemTest.java
+// 图9.9: PayrollSystemTest.java
 // Employee hierarchy test program.
 import java.math.BigDecimal;
 import java.math.RoundingMode;

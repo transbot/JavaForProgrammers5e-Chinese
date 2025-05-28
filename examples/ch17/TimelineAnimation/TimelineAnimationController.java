@@ -1,4 +1,4 @@
-// Fig. 17.12: TimelineAnimationController.java
+// 图17.12: TimelineAnimationController.java
 // Bounce a circle around a window using a Timeline animation
 import java.util.random.RandomGenerator;
 import javafx.animation.KeyFrame;

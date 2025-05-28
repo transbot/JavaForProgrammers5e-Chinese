@@ -1,4 +1,4 @@
-// Fig. 4.4: Interest.java
+// 图4.4: Interest.java
 // Compound-interest calculations with for.
 
 public class Interest {

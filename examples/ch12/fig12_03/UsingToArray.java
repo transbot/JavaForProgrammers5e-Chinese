@@ -1,4 +1,4 @@
-// Fig. 12.3: UsingToArray.java
+// 图12.3: UsingToArray.java
 // Viewing arrays as Lists and converting Lists to arrays.
 import java.util.LinkedList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-// Fig. 7.10: StringBuilderConstructors.java
+// 图7.10: StringBuilderConstructors.java
 // StringBuilder constructors.
 
 public class StringBuilderConstructors {

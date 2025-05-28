@@ -1,4 +1,4 @@
-// Fig. 3.4: Increment.java
+// 图3.4: Increment.java
 // Prefix increment and postfix increment operators.
 
 public class Increment {

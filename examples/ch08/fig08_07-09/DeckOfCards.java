@@ -1,4 +1,4 @@
-// Fig. 8.8: DeckOfCards.java
+// 图8.8: DeckOfCards.java
 // DeckOfCards class represents a deck of playing cards.
 import java.util.random.RandomGenerator; 
 

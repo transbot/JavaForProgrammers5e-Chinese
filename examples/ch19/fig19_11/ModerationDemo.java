@@ -1,4 +1,4 @@
-// Fig. 19.11: ModerationDemo.java
+// 图19.11: ModerationDemo.java
 // Using the OpenAI moderation API to check for offensive content.
 import deitel.openai.OpenAIUtilities;
 import java.util.Scanner;

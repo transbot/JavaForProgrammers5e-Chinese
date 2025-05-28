@@ -1,4 +1,4 @@
-// Fig. 20.5: AddressBookController.java
+// 图20.5: AddressBookController.java
 // Controller for the AddressBook app
 import java.util.List;
 

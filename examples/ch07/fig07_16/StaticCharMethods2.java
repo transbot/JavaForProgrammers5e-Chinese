@@ -1,4 +1,4 @@
-// Fig. 7.16: StaticCharMethods2.java
+// 图7.16: StaticCharMethods2.java
 // Character class static conversion methods.
 import java.util.Scanner;
 

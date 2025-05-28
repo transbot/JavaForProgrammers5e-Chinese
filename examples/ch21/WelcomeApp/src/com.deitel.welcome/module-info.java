@@ -1,4 +1,4 @@
-// Fig. 21.7: module-info.java
+// 图21.7: module-info.java
 // Module declaration for the com.deitel.welcome module
 module com.deitel.welcome {
    requires java.base; // implicit in all modules, so can be omitted

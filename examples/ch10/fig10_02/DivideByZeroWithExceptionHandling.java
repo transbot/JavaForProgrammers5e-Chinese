@@ -1,4 +1,4 @@
-// Fig. 10.2: DivideByZeroWithExceptionHandling.java
+// 图10.2: DivideByZeroWithExceptionHandling.java
 // Handling ArithmeticExceptions and InputMismatchExceptions.
 import java.util.InputMismatchException;
 import java.util.Scanner;

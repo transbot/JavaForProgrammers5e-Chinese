@@ -1,4 +1,4 @@
-// Fig. 12.1: CollectionTest.java
+// 图12.1: CollectionTest.java
 // Collection interface demonstrated via an ArrayList object.
 import java.util.List;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-// Fig. 7.23: CryptographyDemo.java
+// 图7.23: CryptographyDemo.java
 // Encrypting and decrypting messages with AES.
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;

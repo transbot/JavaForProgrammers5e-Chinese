@@ -1,4 +1,4 @@
-// Fig. 13.6: StackTest2.java
+// 图13.6: StackTest2.java
 // Passing generic Stack objects to generic methods.
 import java.util.NoSuchElementException;
       

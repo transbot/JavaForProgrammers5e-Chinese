@@ -1,4 +1,4 @@
-// Fig. 9.11: Invoice.java
+// 图9.11: Invoice.java
 // Invoice class that implements Payable.
 import java.math.BigDecimal;
 

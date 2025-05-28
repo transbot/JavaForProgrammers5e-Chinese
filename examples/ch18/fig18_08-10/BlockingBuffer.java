@@ -1,4 +1,4 @@
-// Fig. 18.9: BlockingBuffer.java
+// 图18.9: BlockingBuffer.java
 // Creating a synchronized buffer using an ArrayBlockingQueue.
 import java.util.concurrent.ArrayBlockingQueue;
 

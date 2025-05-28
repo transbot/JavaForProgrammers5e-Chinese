@@ -1,4 +1,4 @@
-// Fig. 7.3: StringCompare.java
+// 图7.3: StringCompare.java
 // Comparing Strings and portions of Strings.
 
 public class StringCompare {

@@ -1,4 +1,4 @@
-// Fig. 17.18: ThreeDimensionalShapesController.java
+// 图17.18: ThreeDimensionalShapesController.java
 // Setting the material displayed on 3D shapes.
 import javafx.fxml.FXML;
 import javafx.scene.paint.Color;

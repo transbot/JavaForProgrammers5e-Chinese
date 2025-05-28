@@ -1,4 +1,4 @@
-// Fig. 7.7: StringConcatenation.java
+// 图7.7: StringConcatenation.java
 // String method concat.
 
 public class StringConcatenation {

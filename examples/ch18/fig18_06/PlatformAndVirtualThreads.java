@@ -1,4 +1,4 @@
-// Fig. 18.6: PlatformAndVirtualThreads.java
+// 图18.6: PlatformAndVirtualThreads.java
 // Timing large numbers of platform vs. virtual threads.
 import java.time.Duration;
 import java.time.InstantSource;

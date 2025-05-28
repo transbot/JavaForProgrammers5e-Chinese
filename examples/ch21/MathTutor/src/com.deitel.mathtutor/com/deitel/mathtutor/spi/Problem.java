@@ -1,4 +1,4 @@
-// Fig. 21.10: Problem.java
+// 图21.10: Problem.java
 // Problem superclass that contains information about a math problem.
 package com.deitel.mathtutor.spi;
 

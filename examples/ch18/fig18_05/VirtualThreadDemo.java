@@ -1,4 +1,4 @@
-// Fig. 18.5: VirtualThreadDemo.java
+// 图18.5: VirtualThreadDemo.java
 // Using virtual threads to execute Runnables.
 import java.util.concurrent.Executors;
 

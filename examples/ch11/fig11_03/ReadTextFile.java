@@ -1,4 +1,4 @@
-// Fig. 11.3: ReadTextFile.java
+// 图11.3: ReadTextFile.java
 // Reading a text file using a Scanner.
 import java.nio.file.Path;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-// Fig. 22.5: FractalController.java
+// 图22.5: FractalController.java
 // Drawing the "Lo feather fractal" using recursion.
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

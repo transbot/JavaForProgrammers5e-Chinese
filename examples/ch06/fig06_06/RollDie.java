@@ -1,4 +1,4 @@
-// Fig. 6.6: RollDie.java
+// 图6.6: RollDie.java
 // Die-rolling program using arrays instead of switch.
 import java.util.random.RandomGenerator;
 

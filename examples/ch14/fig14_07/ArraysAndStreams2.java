@@ -1,4 +1,4 @@
-// Fig. 14.7: ArraysAndStreams2.java
+// 图14.7: ArraysAndStreams2.java
 // Demonstrating lambdas and streams with an array of Strings.
 import java.util.Arrays;
 

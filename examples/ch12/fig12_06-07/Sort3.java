@@ -1,4 +1,4 @@
-// Fig. 12.7: Sort3.java
+// 图12.7: Sort3.java
 // Collections method sort with a custom Comparator object.
 import java.util.List;
 import java.util.ArrayList;

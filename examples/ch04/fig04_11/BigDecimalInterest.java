@@ -1,4 +1,4 @@
-// Fig. 4.11: BigDecimalInterest.java
+// 图4.11: BigDecimalInterest.java
 // Compound-interest example with BigDecimal objects.
 import java.math.BigDecimal;
 import java.math.RoundingMode;

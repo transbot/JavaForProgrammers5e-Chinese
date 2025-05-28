@@ -1,4 +1,4 @@
-// Fig. 9.8: CommissionEmployee.java
+// 图9.8: CommissionEmployee.java
 // CommissionEmployee class extends Employee.
 import java.math.BigDecimal;
 

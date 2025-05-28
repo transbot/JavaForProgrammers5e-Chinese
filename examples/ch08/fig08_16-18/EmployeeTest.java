@@ -1,4 +1,4 @@
-// Fig. 8.18: EmployeeTest.java
+// 图8.18: EmployeeTest.java
 // Composition demonstration.
 
 public class EmployeeTest {

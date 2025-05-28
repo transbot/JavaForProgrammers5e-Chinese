@@ -1,4 +1,4 @@
-// Fig. B.11: ZeroFlagTest.java
+// 图B.11: ZeroFlagTest.java
 // Printing with the 0 (zero) flag fills in leading zeros.
 
 public class ZeroFlagTest {

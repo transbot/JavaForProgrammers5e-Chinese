@@ -1,4 +1,4 @@
-// Fig. 7.17: OtherCharMethods.java
+// 图7.17: OtherCharMethods.java
 // Character class instance methods.
 public class OtherCharMethods { 
    public static void main(String[] args) {

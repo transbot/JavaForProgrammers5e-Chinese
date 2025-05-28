@@ -1,4 +1,4 @@
-// Fig. 5.1: MaximumFinder.java
+// 图5.1: MaximumFinder.java
 // Programmer-declared method maximum with three double parameters.
 import java.util.Scanner;
 

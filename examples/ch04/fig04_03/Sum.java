@@ -1,4 +1,4 @@
-// Fig. 4.3: Sum.java
+// 图4.3: Sum.java
 // Summing integers with the for statement.
 
 public class Sum {

@@ -1,4 +1,4 @@
-// Fig. 8.25: Records.java
+// 图8.25: Records.java
 // Demonstrating an Employee record class.
 record Employee(
    String first,

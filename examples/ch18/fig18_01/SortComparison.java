@@ -1,4 +1,4 @@
-// Fig. 18.1: SortComparison.java
+// 图18.1: SortComparison.java
 // Comparing the performance of Arrays methods sort and parallelSort.
 import java.time.Duration;
 import java.time.InstantSource;

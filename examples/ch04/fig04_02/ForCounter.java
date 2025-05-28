@@ -1,4 +1,4 @@
-// Fig. 4.2: ForCounter.java
+// 图4.2: ForCounter.java
 // Counter-controlled iteration with the for iteration statement.
 
 public class ForCounter {

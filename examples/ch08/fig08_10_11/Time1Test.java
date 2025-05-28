@@ -1,4 +1,4 @@
-// Fig. 8.11: Time1Test.java
+// 图8.11: Time1Test.java
 // Time1 object used in an app.
 
 public class Time1Test {

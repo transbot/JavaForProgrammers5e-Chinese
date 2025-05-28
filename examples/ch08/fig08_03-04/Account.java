@@ -1,4 +1,4 @@
-// Fig. 8.3: Account.java
+// 图8.3: Account.java
 // Account class with a constructor that initializes the name.
 
 public class Account {

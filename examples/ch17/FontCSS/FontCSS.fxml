@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Fig. 17.2: FontCSS.fxml -->
+<!-- 图17.2: FontCSS.fxml -->
 <!-- FontCSS GUI that is styled via external CSS -->
 
 <?import javafx.scene.control.Label?>

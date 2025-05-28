@@ -1,4 +1,4 @@
-// Fig. 2.5: Addition.java
+// 图2.5: Addition.java
 // Addition program that inputs two numbers then displays their sum.
 import java.util.Scanner; // program uses class Scanner
 

@@ -1,4 +1,4 @@
-// Fig. 19.12: OpenAIUtilities.java
+// 图19.12: OpenAIUtilities.java
 // Helper methods and record classes to used encapsulate calling
 // the OpenAI APIs via the Simple-OpenAI Java library.
 package deitel.openai;

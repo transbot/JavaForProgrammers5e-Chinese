@@ -1,4 +1,4 @@
-// Fig. 8.1: Account.java
+// 图8.1: Account.java
 // Account class with a name instance variable 
 // and methods to set and get its value.
 

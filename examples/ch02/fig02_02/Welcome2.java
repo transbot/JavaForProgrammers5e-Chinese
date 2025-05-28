@@ -1,4 +1,4 @@
-// Fig. 2.2: Welcome2.java
+// 图2.2: Welcome2.java
 // Printing a line of text with multiple statements.
 
 public class Welcome2 {

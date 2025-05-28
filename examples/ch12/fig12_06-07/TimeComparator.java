@@ -1,4 +1,4 @@
-// Fig. 12.6: TimeComparator.java
+// 图12.6: TimeComparator.java
 // Custom Comparator class that compares two Time2 objects.
 import java.util.Comparator;
 

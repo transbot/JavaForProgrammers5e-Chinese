@@ -1,4 +1,4 @@
-// Fig. 6.7: StudentPoll.java
+// 图6.7: StudentPoll.java
 // Poll analysis program.
 
 public class StudentPoll {

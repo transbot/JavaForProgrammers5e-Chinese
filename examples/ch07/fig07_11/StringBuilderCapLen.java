@@ -1,4 +1,4 @@
-// Fig. 7.11: StringBuilderCapLen.java
+// 图7.11: StringBuilderCapLen.java
 // StringBuilder length, setLength, capacity and ensureCapacity methods.
 
 public class StringBuilderCapLen {

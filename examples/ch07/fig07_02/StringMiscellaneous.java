@@ -1,4 +1,4 @@
-// Fig. 7.2: StringMiscellaneous.java
+// 图7.2: StringMiscellaneous.java
 // This program demonstrates the length, charAt and getChars
 // methods of the String class.
 

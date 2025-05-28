@@ -1,4 +1,4 @@
-// Fig. 7.8: StringMiscellaneous2.java
+// 图7.8: StringMiscellaneous2.java
 // String methods replace, toLowerCase, toUpperCase, trim and toCharArray.
 
 public class StringMiscellaneous2 {

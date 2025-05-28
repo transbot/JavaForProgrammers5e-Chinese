@@ -1,4 +1,4 @@
-// Fig. 14.5: IntStreamOperations.java
+// 图14.5: IntStreamOperations.java
 // Demonstrating IntStream operations.
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;

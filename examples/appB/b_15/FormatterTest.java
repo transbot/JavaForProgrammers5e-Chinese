@@ -1,4 +1,4 @@
-// Fig. B.15: FormatterTest.java
+// 图B.15: FormatterTest.java
 // Formatting output with class Formatter.
 import java.util.Formatter;
 

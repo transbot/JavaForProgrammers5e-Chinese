@@ -1,4 +1,4 @@
-// Fig. 10.5: UsingChainedExceptions.java
+// 图10.5: UsingChainedExceptions.java
 // Chained exceptions.
 
 public class UsingChainedExceptions {

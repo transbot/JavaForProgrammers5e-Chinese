@@ -1,4 +1,4 @@
-// Fig. 8.9: DeckOfCardsTest.java
+// 图8.9: DeckOfCardsTest.java
 // Card shuffling and dealing.
 
 public class DeckOfCardsTest {

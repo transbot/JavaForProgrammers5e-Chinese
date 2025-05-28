@@ -1,4 +1,4 @@
-// Fig. 18.3: PrintTask.java
+// 图18.3: PrintTask.java
 // PrintTask class sleeps for a random time from 0 to 5 seconds
 import java.util.random.RandomGenerator;
 

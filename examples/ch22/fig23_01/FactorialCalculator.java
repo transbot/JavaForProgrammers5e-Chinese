@@ -1,4 +1,4 @@
-// Fig. 22.1: FactorialCalculator.java
+// 图22.1: FactorialCalculator.java
 // Recursive factorial method.
 import java.math.BigInteger;
 

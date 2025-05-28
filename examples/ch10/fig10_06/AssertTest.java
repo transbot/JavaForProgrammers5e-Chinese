@@ -1,4 +1,4 @@
-// Fig. 10.6: AssertTest.java
+// 图10.6: AssertTest.java
 // Checking with assert that a value is within range
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-// Fig. 12.11: Algorithms2.java
+// 图12.11: Algorithms2.java
 // Collections methods addAll, frequency and disjoint.
 import java.util.ArrayList;
 import java.util.List;

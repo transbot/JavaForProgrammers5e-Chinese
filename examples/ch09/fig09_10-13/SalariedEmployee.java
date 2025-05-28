@@ -1,4 +1,4 @@
-// Fig. 9.7: SalariedEmployee.java
+// 图9.7: SalariedEmployee.java
 // SalariedEmployee concrete class extends abstract class Employee.
 import java.math.BigDecimal;
 

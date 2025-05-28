@@ -1,4 +1,4 @@
-// Fig. 11.11: CryptographyDemo.java
+// 图11.11: CryptographyDemo.java
 // Encrypting and decrypting messages with AES, and 
 // using RSA to encrypt and decrypt the AES secret key.
 import javax.crypto.Cipher;

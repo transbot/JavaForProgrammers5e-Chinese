@@ -1,4 +1,4 @@
-// Fig. 8.16: Date.java 
+// 图8.16: Date.java 
 // Date class declaration.
 
 public class Date {

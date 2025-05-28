@@ -1,4 +1,4 @@
-// Fig. B.7: MinusFlagTest.java
+// 图B.7: MinusFlagTest.java
 // Right aligning and left aligning values.
 
 public class MinusFlagTest {

@@ -1,4 +1,4 @@
-// Fig. 15.1: TipCalculator.java
+// 图15.1: TipCalculator.java
 // Main application class that loads and displays the Tip Calculator's GUI.
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

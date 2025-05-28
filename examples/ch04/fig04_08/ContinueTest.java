@@ -1,4 +1,4 @@
-// Fig. 4.8: ContinueTest.java
+// 图4.8: ContinueTest.java
 // continue statement terminating an iteration of a for statement.
 public class ContinueTest {
    public static void main(String[] args) {

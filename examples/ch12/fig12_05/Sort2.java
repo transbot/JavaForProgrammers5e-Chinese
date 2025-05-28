@@ -1,4 +1,4 @@
-// Fig. 12.5: Sort2.java
+// 图12.5: Sort2.java
 // Using a Comparator object with method sort.
 import java.util.List;
 import java.util.Arrays;

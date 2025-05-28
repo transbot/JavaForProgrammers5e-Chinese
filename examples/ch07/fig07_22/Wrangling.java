@@ -1,4 +1,4 @@
-// Fig. 7.22: Wrangling.java
+// 图7.22: Wrangling.java
 // Simple data wrangling tasks to prepare text to train language models.
 import java.util.Arrays;
 

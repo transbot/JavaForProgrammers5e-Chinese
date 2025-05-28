@@ -1,4 +1,4 @@
-// Fig. 2.4: Welcome4.java
+// 图2.4: Welcome4.java
 // Displaying multiple lines with method System.out.printf.
 
 public class Welcome4 {

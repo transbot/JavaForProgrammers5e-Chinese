@@ -1,4 +1,4 @@
-// Fig. 14.12: RandomIntStream.java
+// 图14.12: RandomIntStream.java
 // Rolling a die 60,000,000 times with streams
 import java.util.random.RandomGenerator;
 import java.util.function.Function;

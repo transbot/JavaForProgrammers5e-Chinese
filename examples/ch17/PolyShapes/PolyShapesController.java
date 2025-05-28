@@ -1,4 +1,4 @@
-// Fig. 17.5: PolyShapesController.java
+// 图17.5: PolyShapesController.java
 // Drawing Polylines, Polygons and Paths.
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

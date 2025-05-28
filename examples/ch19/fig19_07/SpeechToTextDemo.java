@@ -1,4 +1,4 @@
-// Fig. 19.7: SpeechToTextDemo.java
+// 图19.7: SpeechToTextDemo.java
 // Transcribing audio files to text.
 import deitel.openai.OpenAIUtilities;
 import java.nio.file.Files;

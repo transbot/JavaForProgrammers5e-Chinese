@@ -1,4 +1,4 @@
-// Fig. 13.7: TotalNumbers.java
+// 图13.7: TotalNumbers.java
 // Totaling the numbers in a List<Number>.
 import java.util.Arrays;
 import java.util.List;

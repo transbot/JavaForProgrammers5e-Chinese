@@ -1,4 +1,4 @@
-// Fig. 9.12: Employee.java
+// 图9.12: Employee.java
 // Employee abstract superclass that implements interface Payable.
 import java.math.BigDecimal;
 

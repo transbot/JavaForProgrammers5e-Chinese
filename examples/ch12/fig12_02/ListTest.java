@@ -1,4 +1,4 @@
-// Fig. 12.2: ListTest.java
+// 图12.2: ListTest.java
 // Lists, LinkedLists and ListIterators.
 import java.util.List;
 import java.util.LinkedList;

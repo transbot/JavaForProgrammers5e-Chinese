@@ -1,4 +1,4 @@
-// Fig. 9.18: PayrollSystemTest.java
+// 图9.18: PayrollSystemTest.java
 // Processing Employees with various CompensationModels.
 import java.math.BigDecimal;
 import java.math.RoundingMode;

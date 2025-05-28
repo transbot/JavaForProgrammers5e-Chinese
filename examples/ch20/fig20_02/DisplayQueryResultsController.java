@@ -1,4 +1,4 @@
-// Fig. 20.2: DisplayQueryResultsController.java
+// 图20.2: DisplayQueryResultsController.java
 // Controller for the DisplayQueryResults app
 import java.sql.Connection;
 import java.sql.DriverManager;

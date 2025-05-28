@@ -1,4 +1,4 @@
-// Fig. 11.2: CreateTextFile.java
+// 图11.2: CreateTextFile.java
 // Writing data to a sequential text file with class Formatter.
 import java.util.Formatter;               
 import java.nio.file.Path;

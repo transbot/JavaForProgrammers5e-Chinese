@@ -1,4 +1,4 @@
-// Fig. 7.15: StaticCharMethods.java
+// 图7.15: StaticCharMethods.java
 // Character static methods for testing characters and converting case.
 import java.util.Scanner;
 

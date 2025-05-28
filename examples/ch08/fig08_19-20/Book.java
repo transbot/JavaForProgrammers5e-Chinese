@@ -1,4 +1,4 @@
-// Fig. 8.19: Book.java
+// 图8.19: Book.java
 // Declaring an enum type with a constructor and explicit instance fields 
 // and accessors for these fields
 

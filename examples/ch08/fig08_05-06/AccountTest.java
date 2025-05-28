@@ -1,4 +1,4 @@
-// Fig. 8.6: AccountTest.java
+// 图8.6: AccountTest.java
 // Inputting and outputting floating-point numbers with Account objects.
 import java.math.BigDecimal;
 import java.math.RoundingMode;

@@ -1,4 +1,4 @@
-// Fig. 12.16: FactoryMethods.java
+// 图12.16: FactoryMethods.java
 // Java SE 9 collection factory methods.
 import java.util.List;
 import java.util.Map;

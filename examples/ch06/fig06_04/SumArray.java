@@ -1,4 +1,4 @@
-// Fig. 6.4: SumArray.java
+// 图6.4: SumArray.java
 // Computing the sum of the elements of an array.
 
 public class SumArray {

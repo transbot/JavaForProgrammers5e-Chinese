@@ -1,4 +1,4 @@
-// Fig. 11.1: FileAndDirectoryInfo.java
+// 图11.1: FileAndDirectoryInfo.java
 // File class used to obtain file and directory information.
 import java.io.IOException;          
 import java.nio.file.DirectoryStream;

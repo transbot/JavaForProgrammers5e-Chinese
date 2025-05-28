@@ -1,4 +1,4 @@
-// Fig. 4.7: BreakTest.java
+// 图4.7: BreakTest.java
 // break statement exiting a for statement.
 public class BreakTest {
    public static void main(String[] args) {

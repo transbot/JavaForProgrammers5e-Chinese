@@ -1,4 +1,4 @@
-// Fig. 17.10: TransitionAnimationsController.java
+// 图17.10: TransitionAnimationsController.java
 // Applying Transition animations to a Rectangle.
 import javafx.animation.FadeTransition;      
 import javafx.animation.FillTransition;        

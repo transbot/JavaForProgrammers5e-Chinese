@@ -1,4 +1,4 @@
-// Fig. B.1: IntegerConversionTest.java
+// 图B.1: IntegerConversionTest.java
 // Using the integer conversion characters.
 
 public class IntegerConversionTest {

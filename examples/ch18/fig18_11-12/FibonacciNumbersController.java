@@ -1,4 +1,4 @@
-// Fig. 18.12: FibonacciNumbersController.java
+// 图18.12: FibonacciNumbersController.java
 // Using a Task to perform a long calculation 
 // outside the JavaFX application thread.
 import java.util.concurrent.Executors;

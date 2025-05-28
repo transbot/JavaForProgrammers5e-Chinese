@@ -1,4 +1,4 @@
-// Fig. 8.26: RecordPatternMatchingDemo.java
+// 图8.26: RecordPatternMatchingDemo.java
 // Assigning result of a switch expression to a variable.
 
 public class RecordPatternMatchingDemo {

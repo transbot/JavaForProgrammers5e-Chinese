@@ -1,4 +1,4 @@
-// Fig. B.9: SpaceFlagTest.java
+// 图B.9: SpaceFlagTest.java
 // Printing a space before non-negative values.
 
 public class SpaceFlagTest { 

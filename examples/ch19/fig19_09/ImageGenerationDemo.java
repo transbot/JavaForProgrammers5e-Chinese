@@ -1,4 +1,4 @@
-// Fig. 19.9: ImageGenerationDemo.java
+// 图19.9: ImageGenerationDemo.java
 // Creating images from text prompts.
 import deitel.openai.OpenAIUtilities;
 import java.nio.file.Path;

@@ -1,4 +1,4 @@
-// Fig. 10.7: UnnamedVariableDemo.java
+// 图10.7: UnnamedVariableDemo.java
 // Using _ where a variable name is required.
 public class UnnamedVariableDemo {
    public static void main(String[] args) {

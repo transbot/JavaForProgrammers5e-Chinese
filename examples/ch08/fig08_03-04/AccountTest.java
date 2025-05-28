@@ -1,4 +1,4 @@
-// Fig. 8.4: AccountTest.java
+// 图8.4: AccountTest.java
 // Using the Account constructor to initialize the name 
 // instance variable of each new Account object.
 

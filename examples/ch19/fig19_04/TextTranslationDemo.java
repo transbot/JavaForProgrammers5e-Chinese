@@ -1,4 +1,4 @@
-// Fig. 19.4: TextTranslationDemo.java
+// 图19.4: TextTranslationDemo.java
 // Translating text among spoken languages.
 import deitel.openai.OpenAIUtilities;
 

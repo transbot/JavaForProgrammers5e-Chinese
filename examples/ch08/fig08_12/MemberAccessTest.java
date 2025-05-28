@@ -1,4 +1,4 @@
-// Fig. 8.12: MemberAccessTest.java
+// 图8.12: MemberAccessTest.java
 // Private members of class Time1 are not accessible.
 public class MemberAccessTest {
    public static void main(String[] args) {

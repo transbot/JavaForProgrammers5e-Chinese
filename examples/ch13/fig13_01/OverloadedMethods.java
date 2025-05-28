@@ -1,4 +1,4 @@
-// Fig. 13.1: OverloadedMethods.java
+// 图13.1: OverloadedMethods.java
 // Printing array elements using overloaded methods.
 
 public class OverloadedMethods {

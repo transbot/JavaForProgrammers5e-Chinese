@@ -1,4 +1,4 @@
-// Fig. 9.5: PolymorphismTest.java
+// 图9.5: PolymorphismTest.java
 // Assigning superclass and subclass references to superclass and
 // subclass variables.
 import java.math.BigDecimal;

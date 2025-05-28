@@ -1,4 +1,4 @@
-// Fig. 6.5: BarChart.java
+// 图6.5: BarChart.java
 // Bar chart printing program.
 
 public class BarChart {

@@ -1,4 +1,4 @@
-// Fig. 21.11: Time1Test.java
+// 图21.11: Time1Test.java
 // Time1 object used in an app.
 package com.deitel.timetest;
 

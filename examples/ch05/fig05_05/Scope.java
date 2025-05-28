@@ -1,4 +1,4 @@
-// Fig. 5.5: Scope.java
+// 图5.5: Scope.java
 // Scope class demonstrates field and local variable scopes.
 
 public class Scope {

@@ -1,4 +1,4 @@
-// Fig. 7.5: StringIndexMethods.java
+// 图7.5: StringIndexMethods.java
 // String searching methods indexOf and lastIndexOf.
 
 public class StringIndexMethods {

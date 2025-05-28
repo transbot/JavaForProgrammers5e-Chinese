@@ -1,4 +1,4 @@
-// Fig. 11.5: ReadJSONFile.java
+// 图11.5: ReadJSONFile.java
 // Reading data from a JSON file using the Jackson open-source library.
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

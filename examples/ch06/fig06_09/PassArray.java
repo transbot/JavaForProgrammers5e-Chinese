@@ -1,4 +1,4 @@
-// Fig. 6.9: PassArray.java
+// 图6.9: PassArray.java
 // Passing arrays and individual array elements to methods.
 
 public class PassArray {

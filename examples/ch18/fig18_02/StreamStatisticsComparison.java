@@ -1,4 +1,4 @@
-// Fig. 18.2: StreamStatisticsComparison.java
+// 图18.2: StreamStatisticsComparison.java
 // Comparing performance of sequential and parallel stream operations.
 import java.time.Duration;
 import java.time.InstantSource;

@@ -1,4 +1,4 @@
-// Fig. 8.14: Time2.java
+// 图8.14: Time2.java
 // Time2 class declaration with overloaded constructors.  
 
 public class Time2 {

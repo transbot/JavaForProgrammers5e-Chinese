@@ -1,4 +1,4 @@
-// Fig. 21.12: module-info.java
+// 图21.12: module-info.java
 // Module declaration for the com.deitel.mathtutor module
 module com.deitel.mathtutor {
    exports com.deitel.mathtutor.spi; // package for provider interface

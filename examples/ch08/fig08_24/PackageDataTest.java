@@ -1,4 +1,4 @@
-// Fig. 8.24: PackageDataTest.java
+// 图8.24: PackageDataTest.java
 // Package-access members of a class are accessible by other classes 
 // in the same package.
 

@@ -1,4 +1,4 @@
-// Fig. 7.12: StringBuilderChars.java
+// 图7.12: StringBuilderChars.java
 // StringBuilder methods charAt, setCharAt, getChars and reverse.
 
 public class StringBuilderChars {

@@ -1,4 +1,4 @@
-// Fig. 15.13: FileChooserTest.java
+// 图15.13: FileChooserTest.java
 // App to test classes FileChooser and DirectoryChooser.
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

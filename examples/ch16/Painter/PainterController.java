@@ -1,4 +1,4 @@
-// Fig. 16.2: PainterController.java
+// 图16.2: PainterController.java
 // Controller for the Painter app
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -1,4 +1,4 @@
-// Fig. 5.3: RollDie.java
+// 图5.3: RollDie.java
 // Roll a six-sided die 60,000,000 times.
 import java.util.random.RandomGenerator;
 

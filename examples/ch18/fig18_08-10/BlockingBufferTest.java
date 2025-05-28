@@ -1,4 +1,4 @@
-// Fig. 18.10: BlockingBufferTest.java
+// 图18.10: BlockingBufferTest.java
 // Two threads manipulating a blocking buffer that properly 
 // implements the producer/consumer relationship.
 import java.util.concurrent.Executors;

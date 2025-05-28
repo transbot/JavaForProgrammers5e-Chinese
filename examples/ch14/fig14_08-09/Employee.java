@@ -1,4 +1,4 @@
-// Fig. 14.8: Employee.java
+// 图14.8: Employee.java
 // Employee class.
 public record Employee(
    String firstName, String lastName, double salary, String department) {

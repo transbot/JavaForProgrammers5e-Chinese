@@ -1,4 +1,4 @@
-// Fig. 19.5: CodeGenerationDemo.java
+// 图19.5: CodeGenerationDemo.java
 // Generating code for a die-rolling simulation.
 import deitel.openai.OpenAIUtilities;
 import deitel.openai.OpenAIUtilities.Message;

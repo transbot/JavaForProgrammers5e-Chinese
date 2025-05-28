@@ -1,4 +1,4 @@
-// Fig. 7.19: RegexExamples.java
+// 图7.19: RegexExamples.java
 // Matching entire Strings to regular expressions.
 public class RegexExamples {
    public static void main(String[] args) {

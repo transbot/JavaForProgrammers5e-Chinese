@@ -1,4 +1,4 @@
-// Fig. B.8: PlusFlagTest.java
+// 图B.8: PlusFlagTest.java
 // Printing numbers with and without the + flag.
 
 public class PlusFlagTest {

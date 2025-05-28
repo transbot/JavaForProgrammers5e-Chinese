@@ -1,4 +1,4 @@
-// Fig. 21.x: module-info.java
+// 图21.x: module-info.java
 // Module declaration for the com.deitel.timelibrary module
 module com.deitel.timelibrary {
    //exports com.deitel.timelibrary; // package available to other modules

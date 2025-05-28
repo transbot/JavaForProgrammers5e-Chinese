@@ -1,4 +1,4 @@
-// Fig. 5.2: RandomIntegers.java
+// 图5.2: RandomIntegers.java
 // Rolling a six-sided die.
 import java.util.random.RandomGenerator; 
 

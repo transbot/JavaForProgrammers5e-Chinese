@@ -1,4 +1,4 @@
-// Fig. 13.2: GenericMethodTest.java
+// 图13.2: GenericMethodTest.java
 // Printing array elements using generic method printArray.
 
 public class GenericMethodTest {

@@ -1,4 +1,4 @@
-// Fig. 7.6: Substring.java
+// 图7.6: Substring.java
 // String class substring methods.
 
 public class Substring {

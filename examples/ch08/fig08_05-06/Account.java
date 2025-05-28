@@ -1,4 +1,4 @@
-// Fig. 8.5: Account.java
+// 图8.5: Account.java
 // Account class with a BigDecimal instance variable balance and
 // a constructor and deposit method that perform validation.
 import java.math.BigDecimal;

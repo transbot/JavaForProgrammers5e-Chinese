@@ -1,4 +1,4 @@
-// Fig. 9.16: Salaried.java
+// 图9.16: Salaried.java
 // Salaried implements the CompensationModel interface.
 import java.math.BigDecimal;
 

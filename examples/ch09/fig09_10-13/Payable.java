@@ -1,4 +1,4 @@
-// Fig. 9.10: Payable.java
+// 图9.10: Payable.java
 // Payable interface declaration.
 import java.math.BigDecimal;
 

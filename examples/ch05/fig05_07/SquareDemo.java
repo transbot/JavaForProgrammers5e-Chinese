@@ -1,4 +1,4 @@
-// Fig. 5.7: SquareDemo.java
+// 图5.7: SquareDemo.java
 // Square method used to demonstrate the  
 // method-call stack and activation records.
 

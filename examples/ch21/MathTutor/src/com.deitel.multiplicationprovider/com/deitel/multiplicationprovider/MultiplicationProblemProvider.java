@@ -1,4 +1,4 @@
-// Fig. 21.15: MultiplicationProblemProvider.java
+// 图21.15: MultiplicationProblemProvider.java
 // MultiplicationProblemProvider implementation of interface  
 // ProblemProvider for the MathTutor app.
 package com.deitel.multiplicationprovider;

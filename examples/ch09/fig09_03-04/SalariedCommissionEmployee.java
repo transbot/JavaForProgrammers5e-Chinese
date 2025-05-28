@@ -1,4 +1,4 @@
-// Fig. 9.3: SalariedCommissionEmployee.java
+// 图9.3: SalariedCommissionEmployee.java
 // SalariedCommissionEmployee class inherits from SalariedEmployee and
 // accesses the superclass's private data via inherited public methods.
 import java.math.BigDecimal;

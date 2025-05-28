@@ -1,4 +1,4 @@
-// Fig. 12.13: SetTest.java
+// 图12.13: SetTest.java
 // HashSet used to remove duplicate values from an array of strings.
 import java.util.List;
 import java.util.Arrays;

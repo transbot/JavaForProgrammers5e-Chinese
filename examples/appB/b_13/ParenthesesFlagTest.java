@@ -1,4 +1,4 @@
-// Fig. B.13: ParenthesesFlagTest.java
+// 图B.13: ParenthesesFlagTest.java
 // Using the ( flag to place parentheses around negative numbers.
 
 public class ParenthesesFlagTest {

@@ -1,4 +1,4 @@
-// Fig. 3.1: ClassAverage.java
+// 图3.1: ClassAverage.java
 // Solving the class-average problem using counter-controlled iteration.
 import java.util.Scanner; // program uses class Scanner
 

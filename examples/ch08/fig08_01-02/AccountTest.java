@@ -1,4 +1,4 @@
-// Fig. 8.2: AccountTest.java
+// 图8.2: AccountTest.java
 // Creating and manipulating an Account object.
 import java.util.Scanner; 
 

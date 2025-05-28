@@ -1,4 +1,4 @@
-// Fig. 7.20: RegexReplacement.java
+// 图7.20: RegexReplacement.java
 // Regular expression replacements.
 public class RegexReplacement {
    public static void main(String[] args) {

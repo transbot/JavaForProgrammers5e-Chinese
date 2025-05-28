@@ -1,4 +1,4 @@
-// Fig. 7.9: StringValueOf.java
+// 图7.9: StringValueOf.java
 // String valueOf methods.
 
 public class StringValueOf {

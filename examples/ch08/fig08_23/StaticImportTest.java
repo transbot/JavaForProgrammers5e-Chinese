@@ -1,4 +1,4 @@
-// Fig. 8.23: StaticImportTest.java
+// 图8.23: StaticImportTest.java
 // Static import of Math class methods.
 import static java.lang.Math.*;
 

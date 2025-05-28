@@ -1,4 +1,4 @@
-// Fig. 12.4: Sort1.java
+// 图12.4: Sort1.java
 // Collections method sort.
 import java.util.List;
 import java.util.Arrays;

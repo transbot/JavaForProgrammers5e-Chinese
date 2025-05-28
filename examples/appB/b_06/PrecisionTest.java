@@ -1,4 +1,4 @@
-// Fig. B.6: PrecisionTest.java
+// 图B.6: PrecisionTest.java
 // Using precision for floating-point numbers and strings.
 public class PrecisionTest {
    public static void main(String[] args) {

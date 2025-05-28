@@ -1,4 +1,4 @@
-// Fig. 21.11: Time1.java
+// 图21.11: Time1.java
 // Class Time1 that will be placed in a module.
 package com.deitel.timelibrary;
 

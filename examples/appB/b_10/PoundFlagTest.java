@@ -1,4 +1,4 @@
-// Fig. B.10: PoundFlagTest.java
+// 图B.10: PoundFlagTest.java
 // Using the # flag with conversion characters o and x.  
 
 public class PoundFlagTest {

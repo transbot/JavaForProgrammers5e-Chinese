@@ -1,4 +1,4 @@
-// Fig. 20.4: PersonQueries.java
+// 图20.4: PersonQueries.java
 // PreparedStatements used by the AddressBook program.
 import java.nio.file.Path;
 import java.sql.Connection;

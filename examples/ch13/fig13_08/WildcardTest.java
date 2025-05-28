@@ -1,4 +1,4 @@
-// Fig. 13.8: WildcardTest.java
+// 图13.8: WildcardTest.java
 // Wildcard test program.
 import java.util.Arrays;
 import java.util.List;

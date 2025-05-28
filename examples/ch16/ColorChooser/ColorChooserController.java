@@ -1,4 +1,4 @@
-// Fig. 16.4: ColorChooserController.java
+// 图16.4: ColorChooserController.java
 // Controller for the ColorChooser app
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;

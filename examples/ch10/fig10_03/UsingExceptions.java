@@ -1,4 +1,4 @@
-// Fig. 10.3: UsingExceptions.java
+// 图10.3: UsingExceptions.java
 // try...catch...finally exception handling mechanism.
 
 public class UsingExceptions {

@@ -1,4 +1,4 @@
-// Fig. 2.7: StringTest.java
+// 图2.7: StringTest.java
 // String class test program.
 public class StringTest {
    public static void main(String[] args) {

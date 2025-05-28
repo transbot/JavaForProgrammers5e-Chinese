@@ -1,4 +1,4 @@
-// Fig. 17.16: CanvasShapesController.java
+// 图17.16: CanvasShapesController.java
 // Drawing on a Canvas.
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
