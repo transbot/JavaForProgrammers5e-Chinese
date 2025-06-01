@@ -1,24 +1,24 @@
 // 图2.5: Addition.java
-// Addition program that inputs two numbers then displays their sum.
-import java.util.Scanner; // program uses class Scanner
+// Addition（加法）程序要求用户输入两个整数，求和并显示结果
+import java.util.Scanner; // 程序使用了Scanner类
 
 public class Addition {
-   // main method begins program execution 
+   // main方法开始程序执行
    public static void main(String[] args) {
-      // create a Scanner to obtain input from the user 
+      // 创建一个Scanner对象从用户获取输入
       Scanner input = new Scanner(System.in);                    
 
-      System.out.print("Enter first integer: "); // prompt   
-      int number1 = input.nextInt(); // read first number from user
+      System.out.print("输入第一个整数: "); // 提示
+      int number1 = input.nextInt(); // 从用户处读取第一个数
 
-      System.out.print("Enter second integer: "); // prompt 
-      int number2 = input.nextInt(); // read second number from user
+      System.out.print("输入第二个整数: "); // 提示
+      int number2 = input.nextInt(); // 从用户处读取第二个数
 
-      int sum = number1 + number2; // add numbers, then store total in sum
+      int sum = number1 + number2; // 求和并将结果存储到变量sum中
 
-      System.out.printf("Sum is %d%n", sum); // display sum
-   } // end method main
-} // end class Addition
+      System.out.pri1ntf("两数之和是%d%n", sum); // 显示sum
+   } // 结束main方法
+} // 结束Addition类
 
 
 /**************************************************************************

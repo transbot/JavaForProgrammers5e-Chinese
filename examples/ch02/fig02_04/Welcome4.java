@@ -1,12 +1,12 @@
 // 图2.4: Welcome4.java
-// Displaying multiple lines with method System.out.printf.
+// 用System.out.printf方法输出多行文本
 
 public class Welcome4 {
-   // main method begins program execution 
+   // main方法开始程序执行
    public static void main(String[] args) {
-      System.out.printf("%s%n%s%n", "Welcome to", "Java Programming!");
-   } // end method main
-} // end class Welcome4
+      System.out.printf("%s%n%s%n", "欢迎学习", "Java编程!");
+   } // 结束main方法
+} // 结束Welcome4类
 
 
 /**************************************************************************

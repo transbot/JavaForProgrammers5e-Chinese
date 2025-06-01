@@ -1,13 +1,13 @@
 // 图2.2: Welcome2.java
-// Printing a line of text with multiple statements.
+// 用多个语句输出单行文本
 
 public class Welcome2 {
-   // main method begins program execution 
+   // main方法开始程序执行
    public static void main(String[] args) {
-      System.out.print("Welcome to ");        
-      System.out.println("Java Programming!");
-   } // end method main
-} // end class Welcome2
+      System.out.print("欢迎学习");        
+      System.out.println("Java编程!");
+   } // 结束main方法
+} // 结束Welcome2类
 
 
 /**************************************************************************

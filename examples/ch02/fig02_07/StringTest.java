@@ -1,39 +1,39 @@
 // 图2.7: StringTest.java
-// String class test program.
+// String类的驱动/测试程序
 public class StringTest {
    public static void main(String[] args) {
-      String s1 = "happy";
-      String s2 = " birthday";
-      String s3 = ""; // creates an empty string
+      String s1 = "生日";
+      String s2 = "快乐";
+      String s3 = ""; // 创建一个空字符串
 
-      // display the Strings and show their lengths
-      System.out.printf("s1: \"%s\"; length: %d%n", s1, s1.length());
-      System.out.printf("s2: \"%s\"; length: %d%n", s2, s2.length());
-      System.out.printf("s3: \"%s\"; length: %d%n%n", s3, s3.length());
+      // 显示三个字符串及其长度
+      System.out.printf("s1: \"%s\"; 长度: %d%n", s1, s1.length());
+      System.out.printf("s2: \"%s\"; 长度: %d%n", s2, s2.length());
+      System.out.printf("s3: \"%s\"; 长度: %d%n%n", s3, s3.length());
 
-      // compare Strings 
-      System.out.println("Results of comparing Strings:");
-      System.out.printf("s1.equals(\"happy\"): %b%n", s1.equals("happy"));
+      // 比较字符串
+      System.out.println("字符串比较结果:");
+      System.out.printf("s1.equals(\"生日\"): %b%n", s1.equals("生日"));
       System.out.printf("s2.equals(s1): %b%n%n", s2.equals(s1));
 
-      // test String method isEmpty 
-      System.out.println("Testing s3.isEmpty():");
+      // 测试String的isEmpty方法
+      System.out.println("测试s3.isEmpty():");
 
       if (s3.isEmpty()) {
-         System.out.println("s3 is empty; assigning to s3");
-         s3 = s1 + s2; // assign s3 the result of concatenating s1 and s2
-         System.out.printf("s3: \"%s\"; length: %d%n%n", s3, s3.length());
+         System.out.println("s3为空；让我们向s3赋值");
+         s3 = s1 + s2; // 连接（拼接）s1和s2，将结果赋给s3
+         System.out.printf("s3: \"%s\"; 长度: %d%n%n", s3, s3.length());
       }
 
-      // testing whether Strings start with "ha" or end with "ay" 
-      System.out.printf("s1.startsWith(\"ha\"): %b%n", 
-         s1.startsWith("ha"));
-      System.out.printf("s2.startsWith(\"ha\"): %b%n", 
-         s2.startsWith("ha"));
-      System.out.printf("s1.endsWith(\"ay\"): %b%n", s1.endsWith("ay"));
-      System.out.printf("s2.endsWith(\"ay\"): %b%n", s2.endsWith("ay"));
-   } // end method main
-} // end class StringTest
+      // 测试字符串是否以"生"开头，或者是否以"乐"结尾
+      System.out.printf("s1.startsWith(\"生\"): %b%n", 
+         s1.startsWith("生"));
+      System.out.printf("s2.startsWith(\"生\"): %b%n", 
+         s2.startsWith("生"));
+      System.out.printf("s1.endsWith(\"乐\"): %b%n", s1.endsWith("乐"));
+      System.out.printf("s2.endsWith(\"乐\"): %b%n", s2.endsWith("乐"));
+   } // 结束main方法
+} // 结束StringTest类
 
 
 /**************************************************************************

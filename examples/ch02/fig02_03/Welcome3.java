@@ -1,12 +1,12 @@
 // 图2.3: Welcome3.java
-// Printing multiple lines of text with a single statement.
+// 用一个语句输出多行文本
 
 public class Welcome3 {
-   // main method begins program execution 
+   // main方法开始程序执行
    public static void main(String[] args) {
-      System.out.println("Welcome\nto\nJava\nProgramming!");
-   } // end method main
-} // end class Welcome3
+            System.out.println("欢迎\n学习\nJava\n编程!");
+   } // 结束main方法
+} // 结束Welcome3类
 
 /**************************************************************************
  * (C) Copyright 1992-2025 by Deitel & Associates, Inc. and               *
