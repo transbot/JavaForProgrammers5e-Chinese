@@ -1,5 +1,5 @@
-// Section 3.7, Checkpoint 1: Power.java
-// Calculate the first power of 2 greater than 1,000,000. 
+// 3.5节, Checkpoint 1: Power.java
+// 找出大于一百万的第一个2的幂
 public class Power {
    public static void main(String[] args) {
       int product = 2;
@@ -10,9 +10,9 @@ public class Power {
          n = n + 1;
       }
 
-      System.out.printf("%s %d%n%s %d%n", 
-         "First power of 2 greater than 1,000,000 is", product, 
-         "which is 2 to the power of", n);
+      System.out.printf("%s%d%n%s%d%s%n", 
+         "比一百万大的第一个2的幂是", product, 
+         "它等于2的", n, "次方");
    }
 }
 

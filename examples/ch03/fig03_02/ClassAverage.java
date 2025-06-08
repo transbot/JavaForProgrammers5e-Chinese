@@ -1,44 +1,44 @@
 // 图3.2: ClassAverage.java
-// Solving the class-average problem using sentinel-controlled iteration. 
-import java.util.Scanner; // program uses class Scanner
+// 使用哨兵控制的循环计算班级平均成绩
+import java.util.Scanner; // 程序使用了Scanner类
 
 public class ClassAverage {
    public static void main(String[] args) {
-      // create Scanner to obtain user input 
+      // 创建一个Scanner对象从用户获取输入
       Scanner input = new Scanner(System.in);
 
-      // initialization phase
-      int total = 0; // initialize grade total
-      int gradeCounter = 0; // initialize # of grades entered so far
+      // 初始化阶段
+      int total = 0; // 初始化用户输入成绩之累加和
+      int gradeCounter = 0; // 初始化用户迄今为止输入的成绩数量
       
-      // processing phase
-      // prompt for input and read grade from user    
-      System.out.print("Enter grade or -1 to quit: ");
+      // 处理阶段
+      // 提示用户输入并读取输入的成绩
+      System.out.print("输入成绩，或者输入-1退出: ");
       int grade = input.nextInt();                    
 
-      // loop until sentinel value read from user
+      // 一直循环迭代，直到用户输入哨兵值（-1）
       while (grade != -1) {
-         total = total + grade; // add grade to total
-         gradeCounter = gradeCounter + 1; // increment counter
+         total = total + grade; // 将grade累加到total上
+         gradeCounter = gradeCounter + 1; // 计数器递增1
 
-         // prompt for input and read next grade from user 
-         System.out.print("Enter grade or -1 to quit: "); 
+         // 提示用户输入下一个成绩并读取
+         System.out.print("输入成绩，或者输入-1退出: "); 
          grade = input.nextInt();                          
       }
 
-      // termination phase
-      // if user entered at least one grade...
+      // 终止阶段
+      // 如果用户输入至少一个成绩...
       if (gradeCounter != 0) { 
-         // use a number with decimal point to calculate the average 
+         // 将一个操作数转型为浮点类型，从而执行浮点计算
          double average = (double) total / gradeCounter;
 
-         // display total and average (with two digits of precision)
-         System.out.printf("%nTotal of the %d grades entered is %d%n", 
+         // 显示总成绩和平均成绩（两位小数精度）
+         System.out.printf("%n全部%d个成绩的总和是%d%n", 
             gradeCounter, total);
-         System.out.printf("Class average is %.2f%n", average); 
+         System.out.printf("班级平均成绩是%.2f%n", average); 
       } 
-      else { // no grades were entered, so output appropriate message
-         System.out.println("No grades were entered"); 
+      else { // 没有输入成绩，输出对应的消息
+         System.out.println("没有输入任何成绩"); 
       } 
    } 
 } 

@@ -1,5 +1,5 @@
-// Section 3.10, Checkpoint 3: OddOrEven.java
-// Determine whether each integer is odd or even. 
+// 3.8节, Checkpoint 3: OddOrEven.java
+// 判断输入的整数是奇数还是偶数
 import java.util.Scanner;
 
 public class OddOrEven {
@@ -8,14 +8,14 @@ public class OddOrEven {
       int counter = 1;
 
       while (counter <= 3) {
-         System.out.print("Enter an integer: ");
+         System.out.print("输入一个整数: ");
          int number = input.nextInt();
 
          if (number % 2 == 0) {
-            System.out.printf("%d is even%n", number);
+            System.out.printf("%d是偶数%n", number);
          } 
          else {
-            System.out.printf("%d is odd%n", number);
+            System.out.printf("%d是奇数%n", number);
          }
 
          counter = counter + 1;

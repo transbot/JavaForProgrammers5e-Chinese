@@ -1,35 +1,35 @@
 // GuessTheNumberGame.java
-// Program plays guess the number.
+// 猜数字游戏程序
 import java.util.Scanner;
 import java.util.random.RandomGenerator;
 import java.util.random.RandomGeneratorFactory;
 
 public class GuessTheNumberGame {
    private static int answer;
-   private static boolean gameOver = false; // is current game finished?
+   private static boolean gameOver = false; // 当前游戏是否结束？
 
    public static void main(String[] args) {
-      // Create a RandomGenerator with a seed so this program produces 
-      // a reproducible sequence. To randomize, replace line 16 with
+      // 创建一个固定种子的RandomGenerator，使程序可重现相同序列
+      // 如需随机化，请将第16行替换为：
       // RandomGenerator.getDefault();
       RandomGenerator generator = 
          RandomGeneratorFactory.getDefault().create(11);
       Scanner input = new Scanner(System.in);
-      boolean continuePlaying = true; // start a new game?
+      boolean continuePlaying = true; // 是否开始新游戏？
 
       while (continuePlaying) {
-         // Start a new game: reset gameOver flag and choose a new number.
+         // 开始新游戏：重置gameOver标志并选择新数字
          gameOver = false;
          newGame(generator);
 
-         // Play the current game until the correct guess.
+         // 进行当前游戏直到猜中数字
          while (!gameOver) {
             System.out.print("? ");
             checkGuess(input.nextInt());
          }
 
-         // Ask if the user wants to play again.
-         System.out.print("Would you like to play again (y or n)? ");
+         // 询问用户是否想再玩一次
+         System.out.print("是否想再玩一次（输入y或n）？ ");
          String playAgain = input.next();
 
          if (!playAgain.toLowerCase().equals("y")) {
@@ -38,27 +38,27 @@ public class GuessTheNumberGame {
       }
    }
 
-   // Starts a new game by generating a new random answer.
+   // 通过生成新的随机答案开始新游戏
    public static void newGame(RandomGenerator generator) {
       answer = generator.nextInt(1, 1001);
       System.out.printf("""
-         I have a number between 1 and 1000.
-         Can you guess my number?
-         Please enter your first guess.
+         我有一个1到1000之间的数字。
+         你能猜出是多少吗？
+         请输入你的第一个猜测。
          """);
    }
 
-   // Checks the user's guess and provides feedback.
+   // 检查用户猜测并提供反馈
    public static void checkGuess(int userGuess) {
       if (userGuess < answer) {
-         System.out.println("Too low. Try again.");
+         System.out.println("太小了。请再试一次。");
       } 
       else if (userGuess > answer) {
-         System.out.println("Too high. Try again.");
+         System.out.println("太大了。请再试一次。");
       } 
       else {
          gameOver = true;
-         System.out.println("\nExcellent! You guessed the number!");
+         System.out.println("\n太棒了！你猜中了这个数字！");
       }
    }
 }

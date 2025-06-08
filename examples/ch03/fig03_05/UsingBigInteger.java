@@ -1,25 +1,25 @@
 // 图3.5: UsingBigInteger.java
-// Creating and manipulating super-sized integers
-// with objects of the Java API's BigInteger class.
+// 使用Java API BigInteger类的对象来
+// 创建和操作超大整数
 import java.math.BigInteger;
 
 public class UsingBigInteger {
    public static void main(String[] args) {
-      // display the largest value a long can store
-      System.out.printf("LARGEST LONG VALUE: %d%n%n", Long.MAX_VALUE);
+      // 显示一个long能存储的最大值
+      System.out.printf("long的最大值: %d%n%n", Long.MAX_VALUE);
 
-      // can create BigIntegers from Strings or integers
+      // 可以从字符串或整数来创建BigInteger类型的对象
       BigInteger value1 = 
-         new BigInteger("100000000000000000000000000000"); // 30 digits
+         new BigInteger("100000000000000000000000000000"); // 30位整数
       BigInteger value2 = BigInteger.valueOf(9_223_372_036_854_775_807L);
       BigInteger value3 = BigInteger.valueOf(17); 
 
-      System.out.println("INITIAL VALUES");
+      System.out.println("初始值");
       System.out.printf("BigInteger value1: %s%n", value1);
       System.out.printf("BigInteger value2: %s%n", value2);
       System.out.printf("BigInteger value3: %s%n", value3);
 
-      System.out.println("\nADD, SUBTRACT AND MULTIPLY BIGINTEGERS");
+      System.out.println("\n对大整数进行加法、减法和乘法运算");
       System.out.printf("     value1.add(value2): %s%n", 
          value1.add(value2));
       System.out.printf("value1.subtract(value2): %s%n", 

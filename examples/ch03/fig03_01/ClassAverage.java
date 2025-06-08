@@ -1,30 +1,30 @@
 // 图3.1: ClassAverage.java
-// Solving the class-average problem using counter-controlled iteration.
-import java.util.Scanner; // program uses class Scanner
+// 使用计数器控制的循环计算班级平均成绩
+import java.util.Scanner; // 程序使用了Scanner类
 
 public class ClassAverage {
    public static void main(String[] args) {
-      // create Scanner to obtain user input 
+      // 创建一个Scanner对象从用户获取输入
       Scanner input = new Scanner(System.in);
 
-      // initialization phase
-      int total = 0;  // initialize sum of grades entered by the user
-      int gradeCounter = 1; // initialize grade # to be entered next
+      // 初始化阶段
+      int total = 0;  // 初始化用户输入成绩之累加和
+      int gradeCounter = 1; // 初始化下一个输入的成绩的编号
    
-      // processing phase uses counter-controlled iteration
-      while (gradeCounter <= 10) { // loop 10 times
-         System.out.print("Enter grade: "); // prompt for next grade
-         int grade = input.nextInt(); // input the grade
-         total = total + grade; // add grade to total
-         gradeCounter = gradeCounter + 1; // increment counter by 1
+      // 在处理阶段，我们使用计数器控制的循环
+      while (gradeCounter <= 10) { // 循环10次67
+         System.out.print("输入成绩: "); // 提示输入下一个成绩
+         int grade = input.nextInt(); // 输入成绩
+         total = total + grade; // 将grade累加到total上
+         gradeCounter = gradeCounter + 1; // 计数器1
       } 
    
-      // termination phase
-      int average = total / 10; // integer division yields integer result
+      // 终止阶段
+      int average = total / 10; // 整数除法的结果也是整数
 
-      // display total and average of grades
-      System.out.printf("%nTotal of all 10 grades is %d%n", total);
-      System.out.printf("Class average is %d%n", average);
+      // 显示总成绩和平均成绩
+      System.out.printf("%n全部10个成绩的总和是%d%n", total);
+      System.out.printf("班级平均成绩是%d%n", average);
    }
 } 
 

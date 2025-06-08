@@ -1,23 +1,23 @@
 // 图3.4: Increment.java
-// Prefix increment and postfix increment operators.
+// 前缀递增和后缀递增操作符
 
 public class Increment {
    public static void main(String[] args) {
-      // demonstrate postfix increment operator
+      // 演示后缀递增操作符
       int c = 5; 
-      System.out.printf("c before postincrement: %d%n", c); // prints 5
-      System.out.printf("    postincrementing c: %d%n", c++); // prints 5
-      System.out.printf(" c after postincrement: %d%n", c); // prints 6  
+      System.out.printf("后缀递增之前的c: %d%n", c); // 打印5
+      System.out.printf("对c进行后缀递增: %d%n", c++); // 打印5
+      System.out.printf("后缀递增之后的c: %d%n", c); // 打印6  
 
       System.out.println(); // skip a line
 
-      // demonstrate prefix increment operator
+      // 演示前缀递增操作符
       c = 5; 
-      System.out.printf(" c before preincrement: %d%n", c); // prints 5
-      System.out.printf("     preincrementing c: %d%n", ++c); // prints 6
-      System.out.printf("  c after preincrement: %d%n", c); // prints 6  
+      System.out.printf("前缀递增之前的c: %d%n", c); // 打印5
+      System.out.printf("对c进行前缀递增: %d%n", ++c); // 打印6
+      System.out.printf("前缀递增之后的c: %d%n", c); // 打印6  
    } 
-} 
+}
 
 /**************************************************************************
  * (C) Copyright 1992-2025 by Deitel & Associates, Inc. and               *
