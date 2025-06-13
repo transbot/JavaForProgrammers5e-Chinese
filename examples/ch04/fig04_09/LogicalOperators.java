@@ -1,50 +1,50 @@
 // 图4.9: LogicalOperators.java
-// Logical operators.
+// 条件/逻辑操作符真值表
 
 public class LogicalOperators {
    public static void main(String[] args) {
-      // create truth table for && (conditional AND) operator
+      // 创建&&(条件AND)操作符的真值表
       System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
-         "Conditional AND (&&)", "false && false", (false && false),
+         "条件AND (&&)", "false && false", (false && false),
          "false && true", (false && true), 
          "true && false", (true && false),
          "true && true", (true && true));
 
-      // create truth table for || (conditional OR) operator
+      // 创建||(条件OR)操作符的真值表
       System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
-         "Conditional OR (||)", "false || false", (false || false),
+         "条件OR(||)", "false || false", (false || false),
          "false || true", (false || true),
          "true || false", (true || false),
          "true || true", (true || true));
 
-      // create truth table for & (boolean logical AND) operator
+      // 创建&(逻辑AND)操作符的真值表
       System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
-         "Boolean logical AND (&)", "false & false", (false & false),
+         "逻辑AND(&)", "false & false", (false & false),
          "false & true", (false & true),
          "true & false", (true & false),
          "true & true", (true & true));
 
-      // create truth table for | (boolean logical inclusive OR) operator
+      // 创建|(逻辑OR)操作符的真值表
       System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
-         "Boolean logical inclusive OR (|)",
+         "逻辑OR(|)",
          "false | false", (false | false),
          "false | true", (false | true),
          "true | false", (true | false),
          "true | true", (true | true));
 
-      // create truth table for ^ (boolean logical exclusive OR) operator
+      // 创建^(逻辑XOR)操作符的真值表
       System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
-         "Boolean logical exclusive OR (^)", 
+         "逻辑XOR(^)", 
          "false ^ false", (false ^ false),
          "false ^ true", (false ^ true),
          "true ^ false", (true ^ false),
          "true ^ true", (true ^ true));
 
-      // create truth table for ! (logical negation) operator
-      System.out.printf("%s%n%s: %b%n%s: %b%n", "Logical NOT (!)",
+      // 创建!(逻辑非/逻辑取反)操作符的真值表
+      System.out.printf("%s%n%s: %b%n%s: %b%n", "逻辑非/逻辑取反(!)",
          "!false", (!false), "!true", (!true));
    } 
-} 
+}
 
 /**************************************************************************
  * (C) Copyright 1992-2025 by Deitel & Associates, Inc. and               *

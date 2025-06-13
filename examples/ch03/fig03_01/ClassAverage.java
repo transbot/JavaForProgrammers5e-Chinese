@@ -12,7 +12,7 @@ public class ClassAverage {
       int gradeCounter = 1; // 初始化下一个输入的成绩的编号
    
       // 在处理阶段，我们使用计数器控制的循环
-      while (gradeCounter <= 10) { // 循环10次67
+      while (gradeCounter <= 10) { // 循环10次
          System.out.print("输入成绩: "); // 提示输入下一个成绩
          int grade = input.nextInt(); // 输入成绩
          total = total + grade; // 将grade累加到total上

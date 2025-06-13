@@ -1,74 +1,74 @@
 // 图4.6: LetterGrades.java
-// LetterGrades class uses the switch statement to count letter grades.
+// LetterGrades类用switch语句统计每个字母成绩的学生人数
 import java.util.Scanner; 
 
 public class LetterGrades {
    public static void main(String[] args) {
-      int total = 0; // sum of grades                  
-      int gradeCounter = 0; // number of grades entered
-      int aCount = 0; // count of A grades             
-      int bCount = 0; // count of B grades             
-      int cCount = 0; // count of C grades             
-      int dCount = 0; // count of D grades             
-      int fCount = 0; // count of F grades             
+      int total = 0; // 成绩总和
+      int gradeCounter = 0; // 已输入成绩数
+      int aCount = 0; // 成绩A的数量
+      int bCount = 0; // 成绩B的数量
+      int cCount = 0; // 成绩C的数量
+      int dCount = 0; // 成绩D的数量
+      int fCount = 0; // 成绩F的数量
 
       Scanner input = new Scanner(System.in);
 
       System.out.println("""
-         Enter the integer grades in the range 0-100.
-         Enter the end-of-file indicator to terminate input:
-            On macOS/Linux enter <Ctrl> d then press Enter
-            On Windows enter <Ctrl> z then press Enter""");
-
-      // loop until user enters the end-of-file indicator
+         输入0~100的整数成绩。
+         输入文件结束符（EOF）来终止输入:
+            macOS/Linux：Ctrl+D（需在新行开头输入）；
+            Windows：按Ctrl+Z（需在新行开头输入）。""");
+ 
+      // 一直循环，直到用户输入文件结束符（EOF）
       while (input.hasNext()) {
-         int grade = input.nextInt(); // read grade
-         total += grade; // add grade to total
-         ++gradeCounter; // increment number of grades
+         int grade = input.nextInt(); // 读取grade
+         total += grade; // 将grade累加到total上
+         ++gradeCounter; // 递增grade数量
          
-         //  increment appropriate letter-grade counter
+         //  递增相应的字母成绩计数器
          switch (grade / 10) {                          
-            case 10:  // grade was 90-100, inclusive 
+            case 10:  // 成绩为90~100分（含）
             case 9:   
                ++aCount;                               
-               break; // exits switch                  
-            case 8: // grade was 80-89        
-               ++bCount;                               
-               break; // exits switch                  
-            case 7: // grade was 70-79        
-               ++cCount;                               
-               break; // exits switch                  
-            case 6: // grade was 60-69        
-               ++dCount;                               
-               break; // exits switch                  
-            default: // grade was less than 60            
-               ++fCount;                               
-               break; // optional; exits switch anyway 
+               break; // 退出switch                  
+            case 8: // 成绩为80~89分
+               ++bCount;
+               break; // 退出switch                  
+            case 7: // 成绩为70~79分
+               ++cCount;
+               break; // 退出switch
+            case 6: // 成绩为60-69分
+               ++dCount;
+               break; // 退出switch
+            default: // 成绩小于60分
+               ++fCount;
+               break; // 可选; 强制退出switch
          }
       }  
 
-      // display grade report
-      System.out.printf("%nGrade Report:%n");
+      // 显示成绩报告
+      System.out.printf("%n成绩报告:%n");
 
-      // if user entered at least one grade...
+      // 如果用户输入至少一个成绩……
       if (gradeCounter != 0) {
-         // calculate average of all grades entered
+         // 计算输入的所有成绩的平均值
          double average = (double) total / gradeCounter;  
 
-         // output summary of results
-         System.out.printf("Total of the %d grades entered is %d%n", 
+         // 输出成绩报告
+         System.out.printf("全部%d个成绩的总和是%d分%n", 
             gradeCounter, total);
-         System.out.printf("Class average is %.2f%n", average);
+         System.out.printf("班级平均成绩是%.2f分%n", average);
          System.out.printf("%n%s%n%s%d%n%s%d%n%s%d%n%s%d%n%s%d%n", 
-            "Number of students who received each grade:", 
-            "A: ", aCount,  // display number of A grades
-            "B: ", bCount,  // display number of B grades
-            "C: ", cCount,  // display number of C grades 
-            "D: ", dCount,  // display number of D grades
-            "F: ", fCount); // display number of F grades
+            "每个字母成绩的学生数是:", 
+            "A: ", aCount,  // 显示成绩A的人数
+            "B: ", bCount,  // 显示成绩B的人数
+            "C: ", cCount,  // 显示成绩C的人数
+            "D: ", dCount,  // 显示成绩D的人数
+            "F: ", fCount); // 显示成绩F的人数
       }
-      else { // no grades were entered, so output appropriate message
-         System.out.println("No grades were entered");
+      else { // 没有输入成绩，输出对应的消息
+         System.out.println("没有输入任何成绩");
       } 
    }
 } 

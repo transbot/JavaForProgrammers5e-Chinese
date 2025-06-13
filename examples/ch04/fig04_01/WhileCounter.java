@@ -1,13 +1,13 @@
 // 图4.1: WhileCounter.java
-// Counter-controlled iteration with the while iteration statement.
+// 计数器控制的while循环
 
 public class WhileCounter {
    public static void main(String[] args) {
-      int counter = 1; // declare and initialize control variable
+      int counter = 1; // 声明并初始化控制变量
 
-      while (counter <= 10) { // loop-continuation condition
+      while (counter <= 10) { // 循环继续条件
          System.out.printf("%d  ", counter);
-         ++counter; // increment control variable
+         ++counter; // 递增控制变量
       }
 
       System.out.println(); 

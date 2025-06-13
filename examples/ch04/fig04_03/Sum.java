@@ -1,16 +1,16 @@
 // 图4.3: Sum.java
-// Summing integers with the for statement.
+// 用for语句累加偶数
 
 public class Sum {
    public static void main(String[] args) {
       int total = 0; 
 
-      // total even integers from 2 through 20
+      // 累加2~20的偶数
       for (int number = 2; number <= 20; number += 2) {
          total += number;                              
       }
 
-      System.out.printf("Sum is %d%n", total);
+      System.out.printf("2~20的偶数之和是%d%n", total);
    } 
 } 
 

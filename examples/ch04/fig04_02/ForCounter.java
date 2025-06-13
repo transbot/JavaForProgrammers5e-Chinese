@@ -1,10 +1,10 @@
 // 图4.2: ForCounter.java
-// Counter-controlled iteration with the for iteration statement.
+// 计数器控制的for循环
 
 public class ForCounter {
    public static void main(String[] args) {
-      // for statement header includes initialization, loop-continuation
-      // condition and increment separated by required semicolons
+      // for语句头中包含初始化、循环继续条件以及
+      // 控制变量的增量/递减，它们之间必须用分号分隔
       for (int counter = 1; counter <= 10; ++counter) {
          System.out.printf("%d  ", counter);           
       }

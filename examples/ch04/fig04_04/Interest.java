@@ -1,21 +1,21 @@
 // 图4.4: Interest.java
-// Compound-interest calculations with for.
+// 使用for进行复利计算
 
 public class Interest {
    public static void main(String[] args) {
-      double principal = 1000.00; // initial amount before interest
-      double rate = 0.05; // interest rate
+      double principal = 1000.00; // 本金
+      double rate = 0.05; // 利率
 
-      // display headers
-      System.out.printf("%s%20s%n", "Year", "Amount on deposit");
+      // 显示列标题
+      System.out.printf("%s%16s%n", "年份", "存款总额");
 
-      // calculate amount on deposit for each of ten years
+      // 计算未来10年的每年存款总额
       for (int year = 1; year <= 10; ++year) {                  
-         // calculate new amount on deposit for specified year  
+         // 计算指定年份的新存款总额
          double amount = principal * Math.pow(1.0 + rate, year);
                                                                 
-         // display the year and the amount                     
-         System.out.printf("%4d%,20.2f%n", year, amount);       
+         // 显示年份和对应存款总额  
+         System.out.printf("%4d%20.2f%n", year, amount);       
       }                                                         
    } 
 } 

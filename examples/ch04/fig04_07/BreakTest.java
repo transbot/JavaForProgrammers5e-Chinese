@@ -1,18 +1,18 @@
 // 图4.7: BreakTest.java
-// break statement exiting a for statement.
+// 用break语句退出for
 public class BreakTest {
    public static void main(String[] args) {
-      int count; // control variable also used after loop terminates
+      int count; // 在进入循环前声明控制变量，以便在循环终止后也能使用
       
       for (count = 1; count <= 10; ++count) { // loop 10 times
          if (count == 5) {
-            break; // terminates loop if count is 5
+            break; // count为5就终止循环
          }
 
          System.out.printf("%d ", count);
       } 
 
-      System.out.printf("%nBroke out of loop at count = %d%n", count);
+      System.out.printf("%n当count = %d时，循环终止%n", count);
    }
 } 
 
