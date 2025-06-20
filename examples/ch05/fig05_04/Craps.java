@@ -1,78 +1,78 @@
 // 图5.4: Craps.java
-// Craps class simulates the dice game craps.
+// 用于模拟“双骰子”游戏的Craps类
 import java.util.random.RandomGenerator;
 
 public class Craps {
-   // get the default RandomGenerator for use in method rollDice
-   private static final RandomGenerator randomNumbers =
-      RandomGenerator.getDefault();
+    // 获取默认的RandomGenerator对象，供rollDice方法使用
+    private static final RandomGenerator randomNumbers =
+        RandomGenerator.getDefault();
 
-   // enum type with constants that represent the game status
-   private enum Status {CONTINUE, WON, LOST};                
+    // 定义游戏状态的枚举类型
+    private enum Status {CONTINUE, WON, LOST};
 
-   // plays one game of craps
-   public static void main(String[] args) {
-      int myPoint = 0; // point if no win or loss on first roll
-      Status gameStatus; // can contain CONTINUE, WON or LOST
+    // 玩一局双骰子游戏
+    public static void main(String[] args) {
+        int myPoint = 0;   // 初始化第一次掷骰未分胜负时的“目标点数”
+        Status gameStatus; // 可用于存储游戏状态：CONTINUE（继续）、WON（获胜）或LOST（失败）
 
-      int sumOfDice = rollDice(); // first roll of the dice
+        int sumOfDice = rollDice(); // 第一次掷骰子
 
-      // determine game status and point based on first roll 
-      switch (sumOfDice) {
-         case 7:  // win with 7 on first roll    
-         case 11: // win with 11 on first roll
-            gameStatus = Status.WON;
-            break;
-         case 2: // lose with 2 on first roll
-         case 3: // lose with 3 on first roll      
-         case 12: // lose with 12 on first roll
-            gameStatus = Status.LOST;
-            break;
-         default: // did not win or lose, so remember point  
-            gameStatus = Status.CONTINUE; // game is not over
-            myPoint = sumOfDice; // remember the point       
-            System.out.printf("Point is %d%n", myPoint);
-            break; 
-      }
+        // 根据第一次掷出的点数和，决定游戏状态和“目标点数” 
+        switch (sumOfDice) {
+            case 7:  // 第一次掷出7点，获胜
+            case 11: // 第一次掷出11点，获胜
+                gameStatus = Status.WON;
+                break;
+            case 2:  // 第一次掷出2点，失败
+            case 3:  // 第一次掷出3点，失败
+            case 12: // 第一次掷出12点，失败
+                gameStatus = Status.LOST;
+                break;
+            default: // 未分胜负，记下“目标点数”
+                gameStatus = Status.CONTINUE; // 游戏尚未结束  
+                myPoint = sumOfDice; // 记下目标点数
+                System.out.printf("目标点数是%d%n", myPoint);
+                break; 
+        }
 
-      // while game is not complete
-      while (gameStatus == Status.CONTINUE) { // not WON or LOST
-         sumOfDice = rollDice(); // roll dice again
+        // 当游戏尚未结束时，持续循环
+        while (gameStatus == Status.CONTINUE) { // 即游戏状态既不是WON也不是LOST
+            sumOfDice = rollDice(); // 再次掷骰
 
-         // determine game status
-         if (sumOfDice == myPoint) { // win by making point
-            gameStatus = Status.WON;
-         } 
-         else { 
-            if (sumOfDice == 7) { // lose by rolling 7 before point
-               gameStatus = Status.LOST;
+            // 判断游戏状态
+            if (sumOfDice == myPoint) { // 掷出目标点数，获胜
+                gameStatus = Status.WON;
             } 
-         } 
-      } 
+            else { 
+                if (sumOfDice == 7) { // 在掷出目标点数前掷出了7，失败
+                    gameStatus = Status.LOST;
+                } 
+            } 
+        } 
 
-      // display won or lost message
-      if (gameStatus == Status.WON) {
-         System.out.println("Player wins");
-      } 
-      else {
-         System.out.println("Player loses");
-      } 
-   } 
+        // 显示获胜或失败的消息
+        if (gameStatus == Status.WON) {
+            System.out.println("玩家赢");
+        } 
+        else {
+            System.out.println("玩家输");
+        } 
+    } 
 
-   // roll dice, calculate sum and display results
-   public static int rollDice() {
-      // pick random die values
-      int die1 = randomNumbers.nextInt(1, 7); // first die roll
-      int die2 = randomNumbers.nextInt(1, 7); // second die roll
+    // 掷骰子，计算点数和，并显示结果
+    public static int rollDice() {
+        // 随机选择骰子的点数
+        int die1 = randomNumbers.nextInt(1, 7); // 第一枚骰子的点数
+        int die2 = randomNumbers.nextInt(1, 7); // 第二枚骰子的点数
 
-      int sum = die1 + die2; // sum of die values
+        int sum = die1 + die2; // 两枚骰子的点数和
 
-      // display results of this roll
-      System.out.printf("Player rolled %d + %d = %d%n", die1, die2, sum);
+        // 显示本次掷骰的结果
+        System.out.printf("玩家掷出了%d + %d = %d点%n", die1, die2, sum);
 
-      return sum; 
-   } 
-} 
+        return sum; 
+    } 
+}
 
 
 

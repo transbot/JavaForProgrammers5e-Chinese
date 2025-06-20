@@ -1,36 +1,36 @@
 // 图5.1: MaximumFinder.java
-// Programmer-declared method maximum with three double parameters.
+// 接收三个double参数的自定义maximum方法
 import java.util.Scanner;
 
 public class MaximumFinder {
    public static void main(String[] args) {
-      // create Scanner for input from command window
+      // 创建一个Scanner对象从用户获取输入
       var input = new Scanner(System.in);
 
-      // prompt for and input three floating-point values
+      // 提示输入三个浮点值
       System.out.print(
-         "Enter three floating-point values separated by spaces: ");
-      double number1 = input.nextDouble(); // read first double
-      double number2 = input.nextDouble(); // read second double
-      double number3 = input.nextDouble(); // read third double
+         "连续输入三个浮点值，以空格分隔: ");
+      double number1 = input.nextDouble(); // 读入第一个double
+      double number2 = input.nextDouble(); // 读入第二个double
+      double number3 = input.nextDouble(); // 读入第三个double
 
-      // determine the maximum value
+      // 判断最大值
       double result = maximum(number1, number2, number3); 
 
-      // display maximum value 
-      System.out.printf("Maximum is: %.2f%n", result);
+      // 显示最大值
+      System.out.printf("最大值是: %.2f%n", result);
    } 
 
-   // returns the maximum of its three double parameters          
+   // 返回三个double实参中最大的那一个
    public static double maximum(double x, double y, double z) {   
-      double maximumValue = x; // assume x is the largest to start
+      double maximumValue = x; // 最开始假定x最大
    
-      // determine whether y is greater than maximumValue         
+      // 判断y是否大于maximumValue
       if (y > maximumValue) {                                     
          maximumValue = y;                                        
       }
    
-      // determine whether z is greater than maximumValue         
+      // 判断z是否大于maximumValue
       if (z > maximumValue) {                                     
          maximumValue = z;                                        
       }

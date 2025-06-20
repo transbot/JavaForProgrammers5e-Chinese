@@ -1,18 +1,18 @@
 // 图5.2: RandomIntegers.java
-// Rolling a six-sided die.
+// 模拟掷六面骰子10次
 import java.util.random.RandomGenerator; 
 
 public class RandomIntegers {
    public static void main(String[] args) {
-      // randomNumbers object will produce random numbers
+      // 用randomNumbers对象生成随机数
       RandomGenerator randomNumbers = RandomGenerator.getDefault(); 
 
-      // loop 10 times
+      // 循环10次
       for (int counter = 1; counter <= 10; ++counter) {
-         // pick random integer from 1 to 6    
+         // 生成1~6的随机整数
          int face = randomNumbers.nextInt(1, 7);
 
-         System.out.printf("%d  ", face); // display generated value
+         System.out.printf("%d  ", face); // 显示生成的值
       }
 
       System.out.println();

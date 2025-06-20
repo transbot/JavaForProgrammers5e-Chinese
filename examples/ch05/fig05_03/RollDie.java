@@ -1,35 +1,35 @@
 // 图5.3: RollDie.java
-// Roll a six-sided die 60,000,000 times.
+// 模拟掷六面骰子6000万次
 import java.util.random.RandomGenerator;
 
 public class RollDie {
    public static void main(String[] args) {
-      // randomNumbers object will produce random numbers
+      // 用randomNumbers对象生成随机数
       RandomGenerator randomNumbers = RandomGenerator.getDefault(); 
 
-      int frequency1 = 0; // count of 1s rolled
-      int frequency2 = 0; // count of 2s rolled
-      int frequency3 = 0; // count of 3s rolled
-      int frequency4 = 0; // count of 4s rolled
-      int frequency5 = 0; // count of 5s rolled
-      int frequency6 = 0; // count of 6s rolled
+      int frequency1 = 0; // 掷出1点的次数
+      int frequency2 = 0; // 掷出2点的次数
+      int frequency3 = 0; // 掷出3点的次数
+      int frequency4 = 0; // 掷出4点的次数
+      int frequency5 = 0; // 掷出5点的次数
+      int frequency6 = 0; // 掷出6点的次数
    
-      // tally counts for 60,000,000 rolls of a die
+      // 统计6000万次掷骰结果
       for (int roll = 1; roll <= 60_000_000; ++roll) {
-         int face = randomNumbers.nextInt(1, 7); // number from 1 to 6
+         int face = randomNumbers.nextInt(1, 7); // 生成1~6的随机整数
    
-         // use face value 1-6 to determine which counter to increment
+         // 根据点数来决定递增哪个计数器
          switch (face) {
-            case 1 -> ++frequency1; // increment the 1s counter
-            case 2 -> ++frequency2; // increment the 2s counter
-            case 3 -> ++frequency3; // increment the 3s counter
-            case 4 -> ++frequency4; // increment the 4s counter
-            case 5 -> ++frequency5; // increment the 5s counter
-            case 6 -> ++frequency6; // increment the 6s counter
+            case 1 -> ++frequency1; // 递增点数1的计数器
+            case 2 -> ++frequency2; // 递增点数2的计数器
+            case 3 -> ++frequency3; // 递增点数3的计数器
+            case 4 -> ++frequency4; // 递增点数4的计数器
+            case 5 -> ++frequency5; // 递增点数5的计数器
+            case 6 -> ++frequency6; // 递增点数6的计数器
          } 
       } 
 
-      System.out.println("Face\tFrequency"); // output headers
+      System.out.println("点数\t次数"); // 列标题
       System.out.printf("1\t%d%n2\t%d%n3\t%d%n4\t%d%n5\t%d%n6\t%d%n",
          frequency1, frequency2, frequency3, frequency4,
          frequency5, frequency6);

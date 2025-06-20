@@ -1,17 +1,17 @@
 // 图5.7: SquareDemo.java
-// Square method used to demonstrate the  
-// method-call stack and activation records.
+// 使用square方法来演示方法调用栈
+// 和激活记录
 
 public class SquareDemo {
    public static void main(String[] args) {
-      int y = 10; // value to square (local variable in main)
+      int y = 10; // 待求平方的值（main中的局部变量）
 
-      int result = square(y); // calculate y squared and store in result
+      int result = square(y); // 计算y的平方并存入result
    }
 
-   // returns the square of an integer
+   // 返回一个整数的平方值
    public static int square(int x) {
-      return x * x; // calculate square and return result
+      return x * x; // 计算平方并返回结果
    }
 }
 
