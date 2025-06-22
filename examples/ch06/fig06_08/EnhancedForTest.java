@@ -1,17 +1,17 @@
 // 图6.8: EnhancedForTest.java
-// Using the enhanced for statement to total integers in an array.
+// 使用增强for语句计算一个数组中所有元素的总和
 
 public class EnhancedForTest {
    public static void main(String[] args) {
       int[] grades = {87, 68, 94, 100, 83, 78, 85, 91, 76, 87};
       int total = 0;
 
-      // add each element's value to total
+      // 将每个元素的值累加到total上
       for (int grade : grades) {          
          total += grade;                 
       }                                   
 
-      System.out.printf("Total of array elements: %d%n", total);
+      System.out.printf("数组元素总和为: %d%n", total);
    } 
 } 
 

@@ -1,17 +1,17 @@
 // 图6.4: SumArray.java
-// Computing the sum of the elements of an array.
+// 计算一个数组中所有元素的总和
 
 public class SumArray {
    public static void main(String[] args) {
       int[] grades = {87, 68, 94, 100, 83, 78, 85, 91, 76, 87};
       int total = 0;
 
-      // add each element's value to total                    
+      // 将每个元素的值累加到total上
       for (int counter = 0; counter < grades.length; ++counter) {
          total += grades[counter];                               
       }                                                         
 
-      System.out.printf("Total of array elements: %d%n", total);
+      System.out.printf("数组元素总和为: %d%n", total);
    } 
 } 
 

@@ -1,58 +1,58 @@
 // 图6.13: ArrayManipulations.java
-// Arrays class methods and System.arraycopy.
+// 演示Arrays类的各种静态方法和静态System.arraycopy方法
 import java.util.Arrays;
 
 public class ArrayManipulations {
    public static void main(String[] args) {
-      // sort doubles into ascending order
+      // 将doubles数组按升序排序
       double[] doubles = {8.4, 9.3, 0.2, 7.9, 3.4};
       Arrays.sort(doubles);
       System.out.printf("doubles: %s%n", Arrays.toString(doubles));
 
-      // fill 10-element array with 7s
+      // 用7填充10个元素的数组
       int[] filledInts = new int[10]; 
       Arrays.fill(filledInts, 7);
       System.out.printf("filledInts: %s%n", Arrays.toString(filledInts));
 
-      // copy array ints into array intsCopy
+      // 将ints数组复制到intsCopy数组
       int[] ints = {1, 2, 3, 4, 5, 6};
       int[] intsCopy = new int[ints.length];
       System.arraycopy(ints, 0, intsCopy, 0, ints.length);
       System.out.printf("ints: %s%n", Arrays.toString(ints));
       System.out.printf("intsCopy: %s%n", Arrays.toString(intsCopy));
 
-      // compare ints and intsCopy for equality
+      // 比较ints和intsCopy是否相等
       boolean b = Arrays.equals(ints, intsCopy);
       System.out.printf("%nints %s intsCopy%n", 
-          (b ? "equals" : "does not equal"));
+          (b ? "等于" : "不等于"));
 
-      // compare ints and filledInts for equality
+      // 比较ints和filledInts是否相等
       b = Arrays.equals(ints, filledInts);
       System.out.printf("ints %s filledInts%n", 
-          (b ? "equals" : "does not equal"));
+          (b ? "等于" : "不等于"));
 
-      // search ints for the value 5
+      // 在ints数组中查找值5
       int location = Arrays.binarySearch(ints, 5);
       
       if (location >= 0) {
-         System.out.printf("Found 5 at element %d in ints%n", location); 
+         System.out.printf("在ints数组的索引%d处找到5%n", location); 
       } 
       else {
-         System.out.println("5 not found in ints"); 
+         System.out.println("在ints数组中未找到5"); 
       } 
 
-      // search intArray for the value 8763
+      // 在ints数组中查找值8763
       location = Arrays.binarySearch(ints, 8763);
 
       if (location >= 0) {
          System.out.printf(
-            "Found 8763 at element %d in ints%n", location);
+            "在ints数组的索引%d处找到8763%n", location);
       } 
       else {
-         System.out.println("8763 not found in ints"); 
+         System.out.println("在ints数组中未找到8763"); 
       } 
    } 
-} 
+}
 
 
 /**************************************************************************

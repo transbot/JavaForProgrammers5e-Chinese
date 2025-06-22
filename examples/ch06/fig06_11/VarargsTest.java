@@ -1,17 +1,17 @@
 // 图6.11: VarargsTest.java
-// Using variable-length argument lists.
+// 使用可变长度参数列表
 
 public class VarargsTest {
-   // calculate average
+   // 计算平均值
    public static double average(double... numbers) {
       double total = 0.0; 
 
-      // calculate total using the enhanced for statement
+      // 使用增强for语句计算总和
       for (double d : numbers) {
          total += d;           
       }
 
-      return total / numbers.length;
+      return total / numbers.length; // 返回平均值
    } 
 
    public static void main(String[] args) {
@@ -23,11 +23,11 @@ public class VarargsTest {
       System.out.printf("d1 = %.1f%nd2 = %.1f%nd3 = %.1f%nd4 = %.1f%n%n",
          d1, d2, d3, d4);
 
-      System.out.printf("Average of d1 and d2 is %.1f%n", 
+      System.out.printf("d1和d2的平均值是%.1f%n", 
          average(d1, d2)); 
-      System.out.printf("Average of d1, d2 and d3 is %.1f%n", 
+      System.out.printf("d1、d2和d3的平均值是%.1f%n", 
          average(d1, d2, d3));
-      System.out.printf("Average of d1, d2, d3 and d4 is %.1f%n", 
+      System.out.printf("d1、d2、d3和d4的平均值是%.1f%n", 
          average(d1, d2, d3, d4));
    } 
 } 

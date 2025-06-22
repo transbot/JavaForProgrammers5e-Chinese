@@ -1,51 +1,51 @@
 // 图6.9: PassArray.java
-// Passing arrays and individual array elements to methods.
+// 将数组和单个数组元素传递给方法
 
 public class PassArray {
-   // main creates array and calls modifyArray and modifyElement
+   // main方法创建数组并调用modifyArray和modifyElement方法
    public static void main(String[] args) {
-      int[] array = {1, 2, 3, 4, 5};
-      
+      int[] array = {1, 2, 3, 4, 5};  // 初始化一个int数组
+    
       System.out.printf(
-         "Effects of passing reference to entire array:%n" +
-         "The values of the original array are:%n");
+         "传递整个数组的引用时的影响:%n" +
+         "原始数组的值为:%n");
 
-      // output original array elements 
+      // 输出原始数组元素
       for (int value : array) {
          System.out.printf("   %d", value);
       }
    
-      modifyArray(array); // pass array reference
-      System.out.printf("%n%nThe values of the modified array are:%n");
+      modifyArray(array);  // 传递数组引用
+      System.out.printf("%n%n修改后的数组值为:%n");
 
-      // output modified array elements 
+      // 输出修改后的数组元素
       for (int value : array) {
          System.out.printf("   %d", value);
       }
    
       System.out.printf(
-         "%n%nEffects of passing array element value:%n" +
-         "array[3] before calling modifyElement: %d%n", array[3]);
+         "%n%n传递单个数组元素时的影响:%n" +
+         "array[3]在调用modifyElement前的值: %d%n", array[3]);
    
-      modifyElement(array[3]); // attempt to modify array[3]
+      modifyElement(array[3]);  // 尝试修改传递的数组元素array[3]
       System.out.printf(
-         "array[3] after modifyElement completes: %d%n", array[3]);
+         "array[3]在modifyElement完成后的值: %d%n", array[3]);
    } 
    
-   // multiply each element of an array by 2                     
+   // 将数组中的每个元素乘以2
    public static void modifyArray(int[] array2) {                
       for (int counter = 0; counter < array2.length; ++counter) {
-         array2[counter] *= 2;                                   
+         array2[counter] *= 2;  // 修改数组元素值                               
       }
    }
    
-   // multiply argument by 2                                  
+   // 将传入的实参乘以2                 
    public static void modifyElement(int element) {            
-      element *= 2;                                           
+      element *= 2;  // 只修改局部变量                                      
       System.out.printf(                                      
-         "Value of element in modifyElement: %d%n", element); 
+         "modifyElement方法中的element值: %d%n", element); 
    }
-} 
+}
 
 /**************************************************************************
  * (C) Copyright 1992-2025 by Deitel & Associates, Inc. and               *

@@ -1,34 +1,36 @@
 // 图6.7: StudentPoll.java
-// Poll analysis program.
+// 分析学生打分结果
 
 public class StudentPoll {
    public static void main(String[] args) {
-      // student response array (more typically, input at runtime)
+      // 学生打分结果数组（通常应在运行时输入）
       int[] responses =  
          {1, 2, 5, 4, 3, 5, 2, 1, 3, 3, 1, 4, 3, 3, 3, 2, 3, 3, 2, 14};
-      int[] frequency = new int[6]; // array of frequency counters
+      int[] frequency = new int[6]; // 频次统计数组
 
-      // for each answer, select responses element and use that value
-      // as frequency index to determine array element to increment
+      // 遍历responses数组来选择每个元素中存储的分数，
+      // 将该分数作为frequency数组的索引，以确定要递增frequency的哪个元素。
       for (int answer = 0; answer < responses.length; ++answer) {    
          try {                                                       
             ++frequency[responses[answer]];                          
          }
          catch (ArrayIndexOutOfBoundsException e) {                  
-            System.out.println(e); // invokes toString method
+            System.out.println(e); // 调用异常对象的toString方法以便输出异常消息
             System.out.printf("   responses[%d] = %d%n%n",           
                answer, responses[answer]);                           
          }
       }
 
-      System.out.printf("%s%10s%n", "Rating", "Frequency");
+      System.out.printf("%s%10s%n", "分数", "频次");
    
-      // output each array element's value
+      // 输出每个分数对应的频次
       for (int rating = 1; rating < frequency.length; ++rating) {
-         System.out.printf("%6d%10d%n", rating, frequency[rating]);
+         System.out.printf("%4d%12d%n", rating, frequency[rating]);
       } 
    } 
 } 
+
+
 
 /**************************************************************************
  * (C) Copyright 1992-2025 by Deitel & Associates, Inc. and               *

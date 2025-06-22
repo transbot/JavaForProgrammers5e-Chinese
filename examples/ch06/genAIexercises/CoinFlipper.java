@@ -1,25 +1,25 @@
-// Section 6.10, Checkpoint 1: CoinFlipper.java
-// Summarizing coin flips.
+// 6.10节, 生成式AI练习: CoinFlipper.java
+// 统计抛硬币结果
 import java.util.random.RandomGenerator;
 
 public class CoinFlipper {
    public static void main(String[] args) {
       RandomGenerator randomNumbers = RandomGenerator.getDefault();
 
-      // constants representing heads and tails
+      // 代表正面和反面的常量，0代表正面，1代表反面 
       final int HEADS = 0;
       final int TAILS = 1;
 
-      // frequency[0] for heads, frequencies[1] for tails
+      // frequency[0]存储正面次数，frequency[1]存储反面次数
       int[] frequency = new int[2]; 
 
-      // simulate 100 coin flips
+      // 模拟抛100次硬币
       for (int counter = 0; counter < 100; ++counter) {
          ++frequency[randomNumbers.nextInt(2)];
       }
 
-      System.out.printf("Number of heads: %d%n", frequency[HEADS]);
-      System.out.printf("Number of tails: %d%n", frequency[TAILS]);
+      System.out.printf("正面次数: %d%n", frequency[HEADS]);
+      System.out.printf("反面次数: %d%n", frequency[TAILS]);
    }
 }
 

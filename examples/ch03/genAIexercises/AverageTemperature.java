@@ -1,4 +1,4 @@
-// 3.7节, Checkpoint 3: AverageTemperature.java
+// 3.7节, 生成式AI练习: AverageTemperature.java
 // 计算几个摄氏温度的平均值
 import java.util.Scanner;
 

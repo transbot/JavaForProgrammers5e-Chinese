@@ -1,4 +1,4 @@
-// 3.10节, Checkpoint 3: Mystery.java
+// 3.10节, 生成式AI练习: Mystery.java
 public class Mystery {
    public static void main(String[] args) {
       int x = 1;

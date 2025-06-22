@@ -1,21 +1,19 @@
 // 图6.1: InitArray.java
-// Initializing the elements of an array to default values of zero.
+// int数组的元素默认初始化为0
 
 public class InitArray {
    public static void main(String[] args) {
-      // declare variable array and initialize it with an array object
-      int[] array = new int[5]; // create the array object           
+      // 声明数组变量array，并用一个数组对象来初始化它
+      int[] array = new int[5]; // 创建数组对象
 
-      System.out.printf("%s%8s%n", "Index", "Value"); // column headings
+      System.out.printf("%s%6s%n", "索引", "值"); // 列标题
    
-      // output each array element's value                      
+      // 输出每个数组元素的值                    
       for (int counter = 0; counter < array.length; ++counter) {
-         System.out.printf("%5d%8d%n", counter, array[counter]);
+         System.out.printf("%d%9d%n", counter, array[counter]);
       }
    } 
 } 
-
-
 
 
 /**************************************************************************

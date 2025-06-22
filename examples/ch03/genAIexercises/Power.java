@@ -1,4 +1,4 @@
-// 3.5节, Checkpoint 1: Power.java
+// 3.5节, 生成式AI练习: Power.java
 // 找出大于一百万的第一个2的幂
 public class Power {
    public static void main(String[] args) {

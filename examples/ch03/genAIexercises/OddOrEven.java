@@ -1,4 +1,4 @@
-// 3.8节, Checkpoint 3: OddOrEven.java
+// 3.8节, 生成式AI练习: OddOrEven.java
 // 判断输入的整数是奇数还是偶数
 import java.util.Scanner;
 
