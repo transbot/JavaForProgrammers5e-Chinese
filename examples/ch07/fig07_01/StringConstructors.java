@@ -9,9 +9,9 @@ public class StringConstructors {
 
       // 使用String类的各种构造函数
       var s1 = new String(); // ""
-      var s2 = new String(s); // "hello"
-      var s3 = new String(charArray); // "birthday"
-      var s4 = new String(charArray, 9, 3); // "day"
+      var s2 = new String(s); // "是那年轮上流浪的眼泪"
+      var s3 = new String(charArray); // "你仍然能闻到风中的胭脂味"
+      var s4 = new String(charArray, 9, 3); // "胭脂味"
 
       System.out.printf(
          "s1 = %s%ns2 = %s%ns3 = %s%ns4 = %s%n", s1, s2, s3, s4);
