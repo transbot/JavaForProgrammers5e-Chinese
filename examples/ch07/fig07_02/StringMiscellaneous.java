@@ -1,27 +1,27 @@
 // 图7.2: StringMiscellaneous.java
-// This program demonstrates the length, charAt and getChars
-// methods of the String class.
+// 该程序演示了String类的length、
+// charAt和getChars方法
 
 public class StringMiscellaneous {
    public static void main(String[] args) {
-      String s1 = "hello there";
-      char[] charArray = new char[5];
+      String s1 = "山魈让她等一等 星夜兼程的情人";
+      char[] charArray = new char[7]; // 调整为7个字符的空间
 
       System.out.printf("s1: %s", s1);
 
-      // test length method
-      System.out.printf("%nLength of s1: %d", s1.length());
+      // 测试length方法
+      System.out.printf("%n字符串s1的长度: %d", s1.length());
 
-      // loop through characters in s1 with charAt and display reversed
-      System.out.printf("%nThe string reversed is: ");
+      // 使用charAt遍历s1的字符并显示反转结果
+      System.out.printf("%n反转后的字符串: ");
 
       for (int count = s1.length() - 1; count >= 0; --count) {
          System.out.printf("%c ", s1.charAt(count));
       }
 
-      // copy characters from s1 into charArray
-      s1.getChars(0, 5, charArray, 0);
-      System.out.printf("%nThe character array is: ");
+      // 从s1复制字符到charArray（提取"山魈让她等一等"）
+      s1.getChars(0, 7, charArray, 0); // 提取前7个字符
+      System.out.printf("%n字符数组内容: ");
 
       for (char character : charArray) {
          System.out.print(character);
@@ -29,7 +29,7 @@ public class StringMiscellaneous {
 
       System.out.println();
    } 
-} 
+}
 
 
 
