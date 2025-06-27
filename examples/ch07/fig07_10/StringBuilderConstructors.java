@@ -1,11 +1,11 @@
 // 图7.10: StringBuilderConstructors.java
-// StringBuilder constructors.
+// StringBuilder的构造函数
 
 public class StringBuilderConstructors {
    public static void main(String[] args) {
       var buffer1 = new StringBuilder();       
       var buffer2 = new StringBuilder(10);     
-      var buffer3 = new StringBuilder("hello");
+      var buffer3 = new StringBuilder("你定是我生命的精灵");
 
       System.out.printf("buffer1 = \"%s\"%n", buffer1);
       System.out.printf("buffer2 = \"%s\"%n", buffer2);

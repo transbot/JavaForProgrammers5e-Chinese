@@ -1,5 +1,5 @@
 // 图7.23: CryptographyDemo.java
-// Encrypting and decrypting messages with AES.
+// 使用AES加密和解密消息
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
@@ -11,80 +11,80 @@ public class CryptographyDemo {
    public static void main(String[] args) {
       var scanner = new Scanner(System.in);
 
-      System.out.println("Enter the text to encrypt:");
+      System.out.println("请输入要加密的文本:");
       String plaintext = scanner.nextLine();
 
       System.out.println(
-         "\nEnter the secret key seed (for reproducibility):");
+         "\n请输入密钥种子(用于重现):");
       String seedString = scanner.nextLine();
 
-      try { // encryption/decryption might throw exceptions
-         // generate a reproducible AES key from the seedString
+      try { // 加密/解密可能抛出异常
+         // 从seedString生成可重现的AES密钥
          SecretKey secretKey = generateKey(seedString);
-         System.out.printf("%nSecretKey:%n%s%n", 
+         System.out.printf("%n生成的密钥:%n%s%n", 
             Base64.getEncoder().encodeToString(secretKey.getEncoded()));
 
-         // encrypt the plaintext
+         // 加密明文
          String ciphertext = encrypt(plaintext, secretKey);
-         System.out.printf("%nEncrypted:%n%s%n", ciphertext);
+         System.out.printf("%n加密后的结果:%n%s%n", ciphertext);
 
-         // decrypt the text
-         System.out.printf("%nDecrypted:%n%s%n", 
+         // 解密密文
+         System.out.printf("%n解密后的结果:%n%s%n", 
             decrypt(ciphertext, secretKey));
 
-         // decrypt ciphertext entered by the user
-         System.out.println("\nEnter the ciphertext to decipher:");
+         // 解密用户输入的密文
+         System.out.println("\n请输入要解密的密文:");
          ciphertext = scanner.nextLine();
-         System.out.printf("%nDecrypted:%n%s%n", 
+         System.out.printf("%n解密后的结果:%n%s%n", 
             decrypt(ciphertext, secretKey));
       }
       catch (Exception ex) { 
          System.out.printf("""
-            An exception occurred during encryption/decryption:
+            加密/解密过程中发生异常:
             %s%n
             """, ex);
       }
    }
 
-   // Generate and return a SecretKey. Note: We are seeding a 
-   // SecureRandom object for reproducibility so you can decipher this 
-   // chapter's encrypted text. Don't do this in production code.
+   // 生成并返回SecretKey。注意：这里考虑到可重现性，
+   // 为SecureRandom设置了固定的种子，以便解密本章的加密文本。
+   // 在生产代码中，绝对不要这样做！
    public static SecretKey generateKey(String seed) throws Exception {
-      // get a secure random number generator
+      // 获取安全的随机数生成器
       var random = SecureRandom.getInstance("SHA1PRNG");
-      random.setSeed(seed.getBytes()); // for demo reproducibility
+      random.setSeed(seed.getBytes()); // 为了演示可重现性
 
-      // get an AES SecretKey generator
+      // 获取AES密钥生成器
       var keyGen = KeyGenerator.getInstance("AES");
-      keyGen.init(256, random); // set up for 256-bit keys
-      return keyGen.generateKey(); // generate and return new SecretKey
+      keyGen.init(256, random); // 设置为256位密钥
+      return keyGen.generateKey(); // 生成并返回新的SecretKey
    }
 
-   // encrypt a String using AES
+   // 使用AES加密字符串
    public static String encrypt(
       String plaintext, SecretKey secretKey) throws Exception {
 
-      var cipher = Cipher.getInstance("AES"); // get a Cipher object
-      cipher.init(Cipher.ENCRYPT_MODE, secretKey); // configure to encrypt
+      var cipher = Cipher.getInstance("AES"); // 获取Cipher对象
+      cipher.init(Cipher.ENCRYPT_MODE, secretKey); // 配置为加密模式
 
-      // encrypt the byte[] representation of plaintext
+      // 加密明文的字节数组表示
       byte[] encrypted = cipher.doFinal(plaintext.getBytes());
 
-      // Base64 encode encrypted as a ciphertext String and return 
+      // 将加密结果Base64编码为密文字符串并返回
       return Base64.getEncoder().encodeToString(encrypted);
    }
 
-   // decrypt an AES-encrypted String
+   // 解密AES加密的字符串
    public static String decrypt(
       String ciphertext, SecretKey secretKey) throws Exception {
 
-      var cipher = Cipher.getInstance("AES"); // get a Cipher object
-      cipher.init(Cipher.DECRYPT_MODE, secretKey); // configure to decrypt
+      var cipher = Cipher.getInstance("AES"); // 获取Cipher对象
+      cipher.init(Cipher.DECRYPT_MODE, secretKey); // 配置为解密模式
 
-      // Base64 decode ciphertext to byte array  
+      // 将密文Base64解码为字节数组
       byte[] ciphertextBytes = Base64.getDecoder().decode(ciphertext);
 
-      // create plaintext String from ciphertextBytes and return it
+      // 从密文字节数组创建明文字符串并返回
       return new String(cipher.doFinal(ciphertextBytes));
    }
 }

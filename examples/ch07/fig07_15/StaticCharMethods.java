@@ -1,34 +1,34 @@
 // 图7.15: StaticCharMethods.java
-// Character static methods for testing characters and converting case.
+// 用于测试字符和转换大小写的Character静态方法。
 import java.util.Scanner;
 
 public class StaticCharMethods {
    public static void main(String[] args) {
-      var scanner = new Scanner(System.in); // create scanner
-      System.out.println("Enter a character and press Enter");
+      var scanner = new Scanner(System.in); // 创建Scanner对象以获取输入
+      System.out.println("请输入一个字符并按Enter键:");
       String input = scanner.next(); 
-      char c = input.charAt(0); // get input character
+      char c = input.charAt(0); // 获取输入的字符
 
-      // display character info
-      System.out.printf("is defined: %b%n", Character.isDefined(c));
-      System.out.printf("is digit: %b%n", Character.isDigit(c));
-      System.out.printf("is first character in a Java identifier: %b%n",
+      // 显示字符信息
+      System.out.printf("是否为已定义字符: %b%n", Character.isDefined(c));
+      System.out.printf("是否为数字: %b%n", Character.isDigit(c));
+      System.out.printf("是否可作为Java标识符的首字符: %b%n",
          Character.isJavaIdentifierStart(c));
-      System.out.printf("is part of a Java identifier: %b%n",
+      System.out.printf("是否可作为Java标识符的一部分: %b%n",
          Character.isJavaIdentifierPart(c));
-      System.out.printf("is letter: %b%n", Character.isLetter(c));
+      System.out.printf("是否为字母: %b%n", Character.isLetter(c));
       System.out.printf(
-         "is letter or digit: %b%n", Character.isLetterOrDigit(c));
+         "是否为字母或数字: %b%n", Character.isLetterOrDigit(c));
       System.out.printf(
-         "is lower case: %b%n", Character.isLowerCase(c));
+         "是否为小写字母: %b%n", Character.isLowerCase(c));
       System.out.printf(
-         "is upper case: %b%n", Character.isUpperCase(c));
+         "是否为大写字母: %b%n", Character.isUpperCase(c));
       System.out.printf(
-         "to upper case: %c%n", Character.toUpperCase(c));
+         "转换为大写: %c%n", Character.toUpperCase(c));
       System.out.printf(
-         "to lower case: %c%n", Character.toLowerCase(c));
+         "转换为小写: %c%n", Character.toLowerCase(c));
    } 
-} 
+}
 
 /**************************************************************************
  * (C) Copyright 1992-2025 by Deitel & Associates, Inc. and               *

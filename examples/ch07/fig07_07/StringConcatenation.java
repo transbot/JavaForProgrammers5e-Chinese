@@ -1,18 +1,17 @@
 // 图7.7: StringConcatenation.java
-// String method concat.
+// String的concat方法
 
 public class StringConcatenation {
    public static void main(String[] args) {
-      String s1 = "Happy ";
-      String s2 = "Birthday";
+      String s1 = "红颜易老";
+      String s2 = "转眼桑田泛清波";
 
-      System.out.printf("s1 = %s%ns2 = %s%n%n",s1, s2);
+      System.out.printf("s1 = %s%ns2 = %s%n%n", s1, s2);
       System.out.printf(
-         "Result of s1.concat(s2) = %s%n", s1.concat(s2));
-      System.out.printf("s1 after concatenation = %s%n", s1);
-   } 
-} 
-
+         "s1.concat(s2)的结果 = %s%n", s1.concat(s2));
+      System.out.printf("连接后的s1 = %s%n", s1);
+   }
+}
 
 /**************************************************************************
  * (C) Copyright 1992-2025 by Deitel & Associates, Inc. and               *

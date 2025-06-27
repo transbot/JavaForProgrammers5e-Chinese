@@ -1,18 +1,18 @@
 // 图7.11: StringBuilderCapLen.java
-// StringBuilder length, setLength, capacity and ensureCapacity methods.
+// StringBuilder类的Length、setLength、capacity和ensureCapacity方法
 
 public class StringBuilderCapLen {
    public static void main(String[] args) {
-      var buffer = new StringBuilder("Hello, how are you?");
+      var buffer = new StringBuilder("问问他山水相逢的命运谁在替她安排");
 
-      System.out.printf("buffer = %s%nlength = %d%ncapacity = %d%n%n",
+      System.out.printf("缓冲区内容 = %s%n长度 = %d%n容量 = %d%n%n",
          buffer.toString(), buffer.length(), buffer.capacity());
 
-      buffer.ensureCapacity(75);
-      System.out.printf("New capacity = %d%n%n", buffer.capacity());
-
-      buffer.setLength(10);
-      System.out.printf("New length = %d%nbuffer = %s%n", 
+      buffer.ensureCapacity(75); // 确保最小容量为75
+      System.out.printf("新容量 = %d%n%n", buffer.capacity());
+      
+      buffer.setLength(10); // 设置新长度为10（截断字符串）
+      System.out.printf("新长度 = %d%n缓冲区内容 = %s%n", 
          buffer.length(), buffer.toString());
    } 
 }

@@ -1,33 +1,33 @@
 // 图7.9: StringValueOf.java
-// String valueOf methods.
+// String的valueOf方法演示
 
-public class StringValueOf {
+public class StringValueOf { 
    public static void main(String[] args) {
-      char[] charArray = {'a', 'b', 'c', 'd', 'e', 'f'};
+      char[] charArray = {'邯', '郸', '梦', '啊', '古', '今', '同'};
       boolean booleanValue = true;
       char characterValue = 'Z';
       int integerValue = 7;
-      long longValue = 10000000000L; // L suffix indicates long  
-      float floatValue = 2.5f; // f indicates that 2.5 is a float
-      double doubleValue = 33.333; // no suffix, double is default
-      Object objectRef = "hello"; // assign string to an Object reference
+      long longValue = 10000000000L; // L后缀表示long类型  
+      float floatValue = 2.5f;       // f 后缀表示2.5是float类型
+      double doubleValue = 33.333;   // 无后缀，默认double类型
+      Object objectRef = "hello";    // 将字符串赋给Object引用
 
       System.out.printf(
-         "char array = %s%n", String.valueOf(charArray));
-      System.out.printf("part of char array = %s%n", 
-         String.valueOf(charArray, 3, 3));
+         "字符数组 = %s%n", String.valueOf(charArray));
+      System.out.printf("部分字符数组 = %s%n", 
+         String.valueOf(charArray, 4, 3));
       System.out.printf(
-         "boolean = %s%n", String.valueOf(booleanValue));
+         "布尔值 = %s%n", String.valueOf(booleanValue));
       System.out.printf(
-         "char = %s%n", String.valueOf(characterValue));
-      System.out.printf("int = %s%n", String.valueOf(integerValue));
-      System.out.printf("long = %s%n", String.valueOf(longValue)); 
-      System.out.printf("float = %s%n", String.valueOf(floatValue)); 
+         "字符 = %s%n", String.valueOf(characterValue));
+      System.out.printf("整数 = %s%n", String.valueOf(integerValue));
+      System.out.printf("长整数 = %s%n", String.valueOf(longValue)); 
+      System.out.printf("浮点数 = %s%n", String.valueOf(floatValue)); 
       System.out.printf(
-         "double = %s%n", String.valueOf(doubleValue)); 
-      System.out.printf("Object = %s%n", String.valueOf(objectRef));
+         "双精度浮点数 = %s%n", String.valueOf(doubleValue)); 
+      System.out.printf("对象 = %s%n", String.valueOf(objectRef));
    } 
-} 
+}
 
 /**************************************************************************
  * (C) Copyright 1992-2025 by Deitel & Associates, Inc. and               *

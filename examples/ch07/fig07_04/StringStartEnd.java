@@ -1,37 +1,37 @@
 // 图7.4: StringStartEnd.java
-// String methods startsWith and endsWith.
+// 演示String类的startsWith和endsWith方法
 
 public class StringStartEnd {
    public static void main(String[] args) {
       String[] strings = {"started", "starting", "ended", "ending"};
 
-      // test method startsWith
+      // 测试startsWith方法
       for (String string : strings) {
          if (string.startsWith("st")) {
-            System.out.printf("\"%s\" starts with \"st\"%n", string);
+            System.out.printf("\"%s\"以\"st\"开头%n", string);
          } 
       } 
 
       System.out.println();
 
-      // test method startsWith starting from position 2 of string
+      // 从位置2开始测试startsWith方法
       for (String string : strings) {
          if (string.startsWith("art", 2)) {
             System.out.printf(
-               "\"%s\" starts with \"art\" at position 2%n", string);
+               "\"%s\"在位置2以\"art\"开头%n", string);
          } 
       } 
 
       System.out.println();
 
-      // test method endsWith
+      // 测试endsWith方法
       for (String string : strings) {
          if (string.endsWith("ed")) {
-            System.out.printf("\"%s\" ends with \"ed\"%n", string);
+            System.out.printf("\"%s\"以\"ed\"结尾%n", string);
          } 
       } 
    } 
-} 
+}
 
 
 /**************************************************************************

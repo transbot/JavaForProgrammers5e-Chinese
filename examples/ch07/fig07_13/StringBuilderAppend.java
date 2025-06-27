@@ -1,10 +1,10 @@
 // 图7.13: StringBuilderAppend.java
-// StringBuilder append methods.
+// StringBuilder的append方法
 
 public class StringBuilderAppend {
    public static void main(String[] args) {
-      Object objectRef = "hello"; 
-      String string = "goodbye";  
+      Object objectRef = "你好"; 
+      String string = "再见";  
       char[] charArray = {'a', 'b', 'c', 'd', 'e', 'f'};
       boolean booleanValue = true;
       char characterValue = 'Z';
@@ -13,7 +13,7 @@ public class StringBuilderAppend {
       float floatValue = 2.5f; 
       double doubleValue = 33.333;
 
-      var lastBuffer = new StringBuilder("last buffer");
+      var lastBuffer = new StringBuilder("buffer中最后的内容");
       var buffer = new StringBuilder();
 
       buffer.append(objectRef)                           
@@ -38,7 +38,7 @@ public class StringBuilderAppend {
             .append(System.lineSeparator())
             .append(lastBuffer);                         
 
-      System.out.printf("buffer contains%n%s%n", buffer.toString());
+      System.out.printf("buffer中包含：%n%s%n", buffer.toString());
    } 
 } 
 

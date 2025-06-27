@@ -1,40 +1,42 @@
+public class StaticCharMethods2 {
 // 图7.16: StaticCharMethods2.java
-// Character class static conversion methods.
+// Character类的静态转换方法：数字与字符的相互转换
 import java.util.Scanner;
 
 public class StaticCharMethods2 {
    public static void main(String[] args) {
       var scanner = new Scanner(System.in);
 
-      // get radix
-      System.out.print("Please enter a radix: ");
+      // 获取基数
+      System.out.print("请输入一个基数(2-36): ");
       int radix = scanner.nextInt();
 
-      // get user choice
+      // 获取用户选择
       System.out.println("""
-         Please choose one:
-            1 -- Convert digit to character
-            2 -- Convert character to digit""");
-      System.out.print(": ");
+         请选择操作:
+            1 -- 将数字转换为字符
+            2 -- 将字符转换为数字""");
+      System.out.print("请输入选项: ");
       int choice = scanner.nextInt(); 
 
-      // process request
+      // 处理用户请求
       switch (choice) {
-         case 1 -> { // convert digit to character
-            System.out.print("Enter a digit: ");
+         case 1 -> { // 将数字转换为字符
+            System.out.print("请输入一个数字(0-" + (radix-1) + "): ");
             int digit = scanner.nextInt();
-            System.out.printf("Convert digit to character: %s%n",
+            System.out.printf("转换结果: %s%n",
                Character.forDigit(digit, radix));
          }
-         case 2 -> { // convert character to digit
-            System.out.print("Enter a character: ");
+         case 2 -> { // 将字符转换为数字
+            System.out.print("请输入一个字符: ");
             char character = scanner.next().charAt(0);
-            System.out.printf("Convert character to digit: %s%n",
+            System.out.printf("转换结果: %d%n",
                Character.digit(character, radix));
          }
+         default -> System.out.println("无效选项!");
       };
    } 
-} 
+}
 
 
 /**************************************************************************

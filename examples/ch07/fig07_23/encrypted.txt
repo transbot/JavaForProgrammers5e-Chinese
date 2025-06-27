@@ -1,5 +1,5 @@
-Secret key seed text:
+种子:
 XMWUJBVYHXZ
 
-Encrypted text you can paste into the last input prompt in 图7.22:
+图7.23最后一步，请粘贴以下密文:
 pMa5tfEKwk59dTvC04Ft1IFQz9mEXnkfYXZwxk4ujGE=

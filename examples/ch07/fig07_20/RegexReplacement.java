@@ -1,11 +1,11 @@
 // 图7.20: RegexReplacement.java
-// Regular expression replacements.
+// 正则表达式替换
 public class RegexReplacement {
    public static void main(String[] args) {
-      // replace tabs with commas
-      String s1 = "1\t2\t3\t4";
-      System.out.printf("Original string: %s%n", s1);
-      System.out.printf("New string with commas replacing tabs: %s%n", 
+      // 制表符替换为逗号
+      String s1 = "一\t二\t三\t四";
+      System.out.printf("原始字符串: %s%n", s1);
+      System.out.printf("用逗号替换制表符后的新字符串: %s%n", 
          s1.replaceAll("\\t", ","));
    }
 }

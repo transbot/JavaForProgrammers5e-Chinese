@@ -1,22 +1,22 @@
 // 图7.14: StringBuilderInsertDelete.java
-// StringBuilder methods insert, delete and deleteCharAt.
+// StringBuilder的insert、delete和deleteCharAt方法
 
 public class StringBuilderInsertDelete {
    public static void main(String[] args) {
-      Object objectRef = "hello";  
-      String string = "goodbye";  
+      Object objectRef = "你好";  
+      String string = "再见";  
       char[] charArray = {'a', 'b', 'c', 'd', 'e', 'f'};
       boolean booleanValue = true;
       char characterValue = 'K';
       int integerValue = 7;
       long longValue = 10000000;
-      float floatValue = 2.5f; // f suffix indicates that 2.5 is a float
+      float floatValue = 2.5f; // f后续表明2.5是一个float
       double doubleValue = 33.333;
 
       var buffer = new StringBuilder();
 
       buffer.insert(0, objectRef);      
-      buffer.insert(0, "  "); // each of these contains two spaces
+      buffer.insert(0, "  "); // 均包含两个空格
       buffer.insert(0, string);         
       buffer.insert(0, "  ");           
       buffer.insert(0, charArray);      
@@ -36,13 +36,13 @@ public class StringBuilderInsertDelete {
       buffer.insert(0, doubleValue);    
 
       System.out.printf(
-         "buffer after inserts:%n%s%n%n", buffer.toString());
+         "插入后的buffer:%n%s%n%n", buffer.toString());
 
-      buffer.deleteCharAt(10); // delete 5 in 2.5  
-      buffer.delete(2, 6); // delete .333 in 33.333
+      buffer.deleteCharAt(10); // 删除2.5中的5
+      buffer.delete(2, 6); // 删除33.333中的.333
 
       System.out.printf(
-         "buffer after deletes:%n%s%n", buffer.toString());
+         "删除后的buffer:%n%s%n", buffer.toString());
    } 
 } 
 

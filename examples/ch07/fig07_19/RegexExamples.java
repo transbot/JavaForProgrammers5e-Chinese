@@ -1,51 +1,51 @@
 // 图7.19: RegexExamples.java
-// Matching entire Strings to regular expressions.
+// 将整个字符串与正则表达式进行匹配
 public class RegexExamples {
    public static void main(String[] args) {
-      // fully match a pattern of literal characters
-      System.out.println("Matching against: 02215");
+      // 完全匹配字面字符模式
+      System.out.println("匹配模式：02215");
       System.out.printf("02215: %b; 51220: %b%n%n",
          "02215".matches("02215"), "51220".matches("02215"));
 
-      // fully match five digits
-      System.out.println("Matching against: \\d{5}");
+      // 完全匹配五位数字
+      System.out.println("匹配模式：\\d{5}");
       System.out.printf("02215: %b; 9876: %b%n%n",
          "02215".matches("\\d{5}"), "9876".matches("\\d{5}"));
 
-      // match a word that starts with a capital letter
-      System.out.println("Matching against: [A-Z][a-z]*");
+      // 匹配以大写字母开头的单词
+      System.out.println("匹配模式：[A-Z][a-z]*");
       System.out.printf("Angel: %b; tina: %b%n%n",
          "Angel".matches("[A-Z][a-z]*"), "tina".matches("[A-Z][a-z]*"));
 
-      // match any character that's not a lowercase letter
-      System.out.println("Matching against: [^a-z]");
+      // 匹配任意非小写字母的字符
+      System.out.println("匹配模式：[^a-z]");
       System.out.printf("A: %b; a: %b%n%n",
          "A".matches("[^a-z]"), "a".matches("[^a-z]"));
 
-      // match metacharacters as literals in a custom character class
-      System.out.println("Matching against: [*+$]");
+      // 在自定义字符类中匹配元字符字面值
+      System.out.println("匹配模式：[*+$]");
       System.out.printf("*: %b; !: %b%n%n",
          "*".matches("[*+$]"), "!".matches("[*+$]"));
 
-      // match a capital letter followed by at least one lowercase letter 
-      System.out.println("Matching against: [A-Z][a-z]+");
+      // 匹配大写字母后跟至少一个小写字母
+      System.out.println("匹配模式：[A-Z][a-z]+");
       System.out.printf("Angel: %b; T: %b%n%n",
          "Angel".matches("[A-Z][a-z]+"), "T".matches("[A-Z][a-z]+"));
 
-      // match zero or one occurrence of a subexpression
-      System.out.println("Matching against: labell?ed");
+      // 匹配子表达式出现零次或一次
+      System.out.println("匹配模式：labell?ed");
       System.out.printf("labelled: %b; labeled: %b; labellled: %b%n%n",
          "labelled".matches("labell?ed"), "labeled".matches("labell?ed"),
          "labellled".matches("labell?ed"));
 
-      // match n (3) or more occurrences of a subexpression
-      System.out.println("Matching against: \\d{3,}");
+      // 匹配子表达式出现n(3)次或更多次
+      System.out.println("匹配模式：\\d{3,}");
       System.out.printf("123: %b; 1234567890: %b; 12: %b%n%n",
          "123".matches("\\d{3,}"), "1234567890".matches("\\d{3,}"),
          "12".matches("\\d{3,}"));
 
-      // match n to m inclusive (3-6), occurrences of a subexpression
-      System.out.println("Matching against: \\d{3,6}");
+      // 匹配子表达式出现n到m次(包含3~6次)
+      System.out.println("匹配模式：\\d{3,6}");
       System.out.printf("123: %b; 123456: %b; 1234567: %b; 12: %b%n",
          "123".matches("\\d{3,6}"), "123456".matches("\\d{3,6}"),
          "1234567".matches("\\d{3,6}"), "12".matches("\\d{3,6}"));

@@ -1,18 +1,18 @@
 // 图7.6: Substring.java
-// String class substring methods.
+// String类的substring方法
 
 public class Substring {
    public static void main(String[] args) {
-      String letters = "abcdefghijklmabcdefghijklm";
+      String letters = "零壹贰叁肆伍陆柒捌玖拾佰仟零壹贰叁肆伍陆柒捌玖拾佰仟";
 
-      // test substring methods
-      System.out.printf("Substring from index 20 to end is \"%s\"%n",
+      // 测试substring方法
+      System.out.printf("从索引20开始到末尾的子串是\"%s\"%n",
          letters.substring(20));
-      System.out.printf("%s \"%s\"%n", 
-         "Substring from index 3 up to, but not including, 6 is",
+      System.out.printf("%s\"%s\"%n", 
+         "从索引3开始到索引6（不包括6）的子串是",
          letters.substring(3, 6));
    } 
-} 
+}
 
 
 

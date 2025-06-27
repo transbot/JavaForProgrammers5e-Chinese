@@ -1,5 +1,5 @@
 // 图7.17: OtherCharMethods.java
-// Character class instance methods.
+// Character类的实例方法
 public class OtherCharMethods { 
    public static void main(String[] args) {
       Character c1 = 'A';
@@ -9,10 +9,10 @@ public class OtherCharMethods {
          "c1 = %c%nc2 = %s%n%n", c1.charValue(), c2.toString());
 
       if (c1.equals(c2)) {
-         System.out.println("c1 and c2 are equal");
+         System.out.println("c1和c2相等");
       } 
       else {
-         System.out.println("c1 and c2 are not equal");
+         System.out.println("c1和c2不相等");
       } 
    } 
 } 

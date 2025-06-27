@@ -1,17 +1,17 @@
 // 图7.18: TokenTest.java
-// Tokenizing with String method split
+// 使用String的split方法进行词元化
 import java.util.Scanner;
 
 public class TokenTest {
    public static void main(String[] args) {
-      // get sentence
+      // 从用户处获取句子
       var scanner = new Scanner(System.in);
-      System.out.println("Enter a sentence and press Enter");
+      System.out.println("请输入一句话(英文)，并按Enter键：");
       String sentence = scanner.nextLine();
 
-      // process user sentence
+      // 处理用户输入的句子
       String[] tokens = sentence.split(" ");
-      System.out.printf("%nNumber of elements: %d%nThe tokens are:%n",
+      System.out.printf("%n元素数量: %d%n包含的词元是:%n",
          tokens.length);
 
       for (String token : tokens) {
