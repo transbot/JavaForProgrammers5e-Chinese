@@ -1,21 +1,21 @@
 // 图8.7: Card.java
-// Card class represents a playing card.
+// 用于表示一张扑克牌的Card类
 
 public class Card {
-   private final String face; // face of card ("Ace", "Deuce", ...)
-   private final String suit; // suit of card ("Hearts", "Diamonds", ...)
+   private final String face; // 牌的点数（如"A"、"2"、"K"等）
+   private final String suit; // 牌的花色（如"红桃♥"、"黑桃♠"等）
 
-   // two-argument constructor initializes card's face and suit
+   // 双参数构造函数，初始化牌的点数和花色
    public Card(String face, String suit) {
-      this.face = face; // initialize face of card
-      this.suit = suit; // initialize suit of card
+      this.face = face; // 初始化牌的点数
+      this.suit = suit; // 初始化牌的花色
    } 
 
-   // return String representation of Card
+   // 返回牌的中文表示形式
    public String toString() {             
-      return face + " of " + suit;        
+      return suit + face; // 格式：花色 + 空格 + 点数
    }
-} 
+}
 
 
 

@@ -1,11 +1,11 @@
 // 图8.18: EmployeeTest.java
-// Composition demonstration.
+// 演示“组合”
 
 public class EmployeeTest {
    public static void main(String[] args) {
       var birth = new Date(7, 24, 1949);
       var hire = new Date(3, 12, 1988);
-      var employee = new Employee("James", "Ramos", birth, hire);
+      var employee = new Employee("Hu", "Hui", birth, hire);
 
       System.out.println(employee);
    } 

@@ -1,33 +1,33 @@
 // 图8.24: PackageDataTest.java
-// Package-access members of a class are accessible by other classes 
-// in the same package.
+// 类的包访问权限成员可以被
+// 同一个包中的其他类访问
 
 public class PackageDataTest {
    public static void main(String[] args) {
       var packageData = new PackageData();
 
-      // output String representation of packageData 
-      System.out.printf("After instantiation:%n%s%n", packageData);
+      // 输出packageData的字符串表示形式
+      System.out.printf("实例化之后:%n%s%n", packageData);
 
-      // change package access data in packageData object
+      // 修改packageData对象中的包访问权限数据
       packageData.number = 77;                           
       packageData.string = "Goodbye";                    
 
-      // output String representation of packageData
-      System.out.printf("%nAfter changing values:%n%s%n", packageData);
+      // 输出packageData的字符串表示形式
+      System.out.printf("%n修改值之后:%n%s%n", packageData);
    } 
 } 
 
-// class with package access instance variables
+// 具有包访问权限实例变量的类
 class PackageData {
-   int number = 0; // package-access instance variable         
-   String string = "Hello"; // package-access instance variable
+   int number = 0;          // 包访问权限的实例变量         
+   String string = "Hello"; // 包访问权限的实例变量
 
-   // return PackageData object String representation
+   // 返回PackageData对象的字符串表示形式
    public String toString() {
       return String.format("number: %d; string: %s", number, string);
    } 
-} 
+}
 
 
 /**************************************************************************

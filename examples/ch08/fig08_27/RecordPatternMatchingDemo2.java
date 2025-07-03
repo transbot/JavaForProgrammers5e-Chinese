@@ -1,28 +1,29 @@
 // 图8.27: RecordPatternMatchingDemo2.java
-// Using record patterns in a switch expression to assign
-// record members to variables for use in a given case.
+// 在switch表达式中使用记录模式，将记录成员（记录组件）
+// 的值赋给变量，以便在特定case中使用这些变量。
+
 
 public class RecordPatternMatchingDemo2 {
-   // record classes representing data for a Rectangle and a Circle
+   // 表示矩形和圆的记录类
    record Rectangle(double length, double width) { }
    record Circle(double radius) { }
 
    public static void main(String[] args) {
       Rectangle r = new Rectangle(10, 5);
       Circle c = new Circle(10);
-      System.out.printf("Rectangle r: %s%nperimeter: %.2f%n%n", 
+      System.out.printf("矩形 r: %s%n周长: %.2f%n%n", 
          r, getPerimeter(r));
-      System.out.printf("Circle c : %s%nperimeter: %.2f%n", 
+      System.out.printf("圆 c : %s%n周长: %.2f%n", 
          c, getPerimeter(c));
    }
          
-   // uses pattern-matching switch to calculate perimeter of a 
-   // Rectangle or Circle; throws IllegalArgumentException for other types
+   // 使用模式匹配switch计算矩形或圆的周长;
+   // 对于其他类型抛出IllegalArgumentException异常
    public static double getPerimeter(Object shape) {
       return switch (shape) {
          case Rectangle(var length, var width) -> 2 * length + 2 * width;
          case Circle(var radius) -> 2 * Math.PI * radius;
-         default -> throw new IllegalArgumentException("invalid type"); 
+         default -> throw new IllegalArgumentException("无效类型"); 
       };
    }
 }

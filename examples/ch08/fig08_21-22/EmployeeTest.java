@@ -1,24 +1,24 @@
 // 图8.22: EmployeeTest.java
-// static member demonstration.
+// 静态成员演示
 
 public class EmployeeTest {
    public static void main(String[] args) {
-      // show that count is 0 before creating Employees
-      System.out.printf("Employees before instantiation: %d%n",
+      // 证明在创建Employee之前，count为0
+      System.out.printf("实例化之前的Employee数量: %d%n",
          Employee.getCount());
 
-      // create two Employees; count should then be 2
+      // 创建两个Employee，之后count应该变成2
       var e1 = new Employee("Anna", "Gruber");
       var e2 = new Employee("Teva", "Maihi");   
     
-      // show that count is 2 after creating two Employees
-      System.out.printf("%nEmployees after instantiation:%n");
-      System.out.printf("via e1.getCount(): %d%n", e1.getCount());
-      System.out.printf("via e2.getCount(): %d%n", e2.getCount());
-      System.out.printf("via Employee.getCount(): %d%n", 
+      // 证明创建两个Employee后count为2
+      System.out.printf("%n实例化之后的Employee数量:%n");
+      System.out.printf("通过e1.getCount(): %d%n", e1.getCount());
+      System.out.printf("通过e2.getCount(): %d%n", e2.getCount());
+      System.out.printf("通过Employee.getCount(): %d%n", 
          Employee.getCount());
    
-      // get names of Employees
+      // 获取雇员姓名
       System.out.printf("%nEmployee 1: %s %s%nEmployee 2: %s %s%n",
          e1.getFirstName(), e1.getLastName(), 
          e2.getFirstName(), e2.getLastName());

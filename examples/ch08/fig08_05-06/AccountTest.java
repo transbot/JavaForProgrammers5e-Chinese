@@ -1,45 +1,45 @@
 // 图8.6: AccountTest.java
-// Inputting and outputting floating-point numbers with Account objects.
+// 使用Account对象进行浮点数的输入和输出操作
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class AccountTest {
    public static void main(String[] args) {
-      var account1 = new Account("Wei Li", new BigDecimal("50.00"));
+      var account1 = new Account("Zhou Jing", new BigDecimal("50.00"));
       var account2 = new Account("Logan Brown", new BigDecimal("-7.53"));
 
-      // display initial balance of each object
-      System.out.printf("%s balance: $%s%n", account1.getName(), 
+      // 显示每个对象的初始余额
+      System.out.printf("%s的余额: $%s%n", account1.getName(), 
          account1.getBalance().setScale(2, RoundingMode.HALF_EVEN));
-      System.out.printf("%s balance: $%s%n%n", account2.getName(), 
+      System.out.printf("%s的余额: $%s%n%n", account2.getName(), 
          account2.getBalance().setScale(2, RoundingMode.HALF_EVEN));
       
-      // create a Scanner to obtain input from the user
+      // 创建Scanner对象以获取用户输入
       var input = new Scanner(System.in);
 
-      System.out.print("Enter deposit amount for account1: "); // prompt
-      var depositAmount = input.nextBigDecimal(); // get input
-      System.out.printf("%nadding %s to account1 balance%n%n", 
+      System.out.print("请输入account1的存款金额: "); // 提示用户输入
+      var depositAmount = input.nextBigDecimal(); // 获取用户输入
+      System.out.printf("%n正在将%s加到account1的余额上%n%n", 
          depositAmount.setScale(2, RoundingMode.HALF_EVEN));
-      account1.deposit(depositAmount); // add to account1 balance
+      account1.deposit(depositAmount); // 向account1存款
 
-      // display balances
-      System.out.printf("%s balance: $%s%n", account1.getName(), 
+      // 显示当前余额
+      System.out.printf("%s的余额: $%s%n", account1.getName(), 
          account1.getBalance().setScale(2, RoundingMode.HALF_EVEN));
-      System.out.printf("%s balance: $%s%n%n", account2.getName(), 
+      System.out.printf("%s的余额: $%s%n%n", account2.getName(), 
          account2.getBalance().setScale(2, RoundingMode.HALF_EVEN));
 
-      System.out.print("Enter deposit amount for account2: "); // prompt
-      depositAmount = input.nextBigDecimal(); // get input
-      System.out.printf("%nadding %s to account2 balance%n%n", 
+      System.out.print("请输入account2的存款金额: "); // 提示用户输入
+      depositAmount = input.nextBigDecimal(); // 获取用户输入
+      System.out.printf("%n正在将%s加到account2的余额上%n%n", 
          depositAmount.setScale(2, RoundingMode.HALF_EVEN));
-      account2.deposit(depositAmount); // add to account2 balance
+      account2.deposit(depositAmount); // 向account2存款
 
-      // display balances
-      System.out.printf("%s balance: $%s%n", account1.getName(), 
+      // 显示最终余额
+      System.out.printf("%s的余额: $%s%n", account1.getName(), 
          account1.getBalance().setScale(2, RoundingMode.HALF_EVEN));
-      System.out.printf("%s balance: $%s%n%n", account2.getName(), 
+      System.out.printf("%s的余额: $%s%n%n", account2.getName(), 
          account2.getBalance().setScale(2, RoundingMode.HALF_EVEN));
    } 
 }

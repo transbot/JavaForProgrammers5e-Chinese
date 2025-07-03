@@ -1,20 +1,20 @@
 // 图8.20: EnumTest.java
-// Testing enum type Book.
+// 测试枚举类型Book
 import java.util.EnumSet;
 
 public class EnumTest {
    public static void main(String[] args) {
-      System.out.println("All books:");
+      System.out.println("所有书籍:");
 
-      // print all books in enum Book 
+      // 打印Book枚举中的所有书
       for (Book book : Book.values()) {                       
          System.out.printf("%-10s%-57s%s%n", book,
              book.getTitle(), book.getCopyrightYear());
       }
 
-      System.out.printf("%nDisplay a range of enum constants:%n");
+      System.out.printf("%n显示指定范围内的枚举常量:%n");
     
-      // print first four books                                 
+      // 打印前4本书
       for (Book book : EnumSet.range(Book.JHTP, Book.CPPHTP)) {
          System.out.printf("%-10s%-57s%s%n", book,
              book.getTitle(), book.getCopyrightYear());

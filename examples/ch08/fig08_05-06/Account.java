@@ -1,45 +1,45 @@
 // 图8.5: Account.java
-// Account class with a BigDecimal instance variable balance and
-// a constructor and deposit method that perform validation.
+// Account类包含BigDecimal类型的实例变量balance，
+// 以及执行数据校验的构造函数和存款方法。
 import java.math.BigDecimal;
  
 public class Account {
-   private String name; // instance variable   
-   private BigDecimal balance = BigDecimal.ZERO; // instance variable
+   private String name; // 实例变量   
+   private BigDecimal balance = BigDecimal.ZERO; // 实例变量
 
-   // Account constructor that receives two parameters  
+   // 接收两个参数的Account构造函数
    public Account(String name, BigDecimal balance) {
-      this.name = name; // assign name to instance variable name
+      this.name = name; // 将参数name的值赋给实例变量name
 
-      // validate that the balance is greater than 0; if it's not,
-      // instance variable balance keeps its default initial value of 0
-      if (balance.compareTo(BigDecimal.ZERO) > 0) { // is balance valid?
-         this.balance = balance; // assign it to instance variable balance
+      // 验证余额是否大于0；如果不是，
+      // 那么实例变量balance保持其默认初始值0。
+      if (balance.compareTo(BigDecimal.ZERO) > 0) { // 余额是否有效？
+         this.balance = balance; // 将其赋给实例变量balance
       }
    } 
 
-   // method that deposits (adds) only a valid amount to the balance
+   // 仅将有效金额存入余额的方法
    public void deposit(BigDecimal amount) {                      
-      if (amount.compareTo(BigDecimal.ZERO) > 0) { // is amount valid? 
-         balance = balance.add(amount); // add it to the balance
+      if (amount.compareTo(BigDecimal.ZERO) > 0) { // 金额是否有效？ 
+         balance = balance.add(amount); // 将其加到余额上
       }
    }
 
-   // method returns the account balance
+   // 返回账户余额的方法
    public BigDecimal getBalance() {         
       return balance;                   
    }                                    
 
-   // method that sets the name
+   // 设置姓名的方法
    public void setName(String name) {
       this.name = name; 
    } 
 
-   // method that returns the name
+   // 返回姓名的方法
    public String getName() {
       return name;
    } 
-} 
+}
 
 
 

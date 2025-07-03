@@ -1,5 +1,5 @@
 // 图8.23: StaticImportTest.java
-// Static import of Math class methods.
+// 静态导入Math类的方法
 import static java.lang.Math.*;
 
 public class StaticImportTest {

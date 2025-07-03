@@ -1,9 +1,9 @@
 // 图8.19: Book.java
-// Declaring an enum type with a constructor and explicit instance fields 
-// and accessors for these fields
+// 该枚举类型包含构造函数和显式的实例字段，
+// 并为这些字段提供了取值函数
 
 public enum Book {
-   // declare constants of enum type                          
+   // 声明枚举常量
    JHTP("Java How to Program", "2025"),                       
    CHTP("C How to Program", "2020"),                          
    CPP20FP("C++20 for Programmers", "2023"),
@@ -11,22 +11,22 @@ public enum Book {
    PYCDS("Intro to Python for Computer Science and Data Science", "2020"),
    PYFP("Python for Programmers", "2020");             
 
-   // instance fields 
-   private final String title; // book title
-   private final String copyrightYear; // copyright year
+   // 枚举的实例字段
+   private final String title;         // 书名
+   private final String copyrightYear; // 版权年份
 
-   // enum constructor
+   // 枚举的构造函数
    Book(String title, String copyrightYear) {
       this.title = title;
       this.copyrightYear = copyrightYear;
    } 
 
-   // accessor for field title
+   // title字段的取值函数
    public String getTitle() {
       return title;
    } 
 
-   // accessor for field copyrightYear
+   // copyrightYear字段的取值函数
    public String getCopyrightYear() {
       return copyrightYear;
    } 

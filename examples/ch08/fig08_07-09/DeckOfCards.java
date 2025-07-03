@@ -1,55 +1,55 @@
 // 图8.8: DeckOfCards.java
-// DeckOfCards class represents a deck of playing cards.
+// 用于表示一副扑克牌的DeckOfCards类
 import java.util.random.RandomGenerator; 
 
 public class DeckOfCards {
-   // random number generator
+   // 随机数生成器
    private static final RandomGenerator randomNumbers = 
       RandomGenerator.getDefault();
-   public static final int NUMBER_OF_CARDS = 52; // constant # of Cards
-   private Card[] deck = new Card[NUMBER_OF_CARDS]; // Card references
-   private int currentCardIndex = 0; // index of next Card to deal (0-51)
+   public static final int NUMBER_OF_CARDS = 52;    // 一副牌中有多少张牌（这常量）
+   private Card[] deck = new Card[NUMBER_OF_CARDS]; // Card引用数组
+   private int currentCardIndex = 0;    // 下一张待发牌的索引 (0-51)
 
-   // constructor fills deck of Cards
+   // 构造函数初始化牌组
    public DeckOfCards() {
-      String[] faces = {"Ace", "Deuce", "Three", "Four", "Five", "Six",
-         "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};    
-      String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};      
+      String[] faces = {"A", "2", "3", "4", "5", "6",
+         "7", "8", "9", "10", "J", "Q", "K"};    
+      String[] suits = {"红桃♥", "方块♦", "梅花♣", "黑桃♠"};
 
-      // populate deck with Card objects                   
+      // 用Card对象填充牌组                  
       for (int count = 0; count < deck.length; ++count) {  
          deck[count] = new Card(faces[count % 13], suits[count / 13]);
       }
    } 
 
-   // shuffle deck of Cards with one-pass algorithm
+   // 使用单遍（one-pass）算法洗牌
    public void shuffle() {
-      // next call to method dealCard should start at deck[0] again
+      // 下次发牌从deck[0]开始
       currentCardIndex = 0; 
 
-      // for each Card, pick another random Card (0-51) and swap them
+      // 遍历每张牌，随机选择另一张牌(0~51)并交换位置
       for (int first = 0; first < deck.length; ++first) {
-         // select a random number between 0 and 51 
+         // 随机选择0~51之间的数字
          int second = randomNumbers.nextInt(NUMBER_OF_CARDS);
 
-         // swap current Card with randomly selected Card
+         // 交换当前牌与随机选择的牌
          Card temp = deck[first];   
          deck[first] = deck[second];
          deck[second] = temp;       
       } 
    } 
 
-   // deal one Card
+   // 发一张牌
    public Card dealCard() {
-      // determine whether Cards remain to be dealt
+      // 检查是否还有牌可发
       if (currentCardIndex < deck.length) {
-         return deck[currentCardIndex++]; // return current Card in array
+         return deck[currentCardIndex++]; // 返回数组中的当前牌
       } 
       else {
-         return null; // return null to indicate that all Cards were dealt
+         return null; // 返回null表示所有牌已发完
       } 
    } 
-} // end class DeckOfCards
+} // 结束DeckOfCards类
 
 
 

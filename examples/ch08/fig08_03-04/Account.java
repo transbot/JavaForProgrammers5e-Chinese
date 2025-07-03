@@ -1,20 +1,20 @@
 // 图8.3: Account.java
-// Account class with a constructor that initializes the name.
+// Account类的一个构造函数可以初始化name
 
 public class Account {
-   private String name; // instance variable
+   private String name; // 实例变量
 
-   // constructor initializes name with parameter name          
-   public Account(String name) { // constructor name is class name
+   // 该构造函数用参数name的值初始化name实例变量
+   public Account(String name) { // 构造函数的名称就是类名
       this.name = name;                                           
    }
 
-   // method to set the name
+   // name的赋值方法（也称为set方法或setter）
    public void setName(String name) {
       this.name = name; 
    }
 
-   // method to retrieve the name
+   // name的取值方法（也称为get方法或getter）
    public String getName() {
       return name; 
    } 

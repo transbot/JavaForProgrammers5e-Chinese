@@ -1,23 +1,23 @@
 // 图8.9: DeckOfCardsTest.java
-// Card shuffling and dealing.
+// 洗牌和发牌演示
 
 public class DeckOfCardsTest {
-   // execute program
+   // 程序执行入口
    public static void main(String[] args) {
       var myDeckOfCards = new DeckOfCards();
-      myDeckOfCards.shuffle(); // place Cards in random order
+      myDeckOfCards.shuffle(); // 将牌随机排序
       
-      // print all 52 Cards in the order in which they are dealt
+      // 按发牌顺序打印所有52张牌
       for (int i = 1; i <= DeckOfCards.NUMBER_OF_CARDS; ++i) {
-         // deal and display a Card
+         // 发牌并显示当前牌
          System.out.printf("%-19s", myDeckOfCards.dealCard());
 
-         if (i % 4 == 0) { // output a newline after every fourth card
+         if (i % 4 == 0) { // 每发4张牌就换行
             System.out.println();
          } 
       } 
    } 
-} 
+}
 
 
 

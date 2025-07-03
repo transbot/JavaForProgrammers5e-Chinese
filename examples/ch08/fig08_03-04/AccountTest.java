@@ -1,16 +1,16 @@
 // 图8.4: AccountTest.java
-// Using the Account constructor to initialize the name 
-// instance variable of each new Account object.
+// 使用Account构造函数来初始化
+// 每个新Account对象的name。
 
 public class AccountTest {
    public static void main(String[] args) {
-      // create two Account objects                
-      var account1 = new Account("Wei Li");
+      // 创建两个Account对象
+      var account1 = new Account("Zhou Jing");
       var account2 = new Account("Logan Brown"); 
 
-      // display initial value of name for each Account
-      System.out.printf("account1 name is: %s%n", account1.getName());
-      System.out.printf("account2 name is: %s%n", account2.getName());
+      // 显示每个Account对象的初始name值
+      System.out.printf("account1中的姓名是: %s%n", account1.getName());
+      System.out.printf("account2中的姓名是: %s%n", account2.getName());
    } 
 } 
 

@@ -1,18 +1,18 @@
 // 图8.1: Account.java
-// Account class with a name instance variable 
-// and methods to set and get its value.
+// Account类具有一个name实例变量，
+// 以及用于赋值和取值的实例方法。
 
 public class Account {
-   private String name; // instance variable
+   private String name; // 实例变量
  
-   // method to set the name        
+   // name的赋值方法（也称为set方法或setter）
    public void setName(String name) {            
-      this.name = name; // store the name
+      this.name = name; // 存储name
    }
 
-   // method to retrieve the name    
+   // name的取值方法（也称为get方法或getter）
    public String getName() {                        
-      return name; // return value of name to caller
+      return name; // 向调用者返回name的值
    }                                                
 } 
 

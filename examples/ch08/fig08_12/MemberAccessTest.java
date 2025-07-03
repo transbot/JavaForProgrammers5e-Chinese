@@ -1,12 +1,12 @@
 // 图8.12: MemberAccessTest.java
-// Private members of class Time1 are not accessible.
+// 不能从外部访问Time1类的私有成员
 public class MemberAccessTest {
    public static void main(String[] args) {
-      var time = new Time1(); // create and initialize Time1 object
+      var time = new Time1(); // 创建并初始化一个Time1对象
 
-      time.hour = 7; // error: hour has private access in Time1     
-      time.minute = 15; // error: minute has private access in Time1
-      time.second = 30; // error: second has private access in Time1
+      time.hour = 7;    // 错误: hour是Time1私有的
+      time.minute = 15; // 错误: minute是Time1私有的
+      time.second = 30; // 错误: second是Time1私有的
    } 
 } 
 

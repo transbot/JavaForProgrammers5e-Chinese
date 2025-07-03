@@ -1,38 +1,38 @@
 // 图8.21: Employee.java
-// static variable used to maintain a count of the number of 
-// Employee objects in memory.
+// 用静态变量维护内存中
+// Employee对象的计数
 
 public class Employee {
-   private static int count = 0; // number of Employees created
+   private static int count = 0; // 已创建的Employee对象数量
    private String firstName;
    private String lastName;
 
-   // initialize Employee, add 1 to static count and output 
-   // a String indicating that the constructor was called
+   // 初始化Employee对象，静态count递增1，并输出
+   // 一个字符串来证明构造函数已被调用
    public Employee(String firstName, String lastName) {
       this.firstName = firstName;
       this.lastName = lastName;
 
-      ++count; // increment static count of employees
-      System.out.printf("Employee constructor: %s %s; count = %d%n",
+      ++count; // 递增员工的静态count
+      System.out.printf("Employee构造函数: %s %s; count = %d%n",
          firstName, lastName, count);
    } 
 
-   // get first name
+   // 获取名字
    public String getFirstName() {
       return firstName; 
    } 
 
-   // get last name
+   // 获取姓氏
    public String getLastName() {
       return lastName; 
    } 
 
-   // static method to get static count value
+   // 静态方法用于获取静态count的值
    public static int getCount() {            
       return count;                          
    }
-} 
+}
 
 /**************************************************************************
  * (C) Copyright 1992-2025 by Deitel & Associates, Inc. and               *

@@ -1,5 +1,5 @@
 // 图8.15: Time2Test.java
-// Overloaded constructors used to initialize Time2 objects.
+// 使用重载构造函数初始化多个Time2对象
 
 public class Time2Test {
    public static void main(String[] args) {
@@ -9,29 +9,29 @@ public class Time2Test {
       var t4 = new Time2(12, 25, 42); // 12:25:42
       var t5 = new Time2(t4); // 12:25:42        
 
-      System.out.println("Constructed with:");
-      displayTime("t1: all default arguments", t1);
-      displayTime("t2: hour specified; default minute and second", t2);
-      displayTime("t3: hour and minute specified; default second", t3);
-      displayTime("t4: hour, minute and second specified", t4);
-      displayTime("t5: Time2 object t4 specified", t5);
+      System.out.println("构造结果：");
+      displayTime("t1: 全部使用默认参数", t1);
+      displayTime("t2: 指定小时；默认分钟和秒", t2);
+      displayTime("t3: 指定小时和分钟；默认秒", t3);
+      displayTime("t4: 指定小时、分钟和秒", t4);
+      displayTime("t5: 指定Time2对象t4", t5);
 
-      // attempt to initialize t6 with invalid values
+      // 尝试用非法值初始化t6
       try {
-         var t6 = new Time2(27, 74, 99); // invalid values
+         var t6 = new Time2(27, 74, 99); // 非法值
       } 
       catch (IllegalArgumentException e) {
-         System.out.printf("%nException while initializing t6: %s%n",
+         System.out.printf("%n初始化t6时发生异常: %s%n",
             e.getMessage());
       } 
    } 
 
-   // displays a Time2 object in 24-hour and 12-hour formats
+   // 以24小时制和12小时制格式显示Time2对象
    private static void displayTime(String header, Time2 t) {
       System.out.printf("%s%n   %s%n   %s%n",
          header, t.toUniversalString(), t.toString());
    } 
-} 
+}
 
 
 

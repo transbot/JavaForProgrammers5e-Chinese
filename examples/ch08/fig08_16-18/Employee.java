@@ -1,5 +1,5 @@
 // 图8.17: Employee.java
-// Employee class with references to other objects.
+// Employee类包含对其他对象的引用
 
 public class Employee {
    private String firstName;
@@ -7,7 +7,7 @@ public class Employee {
    private Date birthDate;
    private Date hireDate; 
 
-   // constructor to initialize name, birth date and hire date
+   // 初始化姓名、生日和入职日期的构造函数   
    public Employee(String firstName, String lastName, Date birthDate, 
       Date hireDate) {
       this.firstName = firstName;
@@ -16,9 +16,9 @@ public class Employee {
       this.hireDate = hireDate;
    } 
 
-   // convert Employee to String format
+   // 将Employee转换为字符串
    public String toString() {
-      return String.format("%s, %s  Hired: %s  Birthday: %s", 
+      return String.format("%s, %s  入职: %s  生日: %s", 
          lastName, firstName, hireDate, birthDate);
    } 
 } 

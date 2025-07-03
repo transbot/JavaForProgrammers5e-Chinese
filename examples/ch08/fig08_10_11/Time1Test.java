@@ -1,38 +1,38 @@
 // 图8.11: Time1Test.java
-// Time1 object used in an app.
+// 在应用程序中使用Time1对象
 
 public class Time1Test {
    public static void main(String[] args) {
-      // create and initialize a Time1 object
-      var time = new Time1(); // invokes Time1 constructor
+      // 创建并初始化Time1对象
+      var time = new Time1(); // 调用Time1构造函数
 
-      // output string representations of the time
-      displayTime("After time object is created", time);
+      // 输出时间的字符串表示形式
+      displayTime("time对象创建后", time);
       System.out.println(); 
 
-      // change time and output updated time 
+      // 修改时间并输出更新后的时间
       time.setTime(13, 27, 6); 
-      displayTime("After calling setTime", time);
+      displayTime("调用setTime方法后", time);
       System.out.println(); 
 
-      // attempt to set time with invalid values
+      // 尝试设置非法时间值
       try {
-         time.setTime(99, 99, 99); // all values out of range
+         time.setTime(99, 99, 99); // 所有值均超出有效范围
       } 
       catch (IllegalArgumentException e) {
-         System.out.printf("Exception: %s%n%n", e.getMessage());
+         System.out.printf("异常：%s%n%n", e.getMessage());
       } 
 
-      // display time after attempt to set invalid values
-      displayTime("After calling setTime with invalid values", time);
+      // 设置非法值后显示时间
+      displayTime("使用无效值调用setTime后", time);
    } 
 
-   // displays a Time1 object in 24-hour and 12-hour formats
+   // 以24小时制和12小时制显示Time1对象
    private static void displayTime(String header, Time1 t) {
-      System.out.printf("%s%nUniversal time: %s%nStandard time: %s%n",
+      System.out.printf("%s%n世界时间：%s%n标准时间：%s%n",
          header, t.toUniversalString(), t.toString());
    } 
-} 
+}
 
 
 

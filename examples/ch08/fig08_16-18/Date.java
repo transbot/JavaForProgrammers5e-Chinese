@@ -1,48 +1,48 @@
 // 图8.16: Date.java 
-// Date class declaration.
+// Date类声明
 
 public class Date {
-   private int month; // 1-12
-   private int day; // 1-31 based on month
-   private int year; // any year
+   private int month; // 1~12
+   private int day;   // 1~31，具体视月份而定
+   private int year;  // 任意年份
 
    private static final int[] daysPerMonth = 
       {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
    
-   // constructor: confirm proper value for month and day given the year
+   // 构造函数：在给定年份下，确认月份和日期的值是否合法
    public Date(int month, int day, int year) {
-      // check if month in range
+      // 检查月份是否在有效范围内
       if (month <= 0 || month > 12) {
          throw new IllegalArgumentException(
-            "month (" + month + ") must be 1-12");
+            "月份(" + month + ")必须是1~12");
       }
 
-      // check if day in range for month
+      // 检查日期是否在该月份的有效范围内
       if (day <= 0 || 
          (day > daysPerMonth[month] && !(month == 2 && day == 29))) {
-         throw new IllegalArgumentException("day (" + day + 
-            ") out-of-range for the specified month and year");
+         throw new IllegalArgumentException("日期(" + day + 
+            ")超出指定月份和年份的有效范围");
       }
 
-      // check for leap year if month is 2 and day is 29
+      // 如果是2月29日，检查是否为闰年
       if (month == 2 && day == 29 && !(year % 400 == 0 || 
            (year % 4 == 0 && year % 100 != 0))) {
-         throw new IllegalArgumentException("day (" + day +
-            ") out-of-range for the specified month and year");
+         throw new IllegalArgumentException("日期(" + day +
+            ")超出指定月份和年份的有效范围");
       }
    
       this.month = month;
       this.day = day;
       this.year = year;
 
-      System.out.printf("Date object constructor for date %s%n", this);
+      System.out.printf("Date对象的构造函数，日期为%s%n", this);
    } 
    
-   // return a String of the form month/day/year
+   // 返回格式为“月/日/年”的字符串
    public String toString() {
       return String.format("%d/%d/%d", month, day, year); 
    } 
-} 
+}
 
 
 
