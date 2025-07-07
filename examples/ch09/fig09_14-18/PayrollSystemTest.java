@@ -1,34 +1,34 @@
 // 图9.18: PayrollSystemTest.java
-// Processing Employees with various CompensationModels.
+// 使用多种CompensationModel来处理Employee
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class PayrollSystemTest {
    public static void main(String[] args) {
-      // create CompensationModels and Employees
+      // 创建不同的CompensationModel和Employee
       var salaried = new Salaried(new BigDecimal("1000.00"));
-      var salariedEmployee = new Employee("Sierra Dembo", salaried);
+      var salariedEmployee = new Employee("殷离", salaried);
 
       var commission = new Commission(
          new BigDecimal("10000.00"), new BigDecimal("0.06"));
-      var commissionEmployee = new Employee("James Davis", commission);
+      var commissionEmployee = new Employee("郭襄", commission);
 
-      // create and initialize array of Employees
+      // 创建并初始化Employee数组
       Employee[] employees = {salariedEmployee, commissionEmployee}; 
 
-      // print each Employee's information and earnings 
+      // 打印每个Employee的信息和实际收入
       for (Employee employee : employees) {
-         // if Salaried CompensationModel, increase salary by 10%
+         // 如果是Salaried模型，就加薪10%
          if (employee.getCompensationModel() instanceof Salaried s) {
             BigDecimal newSalary = 
                s.getSalary().multiply(new BigDecimal("1.10"));
 
-            // inject new CompensationModel
+            // 注入新的CompensationModel
             employee.setCompensationModel(new Salaried(
                newSalary.setScale(2, RoundingMode.HALF_EVEN))); 
          }
 
-         System.out.printf("%s%nearned: $%s%n%n", employee,
+         System.out.printf("%s%n实际收入: $%s%n%n", employee,
             employee.calculateEarnings().setScale(
                2, RoundingMode.HALF_EVEN));
       }

@@ -1,24 +1,24 @@
 // 图9.2: SalariedEmployeeTest.java
-// SalariedEmployee class test program.
+// SalariedEmployee类的测试程序  
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class SalariedEmployeeTest {
    public static void main(String[] args) {
-      // instantiate SalariedEmployee object
+      // 实例化SalariedEmployee对象
       var employee = new SalariedEmployee(
-         "Sierra Dembo", new BigDecimal("1000.00"));       
+         "殷离", new BigDecimal("1000.00"));       
       
-      // get SalariedEmployee data
-      System.out.println("Employee information obtained by get methods:");
-      System.out.printf("name: %s%nsalary: $%s%n", employee.getName(),
+      // 获取SalariedEmployee数据
+      System.out.println("通过取值方法获得的员工信息:");
+      System.out.printf("姓名: %s%n周薪: $%s%n", employee.getName(),
          employee.getSalary().setScale(2, RoundingMode.HALF_EVEN));
 
-      employee.setSalary(new BigDecimal("1200.00")); // change salary
+      employee.setSalary(new BigDecimal("1200.00")); // 用赋值方法修改周薪
       
-      // display updated information and calculate and display earnings
-      System.out.printf("%n%s:%n%s%n%nearnings: $%s%n",
-         "Updated employee information obtained by toString", employee,
+      // 计算并显示更新后的实际收入
+      System.out.printf("%n%s:%n%s%n%n实际收入: $%s%n",
+         "通过toString方法获得更新后的员工信息", employee,
          employee.calculateEarnings().setScale(
             2, RoundingMode.HALF_EVEN));
    } 

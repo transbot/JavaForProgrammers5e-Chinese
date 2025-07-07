@@ -1,28 +1,28 @@
 // 图9.13: PayableInterfaceTest.java
-// Payable interface test program processing Invoices and 
-// Employees polymorphically.
+// Payable接口测试程序多态地
+// 处理发票和员工对象
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class PayableInterfaceTest {
    public static void main(String[] args) {
-      // create four-element Payable array
+      // 创建包含4个元素的Payable数组payableObjects
       Payable[] payableObjects = {
-         new Invoice("01234", "seat", 2, new BigDecimal("375.00")),
-         new Invoice("56789", "tire", 4, new BigDecimal("79.95")),
-         new SalariedEmployee("Lorena Silva", new BigDecimal("1200.00")),
-         new SalariedEmployee("Hans Olsen", new BigDecimal("800.00"))
+         new Invoice("01234", "座椅", 2, new BigDecimal("375.00")),
+         new Invoice("56789", "轮胎", 4, new BigDecimal("79.95")),
+         new SalariedEmployee("纪晓芙", new BigDecimal("1200.00")),
+         new SalariedEmployee("谢逊", new BigDecimal("800.00"))
       };
 
       System.out.println(
-         "Invoices and Employees processed polymorphically:\n"); 
+         "多态地处理发票和员工的应付金额:\n"); 
 
-      // generically process each element in array payableObjects
+      // 泛化地处理payableObjects数组中的每个元素
       for (Payable currentPayable : payableObjects) {
-         // output currentPayable and its appropriate payment amount
-         System.out.printf("%s:%n%s %npayment due: $%s%n%n", 
+         // 输出currentPayable及其对应的应付款
+         System.out.printf("%s:%n%s %n应付金额: $%s%n%n", 
             currentPayable.getClass().getName(),
-            currentPayable.toString(), // could invoke implicitly
+            currentPayable.toString(), // 可以隐式调用
             currentPayable.calculatePayment().setScale(
                2, RoundingMode.HALF_EVEN)); 
       } 

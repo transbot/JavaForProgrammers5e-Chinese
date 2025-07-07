@@ -1,9 +1,9 @@
 // 图9.10: Payable.java
-// Payable interface declaration.
+// Payable接口声明
 import java.math.BigDecimal;
 
 public interface Payable {
-   public abstract BigDecimal calculatePayment(); // no implementation
+   public abstract BigDecimal calculatePayment(); // 不提供实现
 }
 
 /**************************************************************************

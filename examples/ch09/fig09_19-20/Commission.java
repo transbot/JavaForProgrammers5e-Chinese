@@ -1,45 +1,45 @@
 // 图9.17: Commission.java
-// Commission implements the CompensationModel interface.
+// Commission实现了CompensationModel接口
 import java.math.BigDecimal;
 
 public final class Commission implements CompensationModel {
    private BigDecimal grossSales;
    private BigDecimal commissionRate;
 
-   // constructor 
+   // 构造函数 
    public Commission(BigDecimal grossSales, BigDecimal commissionRate) {
-      // if grossSales is invalid throw exception
+      // 销售额无效则抛出异常
       if (grossSales.compareTo(BigDecimal.ZERO) < 0) { 
-         throw new IllegalArgumentException("gross sales must be >= 0.0");
+         throw new IllegalArgumentException("销售额必须 >= 0.0");
       }   
 
-      // if commissionRate is invalid throw exception
+      // 提成比例无效则抛出异常
       if (commissionRate.compareTo(BigDecimal.ZERO) <= 0 || 
           commissionRate.compareTo(BigDecimal.ONE) >= 0) { 
          throw new IllegalArgumentException(
-            "commission rate must be > 0.0 and < 1.0");
+            "提成比例必须 > 0.0 且 < 1.0");
       }   
 
       this.grossSales = grossSales;
       this.commissionRate = commissionRate;
    }
 
-   // return the grossSales
+   // 返回销售额
    public BigDecimal getGrossSales() {return grossSales;}
 
-   // return the commissionRate
+   // 返回提成比例
    public BigDecimal getCommissionRate() {return commissionRate;}
 
-   // override CompensationModel abstract method calculateEarnings
+   // 重写CompensationModel的抽象方法calculateEarnings
    @Override
    public BigDecimal calculateEarnings() {
       return grossSales.multiply(commissionRate);
    }
 
-   // override Object method toString  
+   // 重写Object的toString方法  
    @Override
    public String toString() {
-      return String.format("gross sales: $%s; commission rate: %s", 
+      return String.format("销售额: $%s; 提成比例: %s", 
          grossSales, commissionRate);
    }
 }

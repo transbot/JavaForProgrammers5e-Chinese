@@ -1,41 +1,42 @@
 // 图9.7: SalariedEmployee.java
-// SalariedEmployee concrete class extends abstract class Employee.
+// SalariedEmployee具体类扩展了抽象类Employee
 import java.math.BigDecimal;
 
 public class SalariedEmployee extends Employee {
-   private BigDecimal salary; // fixed weekly Salary       
+   private BigDecimal salary; // 固定周薪
 
-   // constructor                                
+   // 构造函数
    public SalariedEmployee(String name, BigDecimal salary) {
       super(name); 
 
-      // if salary is invalid throw exception
+      // 如果周薪无效则抛出异常
       if (salary.compareTo(BigDecimal.ZERO) < 0) { 
-         throw new IllegalArgumentException("salary must be >= 0.0");
+         throw new IllegalArgumentException("工资必须 >= 0.0");
       }   
 
       this.salary = salary;                                    
    } 
 
-   // set salary amount
+   // 设置周薪金额
    public void setSalary(BigDecimal salary) {
       if (salary.compareTo(BigDecimal.ZERO) < 0) { 
-         throw new IllegalArgumentException("salary must be >= 0.0");
+         throw new IllegalArgumentException("工资必须 >= 0.0");
       }
 
       this.salary = salary;
    } 
 
-   // return salary amount
+   // 返回周薪金额
    public BigDecimal getSalary() {return salary;}
 
-   // calculate earnings
+   // 计算实际收入
+   @Override
    public BigDecimal calculateEarnings() {return getSalary();}
 
-   // return String representation of SalariedEmployee object         
-   @Override // indicates that this method overrides a superclass method
+   // 返回SalariedEmployee对象的字符串表示形式
+   @Override // 表示该方法重写了超类的方法
    public String toString() {                                           
-      return String.format("%s%nsalary: $%s", 
+      return String.format("%s%n周薪: $%s", 
          super.toString(), getSalary());
    }
 } 

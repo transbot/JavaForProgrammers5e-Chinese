@@ -1,49 +1,49 @@
 // 图9.5: PolymorphismTest.java
-// Assigning superclass and subclass references to superclass and
-// subclass variables.
+// 将超类和子类引用赋给
+// 超类变量和子类变量
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class PolymorphismTest {
    public static void main(String[] args) {
-      // assign superclass reference to superclass variable 
+      // 将超类引用赋给超类变量
       var salariedEmployee = new SalariedEmployee("Sierra Dembo", 
          new BigDecimal("1000.00"));       
 
-      // assign subclass reference to subclass variable      
+      // 将子类引用赋给子类变量
       var salariedCommissionEmployee = new SalariedCommissionEmployee(
-         "James Davis", new BigDecimal("500.00"), 
+         "郭襄", new BigDecimal("500.00"), 
          new BigDecimal("10000.00"), new BigDecimal("0.04"));
 
-      // invoke toString on superclass object using superclass variable
+      // 使用超类变量调用超类对象的toString方法
       System.out.printf(""" 
-         Call SalariedEmployee's toString and calculateEarnings 
-         methods with superclass reference to superclass object:
+         使用指向超类对象的超类引用调用SalariedEmployee的
+         toString和calculateEarnings方法：
          %s
-         earnings: $%s%n%n""", salariedEmployee,
+         实际地收入: $%s%n%n""", salariedEmployee,
          salariedEmployee.calculateEarnings().setScale(
             2, RoundingMode.HALF_EVEN));
 
-      // invoke toString on subclass object using subclass variable      
+      // 使用子类变量调用子类对象的toString方法      
       System.out.printf(""" 
-         Call SalariedCommissionEmployee's toString and calculateEarnings
-         methods with subclass reference to subclass object:
+         使用指向子类对象的子类引用调用SalariedCommissionEmployee的
+         toString和calculateEarnings方法：
          %s
-         earnings: $%s%n%n""", salariedCommissionEmployee,
+         实际收入: $%s%n%n""", salariedCommissionEmployee,
          salariedCommissionEmployee.calculateEarnings().setScale(
             2, RoundingMode.HALF_EVEN));
 
-      // invoke toString on subclass object using superclass variable
+      // 使用超类变量调用子类对象的toString方法
       SalariedEmployee salariedEmployee2 = salariedCommissionEmployee;
       System.out.printf(""" 
-         Call SalariedCommissionEmployee's toString and calculateEarnings
-         methods with superclass reference to subclass object:
+         使用指向子类对象的超类引用调用SalariedCommissionEmployee的
+         toString和calculateEarnings方法：
          %s
-         earnings: $%s%n""", salariedEmployee2,
+         收入: $%s%n""", salariedEmployee2,
          salariedEmployee2.calculateEarnings().setScale(
             2, RoundingMode.HALF_EVEN));
    } 
-} 
+}
 
 
 /**************************************************************************

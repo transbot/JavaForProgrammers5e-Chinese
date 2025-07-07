@@ -1,31 +1,31 @@
 // 图9.16: Salaried.java
-// Salaried implements the CompensationModel interface.
+// Salaried实现了CompensationModel接口
 import java.math.BigDecimal;
 
 public final class Salaried implements CompensationModel {
    private BigDecimal salary;
 
-   // constructor 
+   // 构造函数
    public Salaried(BigDecimal salary) {
-      // if salary is invalid throw exception
+      // 工资无效则抛出异常
       if (salary.compareTo(BigDecimal.ZERO) < 0) { 
-         throw new IllegalArgumentException("salary must be >= 0.0");
+         throw new IllegalArgumentException("工资必须 >= 0.0");
       }
 
       this.salary = salary;
    }
 
-   // return the salary
+   // 返回工资
    public BigDecimal getSalary() {return salary;}
 
-   // override CompensationModel abstract method calculateEarnings
+   // 重写CompensationModel的抽象方法calculateEarnings
    @Override
    public BigDecimal calculateEarnings() {return salary;}
 
-   // override Object method toString  
+   // 重写Object的toString方法
    @Override
    public String toString() {
-      return String.format("salary: $%s", salary);
+      return String.format("工资: $%s", salary);
    }
 }
 

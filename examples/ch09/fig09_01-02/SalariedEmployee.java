@@ -1,49 +1,49 @@
 // 图9.1: SalariedEmployee.java
-// SalariedEmployee class represents an employee paid a fixed salary.
+// SalariedEmployee类代表固定周薪制员工
 import java.math.BigDecimal;
 
 public class SalariedEmployee extends Object {
-   private final String name;                        
-   private BigDecimal salary; // fixed weekly Salary       
+   private final String name; // 姓名                       
+   private BigDecimal salary; // 固定周薪       
 
-   // two-argument constructor                                
+   // 有两个参数的构造函数                                
    public SalariedEmployee(String name, BigDecimal salary) {
-      // implicit call to Object's default constructor occurs here   
+      // 这里隐式调用了Object的默认构造函数   
 
-      // if salary is invalid throw exception
+      // 如果周薪无效则抛出异常
       if (salary.compareTo(BigDecimal.ZERO) < 0) { 
-         throw new IllegalArgumentException("salary must be >= 0.0");
+         throw new IllegalArgumentException("工资必须 >= 0.0");
       }   
 
       this.name = name;                                    
       this.salary = salary;                                    
    } 
 
-   // return name
+   // 返回姓名
    public String getName() {return name;}
 
-   // set salary amount
+   // 设置周薪金额
    public void setSalary(BigDecimal salary) {
       if (salary.compareTo(BigDecimal.ZERO) < 0) { 
-         throw new IllegalArgumentException("salary must be >= 0.0");
+         throw new IllegalArgumentException("周薪必须 >= 0.0");
       }
 
       this.salary = salary;
    } 
 
-   // return salary amount
+   // 返回周薪金额
    public BigDecimal getSalary() {return salary;}
 
-   // calculate earnings
+   // 计算实际收入
    public BigDecimal calculateEarnings() {return getSalary();}
 
-   // return String representation of CommissionEmployee object         
-   @Override // indicates that this method overrides a superclass method
+   // 返回SalariedEmployee对象的字符串表示形式         
+   @Override // 表示该方法重写了超类的方法
    public String toString() {                                           
-      return String.format("name: %s%nsalary: $%s", 
+      return String.format("姓名: %s%n周薪: $%s", 
          getName(), getSalary());
    }
-} 
+}
 
 
 /**************************************************************************

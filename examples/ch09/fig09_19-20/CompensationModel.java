@@ -1,10 +1,12 @@
 // 图9.19: CompensationModel.java
-// sealed CompensationModel interface defining method calculateEarnings.
+// 密封的CompensationModel接口定义了calculateEarnings方法
 import java.math.BigDecimal;
 
 public sealed interface CompensationModel permits Salaried, Commission {
    public abstract BigDecimal calculateEarnings(); 
 }
+
+
 
 
 

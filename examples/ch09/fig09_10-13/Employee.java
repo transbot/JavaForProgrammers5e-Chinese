@@ -1,25 +1,25 @@
 // 图9.12: Employee.java
-// Employee abstract superclass that implements interface Payable.
+// 实现了Payable接口的Employee抽象超类
 import java.math.BigDecimal;
 
 public abstract class Employee implements Payable {
    private final String name;
 
-   // constructor
+   // 构造函数
    public Employee(String name) {this.name = name;}
 
-   // return name
+   // 返回姓名
    public String getName() {return name;}
 
-   // return String representation of Employee object
+   // 返回Employee对象的字符串表示形式
    @Override
-   public String toString() {return String.format("name: %s", getName());}
+   public String toString() {return String.format("姓名: %s", getName());}
 
-   // abstract method must be overridden by concrete subclasses
-   public abstract BigDecimal calculateEarnings(); // no implementation
+   // 抽象方法必须由具体子类重写   
+   public abstract BigDecimal calculateEarnings(); // 不提供实现
 
-   // implementing calculatePayment here enables the entire Employee
-   // class hierarchy to be used in an app that processes Payables  
+   // 在这里实现calculatePayment方法   使得整个Employee
+   // 类层次结构可以在处理Payable对象的应用程序中使用   
    @Override
    public BigDecimal calculatePayment() {return calculateEarnings();}            
 } 

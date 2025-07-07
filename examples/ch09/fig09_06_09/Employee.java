@@ -1,22 +1,22 @@
 // 图9.6: Employee.java
-// Employee abstract superclass.
+// Employee抽象超类
 import java.math.BigDecimal;
 
 public abstract class Employee {
    private final String name;
 
-   // constructor
+   // 构造函数
    public Employee(String name) {this.name = name;}
 
-   // return name
+   // 返回姓名
    public String getName() {return name;}
 
-   // return String representation of Employee object
+   // 返回Employee的字符串表示形式
    @Override
-   public String toString() {return String.format("name: %s", getName());}
+   public String toString() {return String.format("姓名: %s", getName());}
 
-   // abstract method must be overridden by concrete subclasses
-   public abstract BigDecimal calculateEarnings(); // no implementation
+   // 抽象方法必须由具体的子类重写
+   public abstract BigDecimal calculateEarnings(); // 不提供实现
 } 
 
 

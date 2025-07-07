@@ -1,39 +1,38 @@
 // 图9.15: Employee.java
-// An Employee "has a" CompensationModel.
+// Employee与CompensationModel是"有一个"（has-a）关系
 import java.math.BigDecimal;
 
 public final class Employee {
    private final String name;
-   private CompensationModel model;
+   private CompensationModel model; // has-a关系
 
-   // constructor performs "constructor injection" to initialize  
-   // the model reference to a CompensationModel implementation 
+   // 传入一个对CompensationModel实现的引用，
+   // 从而通过“构造器注入”（constructor injection）来初始化模型
    public Employee(String name, CompensationModel model) {
       this.name = name;
-      this.model = model;
+      this.model = model; // 构造器注入
    }
 
-   // set method performs "property injection" to change the   
-   // model to a new CompensationModel implementation 
+   // 赋值方法（setter）执行“属性注入”（property injection）操作
+   // 将模型替换为新的CompensationModel实现
    public void setCompensationModel(CompensationModel model) {
-      this.model = model;
+      this.model = model; // 属性注入
    }
 
-   // return the current CompensationModel 
+   // 返回当前的CompensationModel实例
    public CompensationModel getCompensationModel() {return model;}
 
-   // use the CompensationModel to calculate the Employee's earnings
+   // 使用CompensationModel计算员工收入
    public BigDecimal calculateEarnings() {
       return model.calculateEarnings();
    }
 
-   // return String representation of Employee object 
+   // 返回Employee对象的字符串表示
    @Override
    public String toString() {
       return String.format("%s\n%s", name, model.toString());
    }
 }
-
 
 /**************************************************************************
  * (C) Copyright 1992-2025 by Deitel & Associates, Inc. and               *

@@ -1,24 +1,24 @@
 // 图9.11: Invoice.java
-// Invoice class that implements Payable.
+// 实现了Payable接口的Invoice类
 import java.math.BigDecimal;
 
 public class Invoice implements Payable {
-   private final String partNumber; 
-   private final String partDescription;
-   private final int quantity;
-   private final BigDecimal pricePerItem;
+   private final String partNumber;       // 零件编号
+   private final String partDescription;  // 零件描述
+   private final int quantity;            // 零件数量
+   private final BigDecimal pricePerItem; // 零件单价
 
-   // constructor
+   // 构造函数
    public Invoice(String partNumber, String partDescription, int quantity,
       BigDecimal pricePerItem) {
-      if (quantity < 0) { // validate quantity
-         throw new IllegalArgumentException("Quantity must be >= 0");
+      if (quantity < 0) { // 校验数量
+         throw new IllegalArgumentException("数量必须 >= 0");
       }
 
-      // validate pricePerItem
+      // 校验单价（pricePerItem）
       if (pricePerItem.compareTo(BigDecimal.ZERO) < 0) { 
          throw new IllegalArgumentException(
-            "Price per item must be >= 0");
+            "单价必须 >= 0");
       }
 
       this.quantity = quantity;
@@ -27,25 +27,25 @@ public class Invoice implements Payable {
       this.pricePerItem = pricePerItem;
    } 
 
-   // get methods
+   // 各种取值方法
    public String getPartNumber() {return partNumber;}
    public String getPartDescription() {return partDescription;}
    public int getQuantity() {return quantity;}
    public BigDecimal getPricePerItem() {return pricePerItem;}
 
-   // return String representation of Invoice object
+   // 返回Invoice对象的字符串表示形式
    @Override
    public String toString() {
       return String.format("%s: %s (%s)%n%s: %d%n%s: $%s", 
-         "part number", getPartNumber(), getPartDescription(), 
-         "quantity", getQuantity(), "price per item", getPricePerItem());
+         "零件编号", getPartNumber(), getPartDescription(), 
+         "数量", getQuantity(), "单价", getPricePerItem());
    } 
 
-   // method required to carry out contract with interface Payable     
+   // 实现Payable接口契约所要求的方法   
    @Override                                                           
    public BigDecimal calculatePayment() {                                  
       BigDecimal quantity = new BigDecimal(getQuantity());
-      return quantity.multiply(getPricePerItem()); // calculate total cost
+      return quantity.multiply(getPricePerItem()); // 计算总价
    }
 } 
 

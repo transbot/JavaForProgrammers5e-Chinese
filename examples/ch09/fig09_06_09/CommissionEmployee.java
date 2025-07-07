@@ -1,59 +1,59 @@
 // 图9.8: CommissionEmployee.java
-// CommissionEmployee class extends Employee.
+// CommissionEmployee具体类扩展了抽象类Employee
 import java.math.BigDecimal;
 
 public class CommissionEmployee extends Employee {
-   private BigDecimal grossSales; // gross weekly sales
-   private BigDecimal commissionRate; // commission percentage
+   private BigDecimal grossSales;     // 销售额
+   private BigDecimal commissionRate; // 提成比例
 
-   // constructor
+   // 构造函数
    public CommissionEmployee(String name, 
       BigDecimal grossSales, BigDecimal commissionRate) {
       super(name);
 
-      // if grossSales is invalid throw exception
+      // 如果销售额无效则抛出异常
       if (grossSales.compareTo(BigDecimal.ZERO) < 0) { 
-         throw new IllegalArgumentException("gross sales must be >= 0.0");
+         throw new IllegalArgumentException("销售额必须 >= 0.0");
       }   
 
-      // if commissionRate is invalid throw exception
+      // 如果提成比例无效则抛出异常
       if (commissionRate.compareTo(BigDecimal.ZERO) <= 0 || 
           commissionRate.compareTo(BigDecimal.ONE) >= 0) { 
          throw new IllegalArgumentException(
-            "commission rate must be > 0.0 and < 1.0");
+            "提成比例必须 > 0.0 且 < 1.0");
       }   
 
       this.grossSales = grossSales;
       this.commissionRate = commissionRate;
    } 
 
-   // set gross sales
+   // 设置销售额
    public void setGrossSales(BigDecimal grossSales) {
       if (grossSales.compareTo(BigDecimal.ZERO) < 0) { 
-         throw new IllegalArgumentException("gross sales must be >= 0.0");
+         throw new IllegalArgumentException("销售额必须 >= 0.0");
       }   
 
       this.grossSales = grossSales;                
    } 
 
-   // return gross sales
+   // 返回销售额
    public BigDecimal getGrossSales() {return grossSales;}
 
-   // set commission rate
+   // 设置提成比例
    public void setCommissionRate(BigDecimal commissionRate) {
       if (commissionRate.compareTo(BigDecimal.ZERO) <= 0 || 
           commissionRate.compareTo(BigDecimal.ONE) >= 0) { 
          throw new IllegalArgumentException(
-            "commission rate must be > 0.0 and < 1.0");
+            "提成比例必须 > 0.0 且 < 1.0");
       }   
 
       this.commissionRate = commissionRate;                
    } 
 
-   // return commission rate
+   // 返回提成比例
    public BigDecimal getCommissionRate() {return commissionRate;}
 
-   // calculate earnings
+   // 计算实际收入
    @Override 
    public BigDecimal calculateEarnings() {
       return getGrossSales().multiply(getCommissionRate());
@@ -62,7 +62,7 @@ public class CommissionEmployee extends Employee {
    // return String representation of CommissionEmployee
    @Override
    public String toString() {
-      return String.format("%s%ngross sales: $%s%ncommission rate: %s", 
+      return String.format("%s%n销售额: $%s%n提成比例: %s", 
          super.toString(), getGrossSales(), getCommissionRate()); 
    } 
 } 
