@@ -1,20 +1,20 @@
 // 图10.6: AssertTest.java
-// Checking with assert that a value is within range
+// 使用assert来判断值是否在范围内
 import java.util.Scanner;
 
 public class AssertTest {
    public static void main(String[] args) {
       var input = new Scanner(System.in);
       
-      System.out.print("Enter a number between 0 and 10: ");
+      System.out.print("请输入0到10之间的数字: ");
       int number = input.nextInt();
       
-      // assert that the value is >= 0 and <= 10
-      assert (number >= 0 && number <= 10) : "bad number: " + number;
+      // 断言该值>=0且<=10
+      assert (number >= 0 && number <= 10) : "输入错误: " + number;
       
-      System.out.printf("You entered %d%n", number);
+      System.out.printf("您输入的是%d%n", number);
    } 
-} 
+}
 
 
 /**************************************************************************

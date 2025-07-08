@@ -1,24 +1,24 @@
 // 图10.1: DivideByZeroNoExceptionHandling.java
-// Integer division without exception handling.
+// 未进行异常处理的整数除法
 import java.util.Scanner;
 
 public class DivideByZeroNoExceptionHandling {
-   // demonstrates throwing an exception when a divide-by-zero occurs
+   // 当发生除零异常时抛出异常
    public static int quotient(int numerator, int denominator) {
-      return numerator / denominator; // possible division by zero
+      return numerator / denominator; // 可能发生除数为零的情况
    } 
 
    public static void main(String[] args) {
       var input = new Scanner(System.in); 
 
-      System.out.print("Enter an integer numerator: ");
+      System.out.print("请输入一个整数分子: ");
       int numerator = input.nextInt();
-      System.out.print("Enter an integer denominator: ");
+      System.out.print("请输入一个整数分母: ");
       int denominator = input.nextInt();
 
       int result = quotient(numerator, denominator);
       System.out.printf(
-         "%nResult: %d / %d = %d%n", numerator, denominator, result);
+         "%n结果: %d / %d = %d%n", numerator, denominator, result);
    }
 }
 

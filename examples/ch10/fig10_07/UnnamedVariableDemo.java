@@ -1,14 +1,14 @@
 // 图10.7: UnnamedVariableDemo.java
-// Using _ where a variable name is required.
+// 在需要变量名的地方使用_
 public class UnnamedVariableDemo {
    public static void main(String[] args) {
       int[] array = {1, 2, 3, 4, 5};
 
       try {
-         int value = array[10]; // index 10 is out of bounds
+         int value = array[10]; // 索引10超出范围
       }
       catch (ArrayIndexOutOfBoundsException _) {
-         System.out.println("Index out of range");
+         System.out.println("索引越界");
       }
    }
 }

@@ -1,46 +1,46 @@
 // 图10.2: DivideByZeroWithExceptionHandling.java
-// Handling ArithmeticExceptions and InputMismatchExceptions.
+// 处理ArithmeticException和InputMismatchException异常
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class DivideByZeroWithExceptionHandling {
-   // demonstrates throwing an exception when a divide-by-zero occurs
+   // 当发生除零异常时抛出异常
    public static int quotient(int numerator, int denominator)
       throws ArithmeticException {
-      return numerator / denominator; // possible division by zero
+      return numerator / denominator; // 可能发生除数为零的情况
    } 
 
    public static void main(String[] args) {
       var input = new Scanner(System.in); 
-      boolean continueLoop = true; // determines if more input is needed
+      boolean continueLoop = true; // 判断是否需要继续输入
 
       while (continueLoop) {
-         try { // read two numbers and calculate quotient                 
-            System.out.print("Enter an integer numerator: ");    
+         try { // 读取两个数字并计算商                 
+            System.out.print("请输入一个整数分子: ");    
             int numerator = input.nextInt();                            
-            System.out.print("Enter an integer denominator: ");  
+            System.out.print("请输入一个整数分母: ");  
             int denominator = input.nextInt();                          
       
             int result = quotient(numerator, denominator);              
-            System.out.printf("%nResult: %d / %d = %d%n", numerator,     
+            System.out.printf("%n结果: %d / %d = %d%n", numerator,     
                denominator, result);                                     
-            continueLoop = false; // input successful; end looping        
+            continueLoop = false; // 输入成功，结束循环        
          }
          catch (InputMismatchException inputMismatchException) {        
-            System.err.printf("%nException: %s%n",                       
+            System.err.printf("%n异常: %s%n",                       
                inputMismatchException);                                  
-            input.nextLine(); // discard input so user can try again
+            input.nextLine(); // 丢弃输入以便用户重试
             System.out.printf(                                          
-               "You must enter integers. Try again.%n%n");          
+               "必须输入整数。请重试。%n%n");          
          }                                                              
          catch (ArithmeticException arithmeticException) {              
-            System.err.printf("%nException: %s%n", arithmeticException);
+            System.err.printf("%n异常: %s%n", arithmeticException);
             System.out.printf(                                          
-               "Zero is an invalid denominator. Try again.%n%n");   
+               "分母不能为零。请重试。%n%n");   
          }
       }
    } 
-} 
+}
 
 
 /**************************************************************************
