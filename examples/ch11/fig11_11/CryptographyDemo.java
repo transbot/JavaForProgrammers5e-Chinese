@@ -1,6 +1,6 @@
 // 图11.11: CryptographyDemo.java
-// Encrypting and decrypting messages with AES, and 
-// using RSA to encrypt and decrypt the AES secret key.
+// 使用AES加密和解密消息，并
+// 使用RSA来加密和解密AES密钥
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
@@ -17,132 +17,132 @@ public class CryptographyDemo {
    public static void main(String[] args) {
       var scanner = new Scanner(System.in);
 
-      System.out.println("Enter the text to encrypt:");
+      System.out.println("请输入要加密的文本:");
       String plaintext = scanner.nextLine();
 
       System.out.println(
-         "\nEnter the secret key seed (for reproducibility):");
+         "\n请输入密钥种子(用于重现):");
       String seedString = scanner.nextLine();
 
-      try { // encryption/decryption might throw exceptions
-         // generate a reproducible AES key from the seedString
+      try { // 加密/解密可能抛出异常
+         // 从seedString生成可重现的AES密钥
          SecretKey secretKey = generateKey(seedString);
-         System.out.printf("%nSecretKey:%n%s%n", 
+         System.out.printf("%n生成的密钥:%n%s%n", 
             Base64.getEncoder().encodeToString(secretKey.getEncoded()));
 
-         // AES encrypt the plaintext
+         // AES加密明文
          String ciphertext = encrypt(plaintext, secretKey);
-         System.out.printf("%nEncrypted message:%n%s%n", ciphertext);
+         System.out.printf("%n加密后的结果:%n%s%n", ciphertext);
 
-         // generate RSA key pair -- normally done by message receiver
+         // 生成RSA密钥对——通常由消息接收方完成
          var keyPairGenerator = KeyPairGenerator.getInstance("RSA");
-         keyPairGenerator.initialize(2048); // set key size to 2048 bits
+         keyPairGenerator.initialize(2048); // 设置密钥大小为2048位
          KeyPair rsaKeyPair = keyPairGenerator.generateKeyPair();
 
-         // get RSA public and private keys -- recipient sends the  
-         // public key to anyone who needs to send them something securely
+         // 获取RSA公钥和私钥——接收方将公钥
+         // 发送给需要安全通信的任何人
          PublicKey publicKey = rsaKeyPair.getPublic();
          PrivateKey privateKey = rsaKeyPair.getPrivate();
 
-         // encrypt the AES secret key with the RSA public key;
-         // this would be sent to recipient with the encrypted message
+         // 使用RSA公钥加密AES密钥；
+         // 此密钥将与加密消息一起发送给接收方
          String encryptedAESKey = 
             encryptRSA(secretKey.getEncoded(), publicKey);
          System.out.printf(
-            "%nRSA Encrypted AES SecretKey:%n%s%n", encryptedAESKey);
+            "%nRSA加密的AES密钥:%n%s%n", encryptedAESKey);
 
-         // receiver decrypts AES secret key using RSA private key
+         // 接收方使用RSA私钥解密AES密钥
          SecretKey decryptedSecretKey = 
             decryptRSA(encryptedAESKey, privateKey);
-         System.out.printf("%nDecrypted AES SecretKey:%n%s%n", 
+         System.out.printf("%n解密后的AES密钥:%n%s%n", 
             Base64.getEncoder().encodeToString(
                decryptedSecretKey.getEncoded()));
 
-         // AES decrypt the text
-         System.out.printf("%nDecrypted:%n%s%n", 
+         // AES解密文本
+         System.out.printf("%n解密后的结果:%n%s%n", 
             decrypt(ciphertext, decryptedSecretKey));
       }
       catch (Exception ex) { 
          System.out.printf("""
-            An exception occurred during encryption/decryption:
+            加密/解密过程中发生异常:
             %s%n
             """, ex);
       }
    }
 
-   // Generate and return a SecretKey. Note: We are seeding a 
-   // SecureRandom object for reproducibility so you get the same results 
-   // we show in this program's output. Don't do this in production code.
+   // 生成并返回SecretKey。注意：这里考虑到可重现性，
+   // 为SecureRandom设置了固定的种子，以便解密本章的加密文本。
+   // 在生产代码中，绝对不要这样做！
    public static SecretKey generateKey(String seed) throws Exception {
-      // get a secure random number generator
+      // 获取安全的随机数生成器
       var random = SecureRandom.getInstance("SHA1PRNG");
-      random.setSeed(seed.getBytes()); // for demo reproducibility
+      random.setSeed(seed.getBytes()); // 为了演示可重现性
 
-      // get an AES SecretKey generator
+      // 获取AES密钥生成器
       var keyGen = KeyGenerator.getInstance("AES");
-      keyGen.init(256, random); // set up for 256-bit keys
-      return keyGen.generateKey(); // generate and return new SecretKey
+      keyGen.init(256, random); // 设置为256位密钥
+      return keyGen.generateKey(); // 生成并返回新的SecretKey
    }
 
-   // encrypt a String using AES
+   // 使用AES加密字符串
    public static String encrypt(
       String plaintext, SecretKey secretKey) throws Exception {
 
-      var cipher = Cipher.getInstance("AES"); // get a Cipher object
-      cipher.init(Cipher.ENCRYPT_MODE, secretKey); // configure to encrypt
+      var cipher = Cipher.getInstance("AES"); // 获取Cipher对象
+      cipher.init(Cipher.ENCRYPT_MODE, secretKey); // 配置为加密模式
 
-      // encrypt the byte[] representation of plaintext
+      // 加密明文的字节数组表示
       byte[] encrypted = cipher.doFinal(plaintext.getBytes());
 
-      // Base64 encode encrypted as a ciphertext String and return 
+      // 将加密结果Base64编码为密文字符串并返回 
       return Base64.getEncoder().encodeToString(encrypted);
    }
 
-   // decrypt an AES-encrypted String
+   // 解密AES加密的字符串
    public static String decrypt(
       String ciphertext, SecretKey secretKey) throws Exception {
 
-      var cipher = Cipher.getInstance("AES"); // get a Cipher object
-      cipher.init(Cipher.DECRYPT_MODE, secretKey); // configure to decrypt
+      var cipher = Cipher.getInstance("AES"); // 获取Cipher对象
+      cipher.init(Cipher.DECRYPT_MODE, secretKey); // 配置为解密模式
 
-      // Base64 decode ciphertext to byte array  
+      // 将密文Base64解码为字节数组  
       byte[] ciphertextBytes = Base64.getDecoder().decode(ciphertext);
 
-      // create plaintext String from ciphertextBytes and return it
+      // 从密文字节数组创建明文字符串并返回
       return new String(cipher.doFinal(ciphertextBytes));
    }
   
-   // encrypt data using RSA public key -- the result of this method 
-   // would be sent to the AES encrypted message's receiver
+   // 使用RSA公钥加密数据——此方法的结果
+   // 将发送给AES加密消息的接收方
    public static String encryptRSA(byte[] data, PublicKey publicKey) 
       throws Exception {
 
-      var cipher = Cipher.getInstance("RSA"); // create RSA Cipher object
+      var cipher = Cipher.getInstance("RSA"); // 创建RSA Cipher对象
       
-      // initialize cipher in encryption mode with recipient's public key
+      // 使用接收方的公钥初始化加密模式
       cipher.init(Cipher.ENCRYPT_MODE, publicKey);
       
-      // encrypt data (the AES key) using the RSA public key
+      // 使用RSA公钥加密数据(AES密钥)
       byte[] encryptedData = cipher.doFinal(data);
       
-      // Base64 encode the encrypted AES key 
+      // 将加密的AES密钥进行Base64编码 
       return Base64.getEncoder().encodeToString(encryptedData);
    }
 
-   // decrypt data using RSA private key and return the SecretKey
+   // 使用RSA私钥解密数据并返回SecretKey
    public static SecretKey decryptRSA(
       String encryptedData, PrivateKey privateKey) throws Exception {
 
-      var cipher = Cipher.getInstance("RSA"); // create RSA Cipher object
+      var cipher = Cipher.getInstance("RSA"); // 创建RSA Cipher对象
       
-      // initialize cipher in decryption mode with recipient's private key
+      // 使用接收方的私钥初始化解密模式
       cipher.init(Cipher.DECRYPT_MODE, privateKey);
       
-      // decode the encrypted AES key from Base64 format and decrypt it
+      // 从Base64格式解码加密的AES密钥并进行解密
       byte[] decryptedData = 
          cipher.doFinal(Base64.getDecoder().decode(encryptedData));
       
-      // convert decrypted byte array back to an AES SecretKey object 
+      // 将解密的字节数组转换回AES SecretKey对象 
       return new SecretKeySpec(
          decryptedData, 0, decryptedData.length, "AES");
    }

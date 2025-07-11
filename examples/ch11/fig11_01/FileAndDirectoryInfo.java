@@ -1,5 +1,5 @@
 // 图11.1: FileAndDirectoryInfo.java
-// File class used to obtain file and directory information.
+// 使用File类获取文件和目录信息
 import java.io.IOException;          
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;          
@@ -10,28 +10,28 @@ public class FileAndDirectoryInfo {
    public static void main(String[] args) throws IOException {
       var input = new Scanner(System.in);
 
-      System.out.println("Enter file or directory name:");
+      System.out.println("请输入文件或目录名称:");
 
-      // create Path object based on user input
+      // 根据用户输入创建Path对象
       Path path = Path.of(input.nextLine()); 
 
-      if (Files.exists(path)) { // if path exists, output info about it
-         // display file or directory information
-         System.out.printf("%n%s exists%n", path.getFileName());
-         System.out.printf("%s a directory%n", 
-            Files.isDirectory(path) ? "Is" : "Is not");
-         System.out.printf("%s an absolute path%n", 
-            path.isAbsolute() ? "Is" : "Is not");
-         System.out.printf("Last modified: %s%n", 
+      if (Files.exists(path)) { // 如果路径存在，就输出相关信息
+         // 显示文件或目录信息
+         System.out.printf("%n%s存在%n", path.getFileName());
+         System.out.printf("%s目录%n", 
+            Files.isDirectory(path) ? "是" : "不是");
+         System.out.printf("%s绝对路径%n", 
+            path.isAbsolute() ? "是" : "不是");
+         System.out.printf("最后修改时间: %s%n", 
             Files.getLastModifiedTime(path));
-         System.out.printf("Size: %s%n", Files.size(path));
-         System.out.printf("Path: %s%n", path);
-         System.out.printf("Absolute path: %s%n", path.toAbsolutePath());
+         System.out.printf("大小: %s%n", Files.size(path));
+         System.out.printf("路径: %s%n", path);
+         System.out.printf("绝对路径: %s%n", path.toAbsolutePath());
 
-         if (Files.isDirectory(path)) { // output directory listing
-            System.out.printf("%nDirectory contents:%n");
+         if (Files.isDirectory(path)) { // 如果是目录，就列出内容
+            System.out.printf("%n目录内容:%n");
             
-            // object for iterating through a directory's contents
+            // 用于遍历目录内容的对象
             DirectoryStream<Path> directoryStreamPath =               
                Files.newDirectoryStream(path);                    
    
@@ -40,11 +40,11 @@ public class FileAndDirectoryInfo {
             } 
          } 
       } 
-      else { // not file or directory, output error message
-         System.out.printf("%s does not exist%n", path);
+      else { // 文件或目录不存在，输出错误信息
+         System.out.printf("%s不存在%n", path);
       }   
    } 
-} 
+}
 
 
 /*************************************************************************

@@ -1,39 +1,39 @@
-// 图11.4: CreateCSVFile.java
-// Writing data to a CSV file using the Jackson open-source library.
+// 图11.4: CreateJSONFile.java
+// 使用Jackson开源库将数据写入JSON文件
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 
-// record class to represent an account
+// 表示账户的record类
 record Account(int accountNumber, String name, double balance) {}
 
 public class CreateJSONFile {
    public static void main(String[] args) {
-      // account data to write to JSON
+      // 要写入JSON的账户数据
       List<Account> accounts = List.of(
-         new Account(100, "Devi", 24.98),
-         new Account(200, "Taylor", 345.67),
-         new Account(300, "Huber", 0.00),
-         new Account(400, "Ito", -42.16),
-         new Account(500, "Lopez", 224.62)
+         new Account(100, "张无忌", 24.98),
+         new Account(200, "赵敏", 345.67),
+         new Account(300, "周芷若", 0.00),
+         new Account(400, "殷离", -42.16),
+         new Account(500, "小昭", 224.62)
       );
 
-      // Path to clients.json in user's Documents folder
+      // 用户Documents文件夹中的clients.json文件路径      
       Path filePath = Path.of(System.getProperty("user.home"), 
          "Documents", "clients.json");
 
-      var mapper = new ObjectMapper(); // performs the serialization
+      var mapper = new ObjectMapper(); // 执行序列化
 
       try {
-         // Write accounts to a JSON file
+         // 将账户数据写入JSON文件
          mapper.writeValue(filePath.toFile(), accounts);
          System.out.printf(
-            "JSON file created at: %s%n", filePath.toAbsolutePath());
+            "JSON文件已创建于: %s%n", filePath.toAbsolutePath());
       } 
       catch (IOException e) {
          System.err.printf(
-            "Error writing JSON file: %s%n", e.getMessage());
+            "写入JSON文件时出错: %s%n", e.getMessage());
       }
    }
 }

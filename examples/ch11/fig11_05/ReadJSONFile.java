@@ -1,40 +1,40 @@
 // 图11.5: ReadJSONFile.java
-// Reading data from a JSON file using the Jackson open-source library.
+// 使用Jackson开源库从JSON文件读取数据
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 
-// record class to represent an account
+// 表示账户的record类
 record Account(int accountNumber, String name, double balance) {}
 
 public class ReadJSONFile {
    public static void main(String[] args) {
-      // Path to clients.json in user's Documents folder
+      // 用户Documents文件夹中的clients.json文件路径
       Path filePath = Path.of(System.getProperty("user.home"), 
          "Documents", "clients.json");
 
-      var mapper = new ObjectMapper(); // performs the deserialization
+      var mapper = new ObjectMapper(); // 执行反序列化
 
       try {
-         // Read accounts from the JSON file
+         // 从JSON文件读取账户数据
          List<Account> accounts = mapper.readValue(
             filePath.toFile(), new TypeReference<List<Account>>() {});
 
-         // display the accounts 
+         // 显示账户数据
          System.out.printf(
-            "%-10s %-10s %7s%n", "Account", "Name", "Balance");
+            "%-8s%-10s%-7s%n", "账户", "姓名", "余额");
 
          for (var account : accounts) {
-            System.out.printf("%-10d %-10s %7.2f%n", 
+            System.out.printf("%-10d%-10s%-10.2f%n", 
                account.accountNumber(), account.name(), 
                account.balance());
          }
       } 
       catch (IOException e) {
          System.err.printf(
-            "Error reading JSON file: %s%n", e.getMessage());
+            "读取JSON文件出错: %s%n", e.getMessage());
       }
    }
 }

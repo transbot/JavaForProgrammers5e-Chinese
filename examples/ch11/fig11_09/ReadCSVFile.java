@@ -1,5 +1,5 @@
 // 图11.9: ReadCSVFile.java
-// Reading data from a CSV file using the Jackson open-source library.
+// 使用Jackson开源库从CSV文件读取数据
 import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
@@ -8,45 +8,45 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 
-// record class to represent an account
+// 表示账户的record类
 record Account(int accountNumber, String name, double balance) {}
 
 public class ReadCSVFile {
    public static void main(String[] args) {
-      // Path to clients.csv in user's Documents folder
+      // 用户Documents文件夹中的clients.csv路径
       Path filePath = Path.of(System.getProperty("user.home"), 
          "Documents", "clients.csv");
 
-      var mapper = new CsvMapper(); // reads CSV records
+      var mapper = new CsvMapper(); // 读取CSV记录
 
-      // specify that Jackson should map each CSV column to
-      // an instance variable in the record class Account
+      // 指定Jackson将每个CSV列映射到
+      // record类Account的实例变量
       CsvSchema schema = 
-         mapper.schemaFor(Account.class) // fields map to Account objects
-               .withHeader(); // first line of text is the field names
+         mapper.schemaFor(Account.class) // 字段映射到Account对象
+               .withHeader(); // 第一行文本是字段名称
 
-      // read the CSV file
+      // 读取CSV文件
       try {
-         // MappingIterator provides access to records as Account objects
+         // MappingIterator提供将记录作为Account对象访问的功能
          MappingIterator<Account> iterator = 
             mapper.readerFor(Account.class).with(schema).readValues(
                filePath.toFile());
 
          List<Account> accounts = iterator.readAll();
 
-         // display the accounts 
+         // 显示账户信息 
          System.out.printf(
-            "%-10s %-10s %7s%n", "Account", "Name", "Balance");
+            "%-8s%-10s%-7s%n", "账户", "姓名", "余额");
 
          for (var account : accounts) {
-            System.out.printf("%-10d %-10s %7.2f%n", 
+            System.out.printf("%-10d%-10s%-10.2f%n", 
                account.accountNumber(), account.name(), 
                account.balance());
          }
       } 
       catch (IOException e) {
          System.err.printf(
-            "Error reading CSV file: %s%n", e.getMessage());
+            "读取CSV文件时出错: %s%n", e.getMessage());
       }
    }
 }

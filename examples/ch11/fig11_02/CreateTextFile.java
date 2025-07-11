@@ -1,41 +1,41 @@
 // 图11.2: CreateTextFile.java
-// Writing data to a sequential text file with class Formatter.
+// 使用Formatter类将数据写入顺序文本文件
 import java.util.Formatter;               
 import java.nio.file.Path;
 import java.util.List;
 
-// record class to represent an account
+// 表示账户的record类
 record Account(int accountNumber, String name, double balance) {}
 
 public class CreateTextFile {
    public static void main(String[] args) {
-      // account data to write to a text file
+      // 要写入文本文件的账户数据
       List<Account> accounts = List.of(
-         new Account(100, "Devi", 24.98),
-         new Account(200, "Taylor", 345.67),
-         new Account(300, "Huber", 0.00),
-         new Account(400, "Ito", -42.16),
-         new Account(500, "Lopez", 224.62)
+         new Account(100, "张无忌", 24.98),
+         new Account(200, "赵敏", 345.67),
+         new Account(300, "周芷若", 0.00),
+         new Account(400, "殷离", -42.16),
+         new Account(500, "小昭", 224.62)
       );
 
-      // Path to clients.txt in the user's Documents folder
+      // 用户Documents文件夹中的clients.txt文件路径
       Path filePath = Path.of(System.getProperty("user.home"), 
          "Documents", "clients.txt");
 
-      // open clients.txt, output data to the file then close clients.txt
+      // 打开clients.txt，输出数据到文件，然后关闭文件
       try (var output = new Formatter(filePath.toString())) {
-         // output each Account to file
+         // 将每个Account输出到文件
          for (var account : accounts) {
             output.format("%d %s %.2f%n", account.accountNumber(), 
                account.name(), account.balance());
          } 
 
          System.out.printf(
-            "Text file created at: %s%n", filePath.toAbsolutePath());
+            "文本文件已创建于: %s%n", filePath.toAbsolutePath());
       }
-      catch (IOException e) {
+      catch (Exception e) {
          System.err.printf(
-            "Error writing text file: %s%n", e.getMessage());
+            "写入文本文件时出错: %s%n", e.getMessage());
       } 
    } 
 }
