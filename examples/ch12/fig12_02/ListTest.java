@@ -1,45 +1,45 @@
 // 图12.2: ListTest.java
-// Lists, LinkedLists and ListIterators.
+// 演示List、LinkedList和ListIterator
 import java.util.List;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
 public class ListTest {
    public static void main(String[] args) {
-      // add colors elements to list1
+      // 将colors数组的元素添加到list1
       String[] colors = 
-         {"black", "yellow", "green", "blue", "violet", "silver"};
+         {"黑(black)", "黄(yellow)", "绿(green)", "蓝(blue)", "紫(violet)", "银(silver)"};
       List<String> list1 = new LinkedList<>(); 
 
       for (String color : colors) {
          list1.add(color);
       }
 
-      // add colors2 elements to list2
+      // 将colors2数组的元素添加到list2
       String[] colors2 = 
-         {"gold", "white", "brown", "blue", "gray", "silver"};
+         {"金(gold)", "白(white)", "棕(brown)", "蓝(blue)", "灰(gray)", "银(silver)"};
       List<String> list2 = new LinkedList<>();
 
       for (String color : colors2) {
          list2.add(color);
       }
 
-      list1.addAll(list2); // concatenate lists
+      list1.addAll(list2); // 连接（拼接）两个列表
 
       printList(list1); 
 
       convertToUppercaseStrings(list1); 
       printList(list1); 
 
-      System.out.printf("%nDeleting elements 4 to 6...");
-      removeItems(list1, 4, 7); // remove items 4-6 from list
+      System.out.printf("%n删除元素4~6..."); 
+      removeItems(list1, 4, 7); // 从列表中移除元素4~6
       printList(list1); 
       printReversedList(list1); 
    }                                     
 
-   // output List contents
+   // 输出列表内容
    private static void printList(List<String> list) {
-      System.out.printf("%nlist:%n");
+      System.out.printf("%n列表内容:%n");
    
       for (String color : list) {
          System.out.printf("%s ", color);
@@ -48,29 +48,29 @@ public class ListTest {
       System.out.println();
    }                                                    
 
-   // locate String objects and convert to uppercase
+   // 定位字符串对象并转换为大写
    private static void convertToUppercaseStrings(List<String> list) {
       ListIterator<String> iterator = list.listIterator();
 
       while (iterator.hasNext()) {
-         String color = iterator.next(); // get item                
-         iterator.set(color.toUpperCase()); // convert to upper case
+         String color = iterator.next();    // 获取元素                
+         iterator.set(color.toUpperCase()); // 转换为大写
       } 
    } 
 
-   // obtain sublist and use clear method to delete sublist items
+   // 获取子列表并使用clear方法删除子列表项
    private static void removeItems(List<String> list, 
       int start, int end) {
-      list.subList(start, end).clear(); // remove items
+      list.subList(start, end).clear(); // 移除元素
    } 
 
-   // print reversed list
+   // 打印反转后的列表
    private static void printReversedList(List<String> list) {
       ListIterator<String> iterator = list.listIterator(list.size());
 
-      System.out.printf("%nReversed list:%n");
+      System.out.printf("%n反转后的列表:%n");
 
-      // print list in reverse order
+      // 以相反顺序打印列表
       while (iterator.hasPrevious()) {
          System.out.printf("%s ", iterator.previous()); 
       }

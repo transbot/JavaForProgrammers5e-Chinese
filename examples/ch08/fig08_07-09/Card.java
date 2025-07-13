@@ -13,7 +13,7 @@ public class Card {
 
    // 返回牌的中文表示形式
    public String toString() {             
-      return suit + face; // 格式：花色 + 空格 + 点数
+      return suit + face; // 格式：花色+点数
    }
 }
 

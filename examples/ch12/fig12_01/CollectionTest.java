@@ -1,5 +1,5 @@
 // 图12.1: CollectionTest.java
-// Collection interface demonstrated via an ArrayList object.
+// 通过ArrayList对象演示Collection接口
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -7,50 +7,50 @@ import java.util.Iterator;
 
 public class CollectionTest {
    public static void main(String[] args) {
-      // add elements in colors array to colorList
-      String[] colors = {"MAGENTA", "RED", "WHITE", "BLUE", "CYAN"};
+      // 将colors数组的元素添加到colorList
+      String[] colors = {"品红", "红", "白", "蓝", "青"};  // 要添加的颜色
       List<String> colorList = new ArrayList<String>();
 
       for (String color : colors) {
-         colorList.add(color); // adds color to end of colorList
+         colorList.add(color); // 在colorList末尾添加颜色
       }
 
-      // add elements in removeColors array to removeList
-      String[] removeColors = {"RED", "WHITE", "BLUE"};
+      // 将removeColors数组的元素添加到removeList
+      String[] removeColors = {"红", "白", "蓝"};  // 要移除的颜色
       List<String> removeList = new ArrayList<String>();
 
       for (String color : removeColors) {
          removeList.add(color);
       }
 
-      // output colorList contents
-      System.out.println("ArrayList: ");
+      // 输出colorList内容
+      System.out.println("ArrayList的内容: ");
 
       for (int count = 0; count < colorList.size(); ++count) {
          System.out.printf("%s ", colorList.get(count));
       }
 
-      // remove from colorList the colors contained in removeList
+      // 从colorList中移除removeList包含的颜色
       removeColors(colorList, removeList);
 
-      // output colorList contents
-      System.out.printf("%n%nArrayList after calling removeColors:%n");
+      // 输出colorList内容
+      System.out.printf("%n%n调用removeColors后的ArrayList:%n");  // 提示文本翻译
 
       for (String color : colorList) {
          System.out.printf("%s ", color);
       }
    } 
 
-   // remove colors specified in itemsToRemove from allItems
+   // 从allItems中移除itemsToRemove指定的颜色
    private static void removeColors(Collection<String> allItems, 
       Collection<String> itemsToRemove) {
       
-      Iterator<String> iterator = allItems.iterator(); // get iterator
+      Iterator<String> iterator = allItems.iterator(); // 获取迭代器
 
-      // loop while collection has items
+      // 当集合有元素时就循环
       while (iterator.hasNext()) {
-         if (itemsToRemove.contains(iterator.next())) {   
-            iterator.remove(); // remove current element
+         if (itemsToRemove.contains(iterator.next())) { // 检查当前元素是否存在于需要移除的颜色集合中    
+            iterator.remove(); // 移除当前元素
          }
       } 
    } 

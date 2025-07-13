@@ -1,57 +1,57 @@
 // 图12.8: DeckOfCards.java
-// Card shuffling and dealing with Collections method shuffle.
+// 使用Collections的shuffle方法进行洗牌和发牌
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
 
-// class to represent a Card in a deck of cards
+// Card类表示牌组中的一张牌
 class Card {
-   public enum Face {Ace, Deuce, Three, Four, Five, Six,
-      Seven, Eight, Nine, Ten, Jack, Queen, King }      
-   public enum Suit {Clubs, Diamonds, Hearts, Spades} 
+   public enum Face {A, 二, 三, 四, 五, 六, 七, 八, 九, 十,
+      J, Q, K }      
+   public enum Suit {红桃, 方块, 梅花, 黑桃} 
 
    private final Face face; 
    private final Suit suit; 
    
-   // constructor
+   // 构造函数
    public Card(Face face, Suit suit) {
-       this.face = face; 
-       this.suit = suit; 
+       this.face = face; // 初始化牌的点数
+       this.suit = suit; // 初始化牌的花色
    } 
    
-   // return face of the card
+   // 返回牌点
    public Face getFace() {return face;}
 
-   // return suit of Card
+   // 返回花色
    public Suit getSuit() {return suit;}
 
-   // return String representation of Card
+   // 返回Card的字符串表示
    public String toString() {
-      return String.format("%s of %s", face, suit);
+      return String.format("%s%s", suit, face);
    } 
 } 
 
-// class DeckOfCards declaration
+// DeckOfCards（牌组）类声明
 public class DeckOfCards {
-   private List<Card> deck = new ArrayList<>(); // List to store Cards
+   private List<Card> deck = new ArrayList<>(); // 用于存储Card对象的列表
 
-   // set up deck of Cards and shuffle
+   // 设置牌组并洗牌
    public DeckOfCards() {
-      // populate deck with Card objects
+      // 用Card对象填充牌组
       for (Card.Suit suit : Card.Suit.values()) {
          for (Card.Face face : Card.Face.values()) {  
             deck.add(new Card(face, suit));
          } 
       } 
 
-      Collections.shuffle(deck);  // shuffle deck
+      Collections.shuffle(deck);  // 洗牌
    } 
 
    // output deck
    public void printCards() {
-      // display 52 cards in four columns
+      // 52张牌分4列显示
       for (int i = 0; i < deck.size(); ++i) {
-         System.out.printf("%-19s%s", deck.get(i),
+         System.out.printf("%-12s%s", deck.get(i),
             ((i + 1) % 4 == 0) ? System.lineSeparator() : "");
       }
    } 

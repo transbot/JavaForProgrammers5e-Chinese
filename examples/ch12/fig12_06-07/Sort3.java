@@ -1,12 +1,12 @@
 // 图12.7: Sort3.java
-// Collections method sort with a custom Comparator object.
+// 为sort方法使用一个自定义Comparator对象
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class Sort3 {
    public static void main(String[] args) {
-      List<Time2> list = new ArrayList<>(); // create List
+      List<Time2> list = new ArrayList<>(); // 创建列表
 
       list.add(new Time2(6, 24, 34));
       list.add(new Time2(18, 14, 58));
@@ -14,14 +14,14 @@ public class Sort3 {
       list.add(new Time2(12, 14, 58));
       list.add(new Time2(6, 24, 22));
       
-      // output List elements
-      System.out.printf("Unsorted array elements:%n%s%n", list);
+      // 输出列表元素
+      System.out.printf("未排序的数组元素:%n%s%n", list);
 
-      // sort in order using a comparator          
+      // 使用一个comparator来排序          
       Collections.sort(list, new TimeComparator());
 
-      // output List elements
-      System.out.printf("Sorted list elements:%n%s%n", list);
+      // 输出列表元素
+      System.out.printf("已排序的列表元素:%n%s%n", list);
    } 
 } 
 

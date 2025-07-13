@@ -1,20 +1,20 @@
 // 图12.5: Sort2.java
-// Using a Comparator object with method sort.
+// 为sort方法使用一个Comparator对象
 import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
 
 public class Sort2 {
    public static void main(String[] args) {
-      String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
+      String[] country =  {"USA", "China", "Japan", "Germany"};
 
-      // Create and display a list containing the suits array elements
-      List<String> list = Arrays.asList(suits); // create List
-      System.out.printf("Unsorted array elements: %s%n", list);
+      // 创建并显示包含country数组元素的一个列表
+      List<String> list = Arrays.asList(country); // 返回固定大小的List
+      System.out.printf("未排序的数组元素: %s%n", list);
 
-      // sort in descending order using a comparator     
+      // 使用一个Comparator对象来降序排序
       Collections.sort(list, Collections.reverseOrder());
-      System.out.printf("Sorted list elements: %s%n", list);
+      System.out.printf("已排序的数组元素(降序): %s%n", list);
    } 
 } 
 

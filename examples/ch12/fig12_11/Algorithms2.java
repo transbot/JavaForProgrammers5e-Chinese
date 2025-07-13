@@ -1,5 +1,5 @@
 // 图12.11: Algorithms2.java
-// Collections methods addAll, frequency and disjoint.
+// Collections的addAll、frequency和disjoint方法
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
@@ -7,30 +7,30 @@ import java.util.Collections;
 
 public class Algorithms2 {
    public static void main(String[] args) {
-      // initialize list1 and list2
-      String[] colors = {"red", "white", "yellow", "blue"};
+      // 初始化list1和list2
+      String[] colors = {"红", "白", "黄", "蓝"};
       List<String> list1 = Arrays.asList(colors);
       List<String> list2 = new ArrayList<>();
 
-      list2.add("black"); // add "black" to the end of list2
-      list2.add("red"); // add "red" to the end of list2
-      list2.add("green"); // add "green" to the end of list2
+      list2.add("黑"); // 将"黑"添加到list2末尾
+      list2.add("红"); // 将"红"添加到list2末尾
+      list2.add("绿"); // 将"绿"添加到list2末尾
 
-      System.out.printf("Before addAll, list2 contains: %s%n", list2);
-      Collections.addAll(list2, colors); // add colors Strings to list2
-      System.out.printf("After addAll, list2 contains: %s%n", list2);
+      System.out.printf("addAll前，list2包含: %s%n", list2);
+      Collections.addAll(list2, colors); // 将colors中的字符串添加到list2
+      System.out.printf("addAll后，list2包含: %s%n", list2);
 
-      // get frequency of "red"                           
-      int frequency = Collections.frequency(list2, "red");
-      System.out.printf("%nFrequency of red in list2: %d%n", frequency);
+      // 获取"红"的出现频率                           
+      int frequency = Collections.frequency(list2, "红");
+      System.out.printf("%nlist2中红的出现频率: %d%n", frequency);
 
-      // check whether list1 and list2 have any elements in common
+      // 检查list1和list2是否有共同元素
       boolean areDisjoint = Collections.disjoint(list1, list2);  
 
-      System.out.printf("list1 and list2 %s elements in common%n", 
-         (areDisjoint ? "do not have" : "have"));
+      System.out.printf("list1和list2%s共同元素%n", 
+         (areDisjoint ? "没有" : "有")); // 提示文本翻译
    } 
-} 
+}
 
 
 /**************************************************************************

@@ -1,28 +1,28 @@
 // 图12.3: UsingToArray.java
-// Viewing arrays as Lists and converting Lists to arrays.
+// 将数组视为List，并将List转换为数组
 import java.util.LinkedList;
 import java.util.Arrays;
 
 public class UsingToArray {
    public static void main(String[] args) {
-      String[] colors = {"black", "blue", "yellow"};
+      String[] colors = {"黑", "蓝", "黄"};
       LinkedList<String> list = new LinkedList<>(Arrays.asList(colors));
 
-      list.addLast("red"); // add as last item   
-      list.add("pink"); // add to the end        
-      list.add(3, "green"); // add at 3rd index  
-      list.addFirst("cyan"); // add as first item
+      list.addLast("红");   // 作为最后一项添加   
+      list.add("粉");       // 添加到末尾        
+      list.add(3, "绿");    // 在索引3处添加  
+      list.addFirst("青");  // 作为第一项添加
 
-      // get LinkedList elements as an array           
+      // 将LinkedList的元素作为数组来获取
       colors = list.toArray(new String[list.size()]);
 
-      System.out.println("colors: ");
+      System.out.println("颜色列表: ");
 
       for (String color : colors) {
          System.out.println(color);
       }
    }  
-} 
+}
 
 
 /**************************************************************************

@@ -1,23 +1,23 @@
 // 图12.12: PriorityQueueTest.java
-// PriorityQueue test program.
+// PriorityQueue测试程序
 import java.util.PriorityQueue;
 
 public class PriorityQueueTest {
    public static void main(String[] args) {
-      // queue of capacity 11                             
+      // 初始队列容量为11
       var queue = new PriorityQueue<Double>();
 
-      // insert elements to queue
+      // 向队列插入元素（入队）
       queue.offer(3.2);          
       queue.offer(9.8);          
       queue.offer(5.4);          
 
-      System.out.print("Polling from queue: ");
+      System.out.print("连续获取并移除（poll）队头元素: ");
 
-      // display elements in queue
+      // 显示队列中的元素
       while (!queue.isEmpty()) {
-         System.out.printf("%.1f ", queue.peek()); // view top element
-         queue.poll(); // remove top element
+         System.out.printf("%.1f ", queue.peek()); // 查看队头元素
+         queue.poll(); // 移除队头元素
       } 
    } 
 }

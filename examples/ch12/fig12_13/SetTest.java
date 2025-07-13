@@ -1,5 +1,5 @@
 // 图12.13: SetTest.java
-// HashSet used to remove duplicate values from an array of strings.
+// 用HashSet从字符串数组中删除重复值
 import java.util.List;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -8,22 +8,22 @@ import java.util.Collection;
 
 public class SetTest {
    public static void main(String[] args) {
-      // create and display a List<String>
-      String[] colors = {"red", "white", "blue", "green", "gray", 
-         "orange", "tan", "white", "cyan", "peach", "gray", "orange"};
+      // 创建并显示List<String>
+      String[] colors = {"红", "白", "蓝", "绿", "灰", 
+         "橙", "棕", "白", "青", "桃", "灰", "橙"}; // 颜色翻译
       List<String> list = Arrays.asList(colors);
-      System.out.printf("List: %s%n", list);
+      System.out.printf("原始列表: %s%n", list);
 
-      // eliminate duplicates then print the unique values
+      // 消除重复项后打印唯一值
       printNonDuplicates(list);
    }  
 
-   // create a Set from a Collection to eliminate duplicates
+   // 通过一个Collection来创建Set，以消除重复项
    private static void printNonDuplicates(Collection<String> values) {
-      // create a HashSet 
+      // 创建HashSet 
       Set<String> set = new HashSet<>(values);
 
-      System.out.printf("%nNonduplicates are: ");
+      System.out.printf("%n无重复的项包括: ");
 
       for (String value : set) {
          System.out.printf("%s ", value);

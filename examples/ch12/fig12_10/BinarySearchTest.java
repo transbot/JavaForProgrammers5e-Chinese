@@ -1,5 +1,5 @@
 // 图12.10: BinarySearchTest.java
-// Collections method binarySearch.
+// Collections的binarySearch方法
 import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
@@ -7,35 +7,35 @@ import java.util.ArrayList;
 
 public class BinarySearchTest {
    public static void main(String[] args) {
-      // create an ArrayList<String> from the contents of colors array
-      String[] colors = {"red", "white", "blue", "black", "yellow", 
-         "purple", "tan", "pink"};
+      // 从colors数组创建ArrayList<String>
+      String[] colors = {"红", "白", "蓝", "黑", "黄", 
+         "紫", "棕", "粉"};
       List<String> list = new ArrayList<>(Arrays.asList(colors));
 
-      Collections.sort(list); // sort the ArrayList
-      System.out.printf("Sorted ArrayList: %s%n", list);
+      Collections.sort(list); // 排序ArrayList
+      System.out.printf("排序后的ArrayList: %s%n", list);
 
-      // search list for various values
-      printSearchResults(list, "black"); 
-      printSearchResults(list, "red"); 
-      printSearchResults(list, "pink"); 
-      printSearchResults(list, "aqua"); // below lowest
-      printSearchResults(list, "gray"); // does not exist
-      printSearchResults(list, "teal"); // does not exist
+      // 在列表中查找不同值
+      printSearchResults(list, "黑"); 
+      printSearchResults(list, "红"); 
+      printSearchResults(list, "粉"); 
+      printSearchResults(list, "浅绿"); // 不存在
+      printSearchResults(list, "灰");   // 不存在
+      printSearchResults(list, "青");   // 不存在
    }      
 
-   // perform search and display result
+   // 执行查找并显示结果
    private static void printSearchResults(
       List<String> list, String key) {
 
-      System.out.printf("%nSearching for: %s%n", key);
+      System.out.printf("%n正在查找: %s%n", key);
       int result = Collections.binarySearch(list, key);
       
       if (result >= 0) {
-         System.out.printf("Found at index %d%n", result);
+         System.out.printf("在索引 %d 处找到%n", result);
       } 
       else {
-         System.out.printf("Not Found (%d)%n",result);
+         System.out.printf("未找到 (%d)%n", result);
       } 
    } 
 }

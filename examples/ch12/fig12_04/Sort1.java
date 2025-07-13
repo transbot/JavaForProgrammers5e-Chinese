@@ -1,19 +1,19 @@
 // 图12.4: Sort1.java
-// Collections method sort.
+// Collections的sort方法
 import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
 
 public class Sort1 {
    public static void main(String[] args) {
-      String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
+      String[] country = {"USA", "China", "Japan", "Germany"};
       
-      // Create and display a list containing the suits array elements
-      List<String> list = Arrays.asList(suits); 
-      System.out.printf("Unsorted array elements: %s%n", list);
+      // 创建并显示包含country数组元素的一个列表
+      List<String> list = Arrays.asList(country);  // 返回固定大小的List
+      System.out.printf("未排序的数组元素: %s%n", list);
 
-      Collections.sort(list); // sort ArrayList
-      System.out.printf("Sorted array elements: %s%n", list);
+      Collections.sort(list); // 对ArrayList进行排序
+      System.out.printf("已排序的数组元素(升序): %s%n", list);
    } 
 } 
 

@@ -1,5 +1,5 @@
 // 图12.6: TimeComparator.java
-// Custom Comparator class that compares two Time2 objects.
+// 用于比较两个Time2对象的自定义Comparator类
 import java.util.Comparator;
 
 public class TimeComparator implements Comparator<Time2> {
@@ -7,13 +7,13 @@ public class TimeComparator implements Comparator<Time2> {
    public int compare(Time2 time1, Time2 time2) {
       int hourDifference = time1.getHour() - time2.getHour();
          
-      if (hourDifference != 0) { // test the hour first
+      if (hourDifference != 0) { // 首先测试小时
          return hourDifference; 
       }
          
       int minuteDifference = time1.getMinute() - time2.getMinute(); 
          
-      if (minuteDifference != 0) { // then test the minute
+      if (minuteDifference != 0) { // 然后测试分钟
          return minuteDifference;
       }
          

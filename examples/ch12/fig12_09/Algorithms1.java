@@ -1,43 +1,43 @@
 // 图12.9: Algorithms1.java
-// Collections methods reverse, fill, copy, max and min.
+// Collections的reverse、fill、copy、max和min方法
 import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
 
 public class Algorithms1 {
    public static void main(String[] args) {
-      // create and display a List<Character>
+      // 创建并显示List<Character>
       Character[] letters = {'P', 'C', 'M'};
-      List<Character> list = Arrays.asList(letters); // get List
+      List<Character> list = Arrays.asList(letters); // 获取List
       outputList(list);
 
-      // reverse and display the List<Character>
-      Collections.reverse(list); // reverse order the elements
-      System.out.printf("%nAfter calling reverse, list contains:%n");
+      // 反转并显示List<Character>
+      Collections.reverse(list); // 反转元素顺序
+      System.out.printf("%n调用reverse后，list包含:%n");
       outputList(list);
 
-      // create copyList from an array of 3 Characters
+      // 从包含3个Character的数组创建copyList
       Character[] lettersCopy = new Character[3]; 
       List<Character> copyList = Arrays.asList(lettersCopy); 
 
-      // copy the contents of list into copyList
+      // 将list的内容复制到copyList
       Collections.copy(copyList, list);
-      System.out.printf("%nAfter copying, copyList contains:%n");
+      System.out.printf("%n复制后，copyList包含:%n");
       outputList(copyList);
 
-      // fill list with Rs 
+      // 用R填充list
       Collections.fill(list, 'R');
-      System.out.printf("%nAfter calling fill, list contains:%n");
+      System.out.printf("%n调用fill后，list包含:%n");
       outputList(list);
    } 
 
-   // output List information
+   // 输出list中的信息
    private static void outputList(List<Character> list) {
-      System.out.printf("The list is: %s%n", list);
-      System.out.printf("Max: %s; Min: %s%n", Collections.max(list),
+      System.out.printf("列表内容: %s%n", list);
+      System.out.printf("最大值: %s; 最小值: %s%n", Collections.max(list),
          Collections.min(list));
    } 
-} 
+}
 
 
 

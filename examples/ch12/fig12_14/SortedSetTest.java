@@ -1,33 +1,33 @@
 // 图12.14: SortedSetTest.java
-// Using SortedSets and TreeSets.
+// 使用SortedSet和TreeSet
 import java.util.Arrays;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class SortedSetTest {
    public static void main(String[] args) {
-      // create TreeSet from array colors
-      String[] colors = {"yellow", "green", "black", "tan", "grey",
-         "white", "orange", "red", "green"};
+      // 从colors数组创建TreeSet
+      String[] colors = {"黄", "绿", "黑", "棕", "灰",
+         "白", "橙", "红", "绿"};
       SortedSet<String> tree = new TreeSet<>(Arrays.asList(colors));
 
-      System.out.print("sorted set: ");
+      System.out.print("排序集合: ");
       printSet(tree); 
 
-      // get headSet based on "orange"
-      System.out.print("headSet (\"orange\"): ");
-      printSet(tree.headSet("orange"));
+      // 获取基于"橙"的headSet
+      System.out.print("headSet (\"橙\"): ");
+      printSet(tree.headSet("橙"));
 
-      // get tailSet based on "orange"
-      System.out.print("tailSet (\"orange\"): ");
-      printSet(tree.tailSet("orange"));
+      // 获取基于"橙"的tailSet
+      System.out.print("tailSet (\"橙\"): ");
+      printSet(tree.tailSet("橙"));
 
-      // get first and last elements
-      System.out.printf("first: %s%n", tree.first());
-      System.out.printf("last : %s%n", tree.last());
+      // 获取第一个和最后一个元素
+      System.out.printf("第一个元素: %s%n", tree.first());
+      System.out.printf("最后一个元素: %s%n", tree.last());
    } 
 
-   // output SortedSet using enhanced for statement
+   // 使用增强for循环输出SortedSet
    private static void printSet(SortedSet<String> set) {
       for (String s : set) {
          System.out.printf("%s ", s);
@@ -35,7 +35,7 @@ public class SortedSetTest {
 
       System.out.println();
    } 
-} 
+}
 
 
 /**************************************************************************

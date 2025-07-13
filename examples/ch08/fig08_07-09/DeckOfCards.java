@@ -8,7 +8,7 @@ public class DeckOfCards {
       RandomGenerator.getDefault();
    public static final int NUMBER_OF_CARDS = 52;    // 一副牌中有多少张牌（这常量）
    private Card[] deck = new Card[NUMBER_OF_CARDS]; // Card引用数组
-   private int currentCardIndex = 0;    // 下一张待发牌的索引 (0-51)
+   private int currentCardIndex = 0;    // 下一张待发牌的索引 (0~51)
 
    // 构造函数初始化牌组
    public DeckOfCards() {
