@@ -1,29 +1,29 @@
 // 图13.3: MaximumTest.java
-// Generic method maximum returns the largest of three objects.
+// 泛型maximum方法返回三个对象中最大的那一个
 
 public class MaximumTest {
    public static void main(String[] args) {
-      System.out.printf("Maximum of %d, %d and %d is %d%n", 3, 4, 5, 
+      System.out.printf("%d, %d 和 %d 的最大值是 %d%n", 3, 4, 5, 
          maximum(3, 4, 5));
-      System.out.printf("Maximum of %.1f, %.1f and %.1f is %.1f%n", 
+      System.out.printf("%.1f, %.1f 和 %.1f 的最大值是 %.1f%n", 
          6.6, 8.8, 7.7, maximum(6.6, 8.8, 7.7));
-      System.out.printf("Maximum of %s, %s and %s is %s%n", "pear", 
-         "apple", "orange", maximum("pear", "apple", "orange"));
+      System.out.printf("%s, %s 和 %s 的最大值是 %s%n", "苹果", 
+         "梨", "橙子", maximum("苹果", "梨", "橙子"));
    } 
 
-   // determines the largest of three objects                 
+   // 确定三个对象中的最大值                 
    public static <T extends Comparable<T>> T maximum(T x, T y, T z) {    
-      T max = x; // assume x is initially the largest                    
+      T max = x; // 假设x初始为最大值                    
    
       if (y.compareTo(max) > 0) {                                        
-         max = y; // y is the largest so far                             
+         max = y; // 当前y是最大值                             
       }
    
       if (z.compareTo(max) > 0) {                                        
-         max = z; // z is the largest                                    
+         max = z; // z才是最大值                                    
       }
    
-      return max; // returns the largest object                          
+      return max; // 返回最大值                          
    }
 }
 

@@ -1,40 +1,40 @@
 // WildcardTest2.java
-// Wildcard test program.
+// 不使用通配符
 import java.util.Arrays;
 import java.util.List;
 
 public class WildcardTest2 {
    public static void main(String[] args) {
-      // create and initialize a List<Integer>
+      // 创建并初始化List<Integer> 
       Integer[] integers = {1, 2, 3, 4, 5};
       List<Integer> integerList = Arrays.asList(integers);
 
-      System.out.printf("integerList contains: %s%n", integerList);
-      System.out.printf("Total of the elements in integerList: %.0f%n%n",
+      System.out.printf("integerList中包含: %s%n", integerList);
+      System.out.printf("integerList中元素的总和: %.0f%n%n",
          sum(integerList));
 
-      // create and initialize a List<Double>
+      // 创建并初始化List<Double>
       Double[] doubles = {1.1, 3.3, 5.5};
       List<Double> doubleList =  Arrays.asList(doubles);
 
-      System.out.printf("doubleList contains: %s%n", doubleList);
-      System.out.printf("Total of the elements in doubleList: %.1f%n%n", 
+      System.out.printf("doubleList中包含: %s%n", doubleList);
+      System.out.printf("doubleList中元素的总和: %.1f%n%n", 
          sum(doubleList));
 
-      // create and initialize a List<Number> with mixed numeric types
+      // 创建并初始化List<Number>，其中包含混合的数值类型
       Number[] numbers = {1, 2.4, 3, 4.1}; 
       List<Number> numberList = Arrays.asList(numbers);
 
-      System.out.printf("numberList contains: %s%n", numberList);
-      System.out.printf("Total of the elements in numberList: %.1f%n", 
+     System.out.printf("numberList中包含: %s%n", numberList);
+      System.out.printf("numberList中元素的总和: %.1f%n", 
          sum(numberList));
    }
 
-   // total the elements; using a wildcard in the List parameter
+   // 计算元素的总和；没有使用通配符
    public static <T extends Number> double sum(List<T> list) {
-      double total = 0; // initialize total
+      double total = 0; // 初始化总和
 
-      // calculate sum
+      // 计算总和
       for (T element : list) {
          total += element.doubleValue();
       }

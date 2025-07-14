@@ -1,37 +1,37 @@
 // 图13.4: Stack.java
-// Stack generic class declaration.
+// Stack泛型类声明
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 public class Stack<E> {
-   private final ArrayList<E> elements; // ArrayList stores stack elements
+   private final ArrayList<E> elements; // 用ArrayList来存储栈中的元素
 
-   // no-argument constructor creates a stack of the default size
+   // 无参构造函数创建默认容量的栈
    public Stack() {
-      this(10); // default stack size
+      this(10); // 默认栈大小
    }
    
-   // constructor creates a stack of the specified number of elements
+   // 有参构造函数创建指定容量的栈
    public Stack(int capacity) {
-      int initCapacity = capacity > 0 ? capacity : 10; // validate
-      elements = new ArrayList<E>(initCapacity); // create ArrayList
+      int initCapacity = capacity > 0 ? capacity : 10; // 校验容量
+      elements = new ArrayList<E>(initCapacity);       // 创建ArrayList
    } 
 
-   // push element onto stack
+   // 将元素压入栈顶
    public void push(E pushValue) {
-      elements.addLast(pushValue); // place pushValue on Stack
+      elements.addLast(pushValue); // pushValue入栈
    } 
 
-   // return the top element if not empty; else throw exception
+   // 栈非空时返回栈顶元素；否则抛出异常
    public E pop() {
-      if (elements.isEmpty()) { // if stack is empty
-         throw new NoSuchElementException("Stack is empty, cannot pop");
+      if (elements.isEmpty()) { // 如果栈为空
+         throw new NoSuchElementException("栈为空，没有可以出栈的元素");
       } 
 
-      // remove and return top element of Stack
+      // 移除并返回栈顶元素
       return elements.removeLast(); 
    } 
-} 
+}
 
 
 /**************************************************************************

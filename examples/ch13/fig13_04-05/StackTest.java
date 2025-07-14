@@ -1,5 +1,5 @@
 // 图13.5: StackTest.java
-// Stack generic class test program.
+// Stack泛型类测试程序
 import java.util.NoSuchElementException;
 
 public class StackTest {
@@ -7,41 +7,41 @@ public class StackTest {
       double[] doubleElements = {1.1, 2.2, 3.3, 4.4, 5.5};
       int[] integerElements = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
       
-      // Create a Stack<Double> and a Stack<Integer>
+      // 创建一个Stack<Double>和一个Stack<Integer>
       var doubleStack = new Stack<Double>(5);   
       var integerStack = new Stack<Integer>();  
 
-      // push elements of doubleElements onto doubleStack
+      // 将doubleElements的元素压入doubleStack
       testPushDouble(doubleStack, doubleElements); 
-      testPopDouble(doubleStack); // pop from doubleStack
+      testPopDouble(doubleStack); // 从doubleStack出栈
 
-      // push elements of integerElements onto integerStack
+      // 将integerElements的元素压入integerStack
       testPushInteger(integerStack, integerElements); 
-      testPopInteger(integerStack); // pop from integerStack
+      testPopInteger(integerStack); // 从integerStack出栈
    } 
 
-   // test push method with double stack
+   // 测试double栈的push方法
    private static void testPushDouble(
       Stack<Double> stack, double[] values) {
-      System.out.printf("%nPushing elements onto doubleStack%n   ");
+      System.out.printf("%n以下元素向doubleStack入栈：%n   ");
 
-      // push elements to Stack
+      // 元素入栈
       for (double value : values) {
          System.out.printf("%.1f ", value);
-         stack.push(value); // push onto doubleStack
+         stack.push(value); // 向doubleStack入栈
       }
    }
 
-   // test pop method with double stack
+   // 测试double栈的pop方法
    private static void testPopDouble(Stack<Double> stack) {
-      // pop elements from stack
+      // 从栈弹出元素
       try {
-         System.out.printf("%nPopping elements from doubleStack%n   ");
-         double popValue; // store element removed from stack
+         System.out.printf("%n以下元素从doubleStack出栈：%n   ");
+         double popValue; // 用于存储出栈的元素
 
-         // remove all elements from Stack
+         // 移除栈中的所有元素
          while (true) {
-            popValue = stack.pop(); // pop from doubleStack
+            popValue = stack.pop(); // 从doubleStack出栈
             System.out.printf("%.1f ", popValue); 
          } 
       }
@@ -51,28 +51,28 @@ public class StackTest {
       } 
    }
 
-   // test push method with integer stack
+   // 测试integerStack栈的push方法
    private static void testPushInteger(
       Stack<Integer> stack, int[] values) {
-      System.out.printf("%nPushing elements onto integerStack%n   ");
+      System.out.printf("%n以下元素向integerStack入栈：%n   ");
 
-      // push elements to Stack
+      // 元素入栈
       for (int value : values) {
          System.out.printf("%d ", value);
-         stack.push(value); // push onto integerStack
+         stack.push(value); // 向integerStack入栈
       } 
    }
 
-   // test pop method with integer stack
+   // 测试integerStackr栈的pop方法
    private static void testPopInteger(Stack<Integer> stack) {
-      // pop elements from stack
+      // 元素出栈
       try {
-         System.out.printf("%nPopping elements from integerStack%n   ");
-         int popValue; // store element removed from stack
+         System.out.printf("%n以下元素从integerStack出栈：%n   ");
+         int popValue; // 用于存储出栈的元素
 
-         // remove all elements from Stack
+         // 从栈中移除所有元素
          while (true) {
-            popValue = stack.pop(); // pop from intStack
+            popValue = stack.pop(); // 从intStack出栈
             System.out.printf("%d ", popValue);
          } 
       } 
@@ -81,7 +81,7 @@ public class StackTest {
          noSuchElementException.printStackTrace();
       }
    } 
-} 
+}
 
 /**************************************************************************
  * (C) Copyright 1992-2025 by Deitel & Associates, Inc. and               *

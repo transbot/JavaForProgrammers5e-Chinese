@@ -1,28 +1,28 @@
 // 图13.2: GenericMethodTest.java
-// Printing array elements using generic method printArray.
+// 使用泛型方法printArray打印数组元素
 
 public class GenericMethodTest {
    public static void main(String[] args) {
-      // create arrays of Integer, Double and Character
+      // 创建Integer和Double数组
       Integer[] integerArray = {1, 2, 3, 4, 5, 6};
       Double[] doubleArray = {1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7};
 
-      System.out.printf("Array integerArray contains: ");
-      printArray(integerArray); // pass an Integer array
-      System.out.printf("Array doubleArray contains: ");
-      printArray(doubleArray); // pass a Double array
+      System.out.printf("整数数组integerArray包含: ");
+      printArray(integerArray); // 传入Integer数组
+      System.out.printf("双精度数组doubleArray包含: ");
+      printArray(doubleArray); // 传入Double数组
    }
 
-   // generic method printArray                     
+   // 泛型方法printArray                     
    public static <T> void printArray(T[] inputArray) {
-      // display array elements            
+      // 显示数组元素            
       for (T element : inputArray) {       
          System.out.printf("%s ", element);
       }
 
       System.out.println();
    } 
-} 
+}
 
 
 

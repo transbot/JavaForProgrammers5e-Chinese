@@ -1,27 +1,27 @@
 // 图13.7: TotalNumbers.java
-// Totaling the numbers in a List<Number>.
+// 对List<Number>中的数字进行求和
 import java.util.Arrays;
 import java.util.List;
 
 public class TotalNumbers {
    public static void main(String[] args) {
-      // create List<Number> and add Integers and Doubles to it 
-      Number[] numbers = {1, 2.4, 3, 4.1}; // ints and doubles
+      // 创建一个List<Number>，并向其中添加Integer和Double类型的数据
+      Number[] numbers = {1, 2.4, 3, 4.1}; // 包含整数和双精度浮点数
       List<Number> numberList = Arrays.asList(numbers);                
 
-      // display numbersList 
-      System.out.printf("numberList contains: %s%n", numberList);
+      // 显示numbersList 
+      System.out.printf("numberList中包含：%s%n", numberList);
 
-      // total numbersList's elements then display the result
-      System.out.printf("Total of the elements in numberList: %.1f%n", 
+      // 对numbersList中的元素求和，然后显示结果
+      System.out.printf("numberList中元素的总和：%.1f%n", 
          sum(numberList));
    }
 
-   // calculate total of List elements
+   // 计算List中元素的总和
    public static double sum(List<Number> list) {
-      double total = 0; // initialize total
+      double total = 0; // 初始化总和
 
-      // calculate sum
+      // 计算总和
       for (Number element : list) {     
          total += element.doubleValue();
       }

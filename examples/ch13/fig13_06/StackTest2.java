@@ -1,5 +1,5 @@
 // 图13.6: StackTest2.java
-// Passing generic Stack objects to generic methods.
+// 将泛型Stack对象传递给泛型方法
 import java.util.NoSuchElementException;
       
 public class StackTest2 {
@@ -7,39 +7,39 @@ public class StackTest2 {
       Double[] doubleElements = {1.1, 2.2, 3.3, 4.4, 5.5};
       Integer[] integerElements = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
       
-      // Create a Stack<Double> and a Stack<Integer>
+      // 创建一个Stack<Double>和一个Stack<Integer>
       Stack<Double> doubleStack = new Stack<>(5); 
       Stack<Integer> integerStack = new Stack<>(); 
 
-      // push elements of doubleElements onto doubleStack         
+      // 将doubleElements的元素压入doubleStack         
       testPush("doubleStack", doubleStack, doubleElements);       
-      testPop("doubleStack", doubleStack); // pop from doubleStack
+      testPop("doubleStack", doubleStack); // 从doubleStack出栈
  
-      // push elements of integerElements onto integerStack          
+      // 将integerElements的元素压入integerStack          
       testPush("integerStack", integerStack, integerElements);       
-      testPop("integerStack", integerStack); // pop from integerStack
+      testPop("integerStack", integerStack); // 从integerStack出栈
    }
 
-   // generic method testPush pushes elements onto a Stack
+   // 泛型方法testPush将元素入栈
    public static <E> void testPush(String name, Stack<E> stack,
       E[] elements) {
-      System.out.printf("%nPushing elements onto %s%n   ", name);
+      System.out.printf("%n以下元素向%s入栈：%n   ", name);
 
-      // push elements onto Stack
+      // 元素入栈
       for (E element : elements) {
          System.out.printf("%s ", element);
-         stack.push(element); // push element onto stack
+         stack.push(element); // 元素入栈
       }
    } 
 
-   // generic method testPop pops elements from a Stack
+   // 泛型方法testPop从栈中出栈元素
    public static <E> void testPop(String name, Stack<E> stack) {
-      // pop elements from stack
+      // 元素出栈
       try {
-         System.out.printf("%nPopping elements from %s%n   ", name);
-         E popValue; // store element removed from stack
+         System.out.printf("%n以下元素从%s出栈：%n   ", name);
+         E popValue; // 用于存储出栈的元素
 
-         // remove all elements from Stack
+         // 移除栈中的所有元素
          while (true) {
             popValue = stack.pop(); 
             System.out.printf("%s ", popValue);
@@ -50,7 +50,7 @@ public class StackTest2 {
          noSuchElementException.printStackTrace();
       }
    }
-} 
+}
 
 
 /**************************************************************************

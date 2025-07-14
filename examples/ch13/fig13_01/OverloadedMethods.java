@@ -1,21 +1,21 @@
 // 图13.1: OverloadedMethods.java
-// Printing array elements using overloaded methods.
+// 使用重载方法打印数组元素
 
 public class OverloadedMethods {
    public static void main(String[] args) {
-      // create arrays of Integers and Doubles
+      // 创建Integer和Double数组
       Integer[] integerArray = {1, 2, 3, 4, 5, 6};
       Double[] doubleArray = {1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7};
 
-      System.out.printf("Array integerArray contains: ");
-      printArray(integerArray); // pass an Integer array
-      System.out.printf("Array doubleArray contains: ");
-      printArray(doubleArray); // pass a Double array
+      System.out.printf("整数数组integerArray包含: ");
+      printArray(integerArray); // 传入Integer数组
+      System.out.printf("双精度数组doubleArray包含: ");
+      printArray(doubleArray); // 传入Double数组
    }
 
-   // method printArray to print Integer array
+   // 打印Integer数组的方法
    public static void printArray(Integer[] inputArray) {
-      // display array elements
+      // 显示数组元素
       for (Integer element : inputArray) {
          System.out.printf("%s ", element);
       }
@@ -23,16 +23,16 @@ public class OverloadedMethods {
       System.out.println();
    }
 
-   // method printArray to print Double array
+   // 打印Double数组的方法
    public static void printArray(Double[] inputArray) {
-      // display array elements
+      // 显示数组元素
       for (Double element : inputArray) {
          System.out.printf("%s ", element);
       }
 
       System.out.println();
    } 
-} 
+}
 
 
 
