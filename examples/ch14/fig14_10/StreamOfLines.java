@@ -1,5 +1,5 @@
 // 图14.10: StreamOfLines.java
-// Counting word occurrences in a text file.
+// 统计文本文件中单词的出现次数
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -10,17 +10,17 @@ import java.util.stream.Collectors;
 
 public class StreamOfLines {
    public static void main(String[] args) throws IOException {
-      // Regex that matches one or more consecutive whitespace characters
+      // 匹配一个或多个连续空白字符的正则表达式
       Pattern pattern = Pattern.compile("\\s+"); 
 
-      // count occurrences of each word in a Stream<String> sorted by word
+      // 统计Stream<String>中每个单词的出现次数，并按单词排序
       Map<String, Long> wordCounts =                             
          Files.lines(Paths.get("Chapter2Paragraph.txt"))         
               .flatMap(line -> pattern.splitAsStream(line))      
               .collect(Collectors.groupingBy(String::toLowerCase,
                  TreeMap::new, Collectors.counting()));          
       
-      // display the words grouped by starting letter
+      // 按首字母分组显示单词
       wordCounts.entrySet()                                         
          .stream()                                                  
          .collect(                                                  
@@ -32,7 +32,7 @@ public class StreamOfLines {
                "%13s: %d%n", word.getKey(), word.getValue()));      
          });
    }
-} 
+}
 
 
 /**************************************************************************

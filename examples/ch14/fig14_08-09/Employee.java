@@ -1,13 +1,13 @@
 // 图14.8: Employee.java
-// Employee class.
+// 准备在图14.9中使用的Employee类
 public record Employee(
    String firstName, String lastName, double salary, String department) {
-   // return Employee's first and last name combined
+   // 返回合并后的员工名字和姓氏
    public String getName() {
       return String.format("%s %s", firstName(), lastName());
    }
 
-   // return a String containing the Employee's information
+   // 返回包含员工信息的一个字符串
    @Override
    public String toString() {
       return String.format("%-8s %-8s %8.2f   %s", 

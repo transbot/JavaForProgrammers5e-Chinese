@@ -1,5 +1,5 @@
 // 图14.9: ProcessingEmployees.java
-// Processing streams of Employee objects.
+// 处理Employee对象流
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;               
@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class ProcessingEmployees {
    public static void main(String[] args) {
 
-      // initialize List<Employee>
+      // 初始化List<Employee>
       List<Employee> list = List.of(
          new Employee("James", "Roy", 5000, "IT"),
          new Employee("Zaynab", "Hanna", 7600, "IT"),
@@ -20,113 +20,113 @@ public class ProcessingEmployees {
          new Employee("Emma", "Bernard", 6200, "Sales"),
          new Employee("Xinyi", "Chen", 4236.4, "Marketing"));
 
-      // display all Employees
-      System.out.println("Complete Employee list:");
+      // 显示所有员工
+      System.out.println("完整员工列表：");
       list.stream().forEach(System.out::println);
       
-      // Predicate that returns true for salaries in the range $4000-$6000
+      // 该谓词为工资在$4000-$6000范围内的员工返回true       
       Predicate<Employee> salaryInRange4to6k =                   
          e -> (e.salary() >= 4000 && e.salary() <= 6000);
 
-      // Display Employees with salaries in the range $4000-$6000
-      // sorted into ascending order by salary
+      // 显示工资在$4000-$6000范围内的所有员工，
+      // 按工资进行升序排序
       System.out.printf(
-         "%nEmployees earning $4000-$6000 per month sorted by salary:%n");
+         "%n月薪$4000-$6000的已排序员工：%n");
       list.stream()                                         
           .filter(salaryInRange4to6k)                        
           .sorted(Comparator.comparing(Employee::salary))
           .forEach(System.out::println);                    
 
-      // Display first Employee with salary in the range $4000-$6000
-      System.out.printf("%nFirst employee who earns $4000-$6000:%n%s%n",
+      // 显示工资在$4000-$6000范围内的第一位员工
+      System.out.printf("%n第一位月薪在$4000-$6000的员工：%n%s%n",
          list.stream()                 
              .filter(salaryInRange4to6k)
              .findFirst()
              .get());
 
-      // Functions for getting first and last names from an Employee
+      // 用于从Employee获取名字和姓氏的函数
       Function<Employee, String> byFirstName = Employee::firstName;
       Function<Employee, String> byLastName = Employee::lastName;  
 
-      // Comparator for comparing Employees by first name then last name
+      // 先按姓氏然后按名字比较Employee的比较器
       Comparator<Employee> lastThenFirst =                           
          Comparator.comparing(byLastName).thenComparing(byFirstName);
 
-      // sort employees by last name, then first name 
+      // 先按姓氏然后按名字升序排序员工 
       System.out.printf(
-         "%nEmployees in ascending order by last name then first:%n");
+         "%n先按姓氏然后按名字升序排序的员工：%n");
       list.stream()
           .sorted(lastThenFirst)
           .forEach(System.out::println);
 
-      // sort employees in descending order by last name, then first name
+      // 按姓氏然后名字降序排序员工
       System.out.printf(
-         "%nEmployees in descending order by last name then first:%n");
+         "%n先按姓氏然后按名字降序排序的员工：%n");
       list.stream()
           .sorted(lastThenFirst.reversed())
           .forEach(System.out::println);
 
-      // display unique employee last names sorted
-      System.out.printf("%nUnique employee last names:%n");
+      // 显示排序后的唯一员工姓氏
+      System.out.printf("%n唯一的员工姓氏：%n");
       list.stream()
           .map(Employee::lastName)
           .distinct()                
           .sorted()
           .forEach(System.out::println);
 
-      // display only first and last names
+      // 仅显示名字和姓氏
       System.out.printf(
-         "%nEmployee names in order by last name then first name:%n"); 
+         "%n先按姓氏然后按名字升序排序的员工姓名：%n"); 
       list.stream()
           .sorted(lastThenFirst)
           .map(Employee::getName)
           .forEach(System.out::println);
 
-      // group Employees by department
-      System.out.printf("%nEmployees by department:%n"); 
+      // 按部门分组员工
+      System.out.printf("%n按部门分组的员工：%n"); 
       Map<String, List<Employee>> groupedByDepartment =               
          list.stream()                                                
              .collect(Collectors.groupingBy(Employee::department));
       groupedByDepartment.forEach(                                    
          (department, employeesInDepartment) -> {                     
-            System.out.printf("%n%s%n", department);                  
+            System.out.printf("%s%n", department);                  
             employeesInDepartment.forEach(                            
                employee -> System.out.printf("   %s%n", employee));   
          }                                                            
       );                                                              
 
-      // count number of Employees in each department
-      System.out.printf("%nCount of Employees by department:%n"); 
+      // 统计每个部门的员工数量
+      System.out.printf("%n按部门统计的员工数量：%n"); 
       Map<String, Long> employeeCountByDepartment =                 
          list.stream()                                              
              .collect(Collectors.groupingBy(Employee::department,
                 Collectors.counting()));                            
       employeeCountByDepartment.forEach(                            
          (department, count) -> System.out.printf(                  
-            "%s has %d employee(s)%n", department, count));         
+            "%s有%d名员工%n", department, count));         
 
-      // sum of Employee salaries with DoubleStream sum method
+      // 使用DoubleStream的sum方法计算员工总工资
       System.out.printf(
-         "%nSum of Employees' salaries (via sum method): %.2f%n",
+         "%n员工总工资（通过sum方法）：%.2f%n",
          list.stream()
              .mapToDouble(Employee::salary)
              .sum());
 
-      // calculate sum of Employee salaries with Stream reduce method
+      // 使用Stream的reduce方法计算员工总工资
       System.out.printf(
-         "Sum of Employees' salaries (via reduce method): %.2f%n",
+         "员工总工资（通过reduce方法）：%.2f%n",
          list.stream()
              .mapToDouble(Employee::salary)              
              .reduce(0, (value1, value2) -> value1 + value2));  
 
-      // average of Employee salaries with DoubleStream average method
-      System.out.printf("Average of Employees' salaries: %.2f%n",
+      // 使用DoubleStream的average方法计算员工平均工资
+      System.out.printf("员工平均工资：%.2f%n",
          list.stream()
              .mapToDouble(Employee::salary)
              .average()
              .getAsDouble());      
    } 
-} 
+}
  
 
 

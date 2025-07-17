@@ -1,13 +1,13 @@
 // 图14.2: StreamMapReduce.java
-// Sum the even integers from 2 through 20 with IntStream.
+// 使用IntStream计算2~20的偶数之和
 import java.util.stream.IntStream;
 
 public class StreamMapReduce {
    public static void main(String[] args) {
-      System.out.printf("Sum of the even ints from 2 through 20 is: %d%n",
+      System.out.printf("2~20的偶数之和是: %d%n",
          IntStream.rangeClosed(1, 10)              // 1...10
-                  .map((int x) -> {return x * 2;}) // multiply by 2
-                  .sum());                         // sum
+                  .map((int x) -> {return x * 2;}) // 乘以2
+                  .sum());                         // 求和
    } 
 } 
 

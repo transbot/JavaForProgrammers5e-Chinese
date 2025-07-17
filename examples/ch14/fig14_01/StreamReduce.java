@@ -1,10 +1,10 @@
 // 图14.1: StreamReduce.java
-// Sum the integers from 1 through 10 with IntStream.
+// 使用IntStream对1~10的整数求和
 import java.util.stream.IntStream;
 
 public class StreamReduce {
    public static void main(String[] args) {
-      System.out.printf("Sum of 1 through 10 is: %d%n", 
+      System.out.printf("1~10的求和结果是: %d%n", 
          IntStream.rangeClosed(1, 10)
                   .sum());           
    } 

@@ -1,5 +1,5 @@
 // 图14.7: ArraysAndStreams2.java
-// Demonstrating lambdas and streams with an array of Strings.
+// 使用字符串数组演示Lambda表达式和流
 import java.util.Arrays;
 
 public class ArraysAndStreams2 {
@@ -7,30 +7,30 @@ public class ArraysAndStreams2 {
       String[] strings = 
          {"Red", "orange", "Yellow", "green", "Blue", "indigo", "Violet"};
 
-      // display original strings
-      System.out.printf("Original strings: %s%n", Arrays.asList(strings));
+      // 显示原始字符串
+      System.out.printf("原始字符串：%s%n", Arrays.asList(strings));
 
-      // strings in uppercase
-      System.out.printf("strings in uppercase: %s%n",
+      // 转换为大写的字符串
+      System.out.printf("大写字符串：%s%n",
          Arrays.stream(strings)             
                .map(String::toUpperCase)   
                .toList());
 
-      // strings less than "n" (case insensitive) sorted ascending
-      System.out.printf("strings less than n sorted ascending: %s%n",
+      // 小于"n"的字符串升序排序（不区分大小写）
+      System.out.printf("小于n的字符串升序排序（不区分大小写）：%s%n",
          Arrays.stream(strings)                            
                .filter(s -> s.compareToIgnoreCase("n") < 0)
                .sorted(String.CASE_INSENSITIVE_ORDER)
                .toList());             
 
-      // strings less than "n" (case insensitive) sorted descending
-      System.out.printf("strings less than n sorted descending: %s%n",
+      // 小于"n"的字符串降序排序（不区分大小写）
+      System.out.printf("小于n的字符串降序排序（不区分大小写）：%s%n",
          Arrays.stream(strings)
                .filter(s -> s.compareToIgnoreCase("n") < 0)
                .sorted(String.CASE_INSENSITIVE_ORDER.reversed())
                .toList());
    }
-} 
+}
 
 
 

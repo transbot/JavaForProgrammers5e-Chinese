@@ -1,5 +1,5 @@
 // 图14.5: IntStreamOperations.java
-// Demonstrating IntStream operations.
+// 演示IntStream的操作
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -7,41 +7,41 @@ public class IntStreamOperations {
    public static void main(String[] args) {
       int[] values = {3, 10, 6, 1, 4, 8, 2, 5, 9, 7};
 
-      // display original values
-      System.out.print("Original values: ");
+      // 显示原始值
+      System.out.print("原始值：");
       System.out.println(
          IntStream.of(values)
                   .mapToObj(String::valueOf)
                   .collect(Collectors.joining(" ")));
 
-      // count, min, max, sum and average of the values
-      System.out.printf("%nCount: %d%n", IntStream.of(values).count());
-      System.out.printf("Min: %d%n",
+      // 值的计数、最小值、最大值、总和和平均值
+      System.out.printf("%n计数：%d%n", IntStream.of(values).count());
+      System.out.printf("最小值：%d%n",
          IntStream.of(values).min().getAsInt());
-      System.out.printf("Max: %d%n",
+      System.out.printf("最大值：%d%n",
          IntStream.of(values).max().getAsInt());
-      System.out.printf("Sum: %d%n", IntStream.of(values).sum());
-      System.out.printf("Average: %.2f%n",
+      System.out.printf("总和：%d%n", IntStream.of(values).sum());
+      System.out.printf("平均值：%.2f%n",
          IntStream.of(values).average().getAsDouble());
 
-      // sum of values with reduce method
-      System.out.printf("%nSum via reduce method: %d%n",
+      // 使用reduce方法计算总和
+      System.out.printf("%n通过reduce方法计算的总和：%d%n",
          IntStream.of(values)
                   .reduce(0, (x, y) -> x + y));
 
-      // product of values with reduce method
-      System.out.printf("Product via reduce method: %d%n",
+      // 使用reduce方法计算乘积
+      System.out.printf("通过reduce方法计算的乘积：%d%n",
          IntStream.of(values)
                   .reduce((x, y) -> x * y).getAsInt());
 
-      // sum of squares of values with map and sum methods
-      System.out.printf("Sum of squares via map and sum: %d%n%n",
+      // 使用map和sum方法计算平方和
+      System.out.printf("通过map和sum方法计算的平方和：%d%n%n",
          IntStream.of(values)
                   .map(x -> x * x)
                   .sum());        
 
-      // displaying the elements in sorted order
-      System.out.printf("Values displayed in sorted order: %s%n",
+      // 按排序顺序显示元素
+      System.out.printf("按排序顺序显示的值：%s%n",
          IntStream.of(values)
                   .sorted()
                   .mapToObj(String::valueOf)

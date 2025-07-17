@@ -1,5 +1,5 @@
 // 图14.12: RandomIntStream.java
-// Rolling a die 60,000,000 times with streams
+// 使用流来模拟掷骰6千万次
 import java.util.random.RandomGenerator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -8,14 +8,14 @@ public class RandomIntStream {
    public static void main(String[] args) {
       var random = RandomGenerator.getDefault();
 
-      // roll a die 60,000,000 times and summarize the results
-      System.out.printf("%-6s%s%n", "Face", "Frequency");
+      // 掷骰6千万次并汇总结果
+      System.out.printf("%s%10s%n", "点数", "次数");
       random.ints(60_000_000, 1, 7)
             .boxed()
             .collect(Collectors.groupingBy(Function.identity(),
                Collectors.counting()))
             .forEach((face, frequency) -> 
-               System.out.printf("%-6d%d%n", face, frequency));
+               System.out.printf("%4d%12d%n", face, frequency));
    } 
 } 
 

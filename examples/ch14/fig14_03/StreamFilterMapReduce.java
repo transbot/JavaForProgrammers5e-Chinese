@@ -1,11 +1,11 @@
 // 图14.3: StreamFilterMapReduce.java
-// Double the even ints from 2 through 10 then sum them with IntStream.
+// 将2~10的偶数加倍，然后使用IntStream求和
 import java.util.stream.IntStream;
 
 public class StreamFilterMapReduce {
    public static void main(String[] args) {
       System.out.printf(
-         "Sum of the doubles of the even ints from 2 through 10 is: %d%n",
+         "2~10的偶数加倍后之和是: %d%n",
          IntStream.rangeClosed(1, 10)     
                   .filter(x -> x % 2 == 0)
                   .map(x -> x * 2)        
