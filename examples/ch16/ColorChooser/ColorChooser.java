@@ -1,5 +1,5 @@
 // 16.3: ColorChooser.java
-// Main application class that loads and displays the ColorChooser's GUI.
+// 加载并显示“颜色选择器”GUI的主应用程序类
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +13,7 @@ public class ColorChooser extends Application {
          FXMLLoader.load(getClass().getResource("ColorChooser.fxml"));
       
       var scene = new Scene(root);
-      stage.setTitle("Color Chooser");
+      stage.setTitle("颜色选择器");
       stage.setScene(scene);
       stage.show();
    }

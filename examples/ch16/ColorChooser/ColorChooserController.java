@@ -1,5 +1,5 @@
 // 图16.4: ColorChooserController.java
-// Controller for the ColorChooser app
+// “颜色选择器”应用程序的控制器
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -9,7 +9,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class ColorChooserController {
-   // instance variables for interacting with GUI components
+   // 用于与GUI组件交互的实例变量
    @FXML private Slider redSlider;
    @FXML private Slider greenSlider;
    @FXML private Slider blueSlider;
@@ -20,7 +20,7 @@ public class ColorChooserController {
    @FXML private TextField alphaTextField;
    @FXML private Rectangle colorRectangle;
 
-   // instance variables for managing 
+   // 用于管理应用程序状态的实例变量
    private int red = 0;
    private int green = 0;
    private int blue = 0;
@@ -28,7 +28,7 @@ public class ColorChooserController {
    
    @FXML
    private void initialize() {
-      // bind TextField values to corresponding Slider values
+      // 将TextField值绑定到对应的Slider值
       redTextField.textProperty().bind(              
          redSlider.valueProperty().asString("%.0f"));
       greenTextField.textProperty().bind(
@@ -38,7 +38,7 @@ public class ColorChooserController {
       alphaTextField.textProperty().bind(
          alphaSlider.valueProperty().asString("%.2f"));
       
-      // listeners that set Rectangle's fill based on Slider changes
+      // 根据Slider的变化来设置矩形填充色的侦听器
       redSlider.valueProperty().addListener(                              
          (ov, oldValue, newValue) -> {                        
             red = newValue.intValue();                                 

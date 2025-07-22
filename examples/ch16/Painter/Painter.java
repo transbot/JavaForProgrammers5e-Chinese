@@ -1,5 +1,5 @@
 // 图16.1: Painter.java
-// Main application class that loads and displays the Painter's GUI.
+// 加载并显示“绘图”GUI的主应用程序类
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +13,7 @@ public class Painter extends Application {
          FXMLLoader.load(getClass().getResource("Painter.fxml"));
       
       var scene = new Scene(root);
-      stage.setTitle("Painter"); // displayed in window's title bar
+      stage.setTitle("绘图"); // 在窗口的标题栏中显示
       stage.setScene(scene);
       stage.show();
    }

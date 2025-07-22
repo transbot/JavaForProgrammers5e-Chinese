@@ -1,5 +1,5 @@
-// 图13.13: CoverViewer.java
-// Class that loads and displays the CoverViewer's GUI.
+// 图16.5: CoverViewer.java
+// 加载并显示“封面查看器”GUI的主应用程序类
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +13,7 @@ public class CoverViewer extends Application {
          FXMLLoader.load(getClass().getResource("CoverViewer.fxml"));
       
       var scene = new Scene(root);
-      stage.setTitle("Cover Viewer");
+      stage.setTitle("封面查看器");
       stage.setScene(scene);
       stage.show();
    }

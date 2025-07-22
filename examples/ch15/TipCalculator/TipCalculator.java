@@ -1,5 +1,5 @@
 // 图15.1: TipCalculator.java
-// Main application class that loads and displays the Tip Calculator's GUI.
+// 加载并显示“小费计算器”GUI的主应用程序类
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,14 +12,14 @@ public class TipCalculator extends Application {
       Parent root = 
          FXMLLoader.load(getClass().getResource("TipCalculator.fxml"));
 
-      Scene scene = new Scene(root); // attach scene graph to scene
-      stage.setTitle("Tip Calculator"); // displayed in window's title bar
-      stage.setScene(scene); // attach scene to stage
-      stage.show(); // display the stage
+      Scene scene = new Scene(root); // 将场景图附加到场景
+      stage.setTitle("小费计算器");   // 在窗口标题栏中显示
+      stage.setScene(scene);         // 将场景附加到舞台
+      stage.show();                  // 显示舞台
    }
 
    public static void main(String[] args) {
-      // create a TipCalculator object and call its start method
+      // 创建TipCalculator对象并调用其start方法
       launch(args); 
    }
 }

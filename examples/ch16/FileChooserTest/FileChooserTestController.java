@@ -1,5 +1,5 @@
 // 图16.9: FileChooserTestController.java
-// Displays information about a selected file or folder. 
+// 显示所选文件或文件夹的信息
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.DirectoryStream;
@@ -20,75 +20,75 @@ public class FileChooserTestController {
    @FXML private Button selectDirectoryButton;
    @FXML private TextArea textArea;
 
-   // handles selectFileButton's event
+   // 处理selectFileButton的事件
    @FXML
    private void selectFileButtonPressed(ActionEvent e) {
-      // configure dialog allowing selection of a file 
+      // 配置允许选择文件的对话框
       FileChooser fileChooser = new FileChooser();               
-      fileChooser.setTitle("Select File");
+      fileChooser.setTitle("选择文件");
 
-      // display files in folder from which the application was launched
+      // 显示应用程序启动时所在文件夹中的文件
       fileChooser.setInitialDirectory(new File(".")); 
 
-      // display the FileChooser
+      // 显示文件选择器
       File file = fileChooser.showOpenDialog(
          borderPane.getScene().getWindow());               
 
-      // process selected Path or display a message
+      // 处理选中的路径或显示消息
       if (file != null) {
          analyzePath(file.toPath());            
       }
       else {
-         textArea.setText("Select file or directory");
+         textArea.setText("选择文件或目录");
       }
    } 
 
-   // handles selectDirectoryButton's event
+   // 处理selectDirectoryButton的事件
    @FXML
    private void selectDirectoryButtonPressed(ActionEvent e) {
-      // configure dialog allowing selection of a directory
+      // 配置允许选择目录的对话框
       DirectoryChooser directoryChooser = new DirectoryChooser();               
-      directoryChooser.setTitle("Select Directory");
+      directoryChooser.setTitle("选择目录");
 
-      // display folder from which the application was launched
+      // 显示应用程序启动所在文件夹
       directoryChooser.setInitialDirectory(new File(".")); 
 
-      // display the DirectoryChooser
+      // 显示目录选择器
       File file = directoryChooser.showDialog(
          borderPane.getScene().getWindow());               
 
-      // process selected Path or display a message
+      // 处理选中的路径或显示消息
       if (file != null) {
          analyzePath(file.toPath());            
       }
       else {
-         textArea.setText("Select file or directory");
+         textArea.setText("选择文件或目录");
       }
    } 
 
-   // display information about file or directory user specifies
+   // 显示用户指定的文件或目录信息
    public void analyzePath(Path path) {
       try {
-         // if the file or directory exists, display its info
+         // 如果文件或目录存在，则显示其信息
          if (path != null && Files.exists(path)) {
-            // gather file (or directory) information
+            // 收集文件(或目录)信息
             StringBuilder builder = new StringBuilder();
             builder.append(String.format("%s:%n", path.getFileName()));
-            builder.append(String.format("%s a directory%n", 
-               Files.isDirectory(path) ? "Is" : "Is not"));
-            builder.append(String.format("%s an absolute path%n", 
-               path.isAbsolute() ? "Is" : "Is not"));
-            builder.append(String.format("Last modified: %s%n", 
+            builder.append(String.format("%s目录%n", 
+               Files.isDirectory(path) ? "是" : "不是"));
+            builder.append(String.format("%s绝对路径%n", 
+               path.isAbsolute() ? "是" : "不是"));
+            builder.append(String.format("最后修改时间: %s%n", 
                Files.getLastModifiedTime(path)));
-            builder.append(String.format("Size: %s%n", Files.size(path)));
-            builder.append(String.format("Path: %s%n", path));
-            builder.append(String.format("Absolute path: %s%n", 
+            builder.append(String.format("大小: %s%n", Files.size(path)));
+            builder.append(String.format("路径: %s%n", path));
+            builder.append(String.format("绝对路径: %s%n", 
                path.toAbsolutePath()));
 
-            if (Files.isDirectory(path)) { // output directory listing
-               builder.append(String.format("%nDirectory contents:%n"));
+            if (Files.isDirectory(path)) { // 输出目录内容
+               builder.append(String.format("%n目录内容:%n"));
                
-               // object for iterating through a directory's contents
+               // 用于遍历目录内容的对象
                DirectoryStream<Path> directoryStream = 
                   Files.newDirectoryStream(path);
       
@@ -97,11 +97,11 @@ public class FileChooserTestController {
                }
             }
 
-            // display file or directory info
+            // 显示文件或目录信息
             textArea.setText(builder.toString()); 
          } 
-         else { // Path does not exist
-            textArea.setText("Path does not exist");
+         else { // 路径不存在
+            textArea.setText("路径不存在");
          }   
       }
       catch (IOException ioException) {

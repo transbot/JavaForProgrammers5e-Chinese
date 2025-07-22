@@ -1,5 +1,5 @@
 // CoverViewerController.java
-// Controller for Cover Viewer application
+// “封面查看器”应用程序的控制器
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,36 +9,36 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class CoverViewerController {
-   // instance variables for interacting with GUI
+   // 用于与GUI组件交互的实例变量
    @FXML private ListView<Book> booksListView;
    @FXML private ImageView coverImageView;
 
-   // stores the list of Book Objects
+   // 存储Book对象列表
    private final ObservableList<Book> books = 
       FXCollections.observableArrayList();
 
-   // initialize controller
+   // 初始化控制器
    public void initialize() {
-      // populate the ObservableList<Book>
-      books.add(new Book("C How to Program", 
-         "/images/small/chtp.jpg", "/images/large/chtp.jpg"));
-      books.add(new Book("C++ How to Program",
-         "/images/small/cpphtp.jpg", "/images/large/cpphtp.jpg"));
-      books.add(new Book("Intro to Python",  
-         "/images/small/python.jpg", "/images/large/python.jpg"));
-      books.add(new Book("Internet and World Wide Web How to Program",  
-         "/images/small/iw3htp.jpg", "/images/large/iw3htp.jpg"));
-      books.add(new Book("Java How to Program", 
-         "/images/small/jhtp.jpg", "/images/large/jhtp.jpg"));
-      books.add(new Book("Python for Programmers", 
-         "/images/small/pythonfp.jpg", "/images/large/pythonfp.jpg"));
-      books.add(new Book("Visual Basic How to Program", 
-         "/images/small/vbhtp.jpg", "/images/large/vbhtp.jpg"));
-      books.add(new Book("Visual C# How to Program", 
-         "/images/small/vcshtp.jpg", "/images/large/vcshtp.jpg"));
-      booksListView.setItems(books); // bind booksListView to books
+      // 填充ObservableList<Book>
+      books.add(new Book("Visual C#从入门到精通", 
+         "/images/small/vcsharp.jpg", "/images/large/vcsharp.jpg"));
+      books.add(new Book("学习C++20中文版",
+         "/images/small/cpp20.jpg", "/images/large/cpp20.jpg"));
+      books.add(new Book("CLR via C#",  
+         "/images/small/clrviacsharp.jpg", "/images/large/clrviacsharp.jpg"));
+      books.add(new Book("机器学习与人工智能实战",  
+         "/images/small/appliedML.jpg", "/images/large/appliedML.jpg"));
+      books.add(new Book("Windows核心编程", 
+         "/images/small/windowsviacpp.jpg", "/images/large/windowsviacpp.jpg"));
+      books.add(new Book("C# 12.0本质论", 
+         "/images/small/EssentialCSharp.jpg", "/images/large/EssentialCSharp.jpg"));
+      books.add(new Book("高质量需求", 
+         "/images/small/SRE.jpg", "/images/large/SRE.jpg"));
+      books.add(new Book("大模型编程实践与提示工程", 
+         "/images/small/ProgrammingLLM.jpg", "/images/large/ProgrammingLLM.jpg"));
+      booksListView.setItems(books); // 将booksListView绑定到books
 
-      // when ListView selection changes, show large cover in ImageView
+      // 当ListView中的选择发生改变时，在ImageView中显示封面大图
       booksListView.getSelectionModel().selectedItemProperty().
          addListener(
             (ov, oldValue, newValue) -> {                        
@@ -47,7 +47,7 @@ public class CoverViewerController {
             }
          );                                                                  
          
-      // set custom ListView cell factory
+      // 设置自定义ListView单元格工厂
       booksListView.setCellFactory(
          listView -> new ImageTextCell()
       );   

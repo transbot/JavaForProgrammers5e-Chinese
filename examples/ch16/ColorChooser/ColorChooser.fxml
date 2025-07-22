@@ -24,13 +24,13 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
 <children>
-	<Label text="Red" />
+	<Label text="红" />
 	<Slider fx:id="redSlider" max="255.0" GridPane.columnIndex="1" />
 	<TextField fx:id="redTextField" prefWidth="50.0" text="0" GridPane.columnIndex="2" />
-	<Label text="Green" GridPane.rowIndex="1" />
+	<Label text="绿" GridPane.rowIndex="1" />
 	<Slider fx:id="greenSlider" max="255.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 	<TextField fx:id="greenTextField" prefWidth="50.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-	<Label text="Blue" GridPane.rowIndex="2" />
+	<Label text="蓝" GridPane.rowIndex="2" />
 	<Slider fx:id="blueSlider" max="255.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 	<TextField fx:id="blueTextField" prefWidth="50.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
 	<Label text="Alpha" GridPane.rowIndex="3" />

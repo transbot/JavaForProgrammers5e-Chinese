@@ -1,5 +1,5 @@
 // 图15.2: TipCalculatorController.java
-// Controller that handles calculateButton and tipPercentageSlider events
+// 用于处理calculateButton和tipPercentageSlider控件事件的控制器
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
@@ -9,8 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 
-public class TipCalculatorController { 
-   // formatters for currency and percentages
+public class TipCalculatorController {    
+   // 用于货币和百分比的格式化器
    private static final NumberFormat currency = 
       NumberFormat.getCurrencyInstance();
    private static final NumberFormat percent = 
@@ -18,7 +18,7 @@ public class TipCalculatorController {
    
    private BigDecimal tipPercentage = new BigDecimal("0.15"); // 15%
    
-   // GUI controls defined in FXML and used by the controller's code
+   // 在FXML中定义并被控制器代码使用的GUI控件
    @FXML 
    private TextField amountTextField; 
 
@@ -34,7 +34,7 @@ public class TipCalculatorController {
    @FXML
    private TextField totalTextField;
 
-   // calculates and displays the tip and total amounts
+   // 计算并显示小费和总额
    @FXML
    private void calculateButtonPressed(ActionEvent event) {
       try {
@@ -46,19 +46,19 @@ public class TipCalculatorController {
          totalTextField.setText(currency.format(total));
       }
       catch (NumberFormatException ex) {
-         amountTextField.setText("Enter amount");
+         amountTextField.setText("输入金额无效");
          amountTextField.selectAll();
          amountTextField.requestFocus();
       }
    }
 
-   // if present, called by FXMLLoader to initialize the controller
+   // 如果存在，则由FXMLLoader调用以初始化控制器
    @FXML
    private void initialize() {
-      // 0-4 rounds down, 5-9 rounds up 
+      // 0~4向下舍入，5~9向上舍入 
       currency.setRoundingMode(RoundingMode.HALF_EVEN);
       
-      // listener for changes to tipPercentageSlider's value
+      // 侦听tipPercentageSlider值的变化
       tipPercentageSlider.valueProperty().addListener( 
          (ov, oldValue, newValue) -> {
             tipPercentage =                                           
