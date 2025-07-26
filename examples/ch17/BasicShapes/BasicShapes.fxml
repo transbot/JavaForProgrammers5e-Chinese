@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 图17.3: BasicShapes.fxml -->
-<!-- Defining Shape objects and styling via CSS -->
+<!-- 定义Shape对象并通过CSS设置样式 -->
 
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Arc?>
@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 
 <Pane id="Pane" prefHeight="110.0" prefWidth="630.0"
-   stylesheets="@BasicShapes.css" xmlns="http://javafx.com/javafx/23" 
+   stylesheets="@BasicShapes.css" xmlns="http://javafx.com/javafx/24" 
    xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Line fx:id="line1" endX="100.0" endY="100.0" 

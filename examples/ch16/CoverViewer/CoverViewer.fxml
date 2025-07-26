@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.BorderPane?>
 
 
-<BorderPane xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CoverViewerController">
+<BorderPane xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CoverViewerController">
    <center>
 <ImageView fx:id="coverImageView" fitHeight="480.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true" />
    </center>

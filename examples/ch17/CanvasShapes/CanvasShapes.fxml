@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- CanvasShapes.fxml -->
-<!-- GUI for manipulating a Polyline, a Polygon -->
+<!-- 本GUI演示了如何在画布上绘制形状 -->
 
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.layout.Pane?>
 
 
-<Pane xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CanvasShapesController">
+<Pane xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CanvasShapesController">
    <children>
       <Canvas fx:id="drawingCanvas" height="115.0" width="650.0" />
    </children>

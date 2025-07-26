@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 图17.2: FontCSS.fxml -->
-<!-- FontCSS GUI that is styled via external CSS -->
+<!-- 通过外部CSS设置样式的FontCSS GUI -->
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox styleClass="vbox" stylesheets="@FontCSS.css" 
-   xmlns="http://javafx.com/javafx/23" 
+   xmlns="http://javafx.com/javafx/24" 
    xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="label1" text="Arial 14pt bold" />

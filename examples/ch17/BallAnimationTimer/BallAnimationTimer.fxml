@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- BallAnimationTimer.fxml -->
-<!-- FXML for a Circle that will be animated by the controller.  -->
+<!-- 该FXML定义了将由控制器动画化的一个Circle   -->
 
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
 
 <Pane id="Pane" fx:id="pane" prefHeight="400.0" 
    prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" 
-   xmlns="http://javafx.com/javafx/23" 
+   xmlns="http://javafx.com/javafx/24" 
    fx:controller="BallAnimationTimerController">
    <children>
       <Circle fx:id="c" fill="DODGERBLUE" layoutX="142.0" layoutY="143.0" 

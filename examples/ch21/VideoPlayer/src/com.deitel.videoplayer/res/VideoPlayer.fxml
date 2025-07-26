@@ -18,7 +18,7 @@
          <items>
             <Button fx:id="playPauseButton" 
               onAction="#playPauseButtonPressed" prefHeight="25.0" 
-              prefWidth="60.0" text="Play" />
+              prefWidth="60.0" text="播放" />
          </items>
       </ToolBar>
    </bottom>

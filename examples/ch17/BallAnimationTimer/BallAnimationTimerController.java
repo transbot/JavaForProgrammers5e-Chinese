@@ -1,5 +1,5 @@
 // 图17.13: BallAnimationTimerController.java
-// Bounce a circle around a window using an AnimationTimer subclass. 
+// 使用AnimationTimer的子类让一个圆在窗口中弹跳
 import java.util.random.RandomGenerator;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
@@ -17,12 +17,12 @@ public class BallAnimationTimerController {
    
    @FXML
    private void initialize() {
-      // define an AnimationTimer
+      // 定义一个动画计时器
       AnimationTimer timer = new AnimationTimer() {
-         int velocity = 60; // used to scale distance changes           
-         long previousTime = System.nanoTime(); // time since app launch
+         int velocity = 60; // 用于缩放距离变化的基准速度           
+         long previousTime = System.nanoTime(); // 应用程序启动后的时间戳
 
-         // specify how to move Circle for current animation frame
+         // 指定如何为当前动画帧移动圆形
          @Override
          public void handle(long now) {
             double elapsedTime = (now - previousTime) / 1000000000.0;
@@ -46,13 +46,13 @@ public class BallAnimationTimerController {
       timer.start();
    }
    
-   // determines whether the circle hit left/right of the window
+   // 判断圆是否碰到窗口的左右边缘
    private boolean hitRightOrLeftEdge(Bounds bounds) {
       return (c.getLayoutX() <= (bounds.getMinX() + c.getRadius())) ||
          (c.getLayoutX() >= (bounds.getMaxX() - c.getRadius()));
    }
 
-   // determines whether the circle hit top/bottom of the window
+   // 判断圆是否碰到窗口的上下边缘
    private boolean hitTopOrBottom(Bounds bounds) {
       return (c.getLayoutY() <= (bounds.getMinY() + c.getRadius())) ||
          (c.getLayoutY() >= (bounds.getMaxY() - c.getRadius()));

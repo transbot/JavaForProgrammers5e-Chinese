@@ -12,7 +12,7 @@ public class PolyShapes extends Application {
          FXMLLoader.load(getClass().getResource("PolyShapes.fxml"));
       
       Scene scene = new Scene(root);
-      stage.setTitle("Draw Polylines, Polygons and Paths");
+      stage.setTitle("绘制折线、多边形和路径");
       stage.setScene(scene);
       stage.show();
    }

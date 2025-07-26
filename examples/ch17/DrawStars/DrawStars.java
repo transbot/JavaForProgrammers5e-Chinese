@@ -11,7 +11,7 @@ public class DrawStars extends Application {
       Parent root = FXMLLoader.load(getClass().getResource("DrawStars.fxml"));
       
       Scene scene = new Scene(root);
-      stage.setTitle("Draw Stars");
+      stage.setTitle("画星星");
       stage.setScene(scene);
       stage.show();
    }

@@ -1,5 +1,5 @@
 // 图17.10: TransitionAnimationsController.java
-// Applying Transition animations to a Rectangle.
+// 将过渡动画应用于Rectangle
 import javafx.animation.FadeTransition;      
 import javafx.animation.FillTransition;        
 import javafx.animation.Interpolator;        
@@ -21,42 +21,42 @@ import javafx.util.Duration;
 public class TransitionAnimationsController {
    @FXML private Rectangle rectangle;
    
-   // configure and start transition animations 
+   // 配置并启动过渡动画
    @FXML
    private void startButtonPressed(ActionEvent event) {
-      // transition that changes a shape's fill   
+      // 改变形状填充色的过渡动画
       var fillTransition = new FillTransition(Duration.seconds(1));
       fillTransition.setToValue(Color.CYAN);
       fillTransition.setCycleCount(2);
       
-      // each even cycle plays transition in reverse to restore original
+      // 每个偶数周期反向播放过渡以恢复原始状态
       fillTransition.setAutoReverse(true); 
 
-      // transition that changes a shape's stroke over time  
+      // 随时间改变形状描边颜色的过渡动画
       var strokeTransition = new StrokeTransition(Duration.seconds(1));
       strokeTransition.setToValue(Color.BLUE);
       strokeTransition.setCycleCount(2);
       strokeTransition.setAutoReverse(true);
       
-      // parallelizes multiple transitions  
+      // 并行执行多个过渡动画
       var parallelTransition = 
          new ParallelTransition(fillTransition, strokeTransition);
 
-      // transition that changes a node's opacity over time
+      // 随时间改变节点透明度的过渡动画
       var fadeTransition = new FadeTransition(Duration.seconds(1));
-      fadeTransition.setFromValue(1.0); // opaque
-      fadeTransition.setToValue(0.0); // transparent
+      fadeTransition.setFromValue(1.0); // 不透明
+      fadeTransition.setToValue(0.0);   // 透明
       fadeTransition.setCycleCount(2);
       fadeTransition.setAutoReverse(true);
 
-      // transition that rotates a node 
+      // 旋转节点的过渡动画
       var rotateTransition = new RotateTransition(Duration.seconds(1));
       rotateTransition.setByAngle(360.0);
       rotateTransition.setCycleCount(2);
       rotateTransition.setInterpolator(Interpolator.EASE_BOTH);
       rotateTransition.setAutoReverse(true);
       
-      // transition that moves a node along a Path  
+      // 使节点沿路径平移（translate）的过渡动画
       var path = new Path(new MoveTo(45, 45), new LineTo(45, 0), 
          new LineTo(90, 0), new LineTo(90, 90), new LineTo(0, 90));
       var translateTransition = 
@@ -65,7 +65,7 @@ public class TransitionAnimationsController {
       translateTransition.setInterpolator(Interpolator.EASE_IN);
       translateTransition.setAutoReverse(true);
       
-      // transition that scales a shape to make it larger or smaller
+      // 缩放形状使其变大或变小的过渡动画
       var scaleTransition = new ScaleTransition(Duration.seconds(1));
       scaleTransition.setByX(0.75);
       scaleTransition.setByY(0.75);
@@ -73,11 +73,11 @@ public class TransitionAnimationsController {
       scaleTransition.setInterpolator(Interpolator.EASE_OUT);
       scaleTransition.setAutoReverse(true);
 
-      // transition that applies a sequence of transitions to a node
+      // 该SequentialTransition将一系列过渡按顺序应用于节点
       var sequentialTransition = new SequentialTransition( 
          rectangle, parallelTransition, fadeTransition, 
          rotateTransition, translateTransition, scaleTransition);
-      sequentialTransition.play(); // play the transition
+      sequentialTransition.play(); // 播放过渡动画
    }
 }
 

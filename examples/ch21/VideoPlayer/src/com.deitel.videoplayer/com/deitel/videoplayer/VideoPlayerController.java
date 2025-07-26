@@ -38,7 +38,7 @@ public class VideoPlayerController {
          new Runnable() {
             public void run() {
                playing = false;
-               playPauseButton.setText("Play");
+               playPauseButton.setText("播放");
                mediaPlayer.seek(Duration.ZERO);
                mediaPlayer.pause();
             }
@@ -77,11 +77,11 @@ public class VideoPlayerController {
       playing = !playing;
 
       if (playing) {
-         playPauseButton.setText("Pause");
+         playPauseButton.setText("暂停");
          mediaPlayer.play();
       }
       else {
-         playPauseButton.setText("Play");
+         playPauseButton.setText("播放");
          mediaPlayer.pause();
       }
    } 

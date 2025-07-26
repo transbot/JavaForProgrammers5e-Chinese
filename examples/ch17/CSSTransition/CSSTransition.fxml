@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 图17.14: TransitionAnimations.fxml -->
-<!-- FXML for a Pane and a Rectangle-->
+<!-- 定义了一个Pane和一个Rectangle的FXML -->
 
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 
 <Pane prefHeight="150.0" prefWidth="150.0" 
    stylesheets="@CSSTransition.css" 
-   xmlns="http://javafx.com/javafx/23" 
+   xmlns="http://javafx.com/javafx/24" 
    xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle fx:id="rectangle" height="90.0" 

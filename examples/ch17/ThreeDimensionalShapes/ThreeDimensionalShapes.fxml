@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 图17.17: ThreeDimensionalShapes.fxml -->
-<!-- FXML that displays a Box, Cylinder and Sphere -->
+<!-- 显示了Box、Cylinder和Sphere的FXML -->
 
 <?import javafx.geometry.Point3D?>
 <?import javafx.scene.layout.Pane?>
@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Sphere?>
 
 <Pane prefHeight="200.0" prefWidth="510.0" 
-   xmlns="http://javafx.com/javafx/23" 
+   xmlns="http://javafx.com/javafx/24" 
    xmlns:fx="http://javafx.com/fxml/1" 
    fx:controller="ThreeDimensionalShapesController">
    <children>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- PolyShapes.fxml -->
-<!-- GUI for manipulating a Polyline, a Polygon -->
+<!-- 处理折线、多边形和路径的GUI -->
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -15,25 +15,25 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Polyline?>
 
-<BorderPane prefHeight="200.0" prefWidth="400.0" stylesheets="@PolyShapes.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PolyShapesController">
+<BorderPane prefHeight="200.0" prefWidth="400.0" stylesheets="@PolyShapes.css" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PolyShapesController">
    <left>
       <VBox prefHeight="200.0" prefWidth="100.0" spacing="8.0" BorderPane.alignment="CENTER">
          <children>
-            <TitledPane text="Select Type">
+            <TitledPane text="选择类型">
                <content>
                   <VBox spacing="8.0">
                      <children>
-                        <RadioButton fx:id="polylineRadioButton" mnemonicParsing="false" onAction="#shapeRadioButtonSelected" selected="true" text="Polyline">
+                        <RadioButton fx:id="polylineRadioButton" mnemonicParsing="false" onAction="#shapeRadioButtonSelected" selected="true" text="折线">
                            <toggleGroup>
                               <ToggleGroup fx:id="toggleGroup" />
                            </toggleGroup></RadioButton>
-                        <RadioButton fx:id="polygonRadioButton" mnemonicParsing="false" onAction="#shapeRadioButtonSelected" text="Polygon" toggleGroup="$toggleGroup" />
-                        <RadioButton fx:id="pathRadioButton" mnemonicParsing="false" onAction="#shapeRadioButtonSelected" text="Path" toggleGroup="$toggleGroup" />
+                        <RadioButton fx:id="polygonRadioButton" mnemonicParsing="false" onAction="#shapeRadioButtonSelected" text="多边形" toggleGroup="$toggleGroup" />
+                        <RadioButton fx:id="pathRadioButton" mnemonicParsing="false" onAction="#shapeRadioButtonSelected" text="路径" toggleGroup="$toggleGroup" />
                      </children>
                   </VBox>
                </content>
             </TitledPane>
-            <Button fx:id="clearButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearButtonPressed" text="Clear" />
+            <Button fx:id="clearButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearButtonPressed" text="清除" />
          </children>
       </VBox>
    </left>

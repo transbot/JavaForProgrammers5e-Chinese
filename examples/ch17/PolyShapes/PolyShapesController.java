@@ -1,5 +1,5 @@
 // 图17.5: PolyShapesController.java
-// Drawing Polylines, Polygons and Paths.
+// 绘制折线、多边形和路径
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
@@ -13,10 +13,10 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Polyline; 
 
 public class PolyShapesController {
-   // enum representing shape types
+   // 表示形状类型的枚举
    private enum ShapeType {POLYLINE, POLYGON, PATH};
    
-   // instance variables that refer to GUI components
+   // 引用GUI组件的实例变量
    @FXML private RadioButton polylineRadioButton;
    @FXML private RadioButton polygonRadioButton;
    @FXML private RadioButton pathRadioButton;
@@ -25,62 +25,62 @@ public class PolyShapesController {
    @FXML private Polygon polygon;  
    @FXML private Path path;        
 
-   // instance variables for managing state
+   // 用于管理状态的实例变量
    private ShapeType shapeType = ShapeType.POLYLINE; 
-   private boolean sweepFlag = true; // used with arcs in a Path
+   private boolean sweepFlag = true; // 用于Path中的圆弧方向控制
    
-   // set user data for the RadioButtons and display polyline object
+   // 为单选钮设置用户数据并显示折线对象
    @FXML 
    private void initialize() {
-      // user data on a control can be any Object
+      // 控件上的用户数据可以是任何对象
       polylineRadioButton.setUserData(ShapeType.POLYLINE);
       polygonRadioButton.setUserData(ShapeType.POLYGON);
       pathRadioButton.setUserData(ShapeType.PATH);
       
-      displayShape(); // sets polyline's visibility to true when app loads
+      displayShape(); // 应用加载时设置折线可见
    }
    
-   // handles drawingArea's onMouseClicked event
+   // 处理绘图区域的鼠标单击事件
    @FXML
    private void drawingAreaMouseClicked(MouseEvent e) {
       polyline.getPoints().addAll(e.getX(), e.getY());
       polygon.getPoints().addAll(e.getX(), e.getY()); 
     
-      // if path is empty, move to first click position and close path
+      // 如果路径为空，移动到首次单击位置并闭合路径
       if (path.getElements().isEmpty()) {
          path.getElements().add(new MoveTo(e.getX(), e.getY()));
          path.getElements().add(new ClosePath());               
       }
-      else { // insert a new path segment before the ClosePath element
-         // create an arc segment and insert it in the path
+      else { // 在ClosePath元素前插入新路径段
+         // 创建圆弧并插入路径
          ArcTo arcTo = new ArcTo();    
          arcTo.setX(e.getX());         
          arcTo.setY(e.getY());         
          arcTo.setRadiusX(100.0);      
          arcTo.setRadiusY(100.0);      
          arcTo.setSweepFlag(sweepFlag);
-         sweepFlag = !sweepFlag;
+         sweepFlag = !sweepFlag; // 切换圆弧方向标志
          path.getElements().add(path.getElements().size() - 1, arcTo);
       }
    }
    
-   // handles color RadioButton's ActionEvents
+   // 处理形状单选钮的选择事件
    @FXML
    private void shapeRadioButtonSelected(ActionEvent e) {
-      // user data for each color RadioButton is a ShapeType constant
+      // 每个单选钮的用户数据都是ShapeType枚举常量
       shapeType =                                                  
          (ShapeType) toggleGroup.getSelectedToggle().getUserData();
-      displayShape(); // display the currently selected shape
+      displayShape(); // 显示当前选中的形状
    } 
 
-   // displays currently selected shape
+   // 显示当前选中的形状
    private void displayShape() {
       polyline.setVisible(shapeType == ShapeType.POLYLINE);
       polygon.setVisible(shapeType == ShapeType.POLYGON);
       path.setVisible(shapeType == ShapeType.PATH);         
    } 
    
-   // resets each shape
+   // 重置所有形状
    @FXML
    private void clearButtonPressed(ActionEvent event) {
       polyline.getPoints().clear();

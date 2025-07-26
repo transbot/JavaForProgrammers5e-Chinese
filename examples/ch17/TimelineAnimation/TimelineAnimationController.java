@@ -1,5 +1,5 @@
 // 图17.12: TimelineAnimationController.java
-// Bounce a circle around a window using a Timeline animation
+// 使用Timeline动画让一个圆在窗口中弹跳
 import java.util.random.RandomGenerator;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -19,10 +19,10 @@ public class TimelineAnimationController {
 
    @FXML
    private void initialize() {
-      // define a timeline animation
+      // 定义一个时间轴动画
       var timelineAnimation = new Timeline(
          new KeyFrame(Duration.millis(10), e -> {
-            // move the circle by the dx and dy amounts
+            // 将圆移动dx和dy的距离
             c.setLayoutX(c.getLayoutX() + dx);
             c.setLayoutY(c.getLayoutY() + dy);
             Bounds bounds = pane.getBoundsInLocal();
@@ -34,21 +34,21 @@ public class TimelineAnimationController {
             if (hitTopOrBottom(bounds)) {
                dy *= -1;
             }
-         }) // end call to KeyFrame constructor
+         }) // KeyFrame构造函数调用结束
       );
 
-      // indicate that the timeline animation should run indefinitely
+      // 设置时间轴动画无限循环运行
       timelineAnimation.setCycleCount(Timeline.INDEFINITE);
       timelineAnimation.play();
    }
    
-   // determines whether the circle hit the left or right of the window
+   // 判断圆是否碰到窗口的左右边缘
    private boolean hitRightOrLeftEdge(Bounds bounds) {
       return (c.getLayoutX() <= (bounds.getMinX() + c.getRadius())) ||
          (c.getLayoutX() >= (bounds.getMaxX() - c.getRadius()));      
    }
 
-   // determines whether the circle hit the top or bottom of the window
+   // 判断圆是否碰到窗口的上下边缘
    private boolean hitTopOrBottom(Bounds bounds) {
       return (c.getLayoutY() <= (bounds.getMinY() + c.getRadius())) ||
          (c.getLayoutY() >= (bounds.getMaxY() - c.getRadius()));      

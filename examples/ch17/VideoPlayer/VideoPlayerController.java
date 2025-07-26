@@ -1,5 +1,5 @@
 // 图17.8: VideoPlayerController.java
-// Using Media, MediaPlayer and MediaView to play a video. 
+// 使用Media、MediaPlayer和MediaView来播放视频
 import java.net.URL;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
@@ -20,32 +20,32 @@ public class VideoPlayerController {
       
    @FXML
    private void initialize() {
-      // get URL of the video file
+      // 获取视频文件的URL
       URL url = VideoPlayerController.class.getResource(
-         "A1Launch~medium.mp4");
+         "Shenzhou-15_Launch_1min_Recap.mp4");
       
-      // create a Media object for the specified URL
+      // 为指定URL创建Media对象
       var media = new Media(url.toExternalForm());
       
-      // create a MediaPlayer to control Media playback
+      // 创建MediaPlayer来控制媒体播放
       mediaPlayer = new MediaPlayer(media);
       
-      // specify which MediaPlayer to display in the MediaView
+      // 指定在MediaView中显示的MediaPlayer
       mediaView.setMediaPlayer(mediaPlayer);
 
-      // set handler to be called when the video completes playing
+      // 设置视频播放结束时的处理程序
       mediaPlayer.setOnEndOfMedia(() -> {
          mediaPlayer.seek(Duration.ZERO);
          mediaPlayer.pause();            
       });
  
-      // set handler that displays an ExceptionDialog if an error occurs
+      // 设置错误处理程序：出现错误时显示异常对话框
       mediaPlayer.setOnError(() -> {
          var dialog = new ExceptionDialog(mediaPlayer.getError());
          dialog.showAndWait();                          
       });
       
-      // set handler to resize mediaView to window size once ready to play
+      // 设置准备就绪处理程序：调整mediaView大小以适应窗口
       mediaPlayer.setOnReady(() -> {
          DoubleProperty width = mediaView.fitWidthProperty();  
          DoubleProperty height = mediaView.fitHeightProperty();
@@ -55,15 +55,15 @@ public class VideoPlayerController {
             mediaView.sceneProperty(), "height"));             
       });
 
-      // bind playPauseButton's text to the MediaPlayer's status
+      // 将播放/暂停按钮文本绑定到MediaPlayer状态
       playPauseButton.textProperty().bind(Bindings.when(
          mediaPlayer.statusProperty().isEqualTo(Status.PLAYING))
-                    .then("Pause")
-                    .otherwise("Play")
+                    .then("暂停")
+                    .otherwise("播放")
       );
    }  
    
-   // toggle media playback and the text on the playPauseButton
+   // 切换媒体播放状态并更新播放/暂停按钮文本
    @FXML
    private void playPauseButtonPressed(ActionEvent e) {
       Status status = mediaPlayer.getStatus();

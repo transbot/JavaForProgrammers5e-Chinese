@@ -1,5 +1,5 @@
 /* 图17.4: BasicShapes.css */
-/* CSS that styles various two-dimensional shapes */
+/* 为各种形状指定样式的CSS */
 
 Line, Rectangle, Circle, Ellipse, Arc {
     -fx-stroke-width: 10;  

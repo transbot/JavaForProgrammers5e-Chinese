@@ -1,5 +1,5 @@
 // 图17.18: ThreeDimensionalShapesController.java
-// Setting the material displayed on 3D shapes.
+// 设置在3D形状上显示的材质
 import javafx.fxml.FXML;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
@@ -9,25 +9,25 @@ import javafx.scene.shape.Cylinder;
 import javafx.scene.shape.Sphere;
 
 public class ThreeDimensionalShapesController {
-   // instance variables that refer to 3D shapes
+   // 引用了3D形状的实例变量
    @FXML private Box box;       
    @FXML private Cylinder cylinder;       
    @FXML private Sphere sphere;       
 
-   // set the material for each 3D shape
+   // 为每个3D形状设置材质
    @FXML
    public void initialize() {
-      // define material for the Box object
+      // 为Box对象定义材质
       var boxMaterial = new PhongMaterial();
       boxMaterial.setDiffuseColor(Color.CYAN);      
       box.setMaterial(boxMaterial);
 
-      // define material for the Cylinder object
+      // 为Cylinder对象定义材质
       var cylinderMaterial = new PhongMaterial();
       cylinderMaterial.setDiffuseMap(new Image("yellowflowers.png"));      
       cylinder.setMaterial(cylinderMaterial);
 
-      // define material for the Sphere object
+      // 为Sphere对象定义材质
       var sphereMaterial = new PhongMaterial();
       sphereMaterial.setDiffuseColor(Color.RED);      
       sphereMaterial.setSpecularColor(Color.WHITE);      

@@ -12,7 +12,7 @@ public class BasicShapes extends Application {
          FXMLLoader.load(getClass().getResource("BasicShapes.fxml"));
         
       Scene scene = new Scene(root);
-      stage.setTitle("Shapes with CSS");
+      stage.setTitle("使用CSS为形状设置样式");
       stage.setScene(scene);
       stage.show();
    }

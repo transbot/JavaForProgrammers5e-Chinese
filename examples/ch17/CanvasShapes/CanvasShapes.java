@@ -12,7 +12,7 @@ public class CanvasShapes extends Application {
          FXMLLoader.load(getClass().getResource("CanvasShapes.fxml"));
       
       Scene scene = new Scene(root);
-      stage.setTitle("Draw shapes with Canvas");
+      stage.setTitle("在画布上绘制形状");
       stage.setScene(scene);
       stage.show();
    }

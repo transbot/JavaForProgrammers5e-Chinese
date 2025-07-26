@@ -1,5 +1,5 @@
 /* 图17.15 CSSTransition.css */
-/* CSS rules to apply styling and CSS transitions to a Rectangle. */
+/* 将样式和CSS过渡应用于矩形的CSS规则 */
 Rectangle {
    -fx-stroke-width: 5;  
    -fx-stroke: black;
