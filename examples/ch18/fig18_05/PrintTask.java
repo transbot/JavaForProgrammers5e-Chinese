@@ -1,37 +1,37 @@
 // 图18.3: PrintTask.java
-// PrintTask class sleeps for a random time from 0 to 5 seconds
+// PrintTask类随机休眠0~5秒
 import java.util.random.RandomGenerator;
 
 public class PrintTask implements Runnable {
    private static final RandomGenerator generator =
       RandomGenerator.getDefault();
-   private final int sleepTime; // random sleep time for thread
+   private final int sleepTime; // 线程随机休眠时间（毫秒）
    private final String taskName; 
     
-   // constructor gives the PrintTask a name and 
-   // picks random sleep time between 0 and 5 seconds
+   // 构造函数：指定任务名称，
+   // 并随机生成0~5秒的休眠时间
    public PrintTask(String taskName) {
       this.taskName = taskName;
-      sleepTime = generator.nextInt(5001); // milliseconds
+      sleepTime = generator.nextInt(5001); // 单位：毫秒
    } 
 
-   // method run contains the code that a thread will execute
+   // run方法包含线程将执行的代码
    @Override
    public void run() {
-      try { // put thread to sleep for sleepTime amount of time 
-         System.out.printf("%s going to sleep for %d milliseconds.%n", 
+      try { // 使线程进入休眠状态
+         System.out.printf("%s即将休眠%d毫秒。%n", 
             taskName, sleepTime);
-         Thread.sleep(sleepTime); // put thread to sleep
+         Thread.sleep(sleepTime); 
       }       
       catch (InterruptedException exception) {
          exception.printStackTrace();
-         Thread.currentThread().interrupt(); // re-interrupt the thread
+         Thread.currentThread().interrupt(); // 重新设置线程中断状态
       } 
         
-      // print task name
-      System.out.printf("%s done sleeping%n", taskName); 
+      // 打印任务完成信息
+      System.out.printf("%s结束休眠%n", taskName); 
    } 
-} 
+}
 
 
 

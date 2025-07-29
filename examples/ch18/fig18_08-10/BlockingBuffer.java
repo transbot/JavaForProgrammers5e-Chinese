@@ -1,30 +1,30 @@
 // 图18.9: BlockingBuffer.java
-// Creating a synchronized buffer using an ArrayBlockingQueue.
+// 使用ArrayBlockingQueue创建同步缓冲区
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class BlockingBuffer implements Buffer {
-   // BlockingBuffer uses an ArrayBlockingQueue to manage synchronization
+   // BlockingBuffer使用ArrayBlockingQueue管理同步
    private final ArrayBlockingQueue<Integer> buffer = 
-      new ArrayBlockingQueue<>(1);;
+      new ArrayBlockingQueue<>(1);
    
-   // place value into buffer
+   // 将值放入缓冲区
    @Override
    public void blockingPut(int value) throws InterruptedException {
-      buffer.put(value); // place value in buffer
-      System.out.printf("%s%2d\t%s%d%n", "Producer writes ", value,
-         "Buffer cells occupied: ", buffer.size());
+      buffer.put(value); // 将值放入缓冲区
+      System.out.printf("%s%2d\t%s%d%n", "生产者写入 ", value,
+         "占用的缓冲区单元数量: ", buffer.size());
    }
 
-   // return value from buffer
+   // 从缓冲区返回值
    @Override
    public int blockingGet() throws InterruptedException {
-      int readValue = buffer.take(); // remove value from buffer
-      System.out.printf("%s %2d\t%s%d%n", "Consumer reads ",
-         readValue, "Buffer cells occupied: ", buffer.size());
+      int readValue = buffer.take(); // 从缓冲区移除值
+      System.out.printf("%s%2d\t%s%d%n", "消费者读取 ",
+         readValue, "占用的缓冲区单元数量: ", buffer.size());
 
       return readValue;
    } 
-} 
+}
 
 
 

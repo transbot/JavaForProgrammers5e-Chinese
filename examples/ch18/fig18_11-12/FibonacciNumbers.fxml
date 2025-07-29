@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FibonacciNumbersController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FibonacciNumbersController">
    <children>
-      <TitledPane collapsible="false" text="With FibonacciTask">
+      <TitledPane collapsible="false" text="使用FibonacciTask">
          <content>
             <GridPane hgap="8.0" vgap="4.0">
               <columnConstraints>
@@ -23,9 +23,9 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Get Fibonacci of:" GridPane.halignment="RIGHT" />
+                  <Label text="第几个斐波那契数:" GridPane.halignment="RIGHT" />
                   <TextField fx:id="numberTextField" GridPane.columnIndex="1" />
-                  <Button fx:id="goButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goButtonPressed" text="Go" GridPane.rowIndex="1" />
+                  <Button fx:id="goButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goButtonPressed" text="开始计算" GridPane.rowIndex="1" />
                   <VBox prefHeight="200.0" prefWidth="100.0" spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
                         <Label fx:id="messageLabel" maxWidth="1.7976931348623157E308" />
@@ -36,7 +36,7 @@
             </GridPane>
          </content>
       </TitledPane>
-      <TitledPane collapsible="false" text="Without FibonacciTask">
+      <TitledPane collapsible="false" text="不使用FibonacciTask">
          <content>
             <GridPane hgap="8.0" vgap="4.0">
               <columnConstraints>
@@ -48,8 +48,8 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="nthLabel" text="Fibonacci of 0:" GridPane.halignment="RIGHT" />
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#nextNumberButtonPressed" text="Next Number" GridPane.rowIndex="1" />
+                  <Label fx:id="nthLabel" text="第0个斐波那契数是:" GridPane.halignment="RIGHT" />
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#nextNumberButtonPressed" text="下一个数" GridPane.rowIndex="1" />
                   <Label fx:id="nthFibonacciLabel" maxWidth="1.7976931348623157E308" text="0" GridPane.columnIndex="1" />
                </children>
             </GridPane>

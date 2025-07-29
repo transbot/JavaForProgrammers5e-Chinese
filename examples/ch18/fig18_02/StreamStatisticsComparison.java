@@ -1,5 +1,5 @@
 // 图18.2: StreamStatisticsComparison.java
-// Comparing performance of sequential and parallel stream operations.
+// 比较顺序流与并行流操作的性能
 import java.time.Duration;
 import java.time.InstantSource;
 import java.util.Arrays;
@@ -8,14 +8,14 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class StreamStatisticsComparison {
    public static void main(String[] args) {
-      var clock = InstantSource.system(); // system clock for timing
+      var clock = InstantSource.system(); // 获取系统时钟用于计时
 
-      // create array of random long values
+      // 创建包含随机长整数的数组
       var values = new long[1_000_000_000];
       Arrays.parallelSetAll(values, 
          i -> ThreadLocalRandom.current().nextLong(1, 1001));
       
-      // perform calculations separately
+      // 单独执行各项计算
       var separateStart = clock.instant();                         
       long count = Arrays.stream(values).count();                    
       long sum = Arrays.stream(values).sum();                        
@@ -24,49 +24,49 @@ public class StreamStatisticsComparison {
       double average = Arrays.stream(values).average().getAsDouble();
       var separateEnd = clock.instant();                           
 
-      // display results
-      System.out.println("Calculations performed separately");
-      System.out.printf("    count: %,d%n", count);
-      System.out.printf("      sum: %,d%n", sum);
-      System.out.printf("      min: %,d%n", min);
-      System.out.printf("      max: %,d%n", max);
-      System.out.printf("  average: %f%n", average);
-      System.out.printf("Total time in milliseconds: %d%n%n", 
+      // 显示结果
+      System.out.println("单独执行各项计算的结果");
+      System.out.printf("    总数: %d%n", count);
+      System.out.printf("    总和: %d%n", sum);
+      System.out.printf("    最小值: %d%n", min);
+      System.out.printf("    最大值: %d%n", max);
+      System.out.printf("    平均值: %f%n", average);
+      System.out.printf("总耗时(毫秒): %d%n%n", 
          Duration.between(separateStart, separateEnd).toMillis());
 
-      // time summaryStatistics operation with sequential stream
-      System.out.println("Calculating statistics on sequential stream");
+      // 顺序流统计操作计时
+      System.out.println("顺序流统计计算中");
       var sequentialStart = clock.instant();                     
       LongSummaryStatistics results1 = 
          Arrays.stream(values).summaryStatistics();
       var sequentialEnd = clock.instant();                       
 
-      // display results
+      // 显示结果
       displayStatistics(results1);
-      System.out.printf("Total time in milliseconds: %d%n%n", 
+      System.out.printf("总耗时(毫秒): %d%n%n", 
          Duration.between(sequentialStart, sequentialEnd).toMillis());
 
-      // time sum operation with parallel stream
-      System.out.println("Calculating statistics on parallel stream");
+      // 并行流统计操作计时
+      System.out.println("并行流统计计算中");
       var parallelStart = clock.instant();                       
       LongSummaryStatistics results2 = 
          Arrays.stream(values).parallel().summaryStatistics();
       var parallelEnd = clock.instant();                         
 
-      // display results
+      // 显示结果
       displayStatistics(results2);
-      System.out.printf("Total time in milliseconds: %d%n%n", 
+      System.out.printf("总耗时(毫秒): %d%n%n", 
          Duration.between(parallelStart, parallelEnd).toMillis());
    }
 
-   // display's LongSummaryStatistics values
+   // 显示LongSummaryStatistics的统计值
    private static void displayStatistics(LongSummaryStatistics stats) {
-      System.out.println("Statistics");
-      System.out.printf("    count: %,d%n", stats.getCount());
-      System.out.printf("      sum: %,d%n", stats.getSum());
-      System.out.printf("      min: %,d%n", stats.getMin());
-      System.out.printf("      max: %,d%n", stats.getMax());
-      System.out.printf("  average: %f%n", stats.getAverage());
+      System.out.println("统计结果");
+      System.out.printf("    总数: %d%n", stats.getCount());
+      System.out.printf("    总和: %d%n", stats.getSum());
+      System.out.printf("    最小值: %d%n", stats.getMin());
+      System.out.printf("    最大值: %d%n", stats.getMax());
+      System.out.printf("    平均值: %f%n", stats.getAverage());
    }
 }
 

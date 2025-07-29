@@ -1,6 +1,6 @@
 // 图18.7: WeatherApp.java
-// Fetch a city's weather using OpenWeatherMap API with 
-// structured concurrency and scoped values.
+// 使用OpenWeatherMap API以及结构化并发和
+// 作用域值获取多个城市的天气
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.lang.ScopedValue;
@@ -19,7 +19,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.StructuredTaskScope;
 import java.util.stream.Collectors;
 
-// record classes for current weather JSON mapping
+// 用于映射当前天气JSON数据的记录类
 @JsonIgnoreProperties(ignoreUnknown = true)
 record WeatherData(Weather[] weather, Main main, long dt, 
    int timezone, String name) {}
@@ -30,7 +30,7 @@ record Weather(String main, String description) {}
 @JsonIgnoreProperties(ignoreUnknown = true)
 record Main(double temp) {}
 
-// record classes for forecast JSON mapping
+// 用于映射天气预报JSON数据的记录类
 @JsonIgnoreProperties(ignoreUnknown = true)
 record ForecastResponse(List<ForecastEntry> list) {}
 
@@ -38,57 +38,57 @@ record ForecastResponse(List<ForecastEntry> list) {}
 record ForecastEntry(long dt, Main main, Weather[] weather) {}
 
 public class WeatherApp {
-   // load OpenWeatherMap API key
+   // 加载OpenWeatherMap API密钥
    private static final String API_KEY = 
       System.getenv("OPENWEATHERMAP_API_KEY");
 
-   // HttpClient for making web-service requests
+   // 用于发起Web服务请求的HttpClient
    private static final HttpClient HTTP_CLIENT = 
       HttpClient.newHttpClient(); 
 
-   // used to launch each group of requests for a specified city
+   // 用于为指定城市启动每组请求
    private static final ScopedValue<String> CITY = 
       ScopedValue.newInstance();
 
    public static void main(String[] args) throws Exception {
-      // check for proper command-line arguments
+      // 检查命令行参数是否有效
       if (args.length == 0) {
-         System.out.println("Usage: WeatherApp <city1> <city2> ...");
+         System.out.println("用法: WeatherApp <英文城市名1> <英文城市名2> ...");
          System.exit(1);
       }
 
-      // simulate a server doing thread-per-request handling
+      // 模拟服务器处理每个请求的线程
       try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
          for (String city : args) {
             executor.submit(
-               // set the ScopedValue's value then run a task; the task
-               // and its subtasks will have access to the ScopedValue
+               // 设置ScopedValue的值然后执行任务；
+               // 任务及其子任务将有权访问该ScopedValue
                () -> ScopedValue.where(CITY, city).run(
-                  // task: get and print the weather info for the city
+                  // 任务：获取并打印城市天气信息
                   () -> {
                      try {
-                        System.out.printf("%n%nWeather for %s:\n%s\n", 
+                        System.out.printf("%n%n%s的天气:\n%s\n", 
                            city, getWeather());
                      }
                      catch (Exception ex) {
                         System.err.printf(
-                           "Error fetching weather for %s: %s\n", 
+                           "获取%s的天气时出错: %s\n", 
                            city, ex.getMessage());
                      }
-                  } // end nested lambda expression
-               ) // end call to ScopedValue's run method
-            ); // end call to the executor object's submit method
-         } // end for loop
-      } // end try-with-resources statement
+                  } // 结束嵌套Lambda表达式
+               ) // 结束ScopedValue.run方法调用
+            ); // 结束executor.submit方法调用
+         } // 结束for循环
+      } // 结束try-with-resources语句
    }
 
-   // use structured concurrency to request current weather and forecast
+   // 使用结构化并发请求当前天气和预报
    public static String getWeather() throws Exception {
-      // URL encode the city parameter
+      // URL编码城市参数
       String encodedCity = 
          URLEncoder.encode(CITY.get(), StandardCharsets.UTF_8);
       
-      // construct API URLs
+      // 构建API URL
       String currentWeatherUrl = String.format(
          "https://api.openweathermap.org/data/2.5/weather?q=%s" +
          "&units=metric&appid=%s", encodedCity, API_KEY);
@@ -96,78 +96,78 @@ public class WeatherApp {
          "https://api.openweathermap.org/data/2.5/forecast?q=%s" +
          "&units=metric&appid=%s", encodedCity, API_KEY);
       
-      // use StructuredTaskScope to manage concurrent tasks
+      // 使用StructuredTaskScope管理并发任务
       try (var scope = new StructuredTaskScope.ShutdownOnFailure()) {
          var currentWeatherTask = scope.fork(
             () -> requestData(currentWeatherUrl, WeatherData.class));
          var forecastTask = scope.fork( 
             () -> requestData(forecastUrl, ForecastResponse.class));
          
-         scope.join(); // waits for responses
-         scope.throwIfFailed(); // throws an exception if a task fails 
+         scope.join(); // 等待响应完成
+         scope.throwIfFailed(); // 如果任务失败则抛出异常
 
-         // tasks completed successfully, retrieve results
+         // 任务成功完成，获取结果
          WeatherData weatherData = currentWeatherTask.get();
          ForecastResponse forecastResponse = forecastTask.get();
 
-         // format and return output
+         // 格式化并返回输出
          return formatWeatherOutput(weatherData, forecastResponse);
       }
    }
    
-   // generic method to retrieve JSON data from OpenWeatherMap API
+   // 从OpenWeatherMap API检索JSON数据的通用方法
    private static <T> T requestData(String url, Class<T> type) 
       throws Exception {
-      // build the request to the OpenWeatherMap web service
+      // 构建OpenWeatherMap Web服务请求
       HttpRequest request = HttpRequest.newBuilder()
          .uri(URI.create(url)).GET().build();
       
-      // send the HTTP request and get the response
+      // 发送HTTP请求并获取响应
       HttpResponse<String> response = HTTP_CLIENT.send(request, 
          HttpResponse.BodyHandlers.ofString());
       
-      // check if the request was successful; otherwise, throw Exception
+      // 检查请求是否成功，否则抛出异常
       if (response.statusCode() != 200) {
          throw new Exception(String.format(
-            "Error: HTTP status %d\n", response.statusCode()));
+            "错误: HTTP状态码%d\n", response.statusCode()));
       }
 
-      // use Jackson library to deserialize the JSON response 
-      // into the format specified by type
+      // 使用Jackson库将JSON响应
+      // 反序列化为指定的type
       return new ObjectMapper().readValue(response.body(), type);
    }
    
-   // formats weather output for display
+   // 格式化天气输出以便显示
    private static String formatWeatherOutput( 
       WeatherData weatherData, ForecastResponse forecastResponse) {
       
-      // current temperature
+      // 当前温度
       double tempC = weatherData.main().temp();
       double tempF = (tempC * 9 / 5) + 32;
       
-      // date formatter
+      // 日期格式化器
       DateTimeFormatter dateFormatter = 
          DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
             .withZone(ZoneId.ofOffset("UTC", 
                ZoneOffset.ofTotalSeconds(weatherData.timezone())));
       
-      // 5-day/3-hour forecast of weather descriptions with temperatures
+      // 5天/3小时天气预报（包含天气描述和温度）
       String forecastInfo = forecastResponse.list().stream().limit(16)
          .map(f -> {
             double tempCForecast = f.main().temp();
             double tempFForecast = (tempCForecast * 9 / 5) + 32;
             return String.format(
-               "%s: %s; temp: %.1f C (%.1f F)",
+               "%s: %s; 温度: %.1f C (%.1f F)",
                dateFormatter.format(Instant.ofEpochSecond(f.dt())),
                f.weather()[0].main(), tempCForecast, tempFForecast);
          })
          .collect(Collectors.joining("\n"));
       
       return """
-         %s Weather: %s
-         Temperature: %.1f C (%.1f F)
+         %s当前天气状况: %s
+         温度: %.1f C (%.1f F)
          
-         Forecast:
+         预报:
          %s""".formatted(weatherData.name(), 
             weatherData.weather()[0].description(), 
             tempC, tempF, forecastInfo);

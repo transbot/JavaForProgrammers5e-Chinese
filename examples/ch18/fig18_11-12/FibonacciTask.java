@@ -1,34 +1,34 @@
-// 图18.11: FibonacciTask.java
-// Task subclass for calculating Fibonacci numbers in the background
-import javafx.concurrent.Task;
+   // 图18.11: FibonacciTask.java
+   // 用于在后台计算斐波那契数的Task子类
+   import javafx.concurrent.Task;
 
-public class FibonacciTask extends Task<Long> {
-   private final int n; // Fibonacci number to calculate
+   public class FibonacciTask extends Task<Long> {
+      private final int n; // 要计算的斐波那契数
 
-   // constructor
-   public FibonacciTask(int n) {
-      this.n = n;
-   } 
+      // 构造函数
+      public FibonacciTask(int n) {
+         this.n = n;
+      } 
 
-   // long-running code to be run in a worker thread
-   @Override
-   protected Long call() {
-      updateMessage("Calculating...");
-      long result = fibonacci(n);
-      updateMessage("Done calculating."); 
-      return result;
-   } 
+      // 应在工作线程中运行的耗时代码
+      @Override
+      protected Long call() {
+         updateMessage("正在计算...");
+         long result = fibonacci(n);
+         updateMessage("计算完成。"); 
+         return result;
+      } 
 
-   // calculates nth Fibonacci number (Section 22.4 explains this method)
-   public long fibonacci(long number) {
-      if (number == 0 || number == 1) {
-         return number;
+      // 计算第n个斐波那契数（将在22.4节解释这个方法）
+      public long fibonacci(long number) {
+         if (number == 0 || number == 1) {
+            return number;
+         }
+         else {
+            return fibonacci(number - 1) + fibonacci(number - 2);
+         }
       }
-      else {
-         return fibonacci(number - 1) + fibonacci(number - 2);
-      }
-   }
-} 
+   } 
 
 /*************************************************************************
 * (C) Copyright 1992-2025 by Deitel & Associates, Inc. and               *

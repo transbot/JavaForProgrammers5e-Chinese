@@ -1,28 +1,28 @@
 // 图18.5: VirtualThreadDemo.java
-// Using virtual threads to execute Runnables.
+// 使用虚拟线程来执行多个Runnable任务
 import java.util.concurrent.Executors;
 
 public class VirtualThreadDemo {
    public static void main(String[] args) {
-      // PrintTask constructor assigns random sleep time to each
+      // PrintTask构造函数为每个任务分配随机的休眠时间
       PrintTask task1 = new PrintTask("task1");
       PrintTask task2 = new PrintTask("task2");
       PrintTask task3 = new PrintTask("task3");
         
-      System.out.println("Starting Virtual-Thread-Per-Task Executor\n");
+      System.out.println("正在启动Virtual-Thread-Per-Task Executor\n");
 
-      // The ExecutorService returned by newVirtualThreadPerTaskExecutor
-      // runs each task in a virtual thread. The try-with-resources block
-      // calls ExecutorService's close method when the block terminates.
-      // The program then waits for the virtual threads to complete.
+      // newVirtualThreadPerTaskExecutor返回的ExecutorService
+      // 会用不同的虚拟线程运行每个任务。
+      // 当try-with-resources语句块执行完毕时，会自动调用
+      // ExecutorService的close方法。然后，程序等待虚拟线程结束
       try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
-         // start the three PrintTasks
-         executor.execute(task1); // start task1	
-         executor.execute(task2); // start task2
-         executor.execute(task3); // start task3
+         // 启动三个PrintTask
+         executor.execute(task1); // 启动task1	
+         executor.execute(task2); // 启动task2
+         executor.execute(task3); // 启动task3
       } 
 
-      System.out.println("\nMain ends.");
+      System.out.println("\nmain线程结束。");
    } 
 }
 

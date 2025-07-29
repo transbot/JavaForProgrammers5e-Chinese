@@ -1,5 +1,5 @@
 // FindPrimes.java
-// Main application class that loads and displays the FindPrimes GUI.
+// 启动并显示FindPrimes GUI的主应用程序类
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +13,7 @@ public class FindPrimes extends Application {
          FXMLLoader.load(getClass().getResource("FindPrimes.fxml"));
       
       Scene scene = new Scene(root);
-      stage.setTitle("Find Primes");
+      stage.setTitle("查找素数");
       stage.setScene(scene);
       stage.show();
    }

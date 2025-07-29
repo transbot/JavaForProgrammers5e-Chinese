@@ -1,25 +1,25 @@
 // 图18.10: BlockingBufferTest.java
-// Two threads manipulating a blocking buffer that properly 
-// implements the producer/consumer relationship.
+// 两个线程操作一个正确实现了生产者/消费者
+// 关系的阻塞缓冲区
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class BlockingBufferTest {
    public static void main(String[] args) throws InterruptedException {
-      // virtual-thread-per-task executor
+      // 该executor为每个任务分配一个虚拟线程
       try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
-         // create BlockingBuffer to store ints       
+         // 创建BlockingBuffer来存储int值
          final Buffer buffer = new BlockingBuffer();
 
-         // producer task writes 1-10 into buffer
+         // 生产者任务向缓冲区写入1~10
          executor.execute(() -> {
             int sum = 0;
 
             for (int count = 1; count <= 10; count++) {
                try { 
                   Thread.sleep(ThreadLocalRandom.current().nextInt(3000));  
-                  buffer.blockingPut(count); // write value into buffer
-                  sum += count; // keep running total of values written 
+                  buffer.blockingPut(count); // 向缓冲区写入值
+                  sum += count; // 持续累加所写入的值
                } 
                catch (InterruptedException exception) {
                   Thread.currentThread().interrupt(); 
@@ -27,17 +27,17 @@ public class BlockingBufferTest {
             } 
 
             System.out.printf(
-               "Producer done: Produced values totaling %d%n", sum);
+               "生产者完成: 所生成值的总和为%d%n", sum);
          });
 
-         // consumer task reads values from buffer
+         // 消费者任务从缓冲区读取值
          executor.execute(() -> {
             int sum = 0;
 
             for (int count = 1; count <= 10; count++) {
                try {
                   Thread.sleep(ThreadLocalRandom.current().nextInt(3000));  
-                  sum += buffer.blockingGet(); // read value from buffer
+                  sum += buffer.blockingGet(); // 从缓冲区读取值
                } 
                catch (InterruptedException exception) {
                   Thread.currentThread().interrupt(); 
@@ -45,11 +45,11 @@ public class BlockingBufferTest {
             } 
 
             System.out.printf(
-               "%nConsumer done: Read values totaling %d%n", sum);
+               "%n消费者完成: 所读取值的总和为%d%n", sum);
          });
       }
    }
-} 
+}
 
 
 /**************************************************************************

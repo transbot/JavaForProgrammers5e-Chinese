@@ -1,5 +1,5 @@
 // 图18.14: FindPrimesController.java
-// Displaying prime numbers as they're calculated; updating a ProgressBar
+// 一边查找素数一边显示，同时更新ProgressBar进度条
 import java.util.concurrent.Executors;
 
 import javafx.collections.FXCollections;
@@ -20,74 +20,74 @@ public class FindPrimesController {
    @FXML private ProgressBar progressBar;
    @FXML private Label statusLabel;
 
-   // stores the list of primes received from PrimeCalculatorTask
+   // 存储从PrimeCalculatorTask接收到的素数列表
    private ObservableList<Integer> primes = 
       FXCollections.observableArrayList();
-   private PrimeCalculatorTask task; // finds prime numbers
+   private PrimeCalculatorTask task; // 该任务查找素数
 
-   // binds primesListView's items to the ObservableList primes
+   // 将primesListView中的项绑定到名为primes的ObservableList
    @FXML
    public void initialize() {
       primesListView.setItems(primes);
    }
 
-   // start calculating primes in the background
+   // 开始在后台查找素数
    @FXML
    void getPrimesButtonPressed(ActionEvent event) {
       primes.clear();
 
-      // get Fibonacci number to calculate
+      // 获取要查找最大数
       try {
          int input = Integer.parseInt(inputTextField.getText());
-         task = new PrimeCalculatorTask(input); // create task
+         task = new PrimeCalculatorTask(input); // 创建任务
 
-         // display task's messages in statusLabel
+         // 在statusLabel中显示任务的消息
          statusLabel.textProperty().bind(task.messageProperty());
 
-         // update progressBar based on task's progressProperty
+         // 根据任务的progressProperty更新progressBar
          progressBar.progressProperty().bind(task.progressProperty());
 
-         // store intermediate results in the ObservableList primes
+         // 将中间结果存储到名为primes的ObservableList中
          task.valueProperty().addListener(
             (observable, oldValue, newValue) -> {
-               if (newValue != 0) { // task returns 0 when it terminates
+               if (newValue != 0) { // 任务终止会返回0，而0不是素数
                   primes.add(newValue);
                   primesListView.scrollTo(
                      primesListView.getItems().size());
                }
             });
 
-         // when task begins, 
-         // disable getPrimesButton and enable cancelButton
+         // 当任务开始时，
+         // 禁用getPrimesButton按钮，并启用cancelButton按钮
          task.setOnRunning((succeededEvent) -> {
             getPrimesButton.setDisable(true);
             cancelButton.setDisable(false);
          });
 
-         // when task completes successfully, 
-         // enable getPrimesButton and disable cancelButton
+         // 当任务成功完成后，
+         // 启用getPrimesButton按钮并禁用cancelButton按钮
          task.setOnSucceeded((succeededEvent) -> {
             getPrimesButton.setDisable(false);
             cancelButton.setDisable(true);
          });
 
-         // launch the PrimeCalculatorTask
+         // 启动PrimeCalculatorTask
          var executor = Executors.newVirtualThreadPerTaskExecutor();
-         executor.execute(task); // start the task
+         executor.execute(task); // 启动任务
          executor.shutdown();
       }
       catch (NumberFormatException e) {
-         inputTextField.setText("Enter an integer");
+         inputTextField.setText("请输入一个整数");
          inputTextField.selectAll();
          inputTextField.requestFocus();
       }  
    }
 
-   // cancel task when user presses Cancel Button
+   // 单击“取消”按钮时取消任务
    @FXML
    void cancelButtonPressed(ActionEvent event) {
       if (task != null) {
-         task.cancel(); // terminate the task
+         task.cancel(); // 终止任务
          getPrimesButton.setDisable(false);
          cancelButton.setDisable(true);
       }

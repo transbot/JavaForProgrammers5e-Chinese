@@ -12,16 +12,16 @@
    <top>
       <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <items>
-            <Label text="Find primes less than:" />
+            <Label text="查找在这个数之前的素数:" />
             <TextField fx:id="inputTextField" prefColumnCount="5" />
-          <Button fx:id="getPrimesButton" mnemonicParsing="false" onAction="#getPrimesButtonPressed" text="Get Primes" />
+          <Button fx:id="getPrimesButton" mnemonicParsing="false" onAction="#getPrimesButtonPressed" text="查找" />
          </items>
       </ToolBar>
    </top>
    <bottom>
       <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
-          <Button fx:id="cancelButton" disable="true" mnemonicParsing="false" onAction="#cancelButtonPressed" text="Cancel" />
+          <Button fx:id="cancelButton" disable="true" mnemonicParsing="false" onAction="#cancelButtonPressed" text="取消" />
             <ProgressBar fx:id="progressBar" prefWidth="100.0" progress="0.0" />
             <Label fx:id="statusLabel" maxWidth="-Infinity" prefWidth="120.0" />
         </items>

@@ -1,5 +1,5 @@
 // 图18.6: PlatformAndVirtualThreads.java
-// Timing large numbers of platform vs. virtual threads.
+// 平台线程与虚拟线程的性能对比
 import java.time.Duration;
 import java.time.InstantSource;
 import java.util.ArrayList;
@@ -9,31 +9,31 @@ import java.util.concurrent.Future;
 import java.util.stream.LongStream;
 
 public class PlatformAndVirtualThreads {
-   // execute and time threads; sum squares of 1 to number of tasks
+   // 执行并计时线程；计算1到任务数量的平方和
    private static void executeAndTimeThreads(int tasks, 
       String threadType, ExecutorService executor) throws Exception {
-      var clock = InstantSource.system(); // system clock for timing 
+      var clock = InstantSource.system(); // 用于计时的系统时钟
 
-      // stores Futures for all the launched tasks
+      // 存储所有已启动任务的Future
       var futures = new ArrayList<Future<Long>>(tasks);
 
       System.out.printf(
-         "Executing %d tasks on %s...%n", tasks, threadType);
+         "正在%s上执行%d个任务...%n", threadType, tasks);
       var start = clock.instant();
 
-      // auto-closes the ExecutorService at the end of the try block;
-      // automatically waits for all tasks to complete
+      // try块结束时自动关闭ExecutorService；
+      // 自动等待所有任务完成
       try (executor) {
-         // launch the number of tasks specified by tasks parameter
+         // 启动指定数量的任务
          LongStream.rangeClosed(1, tasks).forEach(value -> 
             futures.add(executor.submit(() -> {
-               Thread.sleep(Duration.ofSeconds(1)); // simulate blocking
+               Thread.sleep(Duration.ofMillis(100 + (int)(Math.random() * 1900))); // 模拟阻塞操作
                return value * value; 
             }))
          );
       } 
 
-      // sum the results from the Futures
+      // 从Future中汇总结果
       long sum = 0;
       for (var future : futures) {
          sum += future.get(); 
@@ -41,35 +41,35 @@ public class PlatformAndVirtualThreads {
 
       var end = clock.instant();
 
-      // display results
-      System.out.printf("Execution time: %.2f seconds%n", 
+      // 显示结果
+      System.out.printf("执行时间: %.2f秒%n", 
          Duration.between(start, end).toMillis() / 1000.0);
-      System.out.printf("Sum of squares 1-%d: %d%n%n", tasks, sum);
+      System.out.printf("1~%d的平方和: %d%n%n", tasks, sum);
    }
    
    public static void main(String[] args) throws Exception {
-      // check for proper command-line arguments
+      // 检查命令行参数是否有效
       if (args.length != 1) {
-         System.out.println("Usage: PlatformAndVirtualThreads <count>");
+         System.out.println("用法: PlatformAndVirtualThreads <任务数量>");
          System.exit(1);
       }
 
-      // get number of threads to launch
+      // 获取要启动的线程数量
       final int TASKS = Integer.parseInt(args[0]); 
 
-      // execute and time platform threads with fixed thread pool
+      // 使用固定线程池执行平台线程并计时
       executeAndTimeThreads(TASKS,  
-         "Platform Threads (fixed pool of 1000 threads)", 
+         "平台线程（1000个线程的固定池）", 
          Executors.newFixedThreadPool(1000));
 
-      // execute and time platform threads with cached thread pool
+      // 使用缓存线程池执行平台线程并计时
       executeAndTimeThreads(TASKS, 
-         "Platform Threads (cached thread pool)", 
+         "平台线程（缓存线程池）", 
          Executors.newCachedThreadPool());
 
-      // execute and time virtual threads
+      // 执行虚拟线程并计时
       executeAndTimeThreads(TASKS, 
-         "Virtual Threads", Executors.newVirtualThreadPerTaskExecutor());
+         "虚拟线程", Executors.newVirtualThreadPerTaskExecutor());
    }
 }
 

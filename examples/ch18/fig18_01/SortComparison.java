@@ -1,5 +1,5 @@
 // 图18.1: SortComparison.java
-// Comparing the performance of Arrays methods sort and parallelSort.
+// 比较Arrays类中sort方法与parallelSort方法的性能
 import java.time.Duration;
 import java.time.InstantSource;
 import java.text.NumberFormat;
@@ -8,42 +8,42 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class SortComparison {
    public static void main(String[] args) {
-      var clock = InstantSource.system(); // system clock for timing sorts
+      var clock = InstantSource.system(); // 系统时钟用于计时排序
 
-      // create array of random ints, then copy it; Arrays method 
-      // parallelSetAll divides the task of randomly initializing  
-      // array1 across available cores
+      // 创建随机int数组并复制副本；
+      // Arrays的parallelSetAll方法将随机初始化array1
+      // 的任务分配给可用的处理器核心
       var array1 = new int[100_000_000];
       Arrays.parallelSetAll(array1, 
          i -> ThreadLocalRandom.current().nextInt());
       var array2 = array1.clone();
 
-      // time the sorting of array1 with Arrays method sort 
-      System.out.println("Starting sort");
+      // 使用传统的Arrays.sort方法对array1排序并计时 
+      System.out.println("开始执行sort排序");
       var sortStart = clock.instant();
       Arrays.sort(array1);              
       var sortEnd = clock.instant();  
 
-      // display timing results
+      // 显示计时结果
       double sortTime = Duration.between(sortStart, sortEnd).toMillis();
-      System.out.printf("Sort time: %.3f seconds%n%n", sortTime / 1000.0);
+      System.out.printf("排序耗时: %.3f秒%n%n", sortTime / 1000.0);
 
-      // time the sorting of array2 with Arrays method parallelSort
-      System.out.println("Starting parallelSort");
+      // 使用Arrays.parallelSort方法对array2排序并计时
+      System.out.println("开始执行parallelSort排序");
       var parallelSortStart = clock.instant();
       Arrays.parallelSort(array2);              
       var parallelSortEnd = clock.instant();  
 
-      // display timing results
+      // 显示计时结果
       double parallelSortTime = 
          Duration.between(parallelSortStart, parallelSortEnd).toMillis();
-      System.out.printf("Sort time: %.3f seconds%n%n", 
+      System.out.printf("排序耗时: %.3f秒%n%n", 
          parallelSortTime / 1000.0);
 
-      // display time difference as a percentage
+      // 以百分比形式显示时间差异
       String percentage = NumberFormat.getPercentInstance().format( 
          (sortTime - parallelSortTime) / parallelSortTime);
-      System.out.printf("sort took %s more time than parallelSort%n", 
+      System.out.printf("sort比parallelSort多耗时%s%n", 
          percentage);
    }
 }

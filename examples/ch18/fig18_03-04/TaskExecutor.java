@@ -1,30 +1,30 @@
 // 图18.4: TaskExecutor.java
-// Using an ExecutorService to execute Runnables.
+// 使用ExecutorService来执行多个Runnable任务
 import java.util.concurrent.Executors;
 
 public class TaskExecutor {
    public static void main(String[] args) {
-      // create and name each runnable
+      // 创建并命名每个Runnable任务
       var task1 = new PrintTask("task1");
       var task2 = new PrintTask("task2");
       var task3 = new PrintTask("task3");
         
-      System.out.println("Starting Executor\n");
+      System.out.println("正在启动Executor\n");
 
-      // create ExecutorService for executing tasks; when the 
-      // try-with-resources statement completes, the ExecutorService's
-      // close method shuts it down, preventing it from accepting new
-      // tasks and waiting for existing ones to complete execution
+      // 创建ExecutorService来执行任务：
+      // 当try-with-resources语句块执行完毕时，
+      // 会自动调用ExecutorService的close方法，
+      // 这将阻止其接受新任务，并等待现有任务完成执行
       try (var executorService = Executors.newCachedThreadPool()) {
-         // start the three PrintTasks
-         executorService.execute(task1); // start task1	
-         executorService.execute(task2); // start task2
-         executorService.execute(task3); // start task3
+         // 启动三个PrintTask
+         executorService.execute(task1); // 启动task1	
+         executorService.execute(task2); // 启动task2
+         executorService.execute(task3); // 启动task3
       } 
 
-      System.out.println("\nMain ends.");
+      System.out.println("\nmain线程结束。");
    } 
-} 
+}
 
 
 

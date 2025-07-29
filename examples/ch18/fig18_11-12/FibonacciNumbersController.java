@@ -1,6 +1,6 @@
 // 图18.12: FibonacciNumbersController.java
-// Using a Task to perform a long calculation 
-// outside the JavaFX application thread.
+// 使用Task在JavaFX应用程序线程外部
+// 执行长时间计算
 import java.util.concurrent.Executors;
 
 import javafx.event.ActionEvent;
@@ -17,52 +17,52 @@ public class FibonacciNumbersController {
    @FXML private Label nthLabel;
    @FXML private Label nthFibonacciLabel;
 
-   private long n1 = 0; // initialize with Fibonacci of 0
-   private long n2 = 1; // initialize with Fibonacci of 1
-   private int number = 1; // current Fibonacci number to display
+   private long n1 = 0;    // 初始化第0个斐波那契数
+   private long n2 = 1;    // 初始化第1个斐波那契数
+   private int number = 1; // 当前要显示的斐波那契数
 
-   // starts FibonacciTask to calculate in background
+   // 启动FibonacciTask并在后台计算
    @FXML
    void goButtonPressed(ActionEvent event) {
-      // get Fibonacci number to calculate
+      // 获取要计算的斐波那契数
       try {
          int input = Integer.parseInt(numberTextField.getText());
 
-         // create, configure and launch FibonacciTask
+         // 创建、配置和启动FibonacciTask
          FibonacciTask task = new FibonacciTask(input);
 
-         // display task's messages in messageLabel
+         // 在messageLabel中显示任务的消息
          messageLabel.textProperty().bind(task.messageProperty());
 
-         // clear fibonacciLabel when task starts
+         // 任务启动后清除fibonacciLabel上的文本
          task.setOnRunning((succeededEvent) -> {
             goButton.setDisable(true);
             fibonacciLabel.setText(""); 
          });
          
-         // set fibonacciLabel when task completes successfully
+         // 任务成功完成后设置fibonacciLabel上的文本
          task.setOnSucceeded((succeededEvent) -> {
             fibonacciLabel.setText(task.getValue().toString());
             goButton.setDisable(false);
          });
 
-         // launch a FibonacciTask 
+         // 启动一个FibonacciTask 
          var executor = Executors.newFixedThreadPool(1);
-         executor.execute(task); // start the task
-         executor.shutdown(); // prevent more tasks from being scheduled
+         executor.execute(task); // 启动任务
+         executor.shutdown();    // 防止调度更多任务
       }
       catch (NumberFormatException e) {
-         numberTextField.setText("Enter an integer");
+         numberTextField.setText("请输入一个整数");
          numberTextField.selectAll();
          numberTextField.requestFocus();
       }
    }
 
-   // calculates next Fibonacci value   
+   // 计算下一个斐波那契数
    @FXML
    void nextNumberButtonPressed(ActionEvent event) {
-      // display the next Fibonacci number
-      nthLabel.setText("Fibonacci of " + number + ": ");
+      // 显示下一个斐波那契数
+      nthLabel.setText("第" + number + "个斐波那契数是: ");
       nthFibonacciLabel.setText(String.valueOf(n2));
       long temp = n1 + n2;
       n1 = n2;

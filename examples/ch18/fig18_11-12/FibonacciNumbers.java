@@ -1,5 +1,5 @@
 // FibonacciNumbers.java
-// Main application class that loads and displays the FibonacciNumbers GUI.
+// 加载并显示FibonacciNumbers GUI的主应用程序类
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +13,7 @@ public class FibonacciNumbers extends Application {
          FXMLLoader.load(getClass().getResource("FibonacciNumbers.fxml"));
       
       Scene scene = new Scene(root);
-      stage.setTitle("Fibonacci Numbers");
+      stage.setTitle("斐波那契数");
       stage.setScene(scene);
       stage.show();
    }
