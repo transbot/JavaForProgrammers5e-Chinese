@@ -1,5 +1,5 @@
 // 图19.2: SentimentAnalysisDemo.java
-// Analyzing the sentiment of a transcript.
+// 分析文字记录的情感
 import deitel.openai.OpenAIUtilities;
 import deitel.openai.OpenAIUtilities.Message;
 
@@ -9,20 +9,20 @@ import java.util.List;
 
 public class SentimentAnalysisDemo {
    public static void main(String[] args) throws Exception {
-      // load transcript.txt
-      Path transcriptPath = Path.of(System.getProperty("user.home"),
-         "Documents", "examples", "ch19", "resources", "transcript.txt");
+      // 加载上一级目录resources子目录中的transcript.txt
+      Path transcriptPath = Path.of(System.getProperty("user.dir"))
+         .getParent().resolve("resources").resolve("transcript.txt");
       String transcript = Files.readString(transcriptPath);
 
-      // analyze text sentiment with OpenAI's gpt-4o model
-      System.out.println("ANALYZE SENTIMENT");
+      // 使用OpenAI的gpt-4o模型分析文本情感
+      System.out.println("分析情感");
       String sentiment = OpenAIUtilities.chat("gpt-4o",
          List.of(
             new Message("system", """
-               You are an expert in sentiment analysis. Analyze the
-               following presentation transcript and state whether
-               the sentiment is positive, negative, or neutral.
-               Explain your analysis."""),
+               你是一位情感分析专家。请分析以下演讲文字记录，
+               并判断其情感倾向是积极、消极还是中性。
+               请解释你的分析过程和结论。
+               请用中文回答。"""),
             new Message("user", transcript)
          )
       );

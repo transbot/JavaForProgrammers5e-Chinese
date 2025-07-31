@@ -10,7 +10,7 @@ public class SetTest {
    public static void main(String[] args) {
       // 创建并显示List<String>
       String[] colors = {"红", "白", "蓝", "绿", "灰", 
-         "橙", "棕", "白", "青", "桃", "灰", "橙"}; // 颜色翻译
+         "橙", "棕", "白", "青", "桃", "灰", "橙"}; 
       List<String> list = Arrays.asList(colors);
       System.out.printf("原始列表: %s%n", list);
 

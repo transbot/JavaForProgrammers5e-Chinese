@@ -1,5 +1,5 @@
 // 图19.10: SpeechToVTTDemo.java
-// Transcribing the audio track from a video and creating closed captions.
+// 转录视频中的音轨并创建隐藏（CC）字幕
 import deitel.openai.OpenAIUtilities;
 
 import java.nio.file.Files;
@@ -8,22 +8,22 @@ import java.nio.file.StandardOpenOption;
 
 public class SpeechToVTTDemo {
    public static void main(String[] args) throws Exception {
-      // get path to resources folder
-      Path resourcesFolder = Path.of(System.getProperty("user.home"),
-         "Documents", "examples", "ch19", "resources");
-
-      // get path to audio file ImplicitClass.m4a
+      // 获取资源文件夹路径
+      Path resourcesFolder = Path.of(System.getProperty("user.dir"))
+        .getParent().resolve("resources");   
+      
+      // 获取音频文件 ImplicitClass.m4a 的路径
       Path audioPath =
          Path.of(resourcesFolder.toString(), "ImplicitClass.m4a");
 
-      // convert speech to closed captions with OpenAI's whisper-1 model
+      // 使用OpenAI的whisper-1模型将语音转为隐藏字幕
       System.out.println(
-         "Transcribing audio and creating VTT captions file...");
+         "正在转录音频并创建VTT字幕文件...");
       String captions =
          OpenAIUtilities.speechToVTT("whisper-1", audioPath);
-      System.out.printf("CAPTIONS:%n%s%n", captions);
+      System.out.printf("字幕内容：%n%s%n", captions);
 
-      // output the captions to a .vtt file
+      // 将字幕输出到.vtt文件
       var captionsPath = Path.of(resourcesFolder.toString(),
          "outputs", "ImplicitClass.vtt");
       Files.writeString(captionsPath, captions.trim(),

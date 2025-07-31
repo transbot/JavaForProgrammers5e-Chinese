@@ -28,7 +28,7 @@ public class Algorithms2 {
       boolean areDisjoint = Collections.disjoint(list1, list2);  
 
       System.out.printf("list1和list2%s共同元素%n", 
-         (areDisjoint ? "没有" : "有")); // 提示文本翻译
+         (areDisjoint ? "没有" : "有")); 
    } 
 }
 

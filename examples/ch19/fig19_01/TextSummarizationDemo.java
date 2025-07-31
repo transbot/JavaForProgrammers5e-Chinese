@@ -1,5 +1,5 @@
 // 图19.1: TextSummarizationDemo.java
-// Summarizing a transcript as an abstract paragraph and key points.
+// 将文字记录总结为摘要段落和要点
 import deitel.openai.OpenAIUtilities;
 import deitel.openai.OpenAIUtilities.Message;
 
@@ -9,37 +9,37 @@ import java.util.List;
 
 public class TextSummarizationDemo {
    public static void main(String[] args) throws Exception {
-      // load transcript.txt
-      Path transcriptPath = Path.of(System.getProperty("user.home"),
-         "Documents", "examples", "ch19", "resources", "transcript.txt");
+      // 加载transcript.txt文件
+      Path transcriptPath = Path.of(System.getProperty("user.dir"))
+         .getParent().resolve("resources").resolve("transcript.txt");
       String transcript = Files.readString(transcriptPath);
 
-      // get a summary abstract with OpenAI's gpt-4o model
-      System.out.println("CREATE A SUMMARY ABSTRACT OF A TRANSCRIPT");
+      // 使用OpenAI的gpt-4o模型生成摘要段落
+      System.out.println("为一份文字记录创建摘要");
       String summaryAbstract = OpenAIUtilities.chat("gpt-4o",
          List.of(
             new Message("system", """
-               Given a transcript of a technical presentation, create a 
-               concise, clear summary abstract in paragraph form, written 
-               in a direct style that avoids prepositional phrases and 
-               uses straightforward sentence structures. Focus on the key 
-               points without referring to the speaker. Capture the key 
-               ideas, so a person can understand it without reading the 
-               full transcript."""),
+               给定一份技术演讲的文字记录，请创建
+               一个简洁、清晰的摘要段落。使用直接
+               的写作风格，避免使用介词短语，
+               并采用直截了当的句子结构。
+               聚焦于要点，不要提及演讲者。
+               抓住核心思想，使人无需阅读全文
+               即可理解。请用中文回答。"""),
             new Message("user", transcript)
          )
       );
       System.out.printf("%s%n%n", summaryAbstract);
 
-      // get key points with OpenAI's gpt-4o model
-      System.out.println("EXTRACT KEY POINTS FROM A TRANSCRIPT");
+      // 使用OpenAI的gpt-4o模型提取要点
+      System.out.println("从文字记录中提取要点");
       String keyPoints = OpenAIUtilities.chat("gpt-4o",
          List.of(
             new Message("system", """
-               Given a transcript of a technical presentation, identify 
-               the top 5 key points and present them as a numbered list.  
-               For each point, use a concise, direct, clear, and
-               straightforward sentence. Avoid prepositional phrases."""),
+               给定一份技术演讲的文字记录，请识别前5个要点，
+               并按编号列出。对于每个点，使用简洁、直接、清晰
+               且直截了当的句子。避免使用介词短语。
+               请用中文回答。"""),
             new Message("user", transcript)
          )
       );

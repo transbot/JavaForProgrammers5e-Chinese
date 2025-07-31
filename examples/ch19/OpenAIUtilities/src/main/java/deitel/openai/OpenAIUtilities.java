@@ -1,6 +1,6 @@
 // 图19.12: OpenAIUtilities.java
-// Helper methods and record classes to used encapsulate calling
-// the OpenAI APIs via the Simple-OpenAI Java library.
+// 辅助方法和记录类，用于封装通过
+// Simple-OpenAI Java库调用OpenAI API
 package deitel.openai;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -32,37 +32,37 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class OpenAIUtilities {
-   // record class used to simplify passing messages containing a role
-   // and corresponding content to this class's chat and translate methods
+   // 记录类，用于简化向chat和translate方法
+   // 传递包含角色和内容的消息
    public record Message(String role, String content) {}
 
-   // create a SimpleOpenAI client object
+   // 创建SimpleOpenAI客户端对象
    private final static SimpleOpenAI openAI = SimpleOpenAI.builder()
       .apiKey(System.getenv("OPENAI_API_KEY")).build();
 
-   // perform a chat completion
+   // 执行聊天补全
    public static String chat(String chatModel, List<Message> messages) {
-      // start building a ChatRequest
+      // 开始构建ChatRequest
       var chatRequest = ChatRequest.builder().model(chatModel);
 
-      // add messages to the ChatRequest
+      // 向ChatRequest添加消息
       for (var currentMessage : makeChatMessages(messages)) {
          chatRequest = chatRequest.message(currentMessage);
       }
 
-      var request = chatRequest.build(); // complete building the request
+      var request = chatRequest.build(); // 完成请求构建
 
-      // make the ChatRequest and get the Chat response
+      // 发送ChatRequest并获取Chat响应
       var chatResponse = openAI.chatCompletions().create(request).join();
 
-      return chatResponse.firstContent(); // return the response text
+      return chatResponse.firstContent(); // 返回响应文本
    }
 
-   // utility method to convert our Message record objects into
-   // SystemMessage, UserMessage and AssistantMessage objects
+   // 工具方法：将Message记录对象转换为SystemMessage、
+   // UserMessage和AssistantMessage对象
    private static List<ChatMessage> makeChatMessages(
       List<Message> messages) {
-      // convert each Message record to a ChatMessage subclass object
+      // 将每条Message记录转换为ChatMessage子类对象
       return messages.stream()
          .map(m -> switch(m.role().toLowerCase()) {
             case "system" ->
@@ -71,22 +71,22 @@ public class OpenAIUtilities {
             case "assistant" ->
                ChatMessage.AssistantMessage.of(m.content());
             default -> throw new IllegalArgumentException(
-               "invalid role: " + m.role());
+               "无效角色: " + m.role());
          })
          .toList();
    }
 
-   // perform a chat completion
+   // 执行聊天补全
    public static String describeImage(
       String chatModel, String prompt, Path imagePath) {
-      // start building a ChatRequest for accessible image descriptions
+      // 开始构建可访问图像描述的ChatRequest
       var chatRequest = ChatRequest.builder()
          .model(chatModel)
          .message(ChatMessage.SystemMessage.of("""
-            You are an expert at creating accessible descriptions
-            of images per the World Wide Web Consortium's (W3C's) 
-            guidelines. Given an image, explain it in detail for 
-            people who are blind or have low vision."""))
+            您是创建符合万维网联盟(W3C)
+            指南的图像描述专家。
+            请根据给定图像，
+            为视障人士提供详细文本描述。"""))
          .message(ChatMessage.UserMessage.of(
             List.of(
                ContentPart.ContentPartText.of(prompt),
@@ -96,181 +96,181 @@ public class OpenAIUtilities {
                         Base64Util.MediaType.IMAGE))))))
          .build();
 
-      // make the ChatRequest and get the Chat response
+      // 发送ChatRequest并获取Chat响应
       var chatResponse =
          openAI.chatCompletions().create(chatRequest).join();
 
-      return chatResponse.firstContent(); // return the response text
+      return chatResponse.firstContent(); // 返回响应文本
    }
 
-   // perform a chat completion for translation
+   // 执行翻译的聊天补全
    public static String translate(
       String chatModel, String textToTranslate, String targetLanguage) {
 
-      // build a ChatRequest to translate a String
+      // 构建翻译字符串的ChatRequest
       var chatRequest = ChatRequest.builder().model(chatModel)
          .message(ChatMessage.SystemMessage.of(String.format("""
-            You are an expert in natural language translation.
-            Translate the following text into %s.""", targetLanguage)))
+            您是自然语言翻译专家。
+            请将以下文本翻译成%s。""", targetLanguage)))
          .message(ChatMessage.UserMessage.of(textToTranslate))
          .build();
 
-      // create and submit the ChatRequest and wait for the Chat response
+      // 创建并提交ChatRequest，等待Chat响应
       Chat response = openAI.chatCompletions().create(chatRequest).join();
 
-      return response.firstContent(); // return the translation
+      return response.firstContent(); // 返回翻译结果
    }
 
-   // record classes to define the structure of a JSON response
-   // containing results of named entity recognition
+   // 记录类：定义了JSON响应的结构，其中包含
+   // 命名实体识别的结果
    public record NamedEntity(String text, String tag) {}
    public record NamedEntities(List<NamedEntity> entities) {}
 
-   // generic method that performs a chat completion and
-   // returns structured output
+   // 泛型方法：执行聊天补全
+   // 并返回结构化输出
    public static <T> T chatWithStructuredOutput(String chatModel,
       List<Message> messages, Class<T> jsonStructure) throws Exception {
-      // set up JSON schema for structured output based on jsonStructure
+      // 基于jsonStructure设置结构化输出的JSON模式
       var schema = ResponseFormat.jsonSchema(JsonSchema.builder()
-         .name(jsonStructure.getSimpleName()) // schema name
-         .schemaClass(jsonStructure) // schema Java class
+         .name(jsonStructure.getSimpleName()) // 模式名称
+         .schemaClass(jsonStructure) // 模式Java类
          .build()
       );
 
-      // start building a ChatRequest that returns structured output
+      // 开始构建返回结构化输出的ChatRequest
       var chatRequest = ChatRequest.builder()
          .model(chatModel)
          .responseFormat(schema);
 
-      // add messages to the ChatRequest
+      // 向ChatRequest添加消息
       for (var currentMessage : makeChatMessages(messages)) {
          chatRequest = chatRequest.message(currentMessage);
       }
 
-      var request = chatRequest.build(); // complete building the request
+      var request = chatRequest.build(); // 完成请求构建
 
-      // make the ChatRequest and get the Chat response
+      // 发送ChatRequest并获取Chat响应
       Chat response = openAI.chatCompletions().create(request).join();
 
-      // ObjectMapper for deserializing JSON into a NamedEntities object
+      // 用于将JSON反序列化为NamedEntities对象的ObjectMapper
       var mapper = new ObjectMapper();
 
-      // return the structured response
+      // 返回结构化响应
       return mapper.readValue(response.firstContent(), jsonStructure);
    }
 
-   // convert audio to text transcription
+   // 将音频转录为文本
    public static String speechToText(String model, String audioPath) {
-      // build a TranscriptionRequest
+      // 构建TranscriptionRequest
       var audioRequest = TranscriptionRequest.builder()
          .file(Paths.get(audioPath))
          .model(model)
          .build();
 
-      // submit TranscriptionRequest and wait for Transcription
+      // 提交TranscriptionRequest并等待转录结果
       Transcription transcription =
          openAI.audios().transcribe(audioRequest).join();
-      return transcription.getText(); // return transcription text
+      return transcription.getText(); // 返回转录文本
    }
 
-   // synthesize speech from text
+   // 从文本合成语音
    public static void textToSpeech(String model, String text,
       String voice, String filename) throws Exception {
-      // build a SpeechRequest
+      // 构建SpeechRequest
       var speechRequest = SpeechRequest.builder()
          .model(model)
          .input(text)
          .voice(Voice.valueOf(voice.toUpperCase()))
          .build();
 
-      // submit SpeechRequest and wait for audio, then save audio to file
+      // 提交SpeechRequest并等待音频，然后将音频保存到文件
       try (var audioStream = openAI.audios().speak(speechRequest).join();
            var audioFile = new FileOutputStream(filename)) {
          audioFile.write(audioStream.readAllBytes());
-         System.out.printf("Wrote audio to %s%n", filename);
+         System.out.printf("音频已写入 %s%n", filename);
       }
    }
 
-   // generate an image with Dall-E
+   // 使用Dall-E生成图像
    public static void image(
       String model, String prompt, Path imagePath) throws Exception {
-      // build an ImageRequest with the specified model and prompt
+      // 使用指定模型和提示构建ImageRequest
       var imageRequest = ImageRequest.builder()
          .model(model)
          .prompt(prompt)
          .quality(ImageRequest.Quality.HD)
          .build();
 
-      // submit ImageRequest and wait for image
+      // 提交ImageRequest并等待图像
       var imageResponse = openAI.images().create(imageRequest).join();
 
-      // get image's URL
+      // 获取图像URL
       String urlString = imageResponse.getFirst().getUrl();
       URL url = URI.create(urlString).toURL();
 
-      // save image to PNG file
+      // 将图像保存为PNG文件
       try (var inputStream = url.openStream()) {
          Files.copy(inputStream, imagePath,
             StandardCopyOption.REPLACE_EXISTING);
-         System.out.printf("Wrote image to %s%n", imagePath);
+         System.out.printf("图像已写入 %s%n", imagePath);
       }
    }
 
-   // convert audio track of a video into closed captions
+   // 将视频音轨转换为隐藏字幕
    public static String speechToVTT(String model, Path audioPath) {
-      // build a TranscriptionRequest that returns JSON containing the
-      // transcription segments and their start/end times
+      // 构建一个TranscriptionRequest，它返回包含转录片段
+      // 及其起止时间的JSON
       var audioRequest = TranscriptionRequest.builder()
          .file(audioPath)
          .model(model)
          .responseFormat(AudioResponseFormat.VERBOSE_JSON)
          .build();
 
-      // submit TranscriptionRequest and wait for Transcription
+      // 提交TranscriptionRequest并等待转录结果
       Transcription transcription =
          openAI.audios().transcribe(audioRequest).join();
 
-      // get the transcript's segments
+      // 获取转录片段
       List<Transcription.Segment> segments = transcription.getSegments();
 
-      // create a String representation of the transcription's
-      // segments with their start and end times
+      // 创建包含起止时间的
+      // 转录片段字符串表示
       String transcriptionText = segments.stream()
-         .map(segment -> String.format("Start: %f, End: %f, Text: %s",
+         .map(segment -> String.format("起始: %f, 结束: %f, 文本: %s",
             segment.getStart(), segment.getEnd(), segment.getText()))
          .collect(Collectors.joining("\n"));
 
-      // issue a chat request to convert the audio
-      // segment transcriptions into VTT format
+      // 发起聊天请求将音频片段
+      // 转录转换为VTT格式
       var request = ChatRequest.builder()
          .model("gpt-4o")
          .message(ChatMessage.SystemMessage.of("""
-            You are a subtitle formatting assistant. Take the following
-            transcription data and format it into VTT (WebVTT) format.
-            Timestamps must have the hh:mm:ss.mmm format required by
-            WebVTT. Include the required WEBVTT header at beginning of
-            the file. Output the VTT content only."""))
+            您是字幕格式化助手。请将以下转录
+            数据格式化为VTT(WebVTT)格式。
+            时间戳必须符合WebVTT要求
+            的hh:mm:ss.mmm格式。
+            在文件开头包含必需的WEBVTT标头。仅输出VTT内容。"""))
          .message(ChatMessage.UserMessage.of(transcriptionText))
          .build();
 
-      // make the ChatRequest and get the response
+      // 发送ChatRequest并获取响应
       var response = openAI.chatCompletions().create(request).join();
 
-      // remove markdown code-block delimiters (```) at beginning
-      // and end of response and return VTT-formatted captions
+      // 移除响应开头和结尾的markdown代码块
+      // 分隔符(```)并返回VTT格式字幕
       var captions = response.firstContent();
       return captions.substring(3, captions.length() - 3);
    }
 
-   // send text to OpenAI moderation API to check for offensive content;
+   // 向OpenAI审核API发送文本以检查攻击性内容
    public static Moderation.ModerationResult checkPrompt(String prompt) {
-      // build a ModerationRequest
+      // 构建ModerationRequest
       var moderationRequest = ModerationRequest.builder()
-         .model("omni-moderation-latest") // OpenAI recommended model
+         .model("omni-moderation-latest") // OpenAI推荐模型
          .input(List.of(prompt))
          .build();
 
-      // submit the request and return the result
+      // 提交请求并返回结果
       var result = openAI.moderations().create(moderationRequest).join();
       return result.getResults().getFirst();
    }

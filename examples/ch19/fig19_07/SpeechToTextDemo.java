@@ -1,5 +1,5 @@
 // 图19.7: SpeechToTextDemo.java
-// Transcribing audio files to text.
+// 将音频文件转录为文本
 import deitel.openai.OpenAIUtilities;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -7,23 +7,23 @@ import java.nio.file.StandardOpenOption;
 
 public class SpeechToTextDemo {
    public static void main(String[] args) throws Exception {
-      // get path to resources folder
-      Path resourcesFolder = Path.of(System.getProperty("user.home"),
-         "Documents", "examples", "ch19", "resources");
+      // 获取资源文件夹路径
+      Path resourcesFolder = Path.of(System.getProperty("user.dir"))
+        .getParent().resolve("resources");   
 
-      // get path to audio file WhatsNewInJavaOverview.m4a
+      // 获取音频文件 WhatsNewInJavaOverview.m4a 的路径
       Path audioPath = Path.of(resourcesFolder.toString(),
-         "WhatsNewInJavaOverview.m4a");
+         "Java遇见AI：生成式AI时代如何用Java开发、应对挑战与测试未来？.m4a");
 
-      // convert speech to text with OpenAI's whisper-1 model
-      System.out.println("Waiting for Transcription...");
+      // 使用OpenAI的whisper-1模型进行语音转文本
+      System.out.println("正在转录，请稍候...");
       String transcript = OpenAIUtilities.speechToText(
          "whisper-1", audioPath.toString());
-      System.out.printf("TRANSCRIPT:%n%s%n", transcript);
+      System.out.printf("转录内容：%n%s%n", transcript);
 
-      // write the transcription to a file, overwriting it if it exists
+      // 将转录结果写入文件，若文件已存在则覆盖
       Path transcriptPath = Path.of(resourcesFolder.toString(),
-         "outputs", "WhatsNewInJavaOverview.txt");
+         "outputs", "Java遇见AI.txt");
       Files.writeString(transcriptPath, transcript,
          StandardOpenOption.CREATE,
          StandardOpenOption.TRUNCATE_EXISTING);

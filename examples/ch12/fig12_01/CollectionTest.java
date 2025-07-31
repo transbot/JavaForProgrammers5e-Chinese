@@ -34,7 +34,7 @@ public class CollectionTest {
       removeColors(colorList, removeList);
 
       // 输出colorList内容
-      System.out.printf("%n%n调用removeColors后的ArrayList:%n");  // 提示文本翻译
+      System.out.printf("%n%n调用removeColors后的ArrayList:%n");
 
       for (String color : colorList) {
          System.out.printf("%s ", color);

@@ -1,32 +1,32 @@
 // 图19.9: ImageGenerationDemo.java
-// Creating images from text prompts.
+// 文生图演示
 import deitel.openai.OpenAIUtilities;
 import java.nio.file.Path;
 
 public class ImageGenerationDemo {
-   public static void main(String[] args) throws Exception {
-      // get path to the resources folder
-      Path path = Path.of(System.getProperty("user.home"),
-         "Documents", "examples", "ch19", "resources", "outputs");
+   public static void main(String[] args) throws Exception {      
+      // 获取outputs文件夹的路径
+      Path path = Path.of(System.getProperty("user.dir"))
+        .getParent().resolve("resources").resolve("outputs");     
 
-      // generate images with OpenAI image API and dall-e-3 model
-      System.out.println("IMAGE-GENERATION DEMO");
+      // 使用OpenAI图像API和dall-e-3模型来文生图
+      System.out.println("文生图演示");
       String prompt = """
-         Havanese dog as a Japanese anime character
-         in neon colors against a black background""";
-      System.out.printf("Generating image for:%n%s%n", prompt);
+         日漫风格的一只边牧，采用霓虹色彩，
+         背景为黑色。""";
+      System.out.printf("正在生成图片:%n%s%n", prompt);
       OpenAIUtilities.image("dall-e-3", prompt,
-         Path.of(path.toString(), "HavaneseAnime.png"));
+         Path.of(path.toString(), "边牧(动漫).png"));
 
-      prompt = "Havanese dog in the style of Vincent Van Gogh";
-      System.out.printf("%nGenerating image for:%n%s%n", prompt);
+      prompt = "梵高绘画风格的一只边牧";
+      System.out.printf("%n正在生成图片:%n%s%n", prompt);
       OpenAIUtilities.image("dall-e-3", prompt,
-         Path.of(path.toString(), "HavaneseVanGogh.png"));
+         Path.of(path.toString(), "边牧(梵高).png"));
 
-      prompt = "Havanese dog in the style of Leonardo DaVinci";
-      System.out.printf("%nGenerating image for:%n%s%n", prompt);
+      prompt = "达芬奇风格的一只边牧";
+      System.out.printf("%n正在生成图片:%n%s%n", prompt);
       OpenAIUtilities.image("dall-e-3", prompt,
-         Path.of(path.toString(), "HavaneseDaVinci.png"));
+         Path.of(path.toString(), "边牧(达芬奇).png"));
    }
 }
 

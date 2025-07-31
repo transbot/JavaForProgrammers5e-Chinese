@@ -5,27 +5,32 @@ import java.nio.file.Path;
 
 public class TextToSpeechDemo {
    public static void main(String[] args) throws Exception {
-      // get path to the resources folder
-      Path outputPath = Path.of(System.getProperty("user.home"),
-         "Documents", "examples", "ch19", "resources", "outputs");
+      // 获取outputs文件夹的路径
+      Path outputPath = Path.of(System.getProperty("user.dir"))
+        .getParent().resolve("resources").resolve("outputs");   
 
-      // synthesize speech from text using OpenAI's tts-1-hd model
-      System.out.println("TEXT-TO-SPEECH DEMO");
-      System.out.println("Synthesizing English speech...");
+      // 使用OpenAI的tts-1-hd模型从文本合成主意
+      System.out.println("文本转语音演示");
+      System.out.println("正在合成英语语音...");
       String english =
          "Today was a beautiful day. Tomorrow looks like bad weather.";
-      OpenAIUtilities.textToSpeech("tts-1-hd", english, "onyx",
+      OpenAIUtilities.textToSpeech("tts-1-hd", english, "alloy",
          Path.of(outputPath.toString(), "english.mp3").toString());
 
-      System.out.println("Synthesizing Spanish speech...");
+      System.out.println("正在合成西班牙语语音...");
       String spanish =
          "Hoy fue un día hermoso. Mañana parece que habrá mal tiempo.";
-      OpenAIUtilities.textToSpeech("tts-1-hd", spanish, "onyx",
+      OpenAIUtilities.textToSpeech("tts-1-hd", spanish, "alloy",
          Path.of(outputPath.toString(), "spanish.mp3").toString());
 
-      System.out.println("Synthesizing Japanese speech...");
+      System.out.println("正在合成中文语音...");
+      String chinese = "今日天气很好，明天就有点糟糕了。";
+      OpenAIUtilities.textToSpeech("tts-1-hd", chinese, "alloy",
+         Path.of(outputPath.toString(), "chinese.mp3").toString());         
+
+      System.out.println("正在合成日语语音...");
       String japanese = "今日は美しい日でした。明日は悪天候になりそうです。";
-      OpenAIUtilities.textToSpeech("tts-1-hd", japanese, "onyx",
+      OpenAIUtilities.textToSpeech("tts-1-hd", japanese, "alloy",
          Path.of(outputPath.toString(), "japanese.mp3").toString());
    }
 }

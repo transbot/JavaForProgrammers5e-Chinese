@@ -1,30 +1,30 @@
 // 图19.3: DescribeImageDemo.java
-// Getting accessibility descriptions of images.
+// 获取图像的无障碍描述
 import deitel.openai.OpenAIUtilities;
 import java.nio.file.Path;
 
 public class DescribeImageDemo {
    public static void main(String[] args) throws Exception {
-      // location of resources folder containing sample images
-      Path resourcesPath = Path.of(System.getProperty("user.home"),
-         "Documents", "examples", "ch19", "resources");
+      // 资源文件夹路径（上一级目录的resources子目录）
+      Path resourcesPath = Path.of(System.getProperty("user.dir"))
+         .getParent().resolve("resources");
 
-      // get an accessible description of a diagram using gpt-4o
-      System.out.println("ACCESSIBLE DESCRIPTION OF A DIAGRAM");
+      // 使用gpt-4o获取UML图的详细描述
+      System.out.println("UML图的无障碍描述");
       String diagramDescription =
          OpenAIUtilities.describeImage("gpt-4o", """
-            The attached image is a UML activity diagram showing the
-            flow of control through a Java 'for' loop with UML 
-            notes for additional context.""",
+            这是一张UML活动图，展示了Java 'for'循环的控制流程，
+            图中包含UML注释提供额外上下文。
+            请用中文回答。""",
             Path.of(resourcesPath.toString(), "ForLoop.png"));
       System.out.printf("%s%n%n", diagramDescription);
 
-      // get an accessible description of a photo using gpt-4o
-      System.out.println("ACCESSIBLE DESCRIPTION OF A PHOTO");
+      // 使用gpt-4o获取照片的详细描述
+      System.out.println("照片的无障碍描述");
       String imageDescription =
          OpenAIUtilities.describeImage("gpt-4o", """
-               Describe in detail the attached photo of a beach scene,
-               including every object in the photo.""",
+            这是一张海滩场景的照片。
+            请详细描述照片中的每个对象和场景。请用中文回答。""",
             Path.of(resourcesPath.toString(), "beach.jpg"));
       System.out.printf("%s%n%n", imageDescription);
    }

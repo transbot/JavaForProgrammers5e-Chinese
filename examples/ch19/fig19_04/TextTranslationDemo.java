@@ -1,36 +1,36 @@
 // 图19.4: TextTranslationDemo.java
-// Translating text among spoken languages.
+// 在不同的口头语言之间翻译
 import deitel.openai.OpenAIUtilities;
 
 public class TextTranslationDemo {
    public static void main(String[] args) throws Exception {
-      // translate text with OpenAI's gpt-4o model
-      System.out.println("TRANSLATION DEMO");
+      // 使用OpenAI的gpt-4o模型翻译文本
+      System.out.println("翻译演示");
       String english =
          "Today was a beautiful day. Tomorrow looks like bad weather.";
-      System.out.printf("ORIGINAL: %s%n%n", english);
+      System.out.printf("原文: %s%n%n", english);
 
-      System.out.println("Translating English to Spanish...");
+      System.out.println("正在将英语翻译为西班牙语...");
       String spanish =
          OpenAIUtilities.translate("gpt-4o", english, "Spanish");
-      System.out.printf("SPANISH: %s%n%n", spanish);
+      System.out.printf("西班牙语: %s%n%n", spanish);
 
-      System.out.println("Translating English to Japanese...");
-      String japanese =
-         OpenAIUtilities.translate("gpt-4o", english, "Japanese");
-      System.out.printf("JAPANESE: %s%n%n", japanese);
+      System.out.println("正在将英语翻译为中文...");
+      String chinese =
+         OpenAIUtilities.translate("gpt-4o", english, "Chinese");
+      System.out.printf("中文: %s%n%n", chinese);
 
-      System.out.println("Translating Spanish to English...");
+      System.out.println("正在将西班牙语翻译为英语...");
       String spanishToEnglish =
          OpenAIUtilities.translate("gpt-4o", spanish, "English");
       System.out.printf(
-         "SPANISH TO ENGLISH: %s%n%n", spanishToEnglish);
+         "西班牙语转回英语: %s%n%n", spanishToEnglish);
 
-      System.out.println("Translating Japanese to English...");
-      String japaneseToEnglish =
-         OpenAIUtilities.translate("gpt-4o", japanese, "English");
+      System.out.println("正在将中文翻译为英语...");
+      String chineseToEnglish =
+         OpenAIUtilities.translate("gpt-4o", chinese, "English");
       System.out.printf(
-         "JAPANESE TO ENGLISH: %s%n", japaneseToEnglish);
+         "中文转回英语: %s%n", chineseToEnglish);
    }
 }
 

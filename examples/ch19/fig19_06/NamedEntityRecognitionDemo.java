@@ -1,5 +1,5 @@
 // 图19.6: NamedEntityRecognitionDemo.java
-// Identifying named entities and obtaining them as structured outputs.
+// 识别命名实体并获取结构化输出
 import deitel.openai.OpenAIUtilities;
 import deitel.openai.OpenAIUtilities.Message;
 import deitel.openai.OpenAIUtilities.NamedEntities;
@@ -9,31 +9,31 @@ import java.util.List;
 
 public class NamedEntityRecognitionDemo {
    public static void main(String[] args) throws Exception {
-      // load web.txt
-      Path transcriptPath = Path.of(System.getProperty("user.home"),
-         "Documents", "examples", "ch19", "resources", "web.txt");
+      // 加载web.txt文件
+      Path transcriptPath = Path.of(System.getProperty("user.dir"))
+         .getParent().resolve("resources").resolve("web.txt");
       String text = Files.readString(transcriptPath);
 
-      // create a request to obtain named entities
+      // 创建请求以获取命名实体
       NamedEntities results = OpenAIUtilities.chatWithStructuredOutput(
          "gpt-4o",
          List.of(
             new Message("system", """
-               You are an expert in named entity recognition (NER) using
-               the OntoNotes 5.0 NER tag set. Analyze the following text
-               and return the named entities in the specified structured 
-               JSON format. Do not include any additional information in
-               your JSON response."""),
+                您是使用OntoNotes 5.0 NER标签集的
+                命名实体识别（NER）专家。
+                请分析以下文本，并返回符合指定结构化
+                JSON格式的命名实体。
+                不要在JSON响应中包含任何额外信息。"""),  
             new Message("user", text)
          ),
          OpenAIUtilities.NamedEntities.class
       );
 
-      // display source text
-      System.out.printf("SOURCE TEXT:%n%s%n%n", text);
+      // 显示原始文本
+      System.out.printf("原始文本:%n%s%n%n", text);
 
-      // display named entities
-      System.out.println("ENTITIES:");
+      // 显示命名实体
+      System.out.println("实体:");
       results.entities().forEach(entity ->
          System.out.printf("%s: %s%n", entity.text(), entity.tag()));
    }

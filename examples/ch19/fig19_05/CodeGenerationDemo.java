@@ -1,5 +1,5 @@
-// 图19.5: CodeGenerationDemo.java
-// Generating code for a die-rolling simulation.
+// 图19.5：CodeGenerationDemo.java
+// 生成模拟掷骰代码
 import deitel.openai.OpenAIUtilities;
 import deitel.openai.OpenAIUtilities.Message;
 import java.nio.file.Files;
@@ -11,35 +11,35 @@ import java.util.regex.Pattern;
 
 public class CodeGenerationDemo {
    public static void main(String[] args) throws Exception {
-      // path to store Java source-code that's generated
-      Path codePath = Path.of(System.getProperty("user.home"),
-         "Documents", "examples", "ch19", "resources", "outputs");
+      // 存储生成的Java源代码的路径
+      Path codePath = Path.of(System.getProperty("user.dir"))
+         .getParent().resolve("resources");
 
-      // generate Java code with OpenAI's gpt-4o model
-      System.out.println("GENERATE DIE ROLLING SIMULATION CODE");
+      // 使用OpenAI的gpt-4o模型生成Java代码
+      System.out.println("生成掷骰模拟代码");
       String response = OpenAIUtilities.chat("gpt-4o",
          List.of(
             new Message("system",
-               "You are an expert programmer in Java's latest version."),
+               "您是一位Java最新版本的专家程序员。"),
             new Message("user", """
-               Create a Java class named RollDie that simulates rolling
-               a die 600,000,000 times as quickly as possible. Summarize 
-               the frequencies and display them left-aligned in a  
-               two-column format with the column heads "Face" and 
-               "Frequency". Avoid loops. In the code, use 3-space indents
-               and restrict each code line to 74 characters or fewer.""")
+               创建一个名为RollDie的Java类，模拟
+               尽可能快地掷骰6亿次。统计频率并以
+               左对齐方式显示在双列表格中，
+               列标题为"点数"和"次数"。
+               避免使用循环。在代码中使用三空格的缩进，
+               并将每行代码限制在74个字符以内。""")
          )
       );
       System.out.printf("%s%n%n", response);
 
-      // use regex to extract the code and write it to disk;
-      // the Pattern extracts all the text between the delimiters
-      // "```java" and "```"
+      // 使用正则表达式提取代码并写入磁盘；
+      // 该模式提取分隔符"```java"和"```"
+      // 之间的所有文本
       Pattern pattern =
          Pattern.compile("```java\\s+(.*?)```", Pattern.DOTALL);
       Matcher matcher = pattern.matcher(response);
 
-      // if there was a match, write it into the file RollDie.java
+      // 如果匹配成功，将其写入文件RollDie.java
       if (matcher.find()) {
          Files.writeString(
             Path.of(codePath.toString(), "RollDie.java"),
