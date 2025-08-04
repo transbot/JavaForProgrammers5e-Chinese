@@ -1,5 +1,5 @@
 // 图20.5: AddressBookController.java
-// Controller for the AddressBook app
+// AddressBook应用程序的控制器
 import java.util.List;
 
 import javafx.collections.FXCollections;
@@ -12,45 +12,45 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 public class AddressBookController {
-   @FXML private ListView<Person> listView; // displays contact names
+   @FXML private ListView<Person> listView; // 显示联系人姓名
    @FXML private TextField firstNameTextField;
    @FXML private TextField lastNameTextField;
    @FXML private TextField emailTextField;
    @FXML private TextField phoneTextField;
    @FXML private TextField findByLastNameTextField;
 
-   // interacts with the database
+   // 与数据库交互
    private final PersonQueries personQueries = new PersonQueries();
 
-   // stores list of Person objects that results from a database query
+   //  存储一个Person对象列表，这些对象来自一次数据库查询
    private final ObservableList<Person> contactList = 
       FXCollections.observableArrayList();
    
-   // populate listView and set up listener for selection events
+   // 填充listView，并设置一个侦听器来响应选择事件
    public void initialize() {
-      // when ListView selection changes, display selected person's data
+      // ListView中的选择发生变化时，显示所选联系人的信息
       listView.getSelectionModel().selectedItemProperty().addListener(
          (observableValue, oldValue, newValue) -> {
             displayContact(newValue);
          }
       );     
 
-      listView.setItems(contactList); // bind to contactsList
-      getAllEntries(); // populates contactList, which updates listView 
+      listView.setItems(contactList); // 绑定到contactList
+      getAllEntries(); // 填充用于更新listView的contactList
    }
 
-   // get all the entries from the database to populate contactList
+   // 从数据库获取记录项来填充contactList
    private void getAllEntries() {
       contactList.setAll(personQueries.getAllPeople());
       selectFirstEntry();
    }
 
-   // select first item in listView
+   // 选择listView中的第一条记录
    private void selectFirstEntry() {
       listView.getSelectionModel().selectFirst();
    }
 
-   // display contact information
+   // 显示联系信息
    private void displayContact(Person person) {
       if (person != null) {
          firstNameTextField.setText(person.first());
@@ -66,7 +66,7 @@ public class AddressBookController {
       }
    }
 
-   // add a new entry
+   // 添加一条新记录
    @FXML
    void addEntryButtonPressed(ActionEvent event) {
       int result = personQueries.addPerson(                        
@@ -74,40 +74,40 @@ public class AddressBookController {
          emailTextField.getText(), phoneTextField.getText());      
       
       if (result == 1) {
-         displayAlert(AlertType.INFORMATION, "Entry Added", 
-            "New entry successfully added.");
+         displayAlert(AlertType.INFORMATION, "已添加记录", 
+            "已经成功添加了新记录。");
       }
       else {
-         displayAlert(AlertType.ERROR, "Entry Not Added", 
-            "Unable to add entry.");
+         displayAlert(AlertType.ERROR, "未添加记录", 
+            "添加记录失败，请检查输入数据是否正确。");
       }
       
       getAllEntries();
    }
 
-   // find entries with the specified last name
+   // 查找具有指定姓氏的记录
    @FXML
    void findButtonPressed(ActionEvent event) {
       List<Person> people = personQueries.getPeopleByLastName(
          findByLastNameTextField.getText() + "%");            
 
-      if (people.size() > 0) { // display all entries
+      if (people.size() > 0) { // 显示所有记录
          contactList.setAll(people);
          selectFirstEntry();
       }
       else {
-         displayAlert(AlertType.INFORMATION, "Lastname Not Found", 
-            "There are no entries with the specified last name.");
+         displayAlert(AlertType.INFORMATION, "未找到指定姓氏", 
+            "没有找到与指定姓氏匹配的记录。");
       }
    }
 
-   // browse all the entries
+   // 查看所有记录
    @FXML
    void browseAllButtonPressed(ActionEvent event) {
       getAllEntries();
    }
 
-   // display an Alert dialog
+   // 显示一个Alert对话框
    private void displayAlert(
       AlertType type, String title, String message) {
       var alert = new Alert(type);

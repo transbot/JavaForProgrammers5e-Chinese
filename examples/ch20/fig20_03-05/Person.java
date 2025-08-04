@@ -1,9 +1,9 @@
 // 图20.3: Person.java
-// Person record class that represents an entry in an address book.
+// Person record类代表通讯录中的一条记录
 public record Person (
    int id, String first, String last, String email, String phone) {
 
-   // custom String representation
+   // 自定义字符串表示形式
    @Override
    public String toString() {
       return String.format("%s, %s", last(), first());

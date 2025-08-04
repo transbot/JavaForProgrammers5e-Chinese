@@ -1,5 +1,5 @@
 // 图20.4: PersonQueries.java
-// PreparedStatements used by the AddressBook program.
+// AddressBook应用程序使用的PreparedStatement
 import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,32 +10,32 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class PersonQueries {
-   // addressbook.db location
+   // addressbook.db的位置
    private static final String DATABASE_URL = "jdbc:sqlite:" + 
-      Path.of(System.getProperty("user.home"), "Documents", 
-         "examples", "ch20", "fig20_03-05", "addressbook.db");
+      // 文件就在当前目录中
+      Path.of("addressbook.db");
 
-   private Connection connection; // manages connection
+   private Connection connection; // 管理连接
    private PreparedStatement selectAllPeople;       
    private PreparedStatement selectPeopleByLastName;
    private PreparedStatement insertNewPerson;
     
-   // constructor
+   // 构造函数
    public PersonQueries() {
       try {
          connection = DriverManager.getConnection(DATABASE_URL);
 
-         // create query that selects all entries in the AddressBook 
+         // 创建查询来选择AddressBook中的所有记录
          selectAllPeople = connection.prepareStatement(             
             "SELECT * FROM addresses ORDER BY last, first");
          
-         // create query that selects entries with last names 
-         // that begin with the specified characters 
+         // 创建查询，选择姓氏以指定字符（汉字）
+         // 开头的记录
          selectPeopleByLastName = connection.prepareStatement("""
             SELECT * FROM addresses WHERE last LIKE ? 
             ORDER BY last, first""");                  
          
-         // create insert operation that adds a new entry to the database
+         // 创建插入操作，向数据库添加一条新记录
          insertNewPerson = connection.prepareStatement("""
             INSERT INTO addresses (first, last, email, phone) 
             VALUES (?, ?, ?, ?)"""); 
@@ -46,9 +46,9 @@ public class PersonQueries {
       } 
    } 
    
-   // select all of the addresses in the database
+   // 选择数据库中的所有人
    public List<Person> getAllPeople() {
-      // executeQuery returns ResultSet containing matching entries
+      // executeQuery返回包含匹配记录的一个ResultSet
       try (ResultSet resultSet = selectAllPeople.executeQuery()) {
          List<Person> results = new ArrayList<>();
          
@@ -70,17 +70,17 @@ public class PersonQueries {
       return null;
    }
    
-   // select person by last name
+   // 选择指定姓氏的人
    public List<Person> getPeopleByLastName(String lastName) {
       try {
-         selectPeopleByLastName.setString(1, lastName); // set last name
+         selectPeopleByLastName.setString(1, lastName); // 设置姓氏
       }
       catch (SQLException sqlException) {
          sqlException.printStackTrace();
          return null;
       }
 
-      // executeQuery returns ResultSet containing matching entries
+      // executeQuery返回包含匹配记录的一个ResultSet
       try (ResultSet resultSet = selectPeopleByLastName.executeQuery()) {
          List<Person> results = new ArrayList<>();
 
@@ -101,13 +101,13 @@ public class PersonQueries {
       } 
    }
    
-   // add an entry
+   // 添加一条新记录
    public int addPerson(String first, String last, 
       String email, String phone) {
       
-      // insert the new entry; returns # of rows updated
+      // 插入新记录，返回发生更新的行数
       try {
-         // set parameters
+         // 设置参数
          insertNewPerson.setString(1, first);
          insertNewPerson.setString(2, last);
          insertNewPerson.setString(3, email);
@@ -121,7 +121,7 @@ public class PersonQueries {
       }
    }
    
-   // close the database connection
+   // 关闭数据库连接
    public void close() {
       try {
          connection.close();

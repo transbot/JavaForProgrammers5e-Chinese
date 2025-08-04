@@ -1,5 +1,5 @@
 =============================
-Compiling the AddressBook App
+如何编译AddressBook应用程序
 =============================
 // macOS
 javac --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.fxml *.java
@@ -7,18 +7,18 @@ javac --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.fxml *.java
 // Windows PowerShell
 javac --module-path $env:PATH_TO_FX --add-modules javafx.controls,javafx.fxml *.java
 
-// Windows Command Prompt
+// Windows命令提示符
 javac --module-path %PATH_TO_FX% --add-modules javafx.controls,javafx.fxml *.java
 
 =============================
-Running the AddressBook App
+运行AddressBook应用程序
 =============================
 // macOS
-java --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.fxml -cp ".:../libs/sqlite-jdbc-3.47.1.0.jar" AddressBook
+java --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.fxml -cp ".:../libs/sqlite-jdbc-3.50.3.0.jar" AddressBook
 
 // Windows PowerShell
-java --module-path $env:PATH_TO_FX --add-modules javafx.controls,javafx.fxml -cp ".;..\libs\sqlite-jdbc-3.47.1.0.jar" AddressBook
+java --module-path $env:PATH_TO_FX --add-modules javafx.controls,javafx.fxml -cp ".;..\libs\sqlite-jdbc-3.50.3.0.jar" AddressBook
 
-// Windows Command Prompt
-java --module-path %PATH_TO_FX% --add-modules javafx.controls,javafx.fxml -cp ".;..\libs\sqlite-jdbc-3.47.1.0.jar" AddressBook
+// Windows命令提示符
+java --module-path %PATH_TO_FX% --add-modules javafx.controls,javafx.fxml -cp ".;..\libs\sqlite-jdbc-3.50.3.0.jar" AddressBook
 

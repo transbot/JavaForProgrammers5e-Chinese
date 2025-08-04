@@ -1,6 +1,6 @@
 // 图19.12: OpenAIUtilities.java
-// 辅助方法和记录类，用于封装通过
-// Simple-OpenAI Java库调用OpenAI API
+// 辅助方法和记录类，封装了通过Simple-OpenAI Java库
+// 来调用OpenAI API的功能
 package deitel.openai;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -58,7 +58,7 @@ public class OpenAIUtilities {
       return chatResponse.firstContent(); // 返回响应文本
    }
 
-   // 工具方法：将Message记录对象转换为SystemMessage、
+   // 辅助方法：将Message记录对象转换为SystemMessage、
    // UserMessage和AssistantMessage对象
    private static List<ChatMessage> makeChatMessages(
       List<Message> messages) {

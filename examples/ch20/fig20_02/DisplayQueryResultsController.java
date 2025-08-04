@@ -1,5 +1,5 @@
 // 图20.2: DisplayQueryResultsController.java
-// Controller for the DisplayQueryResults app
+// DisplayQueryResults应用程序的控制器
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -19,107 +19,107 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 
 public class DisplayQueryResultsController {
-   @FXML private TextArea queryTextArea;
-   @FXML private TableView<ObservableList<Object>> tableView;
+   @FXML private TextArea queryTextArea;  // SQL查询输入文本区域
+   @FXML private TableView<ObservableList<Object>> tableView;  // 结果显示表格视图
 
-   // books.db location
+   // books.db数据库文件位置
    private static final String DATABASE_URL = "jdbc:sqlite:" + 
-      Path.of(System.getProperty("user.home"), 
-         "Documents", "examples", "ch20", "books.db");
+      // books.db位于当前目录（..）的上一级目录（即examples/ch20）
+      Path.of("..", "books.db"); 
 
-   // default query retrieves all data from authors table
+   // 默认查询：从authors表中检索所有数据
    private static final String DEFAULT_QUERY = "SELECT * FROM authors";
 
-   private Connection connection; 
+   private Connection connection;  // 数据库连接对象
 
-   // display DEFAULT_QUERY, connect to books.db and execute DEFAULT_QUERY
+   // initialize方法：显示默认查询，连接数据库并执行默认查询
    @FXML
    public void initialize() {
-      queryTextArea.setText(DEFAULT_QUERY);
+      queryTextArea.setText(DEFAULT_QUERY);  // 在文本区显示默认SQL查询
 
-      try {
-         connection = DriverManager.getConnection(DATABASE_URL);
-         executeQuery(DEFAULT_QUERY);
+      try {         
+         connection = DriverManager.getConnection(DATABASE_URL); // 建立数据库连接        
+         executeQuery(DEFAULT_QUERY); // 执行默认查询
       } 
-      catch (SQLException sqlException) {
-         displayAlert(AlertType.ERROR, "Database Error", 
+      catch (SQLException sqlException) {         
+         displayAlert(AlertType.ERROR, "数据库错误", 
             sqlException.getMessage());
-         System.exit(1); // terminate application
+         System.exit(1); // 终止应用程序
       }
    }
 
-   // query the database and display results in TableView
+   // “提交查询按钮”事件处理：执行用户输入的SQL查询
    @FXML
    void submitQueryButtonPressed(ActionEvent event) {
-      executeQuery(queryTextArea.getText());
+      executeQuery(queryTextArea.getText());  // 获取并执行文本区中的SQL查询
    }
 
-   // performs the query and updates the ObservableList<Object> 
-   // that the TableView uses to populate its rows and columns
+   // 执行SQL查询并更新ObservableList<Object>
+   // TableView使用后者填充它的行和列
    private void executeQuery(String query) {
-      try (Statement statement = connection.createStatement();
-           ResultSet resultSet = statement.executeQuery(query)) {
-         tableView.getColumns().clear(); // remove current content
+      try (Statement statement = connection.createStatement();    // 创建SQL语句对象
+           ResultSet resultSet = statement.executeQuery(query)) { // 执行查询来获取结果集
+         tableView.getColumns().clear(); // 清除TableView当前列配置
 
-         // create two-dimensional ObservableList for current ResultSet
+         // 为当前ResultSet创建二维ObservableList
          ObservableList<ObservableList<Object>> data = 
             FXCollections.observableArrayList();
 
-         // use the ResultSetMetaData to get the column heads  
-         // and set up the TableView's columns
+         // 使用ResultSetMetaData获取列标题
+         // 并设置TableView的列
          ResultSetMetaData metaData = resultSet.getMetaData();
-         int columnCount = metaData.getColumnCount();
+         int columnCount = metaData.getColumnCount();  // 获取结果集的列数
 
-         for (int i = 1; i <= columnCount; i++) {
-            // create a new TableColumn for each column in the ResultSet
+         for (int i = 1; i <= columnCount; i++) { // 为结果集的每一列创建表格列
+            // 创建新表格列，使用元数据中的列名
             var column = new TableColumn<ObservableList<Object>, Object>(
                metaData.getColumnName(i));
 
-            // map the column to the corresponding index in each row
+            // 将列映射到每行数据中的对应索引
             final int columnIndex = i - 1;
             column.setCellValueFactory(param -> 
                new SimpleObjectProperty<>(
                   param.getValue().get(columnIndex)));
 
-            // autoscale column width to divide space equally
+            // 自动调整列宽：等分表格宽度
             column.prefWidthProperty().bind(
                tableView.widthProperty().divide(columnCount));
 
-            // add the column to the TableView
+            // 将列添加到TableView
             tableView.getColumns().add(column);
          }
 
-         // populate the rows from the ResultSet
+         // 从ResultSet填充行数据
          while (resultSet.next()) {
-            // create a new ObservableList to represent the row
+            // 新建一个ObservableList来表示一行数据
             ObservableList<Object> row = 
                FXCollections.observableArrayList();
 
-            // populate the row with data from the ResultSet
+            // 用ResultSet中的数据填充行
             for (int i = 1; i <= columnCount; i++) {
-               row.add(resultSet.getObject(i));
+               row.add(resultSet.getObject(i));  // 添加列值到行
             }
 
-            // add the row to the data list
+            // 将行添加到数据列表
             data.add(row);
          }
 
-         // set the TableView's items to the ObservableList data 
+         // 将ObservableList设置为TableView的数据源
          tableView.setItems(data);
       } 
-      catch (SQLException sqlException) {
-         displayAlert(AlertType.ERROR, "Query Error", 
+      catch (SQLException sqlException) {         
+         displayAlert(AlertType.ERROR, "查询错误", // 查询错误处理
             sqlException.getMessage());
       }
    }
 
-   // display an Alert dialog
+   // 显示一个Alert对话框
    private void displayAlert(
       AlertType type, String title, String message) {
-      Alert alert = new Alert(type);
-      alert.setTitle(title);
-      alert.setContentText(message);
-      alert.showAndWait();
+      Alert alert = new Alert(type);  // 创建指定类型的警报
+      alert.setTitle(title);          // 设置警报标题
+      alert.setContentText(message);  // 设置警报内容
+      alert.showAndWait();            // 显示警报并等待用户响应
    }
 }
 

@@ -1,5 +1,5 @@
 // AddressBook.java
-// Main application class that loads and displays the AddressBook's GUI.
+// 加载并显示AddressBook GUI的主应用程序类
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +13,7 @@ public class AddressBook extends Application {
          FXMLLoader.load(getClass().getResource("AddressBook.fxml"));
       
       Scene scene = new Scene(root);
-      stage.setTitle("Address Book");
+      stage.setTitle("通讯录");
       stage.setScene(scene);
       stage.show();
    }

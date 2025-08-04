@@ -17,11 +17,11 @@
    <bottom>
       <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
-            <Label text="Find by last name:" />
+            <Label text="按姓氏查找:" />
             <TextField fx:id="findByLastNameTextField" />
-          <Button mnemonicParsing="false" onAction="#findButtonPressed" text="Find" />
+          <Button mnemonicParsing="false" onAction="#findButtonPressed" text="查找" />
             <Separator orientation="VERTICAL" />
-            <Button mnemonicParsing="false" onAction="#browseAllButtonPressed" text="Browse All" />
+            <Button mnemonicParsing="false" onAction="#browseAllButtonPressed" text="查看所有记录" />
         </items>
       </ToolBar>
    </bottom>
@@ -44,15 +44,15 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="First name:" />
-                  <Label text="Last name:" GridPane.rowIndex="1" />
+                  <Label text="名字:" />
+                  <Label text="姓氏:" GridPane.rowIndex="1" />
                   <Label text="Email:" GridPane.rowIndex="2" />
-                  <Label text="Phone:" GridPane.rowIndex="3" />
+                  <Label text="电话:" GridPane.rowIndex="3" />
                   <TextField fx:id="firstNameTextField" prefColumnCount="25" GridPane.columnIndex="1" />
                   <TextField fx:id="lastNameTextField" maxWidth="1.7976931348623157E308" prefColumnCount="25" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField fx:id="emailTextField" maxWidth="1.7976931348623157E308" prefColumnCount="25" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField fx:id="phoneTextField" maxWidth="1.7976931348623157E308" prefColumnCount="25" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Button mnemonicParsing="false" onAction="#addEntryButtonPressed" text="Add Entry" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#addEntryButtonPressed" text="添加记录" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
                </children>
                <VBox.margin>
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />

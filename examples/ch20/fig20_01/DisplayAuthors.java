@@ -1,5 +1,5 @@
 // 图20.1: DisplayAuthors.java
-// Displaying the contents of the authors table.
+// 显示authors表的内容
 import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.Statement;
@@ -10,32 +10,32 @@ import java.sql.SQLException;
 
 public class DisplayAuthors {
    public static void main(String args[]) {
-      // books.db location
-      Path dbPath = Path.of(System.getProperty("user.home"), 
-         "Documents", "examples", "ch20", "books.db");
-
+      // 指定books.db的位置
+      // 在本地文件系统中，它应该位于当前目录（..）的上一级目录（即examples/ch20）
+      Path dbPath = Path.of("..", "books.db");
+      
       final String url = "jdbc:sqlite:" + dbPath.toUri();
       final String query = "SELECT id, first, last FROM authors";
 
-      // use try-with-resources to connect to and query the database
+      // 使用try-with-resources语句连接并查询数据库
       try (
          Connection connection = DriverManager.getConnection(url);
          Statement statement = connection.createStatement();       
          ResultSet resultSet = statement.executeQuery(query)) {
       
-         // get ResultSet's meta data
+         // 获取ResultSet的元数据
          ResultSetMetaData metaData = resultSet.getMetaData();
          int numberOfColumns = metaData.getColumnCount();     
          
-         System.out.printf("Authors Table of Books Database:%n%n");
+         System.out.printf("books数据库的authors表的内容:%n%n");
 
-         // display the names of the columns in the ResultSet
+         // 显示ResultSet中的列名
          for (int i = 1; i <= numberOfColumns; i++) {
             System.out.printf("%-11s", metaData.getColumnName(i));
          }
          System.out.println();
          
-         // display query results
+         // 显示查询结果
          while (resultSet.next()) {
             for (int i = 1; i <= numberOfColumns; i++) {
                System.out.printf("%-11s", resultSet.getObject(i));
