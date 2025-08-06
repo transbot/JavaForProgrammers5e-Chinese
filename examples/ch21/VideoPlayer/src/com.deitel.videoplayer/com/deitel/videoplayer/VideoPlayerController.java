@@ -1,5 +1,5 @@
 // VideoPlayerController.java
-// Using Media, MediaPlayer and MediaView to play a video. 
+// 使用Media、MediaPlayer和MediaView来播放视频
 package com.deitel.videoplayer;
 
 import java.net.URL;
@@ -21,8 +21,8 @@ public class VideoPlayerController {
    private boolean playing = false;
       
    public void initialize() {
-      // get URL of the video file
-      URL url = VideoPlayerController.class.getResource("/res/sts117.mp4");
+      // 获取视频文件的URL
+      URL url = VideoPlayerController.class.getResource("/res/Shenzhou-15_Launch_1min_Recap.mp4");
       
       // create a Media object for the specified URL
       Media media = new Media(url.toExternalForm());

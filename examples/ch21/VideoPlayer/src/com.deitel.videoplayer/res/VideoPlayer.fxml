@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- VideoPlayer.fxml -->
-<!-- Defines the VideoPlayer GUI with a MediaView and a Button -->
+<!-- 带有MediaView和Button的VideoPlayer GUI -->
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ToolBar?>

@@ -1,5 +1,5 @@
 // 图21.14: module-info.java
-// Module declaration for the com.deitel.additionprovider module
+// com.deitel.additionprovider模块声明
 module com.deitel.additionprovider {
    requires com.deitel.mathtutor;
 

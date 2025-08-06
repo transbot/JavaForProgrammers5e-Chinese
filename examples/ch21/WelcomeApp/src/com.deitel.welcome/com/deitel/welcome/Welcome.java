@@ -1,11 +1,11 @@
 // 图21.6: Welcome.java
-// Welcome class that will be placed in a module
-package com.deitel.welcome; // all classes in modules must be packaged
+// 将放置到模块中的Welcome类
+package com.deitel.welcome; // 模块中的所有类都必须打包
 
 public class Welcome { 
    public static void main(String[] args) {
-      // class System is in package java.lang from the java.base module
-      System.out.println("Welcome to the Java Platform Module System!");
+      // System类在来自java.base模块的java.lang包中
+      System.out.println("欢迎学习Java平台模块系统（JPMS）!");
    } 
 } 
 

@@ -14,7 +14,7 @@ public class VideoPlayer extends Application {
       Parent root = FXMLLoader.load(getClass().getResource("/res/VideoPlayer.fxml"));
       
       Scene scene = new Scene(root);
-      stage.setTitle("Video Player");
+      stage.setTitle("视频播放器");
       stage.setScene(scene);
       stage.show();
    }

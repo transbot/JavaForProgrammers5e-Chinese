@@ -1,6 +1,6 @@
 // 图21.13: AdditionProblemProvider.java
-// AdditionProblemProvider implementation of interface  
-// ProblemProvider for the MathTutor app.
+// MathTutor应用程序ProblemProvider接口的
+// AdditionProblemProvider实现
 package com.deitel.additionprovider;
 
 import java.util.random.RandomGenerator;
@@ -10,11 +10,11 @@ import com.deitel.mathtutor.spi.ProblemProvider;
 public class AdditionProblemProvider implements ProblemProvider {
    private static RandomGenerator random = RandomGenerator.getDefault();
 
-   // returns a new addition problem
+   // 返回一道新的加法题
    @Override
    public Problem getProblem() {
       return new Problem(random.nextInt(10), random.nextInt(10), "+") {
-         // override getResult to add the operands
+         // 重写getResult使两个操作数相加
          @Override
          public int getResult() {
             return getLeftOperand() + getRightOperand();

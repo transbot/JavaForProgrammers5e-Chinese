@@ -231,7 +231,7 @@ jlink --module-path "$JAVA_HOME/jmods" --add-modules java.base \
 Executing the Welcome App Using javabaseruntime
 ===========================================================
 // Windows Command Prompt
-javabaseruntime/bin/java --module-path mods ^
+javabaseruntime\bin\java --module-path mods ^
    --module com.deitel.welcome/com.deitel.welcome.Welcome
 
 // Windows PowerShell
@@ -247,7 +247,7 @@ javabaseruntime/bin/java --module-path mods \
 Executing the Welcome App Using javabaseruntime
 ===========================================================
 // Windows Command Prompt
-javabaseruntime/bin/java --module-path mods ^
+javabaseruntime\bin\java --module-path mods ^
    --module com.deitel.welcome/com.deitel.welcome.Welcome
 
 // Windows PowerShell

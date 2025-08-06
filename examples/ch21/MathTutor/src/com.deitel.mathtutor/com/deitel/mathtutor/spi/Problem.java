@@ -1,5 +1,5 @@
 // 图21.10: Problem.java
-// Problem superclass that contains information about a math problem.
+// 包含有关数学问题信息的Problem超类
 package com.deitel.mathtutor.spi;
 
 public abstract class Problem {
@@ -8,23 +8,23 @@ public abstract class Problem {
    private int result;
    private String operation;
 
-   // constructor  
+   // 构造函数
    public Problem(int leftOperand, int rightOperand, String operation) {
       this.leftOperand = leftOperand;
       this.rightOperand = rightOperand;
       this.operation = operation;
    } 
    
-   // gets the leftOperand
+   // 获取左操作数
    public int getLeftOperand() {return leftOperand;} 
    
-   // gets the rightOperand
+   // 获取右操作数
    public int getRightOperand() {return rightOperand;} 
    
-   // gets the operation
+   // 获取运算
    public String getOperation() {return operation;}
    
-   // gets the result
+   // 获取结果
    public abstract int getResult();
 } 
 

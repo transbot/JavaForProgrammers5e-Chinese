@@ -2,9 +2,9 @@
 // Time1类使用24小时制维护时间
 
 public class Time1 {
-   private int hour; // 0 - 23  
-   private int minute; // 0 - 59
-   private int second; // 0 - 59
+   private int hour; // 0~23  
+   private int minute; // 0~59
+   private int second; // 0~59
 
    // 使用世界时设置新时间值；
    // 如果时、分或秒无效则抛出异常。

@@ -1,7 +1,7 @@
 // 图21.7: module-info.java
-// Module declaration for the com.deitel.welcome module
+// com.deitel.welcome模块声明
 module com.deitel.welcome {
-   requires java.base; // implicit in all modules, so can be omitted
+   requires java.base; // 该语句在所有模块中是隐式的，因此可以省略
 }
 
 

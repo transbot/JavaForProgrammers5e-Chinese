@@ -1,10 +1,10 @@
-// 图21.21: module-info.java
-// Module declaration for the com.deitel.videoplayer module
+// 图21.8: module-info.java
+// com.deitel.videoplayer模块声明
 module com.deitel.videoplayer {
    requires javafx.controls;
    requires javafx.fxml;
    requires javafx.media;
-   requires controlsfx; // automatic module for ControlsFX
+   requires controlsfx; // ControlsFX库的自动模块
 
    exports com.deitel.videoplayer;
    opens com.deitel.videoplayer to javafx.fxml;

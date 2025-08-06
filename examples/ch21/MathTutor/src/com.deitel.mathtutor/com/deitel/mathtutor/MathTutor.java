@@ -1,5 +1,5 @@
 // 图21.11: MathTutor.java
-// Math tutoring app using ProblemProviders to display math problems.
+// 使用ProblemProvider显示数学问题的数学辅导应用
 package com.deitel.mathtutor;
 
 import java.util.List;
@@ -15,18 +15,18 @@ public class MathTutor {
    private static Scanner input = new Scanner(System.in);
 
    public static void main(String[] args) {
-      // get a service loader for ProblemProviders
+      // 获取ProblemProvider的服务加载器
       ServiceLoader<ProblemProvider> serviceLoader = 
         ServiceLoader.load(ProblemProvider.class);
 
-      // get the list of service providers
+      // 获取服务提供者列表
       List<Provider<ProblemProvider>> providersList = 
          serviceLoader.stream().collect(Collectors.toList());
 
-      // check whether there are any providers
+      // 检查是否存在任何提供者
       if (providersList.isEmpty()) {
          System.out.println(
-            "Terminating MathTutor: No problem providers found.");
+            "终止MathTutor：未找到问题提供者。");
          return;
       }
       
@@ -34,40 +34,40 @@ public class MathTutor {
       RandomGenerator random = RandomGenerator.getDefault();
 
       do {
-         // choose a ProblemProvider at random 
+         // 随机选择一个ProblemProvider 
          ProblemProvider provider = 
             providersList.get(random.nextInt(providersList.size())).get();
          
-         // get the Problem
+         // 获取Problem
          Problem problem = provider.getProblem();
 
-         // display the problem to the user
+         // 向用户显示问题
          showProblem(problem);
       } while (playAgain());
    }   
 
-   // show the math problem to the user
+   // 向用户显示数学问题
    private static void showProblem(Problem problem) {
-      var problemStatement = String.format("%nWhat is %d %s %d? ", 
+      var problemStatement = String.format("%n%d %s %d 等于多少？", 
          problem.getLeftOperand(), problem.getOperation(), 
          problem.getRightOperand());
       
-      // display problem and get answer from user
+      // 显示问题并获取用户答案
       System.out.printf(problemStatement);
       int answer = input.nextInt();
 
       while (answer != problem.getResult()) {
-         System.out.println("Incorrect. Please try again.");
+         System.out.println("回答错误，请重试。");
          System.out.printf(problemStatement);
          answer = input.nextInt();
       }
 
-      System.out.println("Correct!");
+      System.out.println("回答正确！");
    }
 
-   // play again?
+   // 是否继续？
    private static boolean playAgain() {
-      System.out.printf("%nTry another? y to continue, n to terminate: ");
+      System.out.printf("%n继续尝试？输入y继续，n终止：");
       String response = input.next();
 
       return response.toLowerCase().startsWith("y");

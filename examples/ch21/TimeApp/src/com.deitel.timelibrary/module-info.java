@@ -1,7 +1,7 @@
 // 图21.12: module-info.java
-// Module declaration for the com.deitel.timelibrary module
+// com.deitel.timelibrary模块声明
 module com.deitel.timelibrary {
-   exports com.deitel.timelibrary; // package available to other modules
+   exports com.deitel.timelibrary; // 其他模块可以使用这个包
 }
 
 

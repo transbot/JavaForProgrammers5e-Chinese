@@ -1,7 +1,7 @@
 // 图21.12: module-info.java
-// Module declaration for the com.deitel.mathtutor module
+// com.deitel.mathtutor模块声明
 module com.deitel.mathtutor {
-   exports com.deitel.mathtutor.spi; // package for provider interface
+   exports com.deitel.mathtutor.spi; // 导出服务提供者接口所在的包
 
    uses com.deitel.mathtutor.spi.ProblemProvider; 
 }
