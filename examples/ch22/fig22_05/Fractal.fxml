@@ -12,8 +12,8 @@
       <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
             <ColorPicker fx:id="colorPicker" onAction="#colorSelected" />
-          <Button mnemonicParsing="false" onAction="#decreaseLevelButtonPressed" text="Decrease Level" />
-            <Button mnemonicParsing="false" onAction="#increaseLevelButtonPressed" text="Increase Level" />
+          <Button mnemonicParsing="false" onAction="#decreaseLevelButtonPressed" text="减小级别" />
+            <Button mnemonicParsing="false" onAction="#increaseLevelButtonPressed" text="增大级别" />
             <Label fx:id="levelLabel" text="Level: 0" />
         </items>
       </ToolBar>
