@@ -1,10 +1,10 @@
 // 图B.8: PlusFlagTest.java
-// Printing numbers with and without the + flag.
+// 使用和不使用+标志来打印数字
 
 public class PlusFlagTest {
    public static void main(String[] args) {
       System.out.printf("%d\t%d%n", 786, -786);
-      System.out.printf("%+d\t%+d%n", 786, -786);
+      System.out.printf("%+d\t%+d%n", 786, -786);      
    } 
 }
 

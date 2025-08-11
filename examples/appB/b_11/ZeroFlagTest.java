@@ -1,5 +1,5 @@
 // 图B.11: ZeroFlagTest.java
-// Printing with the 0 (zero) flag fills in leading zeros.
+// 使用0（零）标志打印来填充前导零
 
 public class ZeroFlagTest {
    public static void main(String[] args) {

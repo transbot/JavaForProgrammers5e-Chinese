@@ -1,9 +1,9 @@
 // 图B.10: PoundFlagTest.java
-// Using the # flag with conversion characters o and x.  
+// 将#标志与转换字符o和x一起使用 
 
 public class PoundFlagTest {
    public static void main(String[] args) {
-      int c = 31;      // initialize c
+      int c = 31;      // 初始化c
    
       System.out.printf("%#o%n", c);
       System.out.printf("%#x%n", c);

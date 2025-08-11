@@ -1,20 +1,20 @@
 // 图B.4: OtherConversion.java
-// Using the b, B, h, H, % and n conversion characters.
+// 使用b、B、h、H、%和n转换字符
 
 public class OtherConversion {
    public static void main(String[] args) {
       Object test = null;
       System.out.printf("%b%n", false);
       System.out.printf("%b%n", true);
-      System.out.printf("%b%n", "Test");
+      System.out.printf("%b%n", "测试");
       System.out.printf("%B%n", test);
-      System.out.printf("Hashcode of \"hello\" is %h%n", "hello");
-      System.out.printf("Hashcode of \"Hello\" is %h%n", "Hello");
-      System.out.printf("Hashcode of null is %H%n", test);
-      System.out.printf("Printing a %% in a format string%n");
-      System.out.printf("Printing a new line %nnext line starts here");
+      System.out.printf("\"hello\"的哈希码是%h%n", "hello");
+      System.out.printf("\"Hello\"的哈希码是%h%n", "Hello");
+      System.out.printf("null的哈希码是%H%n", test);
+      System.out.printf("在格式字符串中打印一个%%%n");
+      System.out.printf("打印一个换行符%n下一行从这里开始");
    } 
-} 
+}
 
 
 

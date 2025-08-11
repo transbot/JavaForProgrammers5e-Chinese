@@ -1,5 +1,5 @@
 // 图B.5: FieldWidthTest.java
-// Right aligning integers in fields.
+// 在字段中右对齐整数
 
 public class FieldWidthTest {
    public static void main(String[] args) {
@@ -7,13 +7,13 @@ public class FieldWidthTest {
       System.out.printf("%4d%n", 12);
       System.out.printf("%4d%n", 123);
       System.out.printf("%4d%n", 1234);
-      System.out.printf("%4d%n%n", 12345); // data too large 
+      System.out.printf("%4d%n%n", 12345); // 太大
 
       System.out.printf("%4d%n", -1);
       System.out.printf("%4d%n", -12);
       System.out.printf("%4d%n", -123);
-      System.out.printf("%4d%n", -1234); // data too large 
-      System.out.printf("%4d%n", -12345); // data too large 
+      System.out.printf("%4d%n", -1234);  // 太大
+      System.out.printf("%4d%n", -12345); // 太大
    } 
 }
 

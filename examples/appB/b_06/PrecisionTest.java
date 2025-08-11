@@ -1,14 +1,14 @@
 // 图B.6: PrecisionTest.java
-// Using precision for floating-point numbers and strings.
+// 为浮点数和字符串指定精度
 public class PrecisionTest {
    public static void main(String[] args) {
       double f = 123.94536; 
-      String s = "Happy Birthday"; 
+      String s = "一二三四五六七八九十一二三四五"; 
 
-      System.out.printf("Using precision for floating-point numbers%n");
+      System.out.printf("使用浮点数精度%n");
       System.out.printf("\t%.3f%n\t%.3e%n\t%.3g%n%n", f, f, f);  
    
-      System.out.printf("Using precision for strings%n");
+      System.out.printf("使用字符串精度%n");
       System.out.printf("\t%.11s%n", s);
    } 
 }

@@ -1,5 +1,5 @@
 // 图B.12: CommaFlagTest.java
-// Using the comma (,) flag to display numbers with thousands separator.
+// 使用逗号（,）标志显示带有千位分隔符的数字
 
 public class CommaFlagTest {
    public static void main(String[] args) {

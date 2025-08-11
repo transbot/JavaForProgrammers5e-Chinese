@@ -1,14 +1,14 @@
 // 图B.14: ArgumentIndexTest.java
-// Reordering output with argument indices.
+// 使用参数索引重新排序输出
 
 public class ArgumentIndexTest {
    public static void main(String[] args) {
       System.out.printf(
-         "Parameter list without reordering: %s %s %s %s%n", 
-         "first", "second", "third", "fourth");
+         "未重新排序的参数列表: %s %s %s %s%n", 
+         "第一", "第二", "第三", "第四");
       System.out.printf(
-         "Parameter list after reordering: %4$s %3$s %2$s %1$s%n", 
-         "first", "second", "third", "fourth");      
+         "重新排序后的参数列表: %4$s %3$s %2$s %1$s%n", 
+         "第一", "第二", "第三", "第四");
    } 
 } 
 

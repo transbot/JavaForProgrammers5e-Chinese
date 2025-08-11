@@ -1,10 +1,10 @@
 // 图B.15: FormatterTest.java
-// Formatting output with class Formatter.
+// 使用 Formatter 类格式化输出
 import java.util.Formatter;
 
 public class FormatterTest {
    public static void main(String[] args) {
-      // create Formatter and format output            
+      // 创建一个Formatter对象并格式化输出
       Formatter formatter = new Formatter();           
       formatter.format("%d = %#o = %#X", 10, 10, 10);
 

@@ -1,9 +1,9 @@
 // 图B.7: MinusFlagTest.java
-// Right aligning and left aligning values.
+// 右对齐和左对齐值
 
 public class MinusFlagTest {
    public static void main(String[] args) {
-      System.out.println("Columns:");
+      System.out.println("列:");
       System.out.println("0123456789012345678901234567890123456789\n");
       System.out.printf("%10s%10d%10c%10f%n%n", "hello", 7, 'a', 1.23);
       System.out.printf(                                  

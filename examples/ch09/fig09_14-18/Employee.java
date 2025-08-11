@@ -7,10 +7,10 @@ public final class Employee {
    private CompensationModel model; // has-a关系
 
    // 传入一个对CompensationModel实现的引用，
-   // 从而通过“构造器注入”（constructor injection）来初始化模型
+   // 从而通过“构造函数注入”（constructor injection）来初始化模型
    public Employee(String name, CompensationModel model) {
       this.name = name;
-      this.model = model; // 构造器注入
+      this.model = model; // 构造函数注入
    }
 
    // 赋值方法（setter）执行“属性注入”（property injection）操作

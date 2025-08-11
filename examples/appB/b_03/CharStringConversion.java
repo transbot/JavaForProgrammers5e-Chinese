@@ -1,16 +1,16 @@
 // 图B.3: CharStringConversion.java
-// Using character and string conversion characters.
+// 使用字符和字符串转换字符
 public class CharStringConversion {
    public static void main(String[] args) {
-      char character = 'A';  // initialize char 
-      String string = "This is also a string";  // String object
-      Integer integer = 1234;  // initialize integer (autoboxing)
+      char character = 'A';  // 初始化char变量
+      String string = "This is also a string";  // 初始化String变量
+      Integer integer = 1234;  // 初始化Integer变量发生自动装箱
 
       System.out.printf("%c%n", character);
       System.out.printf("%s%n", "This is a string");
       System.out.printf("%s%n", string);
       System.out.printf("%S%n", string);
-      System.out.printf("%s%n", integer); // implicit call to toString
+      System.out.printf("%s%n", integer); // 隐式调用toString
    }
 } 
 
