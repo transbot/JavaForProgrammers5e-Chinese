@@ -63,7 +63,7 @@ public class StackTest {
       } 
    }
 
-   // 测试integerStackr栈的pop方法
+   // 测试integerStack栈的pop方法
    private static void testPopInteger(Stack<Integer> stack) {
       // 元素出栈
       try {

@@ -1,5 +1,5 @@
 // 图B.15: FormatterTest.java
-// 使用 Formatter 类格式化输出
+// 使用Formatter类格式化输出
 import java.util.Formatter;
 
 public class FormatterTest {

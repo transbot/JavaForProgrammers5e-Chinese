@@ -40,7 +40,7 @@ public class FileAndDirectoryInfo {
             } 
          } 
       } 
-      else { // 文件或目录不存在，输出错误信息
+      else { // 文件或目录不存在，输出错误消息
          System.out.printf("%s不存在%n", path);
       }   
    } 
