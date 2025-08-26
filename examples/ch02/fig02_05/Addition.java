@@ -16,7 +16,7 @@ public class Addition {
 
       int sum = number1 + number2; // 求和并将结果存储到变量sum中
 
-      System.out.pri1ntf("两数之和是%d%n", sum); // 显示sum
+      System.out.printf("两数之和是%d%n", sum); // 显示sum
    } // 结束main方法
 } // 结束Addition类
 
