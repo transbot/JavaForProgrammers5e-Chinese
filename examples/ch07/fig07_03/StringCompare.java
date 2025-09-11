@@ -63,7 +63,7 @@ public class StringCompare {
       }
       else {
          System.out.println(
-            "在忽略大小写的情况下，s3和s4的前5个字符也不匹配\n");
+            "即使忽略大小写，s3和s4的前5个字符也不匹配\n");
       }
 
       // 测试字符串是否只包含空白字符

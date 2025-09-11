@@ -1,3 +1,4 @@
+// 生成式AI练习，4.10节，BooleanExpressionsDemo.java
 // 练习：要求AI写一个Java程序来显示以下条件的布尔结果，假定i = 1，j = 2，k = 3，m = 2
 
 /*
@@ -11,7 +12,7 @@ g) !(k > m)
 */ 
 
 // 以下是AI生成的程序：
-public class BooleanExpressions {
+public class BooleanExpressionsDemo {
     public static void main(String[] args) {
         // 定义变量
         int i = 1, j = 2, k = 3, m = 2;

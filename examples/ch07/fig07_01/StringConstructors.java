@@ -9,7 +9,7 @@ public class StringConstructors {
 
       // 使用String类的各种构造函数
       var s1 = new String(); // ""
-      var s2 = new String(s); // "是那年轮上流浪的眼泪"
+      var s2 = new String(s); // "我是那年轮上流浪的眼泪"
       var s3 = new String(charArray); // "你仍然能闻到风中的胭脂味"
       var s4 = new String(charArray, 9, 3); // "胭脂味"
 

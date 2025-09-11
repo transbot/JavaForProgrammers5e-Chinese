@@ -20,7 +20,7 @@ public class PolymorphismTest {
          使用指向超类对象的超类引用调用SalariedEmployee的
          toString和calculateEarnings方法：
          %s
-         实际地收入: $%s%n%n""", salariedEmployee,
+         实际收入: $%s%n%n""", salariedEmployee,
          salariedEmployee.calculateEarnings().setScale(
             2, RoundingMode.HALF_EVEN));
 
