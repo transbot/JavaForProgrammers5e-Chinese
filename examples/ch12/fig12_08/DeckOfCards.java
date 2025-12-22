@@ -47,7 +47,7 @@ public class DeckOfCards {
       Collections.shuffle(deck);  // 洗牌
    } 
 
-   // output deck
+   // 输出牌组
    public void printCards() {
       // 52张牌分4列显示
       for (int i = 0; i < deck.size(); ++i) {

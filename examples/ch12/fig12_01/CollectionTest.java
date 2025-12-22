@@ -1,5 +1,5 @@
 // 图12.1: CollectionTest.java
-// 通过ArrayList对象演示Collection接口
+// 使用ArrayList对象来演示Collection接口
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collection;
