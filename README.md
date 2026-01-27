@@ -1,2 +1,3 @@
-![AI高效应用：Java编程实践（第5版）- Java for Programmers with generative AI - 封面](https://github.com/user-attachments/assets/efab12d7-8ce7-40de-80be-7928282483c6)
+![AI高效应用：Java编程实践（第5版）- Java for Programmers with generative AI - 封面](https://github.com/user-attachments/assets/655b12a1-570f-4028-bc2d-96982016a788)
+
 本书预计于2026年初出版，持续更新中...
